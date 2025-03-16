@@ -1,0 +1,269 @@
+/* src/index.css */
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer utilities {
+  .visible {
+    visibility: visible;
+  }
+  .invisible {
+    visibility: hidden;
+  }
+}
+@font-face {
+	font-family: "Dm-Sans";
+	src: url("../fonts/DM_Sans/DMSans-Regular.ttf");
+	font-weight: 400;
+}
+@font-face {
+  font-family: "CalSans-SemiBold";
+  src: url("../fonts/CalSans-SemiBold.woff") format("woff"),
+    url("../fonts/CalSans-SemiBold.otf") format("opentype");
+  font-weight: 600;
+  font-display: swap;
+  font-style: normal;
+}
+
+/* DM Sans Regular */
+@font-face {
+  font-family: "DM Sans";
+  src: url("../fonts/DM_Sans/DMSans-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
+/* DM Sans Italic */
+@font-face {
+  font-family: "DM Sans";
+  src: url("../fonts/DM_Sans/DMSans-Italic.ttf") format("truetype");
+  font-weight: 400;
+  font-display: swap;
+  font-style: italic;
+}
+
+/* DM Sans Medium */
+@font-face {
+  font-family: "DM Sans";
+  src: url("../fonts/DM_Sans/DMSans-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+
+/* DM Sans Bold */
+@font-face {
+  font-family: "DM Sans";
+  src: url("../fonts/DM_Sans/DMSans-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+/* DM Sans Bold Italic */
+@font-face {
+  font-family: "DM Sans";
+  src: url("../fonts/DM_Sans/DMSans-BoldItalic.ttf") format("truetype");
+  font-weight: 700;
+  font-display: swap;
+  font-style: italic;
+}
+
+@layer utilities {
+  .text-fill-transparent {
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+.font-display {
+    font-family: CalSans-SemiBold, sans-serif;
+}
+/* clears the ‘X’ from Internet Explorer */
+
+html[dir="rtl"] .-translate-x-1\/2 {
+  --tw-translate-x: 50%;
+}
+
+html[dir="rtl"] .hover\:translate-x-1:hover {
+  --tw-translate-x: -0.25rem;
+}
+.bg-gradient{
+  /* background: linear-gradient(to right, #f8e1e7, #e3effd, #f5f9f6); */
+  background: linear-gradient(to right, #f8e1e7, #e3effd, #f5f9f6);
+}
+.pricing-table .scrollbar-custom .tab-button{
+  border-radius: 5px;
+}
+.pricing-table .scrollbar-custom .tab-button.active{
+  background-color: rgb(131 88 255 / var(--tw-text-opacity));
+  border: none;
+  color: #fff;
+}
+.pricing-table .scrollbar-custom .tab-button.active::after{
+  content: none;
+}
+.home-cards{
+  box-shadow: 4px 4px 10px 0px #73717157;
+}
+.hover-text-white{
+  transition: .3s;
+}
+.hover-text-white:hover h3{
+color: #fff;
+}
+.hero .four-cards .pink:hover svg {
+  fill: #ff59e2;
+}
+.hero .four-cards .blue:hover svg {
+  fill: #52ddf6;
+}
+.hero .four-cards .orange:hover svg {
+  fill: #ff7356;
+}
+.hero .four-cards .accent:hover svg {
+  fill: #8358FF;
+}
+
+
+/* ---------------liquid button----------------------- */
+/* .liquid-button {
+  position: relative;
+  padding: 20px 5px;
+  display: block;
+  text-decoration: none;
+  width: 200px;
+  overflow: hidden;
+  border-radius: 40px;
+  text-align: center;
+  height: 50px;
+}
+
+.liquid-button span {
+  position: relative;
+  color: #fff;
+  font-size: 18px;
+  z-index: 1;
+}
+
+.liquid-button .liquid {
+  position: absolute;
+  top: -80  px;
+  left: 0;
+  width: 200px;
+  height: 200px;
+  background: #4973ff;
+  box-shadow: inset 0 0 50px rgba(0, 0, 0, .5);
+  transition: .5s;
+}
+
+.liquid-button .liquid::after,
+.liquid-button .liquid::before {
+  content: '';
+  width: 200%;
+  height: 200%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -75%);
+  background: #000;
+}
+
+.liquid-button .liquid::before {
+  
+  border-radius: 45%;
+  background: rgba(20, 20, 20, 1);
+  animation: animate 5s linear infinite;
+}
+
+.liquid-button .liquid::after {
+  
+  border-radius: 40%;
+  background: rgba(20, 20, 20, .5);
+  animation: animate 10s linear infinite;
+}
+
+.liquid-button:hover .liquid{
+  top: -120px;
+}
+
+@keyframes animate {
+  0% {
+    transform: translate(-50%, -75%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -75%) rotate(360deg);
+  }
+} */
+/* ---------------------------- */
+
+/* .hero .four-cards .main-cards {
+  position: relative;
+  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+  width: 200px;
+  overflow: hidden;
+  background-color: #fff;
+}
+
+.hero .four-cards .main-cards span {
+  position: relative;
+  color: #fff;
+  font-size: 20px;
+  font-family: Arial, sans-serif;
+  letter-spacing: 8px;
+  z-index: 1;
+}
+
+.hero .four-cards .main-cards .liquid {
+  position: absolute;
+  left: 0;
+  top: -100px;
+  width: 300px;
+  height: 400px;
+  background: #4973ff;
+  transition: 0.5s;
+}
+
+.hero .four-cards .main-cards .liquid::after,
+.hero .four-cards .main-cards .liquid::before {
+  content: '';
+  width: 200%;
+  height: 200%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -75%);
+  background: #fff;
+}
+
+.hero .four-cards .main-cards .liquid::before {
+  border-radius: 35%;
+  background:  #fff;
+  animation: animate 5s linear infinite;
+}
+
+.hero .four-cards .main-cards .liquid::after {
+  border-radius: 20%;
+  background:  #fff;
+  animation: animate 10s linear infinite;
+}
+
+.hero .four-cards .main-cards:hover .liquid {
+  top: -200px;
+}
+
+@keyframes animate {
+  0% {
+    transform: translate(-50%, -75%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -75%) rotate(360deg);
+  }
+}
+
+
+ */
