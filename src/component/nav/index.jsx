@@ -27,6 +27,18 @@ export default function AcrNav() {
                     role="button">
                     Home
                 </Link>
+                <ul
+          className="dropdown-menu group-hover:visible lg:invisible -left-6 top-[85%] z-10 hidden grid-flow-row grid-cols-[repeat(2,_1fr)] gap-x-4 whitespace-nowrap rounded-xl bg-white transition-all will-change-transform group-hover:opacity-100 dark:bg-jacarta-800 lg:absolute lg:!grid lg:translate-y-4 lg:py-2 lg:px-2 lg:opacity-0 lg:shadow-2xl lg:group-hover:translate-y-2"
+          aria-labelledby="navDropdown-1"
+        >
+            <li>
+              <Link
+                to="/home2"
+                className="flex items-center justify-between rounded-xl px-5 py-2 transition-colors hover:bg-jacarta-50 hover:text-accent focus:text-accent dark:hover:bg-jacarta-600">
+                <span className="mr-4 font-display text-sm ">Home 2</span>
+              </Link>
+            </li>
+        </ul>
             </li>
 
             <li className="group">

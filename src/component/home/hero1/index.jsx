@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";  // Use react-router-dom for routing
 export default function Hero1() {
   const videoRef = useRef(null);
 
+
   useEffect(() => {
     if (videoRef.current) {
       videoRef.current.playbackRate = 0.8;
@@ -34,29 +35,29 @@ export default function Hero1() {
 
       <div className="container">
         <div className="pt-16 text-center m-auto max-w-4xl">
-          <h1 className="mb-10 font-display text-4xl text-jacarta-700 dark:text-white md:text-5xl lg:text-6xl xl:text-7xl xxl:text-7xl">
+          <h1 data-aos="fade-up" data-aos-duration={800}
+          className="mb-10 font-display text-4xl text-jacarta-700 dark:text-white md:text-5xl lg:text-6xl xl:text-7xl xxl:text-7xl">
             Built for Traders, Backed by 
             <span className="animate-gradient"> Professionals!</span>
           </h1>
         </div>
         <div className="flex items-center justify-center mb-20">
-          <Link
-          cla
-            to="/create"
+          <a
+            href="#pricing"
             className="liquid-button w-44 block text-md rounded-full bg-accent py-3 px-5 text-center font-semibold text-white shadow-accent-volume transition-all hover:bg-accent-dark"
           >
             Start Challenge
-          </Link>
+          </a>
           <Link
             to="/create"
             className="mx-3 block rtl:!mr-6 w-44 rounded-full bg-white py-3 px-5 text-center font-semibold text-accent shadow-white-volume transition-all hover:bg-accent-dark hover:text-white hover:shadow-accent-volume"
           >
             Free Trial
           </Link>
+          
         </div>
         <div className="grid gap-5 md:grid-cols-4 text-center m-auto max-w-4xl four-cards">
-          <div className=" main-cards hover-text-white p-5 pt-0 relative pink hover:bg-[#ff59e2] hover:text-white rounded-2.5xl border hover:shadow-[0_16px_24px_-8px_rgba(131,88,255,.3)] border-jacarta-100 bg-white shadow-[0_5px_0_0_#8358ff] transition-shadow  dark:border-jacarta-700 dark:bg-jacarta-700">
-          <div class="liquid"></div>
+          <div data-aos="zoom-in"  className=" main-cards hover-text-white p-5 pt-0 relative pink hover:bg-[#ff59e2] hover:text-white rounded-2.5xl border hover:shadow-[0_16px_24px_-8px_rgba(131,88,255,.3)] border-jacarta-100 bg-white shadow-[0_5px_0_0_#8358ff] transition-shadow  dark:border-jacarta-700 dark:bg-jacarta-700">
               <div className="mb-4 -mt-8 bg-gradient home-cards inline-flex h-[5.5rem] w-[5.5rem] items-center justify-center rounded-full border border-jacarta-100 bg-white dark:border-jacarta-600 dark:bg-jacarta-700">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -74,7 +75,7 @@ export default function Hero1() {
               </h3>
               <p className="dark:text-jacarta-300">of profit split</p>
             </div>
-            <div className="main-cards hover-text-white blue pb-5 relative hover:bg-[#52ddf6] hover:text-white rounded-2.5xl border border-jacarta-100 bg-white  shadow-[0_5px_0_0_#8358ff] transition-shadow hover:shadow-[0_16px_24px_-8px_rgba(131,88,255,.3)] dark:border-jacarta-700 dark:bg-jacarta-700">
+            <div data-aos="zoom-in"  className="main-cards hover-text-white blue pb-5 relative hover:bg-[#52ddf6] hover:text-white rounded-2.5xl border border-jacarta-100 bg-white  shadow-[0_5px_0_0_#8358ff] transition-shadow hover:shadow-[0_16px_24px_-8px_rgba(131,88,255,.3)] dark:border-jacarta-700 dark:bg-jacarta-700">
               <div className="mb-4 -mt-8  bg-gradient home-cards inline-flex h-[5.5rem] w-[5.5rem] items-center justify-center rounded-full border border-jacarta-100 bg-white dark:border-jacarta-600 dark:bg-jacarta-700">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -92,7 +93,7 @@ export default function Hero1() {
               </h3>
               <p className="dark:text-jacarta-300">trading accounts</p>
             </div>
-            <div className="main-cards hover-text-white orange hover:bg-[#ff7356] hover:text-white pb-5 relative rounded-2.5xl border border-jacarta-100 bg-white  shadow-[0_5px_0_0_#8358ff] transition-shadow hover:shadow-[0_16px_24px_-8px_rgba(131,88,255,.3)] dark:border-jacarta-700 dark:bg-jacarta-700">
+            <div data-aos="zoom-in" className="main-cards hover-text-white orange hover:bg-[#ff7356] hover:text-white pb-5 relative rounded-2.5xl border border-jacarta-100 bg-white  shadow-[0_5px_0_0_#8358ff] transition-shadow hover:shadow-[0_16px_24px_-8px_rgba(131,88,255,.3)] dark:border-jacarta-700 dark:bg-jacarta-700">
               <div className="mb-4 -mt-8 bg-gradient home-cards inline-flex h-[5.5rem] w-[5.5rem] items-center justify-center rounded-full border border-jacarta-100 bg-white dark:border-jacarta-600 dark:bg-jacarta-700">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -110,7 +111,7 @@ export default function Hero1() {
               </h3>
               <p className="dark:text-jacarta-300">limit in challenge phase</p>
             </div>
-            <div className="main-cards hover-text-white accent hover:bg-accent hover:text-white pb-5 relative rounded-2.5xl border border-jacarta-100 bg-white  shadow-[0_5px_0_0_#8358ff] transition-shadow hover:shadow-[0_16px_24px_-8px_rgba(131,88,255,.3)] dark:border-jacarta-700 dark:bg-jacarta-700">
+            <div data-aos="zoom-in" className="main-cards hover-text-white accent hover:bg-accent hover:text-white pb-5 relative rounded-2.5xl border border-jacarta-100 bg-white  shadow-[0_5px_0_0_#8358ff] transition-shadow hover:shadow-[0_16px_24px_-8px_rgba(131,88,255,.3)] dark:border-jacarta-700 dark:bg-jacarta-700">
               <div className="mb-4 -mt-8 bg-gradient home-cards inline-flex h-[5.5rem] w-[5.5rem] items-center justify-center rounded-full border border-jacarta-100 bg-white dark:border-jacarta-600 dark:bg-jacarta-700">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

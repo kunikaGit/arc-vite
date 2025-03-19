@@ -45,13 +45,14 @@ export const testimonialsData = [
 ];
 export default function Testimonials() {
   return (
-    <section className="bg-light-base py-24 dark:bg-jacarta-900">
+    <section className="bg-light-base py-20 dark:bg-jacarta-900 overflow-hidden"  id="testimonial">
       <div className="container relative overflow-hidden xl:left-[calc((100vw-1202px)/4)] xl:max-w-[calc(1202px+((100vw-1202px)/2))] xl:pr-[calc((100vw-1176px)/2)]">
         <div className="mx-auto mb-12 max-w-sm text-center">
-          <h2 className="mb-6 text-center font-display text-3xl font-medium text-jacarta-700 dark:text-white">
+          <h2 data-aos-duration={600} data-aos="fade-down"  data-aos-anchor="#testimonial"
+          className="mb-6 text-center font-display text-3xl font-medium text-jacarta-700 dark:text-white">
           TRUST PILOT REVIEW
           </h2>
-          <p className="text-lg dark:text-jacarta-300">
+          <p className="text-lg dark:text-jacarta-300" data-aos-duration={600} data-aos="fade-down" data-aos-anchor="#testimonial">
             <span className="animate-gradient text-lg font-bold">10000+  </span> Customers those who already tried our services.
           </p>
         </div>
@@ -64,7 +65,7 @@ export default function Testimonials() {
                 width={50} height={50}
                   src={elm.imageSrc}
                   alt="image"
-                  className="w-28 self-start rounded-2.5xl lg:w-auto"
+                  className="w-28 self-start rounded-2.5xl "
                 />
                 <div className="-ml-14 -mt-4 flex h-16 w-16 shrink-0 items-center justify-center rounded-full border-[5px] border-white bg-accent dark:border-jacarta-700 md:mb-0 md:w-16">
                   <svg

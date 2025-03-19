@@ -1,120 +1,9 @@
 import { useEffect, useState } from "react";
 import tippy from "tippy.js";
 import './pricingtable.css'
+import TwoPhase from "./twophasechallange";
+import InstantFunding from "./instantfunding";
 
-const ArrowTwo = () => {
-    return (
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#8358ff" height={24} width={24}>
-            <path d="M12 2C17.52 2 22 6.48 22 12C22 17.52 17.52 22 12 22C6.48 22 2 17.52 2 12C2 6.48 6.48 2 12 2ZM12 11H8V13H12V16L16 12L12 8V11Z">
-            </path></svg>
-    )
-}
-function TwoPhase() {
-
-    const accountSizes = [
-        { size: "$8k", price: 39, profitTarget: 500, dailyLossLimit: "4%", drawdown: "10%" },
-        { size: "$15k", price: 75, profitTarget: 1000, dailyLossLimit: "4%", drawdown: "10%" },
-        { size: "$25k", price: 139, profitTarget: 2500, dailyLossLimit: "4%", drawdown: "10%" },
-        { size: "$50k", price: 269, profitTarget: 5000, dailyLossLimit: "4%", drawdown: "10%" },
-        { size: "100k", price: 529, profitTarget: 5000, dailyLossLimit: "4%", drawdown: "10%" },
-
-    ];
-
-    const [selected, setSelected] = useState(accountSizes[2]); // Default to $25k
-
-    return (
-        <div className="p-6 bg-white dark:bg-gray-900 text-gray-900 dark:text-white rounded-lg pricingtable">
-            <div className="flex justify-center space-x-4 mb-6">
-                {accountSizes.map((account, index) => (
-                    <label key={index} className="flex items-center space-x-2 cursor-pointer px-4">
-                        <input
-                            type="radio"
-                            name="accountSize"
-                            className="accent-accent"
-                            checked={selected.size === account.size}
-                            onChange={() => setSelected(account)}
-                        />
-                        <span
-                            className={` py-2  text-md transition-all ${selected.size === account.size
-                                ? "bg-blue-500 border-blue-700 text-black "
-                                : "bg-gray-200 dark:bg-gray-700 border-gray-400 dark:border-gray-500 text-gray-700 dark:text-white"
-                                }`}
-                        >
-                            {account.size}
-                        </span>
-                    </label>
-                ))}
-            </div>
-
-            <div className="upper-box">
-                <div className="sub-box">
-                    <div className="main-heading mb-5">
-                        <span className="animate-gradient text-2xl  font-bold"> Two Phase</span>
-                    </div>
-                    <div className="mb-5">
-                        <h2 className="text-xl font-semibold">${selected.price}</h2>
-                        <h3 className="font-medium">For {selected.size} Account</h3>
-                    </div>
-                    <button className="w-full block text-md rounded-full bg-accent py-2   px-3 text-center font-semibold text-white shadow-accent-volume transition-all hover:bg-accent-dark">
-                        Get Plan</button>
-                </div>
-                <div className="fund-info">
-                    <h2 className="text-black mb-4 text-xl font-semibold dark:text-white">Two Phase - {selected.size} Account</h2>
-                    <ul className="space-y-2">
-                        <li><span><ArrowTwo /> Profit Target :</span>
-                            <span> ${selected.profitTarget}</span>
-                        </li>
-                        <li><span><ArrowTwo /> Maximum Daily Loss: </span><span>{selected.dailyLossLimit}</span></li>
-                        <li><span><ArrowTwo /> Maximum Overall Loss: </span><span> {selected.drawdown} </span></li>
-                        <li><span><ArrowTwo /> Minimum Trading Days:</span> <span>5 Days</span></li>
-                    </ul>
-                </div>
-            </div>
-
-
-        </div>
-    );
-}
-
-const Arrow = () => {
-    return (
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#8358ff" height={24} width={24}>
-            <path d="M12 2C17.52 2 22 6.48 22 12C22 17.52 17.52 22 12 22C6.48 22 2 17.52 2 12C2 6.48 6.48 2 12 2ZM12 11H8V13H12V16L16 12L12 8V11Z">
-            </path></svg>
-    )
-}
-
-
-function InstantFunding() {
-    return (
-
-        <div className="pricingtable">
-            <div className="upper-box">
-                <div className="sub-box">
-                    <div className="main-heading mb-5">
-                        <span className="animate-gradient text-2xl  font-bold"> Instant Funding</span>
-                    </div>
-                    <div className="mb-5">
-                        <h2 className="text-xl font-semibold">$149</h2>
-                        <h3 className="font-medium">For 5k Account</h3>
-                    </div>
-                    <button className="w-full block text-base rounded-full bg-accent py-2   px-3 text-center font-semibold text-white shadow-accent-volume transition-all hover:bg-accent-dark">
-                        Get Plan</button>
-                </div>
-                <div className="fund-info">
-                    <h2 className="text-black mb-4 text-xl font-semibold dark:text-white">Two Phase - 5k Account</h2>
-                    <ul className="space-y-2">
-                        <li><span><Arrow /> Profit Target :</span>
-                            <span> -</span>
-                        </li>
-                        <li><span><Arrow /> Maximum Daily Loss: </span><span>2%</span></li>
-                        <li><span><Arrow /> Maximum Overall Loss: </span><span> 3% </span></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    );
-}
 
 export default function PricingTable() {
     useEffect(() => {
@@ -123,10 +12,10 @@ export default function PricingTable() {
     const [activeTab, setActiveTab] = useState("trending"); // Default active tab
 
     return (
-        <section className="py-20 pricing-table">
+        <section className="py-16 pricing-table" id="pricing">
             <div className="container">
                 <div className="mx-auto mb-14 max-w-xl text-center">
-                    <h2 className="mb-0 text-center font-display text-4xl font-medium text-jacarta-700 dark:text-white">
+                    <h2 data-aos-anchor="#pricing" data-aos-duration={600} data-aos="fade-down" className="mb-0 text-center font-display text-4xl font-medium text-jacarta-700 dark:text-white">
                         One Step towards Financial Freedom</h2>
                 </div>
                 <div className="scrollbar-custom overflow-x-auto">
@@ -135,13 +24,13 @@ export default function PricingTable() {
                         role="tablist"
                     >
                         {/* Trending */}
-                        <li className="nav-item" role="presentation">
+                        <li className="nav-item" role="presentation"  data-aos-duration={600} data-aos="fade-down">
                             <button
                                 className={`tab-button rounded-sm nav-link relative flex items-center whitespace-nowrap py-1.5 px-4 font-display font-semibold
                                     ${activeTab === "trending"
-                                            ? "active text-jacarta-700 dark:text-white"
-                                            : "text-jacarta-400 dark:text-jacarta-200 hover:text-jacarta-700 dark:hover:text-white"
-                                        }`}
+                                        ? "active text-jacarta-700 dark:text-white"
+                                        : "text-jacarta-400 dark:text-jacarta-200 hover:text-jacarta-700 dark:hover:text-white"
+                                    }`}
                                 id="trending-tab"
                                 data-bs-toggle="tab"
                                 data-bs-target="#trending"
@@ -168,13 +57,13 @@ export default function PricingTable() {
                         </li>
 
                         {/* Sweeps */}
-                        <li className="nav-item" role="presentation">
+                        <li className="nav-item" role="presentation"  data-aos-duration={600} data-aos="fade-down">
                             <button
                                 className={`tab-button rounded-sm nav-link relative flex items-center whitespace-nowrap py-1.5 px-4 font-display font-semibold
                                     ${activeTab === "sweeps"
-                                            ? "active text-jacarta-700 dark:text-white"
-                                            : "text-jacarta-400 dark:text-jacarta-200 hover:text-jacarta-700 dark:hover:text-white"
-                                        }`}
+                                        ? "active text-jacarta-700 dark:text-white"
+                                        : "text-jacarta-400 dark:text-jacarta-200 hover:text-jacarta-700 dark:hover:text-white"
+                                    }`}
                                 id="sweeps-tab"
                                 data-bs-toggle="tab"
                                 data-bs-target="#sweeps"
@@ -199,10 +88,10 @@ export default function PricingTable() {
                             </button>
                         </li>
                     </ul>
-                     <div className="tab-content">
-                {activeTab === "trending" && <TwoPhase />}
-                {activeTab === "sweeps" && <InstantFunding />}
-            </div>
+                    <div className="tab-content" data-aos="zoom-in" data-aos-duration={800}   data-aos-delay="300">
+                        {activeTab === "trending" && <TwoPhase />}
+                        {activeTab === "sweeps" && <InstantFunding />}
+                    </div>
                 </div>
             </div>
         </section>

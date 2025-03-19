@@ -26,30 +26,33 @@ export default function Calltoaction() {
           </picture>
           <div className="items-center justify-between md:flex">
             <div className="mb-6 md:w-1/2">
-              <h2 className="mb-4 font-display text-2xl text-jacarta-700 dark:text-white sm:text-3xl uppercase">
-              discover your potential and become a trader
+              <h2 data-aos="fade-down" data-aos-duration={600} className="mb-4 font-display text-2xl text-jacarta-700 dark:text-white sm:text-3xl uppercase">
+                discover your potential and become a trader
               </h2>
               <p className="mb-8 text-lg dark:text-jacarta-300">
-              Join the Leading Prop Firm<br/>
+                Join the Leading Prop Firm<br />
               </p>
               <div className="flex items-center">
-            <Link
-              href="/create"
-              className=" w-44 block text-md rounded-full bg-accent py-3
+                <Link
+                  data-aos="fade-up" data-aos-duration={600}
+                  href="/create"
+                  className=" w-44 block text-md rounded-full bg-accent py-3
              px-5 text-center font-semibold text-white shadow-accent-volume transition-all hover:bg-accent-dark"
-            >
-              Start Challenge
-            </Link>
-            <Link
-              href="/create"
-              className="mx-3 block rtl:!mr-6 w-44 rounded-full bg-white py-3 px-5 text-center font-semibold text-accent shadow-white-volume transition-all hover:bg-accent-dark hover:text-white hover:shadow-accent-volume"
-            >
-              Free Trial
-            </Link>
-          </div>
-              
+                >
+                  Start Challenge
+                </Link>
+                <Link
+                  data-aos="fade-up" data-aos-duration={600}
+                  href="/create"
+                  className="mx-3 block rtl:!mr-6 w-44 rounded-full bg-white py-3 px-5 text-center font-semibold text-accent shadow-white-volume transition-all hover:bg-accent-dark hover:text-white hover:shadow-accent-volume"
+                >
+                  Free Trial
+                </Link>
+              </div>
+
             </div>
             <img
+              data-aos="fade-down" data-aos-duration={600}
               width={340}
               height={300}
               src="/img/crypto-consultant/cta_illustration.png"

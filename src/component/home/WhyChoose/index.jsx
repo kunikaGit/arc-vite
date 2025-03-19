@@ -68,16 +68,18 @@ const Right = () => {
     return (
       <section className="relative py-24" style={{ background: "linear-gradient(to right, #f8e1e7, #e3effd, #f5f9f6)" }}>
         <div className="container">
-          <div className="mx-auto mb-16 max-w-xl text-center">
+          <div className="mx-auto mb-16 max-w-xl text-center" data-aos-duration={600} data-aos="fade-down" >
             <h2 className="mb-2 text-center font-display text-3xl font-medium text-jacarta-700 dark:text-white">
               Why Choose ARC</h2>
             <p className="animate-gradient text-lg font-bold">
               Compare Markets
             </p>
           </div>
-          <div className="rounded-2lg border border-jacarta-100 bg-white text-sm dark:border-jacarta-600 dark:bg-jacarta-700 dark:text-white">
+          <div data-aos-duration={800} data-aos="zoom-in"    data-aos-delay="300"
+          className="rounded-2lg border border-jacarta-100 bg-white text-sm dark:border-jacarta-600 dark:bg-jacarta-700 dark:text-white">
             <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
-              <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 border-jacarta-100 border-t">
+              <table 
+              className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 border-jacarta-100 border-t">
                 <thead className="text-base uppercase">
                   <tr className="border-t border-jacarta-100 py-2 px-4 transition-shadow hover:shadow-lg dark:border-jacarta-600 dark:bg-jacarta-900">
                     <th scope="col" className="px-6 py-3 ">VARIABLES</th>

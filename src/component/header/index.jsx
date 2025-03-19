@@ -8,7 +8,7 @@ import AcrNav from "../nav";
 import { handleDarkMode } from "../../utlis/handleDarkMode";
 import { Link } from "react-router-dom";
 import images from '../../utlis/helper'
-export default function Header3() {
+export default function Header() {
   useEffect(() => {
     addMobileMenuToggle();
     return () => {
