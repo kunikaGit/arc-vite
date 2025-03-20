@@ -38,6 +38,13 @@ export default function AcrNav() {
                 <span className="mr-4 font-display text-sm ">Home 2</span>
               </Link>
             </li>
+            <li>
+              <Link
+                to="/coming-soon"
+                className="flex items-center justify-between rounded-xl px-5 py-2 transition-colors hover:bg-jacarta-50 hover:text-accent focus:text-accent dark:hover:bg-jacarta-600">
+                <span className="mr-4 font-display text-sm ">Coming Soon</span>
+              </Link>
+            </li>
         </ul>
             </li>
 
