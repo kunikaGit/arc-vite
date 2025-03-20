@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";  // Use react-router-dom for routing
+import imageMap from "../../../utlis/helper";
 
 export default function Calltoaction() {
   return (
@@ -49,13 +50,12 @@ export default function Calltoaction() {
                   Free Trial
                 </Link>
               </div>
-
             </div>
             <img
               data-aos="fade-down" data-aos-duration={600}
               width={340}
               height={300}
-              src="/img/crypto-consultant/cta_illustration.png"
+              src={imageMap['cta_illustration.png']}
               alt="image"
             />
           </div>

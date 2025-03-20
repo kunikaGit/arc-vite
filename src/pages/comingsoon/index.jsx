@@ -4,7 +4,7 @@ import imageMap from "../../utlis/helper";
 const ComingSoon = () => {
     return (
         <>
-            <div className="hero-sec" relative id="hero">
+            <div className="hero-sec" id="hero">
                 <div className="absolute inset-0 -z-10 overflow-hidden py-5 bg-black ovarlay-video">
                     <video
                         autoPlay
