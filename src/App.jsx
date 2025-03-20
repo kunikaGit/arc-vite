@@ -1,5 +1,5 @@
 import { Routes, Route, Link } from "react-router-dom";
-import { Checkout, Home } from "./pages/index.js";
+import { Checkout, ComingSoon, Home } from "./pages/index.js";
 import Home2 from "./pages/home2.jsx";
 
 export default function App() {
@@ -8,6 +8,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/home2" element={<Home2 />} />
         <Route path="/checkout" element={<Checkout />} />
+        <Route path="/coming-soon" element={<ComingSoon />} />
       </Routes>
   );
 }

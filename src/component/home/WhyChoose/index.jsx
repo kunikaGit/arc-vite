@@ -69,7 +69,7 @@ const Right = () => {
       <section className="relative py-24" style={{ background: "linear-gradient(to right, #f8e1e7, #e3effd, #f5f9f6)" }}>
         <div className="container">
           <div className="mx-auto mb-16 max-w-xl text-center" data-aos-duration={600} data-aos="fade-down" >
-            <h2 className="mb-2 text-center font-display text-3xl font-medium text-jacarta-700 dark:text-white">
+            <h2 className="mb-2 text-center font-display text-3xl font-medium text-jacarta-700 dark:text-jacarta-700">
               Why Choose ARC</h2>
             <p className="animate-gradient text-lg font-bold">
               Compare Markets

@@ -1,0 +1,52 @@
+
+.hero-sec {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.hero-sec .ovarlay-video::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    background-color: #00000047;
+    height: 100%;
+    width: 100%;
+    /* z-index: 1; */
+}
+.hero-sec .logo{
+    max-width: 200px;
+    position: absolute;
+    top: 0;
+    left: 50px;
+}
+.hero-sec .text-box input{
+    background-color: black;
+}
+.hero-sec .text-box button{
+    background-color: #FFCC4A;
+    color: #000000;
+    font-weight: 500;
+    transition: .3s;
+    border: 1px solid;
+}
+.hero-sec .text-box button:hover{
+    background-color: transparent;
+    border-color: #FFCC4A;
+    color: #FFFFFF;
+}
+.hero-sec .menu {
+    position: relative;
+    bottom: 0;
+}
+.hero-sec .menu ul{
+    display: flex;
+    justify-content: center ;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+.hero-sec .menu ul li a{
+    color: #FFFFFF;
+
+}

@@ -63,7 +63,7 @@
         #399953 270deg 360deg
       )
       1 stretch;
-    background: rgb(255 255 255 / var(--opacity));
+    /* background: rgb(255 255 255 / var(--opacity)); */
   }
   
   @property --opacity {

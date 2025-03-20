@@ -221,3 +221,15 @@ color: #fff;
 .btn-epic:hover span:last-child {
   transform: translateY(-24px);
 }
+
+
+
+.logo-text{
+  font-size: 50px;
+  font-weight: 900;
+  letter-spacing: -5px;
+}
+
+.main-cards{
+  transition: .5s ease-in;
+}

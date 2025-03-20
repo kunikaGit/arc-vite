@@ -43,20 +43,21 @@ export default function Header2() {
         <div className="flex items-center px-6 xl:px-24">
           {/* Logo */}
           <Link to="/" className="shrink-0">
-            <img
+          <h2 className="logo-text animate-gradient">ARC</h2>
+            {/* <img
               width={80}
               height={20}
               src={images['dark-logo.svg']}
               className=" dark:hidden"
               alt="Xhibiter | NFT Marketplace"
-            />
-            <img
+            /> */}
+            {/* <img
               width={80}
               height={20}
               src={images['dark-logo.svg']}
               className="hidden  dark:block"
               alt="Xhibiter | NFT Marketplace"
-            />
+            /> */}
           </Link>
 
           {/* Search */}

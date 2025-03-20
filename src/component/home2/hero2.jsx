@@ -26,12 +26,12 @@ export default function Hero2() {
             <div className="container">
                 <div className="pt-16 text-center m-auto max-w-4xl">
                     <h1 data-aos="fade-up" data-aos-duration={800}
-                        className="mb-10 font-display text-4xl dark:text-jacarta-700 text-white md:text-5xl lg:text-6xl xl:text-7xl xxl:text-7xl">
+                        className="mb-6 font-display text-5xl dark:text-jacarta-700 text-white md:text-5xl lg:text-6xl xl:text-7xl xxl:text-7xl">
                         Built for Traders, Backed by
                         <span className="animate-gradient"> Professionals!</span>
                     </h1>
                 </div>
-                <div className="flex items-center justify-center mb-20 gap-x-4">
+                <div className="flex items-center justify-center mb-16 gap-x-4">
                     <a
                         href="#pricing"
                         className="btn-epic w-44 block text-md rounded-full bg-accent py-3 px-2 text-center font-semibold text-white shadow-accent-volume transition-all "

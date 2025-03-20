@@ -22,7 +22,7 @@ export default function TwoPhase() {
   const [selected, setSelected] = useState(accountSizes[2]); // Default to $25k
 
   return (
-    <div className="p-6 bg-white dark:bg-gray-900 text-gray-900 dark:text-white rounded-lg pricingtable">
+    <div className="p-6 text-gray-900 dark:text-white rounded-lg pricingtable">
       {/* Account Size Selection - Radio Button Style */}
       <div className="flex justify-center space-x-4 mb-6">
         {accountSizes.map((account, index) => (
@@ -36,7 +36,7 @@ export default function TwoPhase() {
             />
             <span
               className={` py-2  text-md transition-all ${selected.size === account.size
-                ? " text-black "
+                ? " text-black dark:text-white"
                 : "  border-gray-400 dark:border-gray-500 text-gray-700 dark:text-white"
                 }`}
             >
@@ -47,7 +47,7 @@ export default function TwoPhase() {
       </div>
 
       {/* Pricing & Details */}
-      <div className="upper-box rainbow">
+      <div className="upper-box rainbow  dark:bg-gray-900">
         <div className="sub-box">
           <div className="main-heading mb-5">
             <span className="animate-gradient text-2xl  font-bold"> Two Phase</span>

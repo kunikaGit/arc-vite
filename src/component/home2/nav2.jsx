@@ -33,7 +33,7 @@ export default function Nav2() {
                 <Link
                     to="/arc-home"
                     className={`dropdown-toggle flex items-center justify-between py-3.5 font-display text-base 
-                        ${isScrolled ? "text-black dark:text-gray-300" : "text-white"}  
+                        ${isScrolled ? "text-black dark:text-white" : "text-white"}  
                         hover:text-accent focus:text-accent dark:hover:text-accent dark:focus:text-accent lg:px-5`}
                     id="navDropdown-1"
                     aria-expanded="false"
@@ -46,7 +46,7 @@ export default function Nav2() {
                 <Link
                     to="/faq"
                     className={`dropdown-toggle flex items-center justify-between py-3.5 font-display text-base 
-                ${isScrolled ? "text-black dark:text-gray-300" : "text-white"}  
+                ${isScrolled ? "text-black dark:text-white" : "text-white"}  
                 hover:text-accent focus:text-accent dark:hover:text-accent dark:focus:text-accent lg:px-5`}>
                     FAQ
                 </Link>
@@ -56,7 +56,7 @@ export default function Nav2() {
                 <Link
                     to="#"
                     className={`dropdown-toggle flex items-center justify-between py-3.5 font-display text-base 
-                ${isScrolled ? "text-black dark:text-gray-300" : "text-white"}  
+                ${isScrolled ? "text-black dark:text-white" : "text-white"}  
                 hover:text-accent focus:text-accent dark:hover:text-accent dark:focus:text-accent lg:px-5`}>
                     About Us
                 </Link>
@@ -66,7 +66,7 @@ export default function Nav2() {
                 <Link
                     to="/create"
                     className={`dropdown-toggle flex items-center justify-between py-3.5 font-display text-base 
-                ${isScrolled ? "text-black dark:text-gray-300" : "text-white"}  
+                ${isScrolled ? "text-black dark:text-white" : "text-white"}  
                 hover:text-accent focus:text-accent dark:hover:text-accent dark:focus:text-accent lg:px-5`}>
                     Client Area
                 </Link>
@@ -76,7 +76,7 @@ export default function Nav2() {
                 <Link
                     to="#"
                     className={`dropdown-toggle flex items-center justify-between py-3.5 font-display text-base 
-                ${isScrolled ? "text-black dark:text-gray-300" : "text-white"}  
+                ${isScrolled ? "text-black dark:text-white" : "text-white"}  
                 hover:text-accent focus:text-accent dark:hover:text-accent dark:focus:text-accent lg:px-5`}>
                     Free Trial
                 </Link>
