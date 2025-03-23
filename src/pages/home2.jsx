@@ -34,8 +34,8 @@ export default function Home2() {
             <div className="categories-section" data-speed="3">
                 <Calltoaction />
             </div>
-            <div class="button-box">
-                <div class="liquid"></div>
+            <div className="button-box">
+                <div className="liquid"></div>
             </div>
             <Footer1 />
 

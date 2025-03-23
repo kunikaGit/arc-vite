@@ -66,7 +66,7 @@ const Right = () => {
   export default function WhyChoose() {
   
     return (
-      <section className="relative py-24" style={{ background: "linear-gradient(to right, #f8e1e7, #e3effd, #f5f9f6)" }}>
+      <section className="relative py-24 why-choose-us" style={{ background: "linear-gradient(to right, #f8e1e7, #e3effd, #f5f9f6)" }}>
         <div className="container">
           <div className="mx-auto mb-16 max-w-xl text-center" data-aos-duration={600} data-aos="fade-down" >
             <h2 className="mb-2 text-center font-display text-3xl font-medium text-jacarta-700 dark:text-jacarta-700">
@@ -82,9 +82,9 @@ const Right = () => {
               className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 border-jacarta-100 border-t">
                 <thead className="text-base uppercase">
                   <tr className="border-t border-jacarta-100 py-2 px-4 transition-shadow hover:shadow-lg dark:border-jacarta-600 dark:bg-jacarta-900">
-                    <th scope="col" className="px-6 py-3 ">VARIABLES</th>
-                    <th scope="col" className="px-6 py-3 text-center">ARC</th>
-                    <th scope="col" className="px-6 py-3 text-center">Fund</th>
+                    <th scope="col" className="px-6 py-3 dark:text-white">VARIABLES</th>
+                    <th scope="col" className="px-6 py-3 text-center dark:text-white">ARC</th>
+                    <th scope="col" className="px-6 py-3 text-center dark:text-white">Fund</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -95,16 +95,16 @@ const Right = () => {
                     >
                       <th
                         scope="row"
-                        className="w-1/3 px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white text-base"
+                        className="text-gray-500 w-1/3 px-6 py-4 font-medium  whitespace-nowrap dark:text-white text-base"
                       >
                         {item.name}
                       </th>
-                      <td className="w-1/3 px-6 py-4 text-center">
+                      <td className="w-1/3 px-6 py-4 text-center dark:text-white">
                         <div className="flex justify-center items-center">
                           {item.arc}
                         </div>
                       </td>
-                      <td className="w-1/3 px-6 py-4 text-center">
+                      <td className="w-1/3 px-6 py-4 text-center dark:text-white">
                         <div className="flex justify-center items-center">
                           {item.fund}
                         </div>

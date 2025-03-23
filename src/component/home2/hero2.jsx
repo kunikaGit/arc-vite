@@ -12,7 +12,7 @@ export default function Hero2() {
     }, []);
 
     return (
-        <section className="hero relative py-20 md:pt-32">
+        <section className="hero-main relative py-20 md:pt-32">
             <div className="absolute inset-0 -z-10 overflow-hidden">
                 <video
                     autoPlay
@@ -24,26 +24,26 @@ export default function Hero2() {
                 />
             </div>
             <div className="container">
-                <div className="pt-16 text-center m-auto max-w-4xl">
+                <div className="pt-10 text-center m-auto max-w-4xl hero-text">
                     <h1 data-aos="fade-up" data-aos-duration={800}
-                        className="mb-6 font-display text-5xl dark:text-jacarta-700 text-white md:text-5xl lg:text-6xl xl:text-7xl xxl:text-7xl">
-                        Built for Traders, Backed by
+                        className="mb-5 font-display  dark:text-jacarta-700 text-white md:text-xl">
+                        Built for Traders, <br />Backed by
                         <span className="animate-gradient"> Professionals!</span>
                     </h1>
                 </div>
-                <div className="flex items-center justify-center mb-16 gap-x-4">
+                <div className="flex items-center justify-center md:max-h-full gap-x-4 home-actions">
                     <a
                         href="#pricing"
-                        className="btn-epic w-44 block text-md rounded-full bg-accent py-3 px-2 text-center font-semibold text-white shadow-accent-volume transition-all "
+                        className="btn-epic w-52 block text-lg rounded-full bg-accent py-3 px-5 text-center font-semibold text-white shadow-accent-volume transition-all "
                     >
-                         <div>
+                        <div>
                             <span className=" font-semibold">Start Challenge</span>
                             <span className=" font-semibold">Start Challenge</span>
                         </div>
                     </a>
                     <Link
                         to="/create"
-                        className="btn-epic mx-3 text-md relative block rtl:!mr-6 w-44 rounded-full bg-white py-3 px-5 text-center font-semibold text-accent shadow-white-volume"
+                        className="btn-epic mx-3 text-lg relative block rtl:!mr-6 w-52 rounded-full bg-white py-3 px-5 text-center font-semibold text-accent shadow-white-volume"
                     >
                         <div>
                             <span className=" font-semibold text-[#fff]">  Free Trial</span>
@@ -59,9 +59,9 @@ export default function Hero2() {
                 </div>
                 </Link> */}
                 </div>
-                <div className="grid gap-5 md:grid-cols-4 text-center m-auto max-w-4xl four-cards">
-                    <div data-aos="zoom-in" className=" main-cards hover-text-white p-5 pt-0 relative pink hover:bg-[#ff59e2] hover:text-white rounded-2.5xl border hover:shadow-[0_16px_24px_-8px_rgba(131,88,255,.3)] border-jacarta-100 bg-white shadow-[0_5px_0_0_#8358ff] transition-shadow  dark:border-jacarta-700 dark:bg-jacarta-700">
-                        <div className="mb-4 -mt-8 bg-gradient home-cards inline-flex h-[5.5rem] w-[5.5rem] items-center justify-center rounded-full border border-jacarta-100 bg-white dark:border-jacarta-600 dark:bg-jacarta-700">
+                <div className="grid gap-5 md:grid-cols-4 text-center m-auto max-w-4xl  four-cards">
+                    <div data-aos="zoom-in" className=" main-cards hover-text-white p-3 pt-0 relative pink hover:bg-[#ff59e2] hover:text-white rounded-2.5xl border hover:shadow-[0_16px_24px_-8px_rgba(131,88,255,.3)] border-jacarta-100 bg-white shadow-[0_5px_0_0_#8358ff] transition-shadow  dark:border-jacarta-700 dark:bg-jacarta-700">
+                        <div className="mb-2 -mt-8 bg-gradient home-cards inline-flex h-[5.5rem] w-[5.5rem] items-center justify-center rounded-full border border-jacarta-100 bg-white dark:border-jacarta-600 dark:bg-jacarta-700">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 24 24"
@@ -73,7 +73,7 @@ export default function Hero2() {
                             </svg>
                         </div>
 
-                        <h3 className=" font-display text-jacarta-700 text-lg  dark:text-white ">
+                        <h3 className=" font-display text-jacarta-700   dark:text-white ">
                             Up to 90%
                         </h3>
                         <p className="dark:text-jacarta-300">of profit split</p>
@@ -91,7 +91,7 @@ export default function Hero2() {
                             </svg>
                         </div>
 
-                        <h3 className=" font-display text-lg text-jacarta-700 dark:text-white">
+                        <h3 className=" font-display  text-jacarta-700 dark:text-white">
                             Up to 100k
                         </h3>
                         <p className="dark:text-jacarta-300">trading accounts</p>
@@ -109,7 +109,7 @@ export default function Hero2() {
                             </svg>
                         </div>
 
-                        <h3 className=" font-display text-lg text-jacarta-700 dark:text-white">
+                        <h3 className=" font-display  text-jacarta-700 dark:text-white">
                             No time
                         </h3>
                         <p className="dark:text-jacarta-300">limit in challenge phase</p>
@@ -127,7 +127,7 @@ export default function Hero2() {
                             </svg>
                         </div>
 
-                        <h3 className=" font-display text-lg text-jacarta-700 dark:text-white">
+                        <h3 className=" font-display  text-jacarta-700 dark:text-white">
                             Gateway to
                         </h3>
                         <p className="dark:text-jacarta-300">Real Market Liquidity</p>

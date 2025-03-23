@@ -13,21 +13,21 @@ const Arrow = () => {
 export default function InstantFunding() {
   return (
     <div className="pricingtable">
-    <div className="upper-box rainbow">
+    <div className="upper-box border border-accent dark:bg-gray-900 bg-white dark:bg-jacarta-700">
       <div className="sub-box">
         <div className="main-heading mb-5">
-          <span className="animate-gradient text-2xl  font-bold"> Instant Funding</span>
+          <span className="animate-gradient text-2xl  font-bold text-jacarta-700 dark:text-white"> Instant Funding</span>
         </div>
         <div className="mb-5">
-          <h2 className="text-xl font-semibold">$149</h2>
-          <h3 className="font-medium">For 5k Account</h3>
+          <h2 className="text-xl font-semibold text-jacarta-700 dark:text-white">$149</h2>
+          <h3 className="font-medium text-jacarta-700 dark:text-white">For 5k Account</h3>
         </div>
         <Link to='/checkout' className="w-full block text-base rounded-full bg-accent py-2   px-3 text-center font-semibold text-white shadow-accent-volume transition-all hover:bg-accent-dark">
           Get Plan</Link>
       </div>
       <div className="fund-info">
-        <h2 className="text-black mb-4 text-xl font-semibold dark:text-white">Two Phase - 5k Account</h2>
-        <ul className="space-y-2">
+        <h2 className="text-jacarta-700 dark:text-white mb-4 text-xl font-semibold ">Two Phase - 5k Account</h2>
+        <ul className="space-y-2 text-jacarta-700 dark:text-white">
           <li><span><Arrow /> Profit Target :</span>
             <span> -</span>
           </li>

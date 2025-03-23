@@ -26,7 +26,7 @@ export default function TwoPhase() {
       {/* Account Size Selection - Radio Button Style */}
       <div className="flex justify-center space-x-4 mb-6">
         {accountSizes.map((account, index) => (
-          <label key={index} className="flex items-center space-x-2 cursor-pointer px-4">
+          <label key={index} className="flex items-center space-x-2 cursor-pointer px-4 text-black dark:text-white">
             <input
               type="radio"
               name="accountSize"
@@ -35,8 +35,8 @@ export default function TwoPhase() {
               onChange={() => setSelected(account)}
             />
             <span
-              className={` py-2  text-md transition-all ${selected.size === account.size
-                ? " text-black dark:text-white"
+              className={`text-jacarta-700 dark:text-white py-2  text-md transition-all ${selected.size === account.size
+                ? " text-accent"
                 : "  border-gray-400 dark:border-gray-500 text-gray-700 dark:text-white"
                 }`}
             >
@@ -47,21 +47,21 @@ export default function TwoPhase() {
       </div>
 
       {/* Pricing & Details */}
-      <div className="upper-box rainbow  dark:bg-gray-900">
+      <div className="upper-box border border-accent dark:bg-gray-900 bg-white dark:bg-jacarta-700">
         <div className="sub-box">
           <div className="main-heading mb-5">
             <span className="animate-gradient text-2xl  font-bold"> Two Phase</span>
           </div>
           <div className="mb-5">
-            <h2 className="text-xl font-semibold">${selected.price}</h2>
-            <h3 className="font-medium">For {selected.size} Account</h3>
+            <h2 className="text-xl font-semibold text-jacarta-700 dark:text-white">${selected.price}</h2>
+            <h3 className="font-medium text-jacarta-700 dark:text-white">For {selected.size} Account</h3>
           </div>
-          <Link to='/checkout' className="w-full block text-md rounded-full bg-accent py-2   px-3 text-center font-semibold text-white shadow-accent-volume transition-all hover:bg-accent-dark">
+          <Link to='/checkout' className="  w-full block text-md rounded-full bg-accent py-2   px-3 text-center font-semibold text-white shadow-accent-volume transition-all hover:bg-accent-dark">
             Get Plan</Link>
         </div>
         <div className="fund-info">
-          <h2 className="text-black mb-4 text-xl font-semibold dark:text-white">Two Phase - {selected.size} Account</h2>
-          <ul className="space-y-2">
+          <h2 className="text-jacarta-700  mb-4 text-xl font-semibold dark:text-white">Two Phase - {selected.size} Account</h2>
+          <ul className="space-y-2 text-jacarta-700 dark:text-white">
             <li><span><Arrow /> Profit Target :</span>
               <span> ${selected.profitTarget}</span>
             </li>
