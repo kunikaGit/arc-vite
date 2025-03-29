@@ -4,15 +4,15 @@ export const collections4 = [
   {
     id: 61,
     imageSrc: "/img/nft1.jpg",
-    avatarSrc: "/img/avatars/avatar_17_rounded.jpg",
+    avatarSrc: "/img/man2.jpg",
     title: "Light Bars",
     subTitle: "Wow Frens",
     author: "Light Bars",
   },
   {
     id: 62,
-    imageSrc: "/img/products/item_13_lg.gif",
-    avatarSrc: "/img/avatars/avatar_18_rounded.gif",
+    imageSrc: "/img/nft3.jpg",
+    avatarSrc: "/img/man2.jpg",
     title: "Etherium NFT Launching Lab",
     subTitle: "051_Hart",
     author: "Etherium NFT Launching Lab",
@@ -20,7 +20,7 @@ export const collections4 = [
   {
     id: 63,
     imageSrc: "/img/nft2.png",
-    avatarSrc: "/img/avatars/avatar_22_rounded.jpg",
+    avatarSrc: "/img/man2.jpg",
     title: "Oceania \\ OVERSEER 017",
     subTitle: "MadeByM1KE",
     author: "Oceania \\ OVERSEER 017",
@@ -28,7 +28,7 @@ export const collections4 = [
   {
     id: 64,
     imageSrc: "/img/nft3.jpg",
-    avatarSrc: "/img/avatars/avatar_19_rounded.jpg",
+    avatarSrc: "/img/man2.jpg",
     title: "Amazing NFT art",
     subTitle: "Lila Spacex",
     author: "Amazing NFT art",
@@ -36,7 +36,7 @@ export const collections4 = [
   {
     id: 65,
     imageSrc: "/img/nft10.jpg",
-    avatarSrc: "/img/avatars/avatar_20_rounded.jpg",
+    avatarSrc: "/img/man2.jpg",
     title: "SwagFox#133",
     subTitle: "Bored Bunny",
     author: "SwagFox#133",
@@ -44,15 +44,15 @@ export const collections4 = [
   {
     id: 61,
     imageSrc: "/img/nft1.jpg",
-    avatarSrc: "/img/avatars/avatar_17_rounded.jpg",
+    avatarSrc: "/img/man2.jpg",
     title: "Light Bars",
     subTitle: "Wow Frens",
     author: "Light Bars",
   },
   {
     id: 62,
-    imageSrc: "/img/products/item_13_lg.gif",
-    avatarSrc: "/img/avatars/avatar_18_rounded.gif",
+    imageSrc: "/img/nft3.png",
+    avatarSrc: "/img/man2.jpg",
     title: "Etherium NFT Launching Lab",
     subTitle: "051_Hart",
     author: "Etherium NFT Launching Lab",
@@ -60,7 +60,7 @@ export const collections4 = [
   {
     id: 63,
     imageSrc: "/img/nft2.png",
-    avatarSrc: "/img/avatars/avatar_22_rounded.jpg",
+    avatarSrc: "/img/man2.jpg",
     title: "Oceania \\ OVERSEER 017",
     subTitle: "MadeByM1KE",
     author: "Oceania \\ OVERSEER 017",
@@ -68,7 +68,7 @@ export const collections4 = [
   {
     id: 64,
     imageSrc: "/img/nft3.jpg",
-    avatarSrc: "/img/avatars/avatar_19_rounded.jpg",
+    avatarSrc: "/img/man2.jpg",
     title: "Amazing NFT art",
     subTitle: "Lila Spacex",
     author: "Amazing NFT art",
@@ -76,7 +76,7 @@ export const collections4 = [
   {
     id: 65,
     imageSrc: "/img/nft1.jpg",
-    avatarSrc: "/img/avatars/avatar_20_rounded.jpg",
+    avatarSrc: "/img/man2.jpg",
     title: "SwagFox#133",
     subTitle: "Bored Bunny",
     author: "SwagFox#133",
@@ -84,15 +84,15 @@ export const collections4 = [
   {
     id: 61,
     imageSrc: "/img/nft1.jpg",
-    avatarSrc: "/img/avatars/avatar_17_rounded.jpg",
+    avatarSrc: "/img/man2.jpg",
     title: "Light Bars",
     subTitle: "Wow Frens",
     author: "Light Bars",
   },
   {
     id: 62,
-    imageSrc: "/img/nft4.gif",
-    avatarSrc: "/img/avatars/avatar_18_rounded.gif",
+    imageSrc: "/img/nft2.png",
+    avatarSrc: "/img/man2.jpg",
     title: "Etherium NFT Launching Lab",
     subTitle: "051_Hart",
     author: "Etherium NFT Launching Lab",
@@ -100,7 +100,7 @@ export const collections4 = [
   {
     id: 63,
     imageSrc: "/img/nft1.jpg",
-    avatarSrc: "/img/avatars/avatar_22_rounded.jpg",
+    avatarSrc: "/img/man2.jpg",
     title: "Oceania \\ OVERSEER 017",
     subTitle: "MadeByM1KE",
     author: "Oceania \\ OVERSEER 017",
@@ -108,7 +108,7 @@ export const collections4 = [
   {
     id: 64,
     imageSrc: "/img/nft11.jpg",
-    avatarSrc: "/img/avatars/avatar_19_rounded.jpg",
+    avatarSrc: "/img/man2.jpg",
     title: "Amazing NFT art",
     subTitle: "Lila Spacex",
     author: "Amazing NFT art",
@@ -116,7 +116,7 @@ export const collections4 = [
   {
     id: 65,
     imageSrc: "/img/nft10.jpg",
-    avatarSrc: "/img/avatars/avatar_20_rounded.jpg",
+    avatarSrc: "/img/man2.jpg",
     title: "SwagFox#133",
     subTitle: "Bored Bunny",
     author: "SwagFox#133",
@@ -126,7 +126,7 @@ import {Link} from "react-router-dom";
 
 export default function CoverFlowSlider() {
   return (
-    <div className="relative px-6 pb-16 sm:px-0 dark:bg-jacarta-900">
+    <div className="relative px-6 pb-16 sm:px-0 dark:bg-jacarta-900 slider-section" >
       <Swiper
         breakpoints={{
           // when window width is >= 640px
@@ -170,7 +170,7 @@ export default function CoverFlowSlider() {
         {collections4.map((elm, i) => (
           <SwiperSlide key={i}>
             <article>
-              <div className="block overflow-hidden rounded-2.5xl bg-white shadow-md transition-shadow hover:shadow-lg dark:bg-jacarta-700">
+              <div className="block overflow-hidden rounded-2.5xl bg-white dark:text-jacarta-900 shadow-md transition-shadow hover:shadow-lg dark:bg-jacarta-700">
                 <figure className="relative">
                   <Link href={`/item/${elm.id}`}>
                     <img

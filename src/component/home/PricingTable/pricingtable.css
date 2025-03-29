@@ -94,3 +94,10 @@
     animation: rotate 6s linear infinite, opacityChange 3s infinite alternate;
   }
   
+
+
+  @media only screen and (max-width: 1024px){
+    .pricingtable .upper-box{
+      width: 100%;
+    }
+  }

@@ -17,6 +17,7 @@ export default function Home2() {
 
     return (
         <>
+        <div className="main-landing-page">
             <Header2 />
             <Hero2 />
             <div className="hotbids-section" data-speed="1.2">
@@ -38,7 +39,7 @@ export default function Home2() {
                 <div className="liquid"></div>
             </div>
             <Footer1 />
-
+            </div>
         </>
     );
 }

@@ -4110,13 +4110,13 @@ input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-sea
 .article-content>:not(.article-content-wide) {
     margin-left: auto;
     margin-right: auto;
-    margin-top: 1.5rem;
-    max-width: 48.125rem
+    margin-top: 1rem;
+    max-width: 52.125rem
 }
 
 .article-content>h1,.article-content>h2,.article-content>h3,.article-content>h4,.article-content>h5,.article-content>h6 {
-    margin-top: 3rem!important;
-    margin-bottom: 1rem;
+    margin-top: 2.5rem!important;
+    margin-bottom: 0.5rem;
     font-family: CalSans-SemiBold,sans-serif;
     --tw-text-opacity: 1;
     color: rgb(19 23 64/var(--tw-text-opacity))

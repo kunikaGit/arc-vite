@@ -37,7 +37,7 @@ export default function Header2() {
   return (
     <>
       <header
-        className={`js-page-header fixed top-0 z-20 w-full backdrop-blur transition-colors  ${scrolled ? "js-page-header--is-sticky" : ""
+        className={`js-page-header  main-header fixed top-0 z-20 w-full backdrop-blur transition-colors  ${scrolled ? "js-page-header--is-sticky" : ""
 }`}
       >
         <div className="flex items-center px-6 xl:px-24">

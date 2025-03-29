@@ -1,10 +1,12 @@
 import { Link } from "react-router-dom";
 
 const links = [
-    { id: 1, name: "Authors", href: "/user/2" },
-    { id: 2, name: "Collection", href: "/collections" },
-    { id: 3, name: "Author Profile", href: "/user/3" },
-    { id: 4, name: "Create Item", href: "/create" },
+    { id: 1, name: "Home", href: "/" },
+    { id: 2, name: "FAQ", href: "/faq" },
+    { id: 3, name: "About Us", href: "#/" },
+    { id: 4, name: "Terms and conditions", href: "/terms-condition" },
+    { id: 4, name: "Privacy policy", href: "/privacy-policy" },
+
   ];
 
   export const menuItems = [
@@ -17,12 +19,11 @@ const links = [
 
 
   export const nftCategories = [
-    { id: 1, name: "All NFTs", href: "/collections" },
-    { id: 2, name: "Art", href: "/collections" },
-    { id: 3, name: "Music", href: "/collections" },
-    { id: 4, name: "Domain Names", href: "/collections" },
-    { id: 5, name: "Collectibles", href: "/collections" },
-    { id: 6, name: "Virtual World", href: "/collections" },
+    { id: 1, name: "Item 1", href: "#/" },
+    { id: 2, name: "Item 2", href: "#/" },
+    { id: 3, name: "Item 3", href: "#/" },
+    { id: 4, name: "Item 4", href: "#/" },
+    { id: 5, name: "Item 5", href: "#/" },
   ];
 
   export const socials = [
@@ -87,13 +88,13 @@ function Socials() {
     );
   }
 
-function MyAccountKink() {
+function Navigation() {
     return (
       <>
         {links.map((elm, i) => (
           <li key={i}>
             <Link
-              href={elm.href}
+              to={elm.href}
               className="hover:text-accent dark:hover:text-white"
             >
               {elm.name}
@@ -169,34 +170,34 @@ export default function Footer1() {
             </div>
           </div>
 
-          <div className="col-span-full sm:col-span-3 md:col-span-2 md:col-start-7">
+          <div className="col-span-full sm:col-span-3 md:col-span-2 md:col-start-7 mt-8">
             <h3 className="mb-6 font-display text-sm text-jacarta-700 dark:text-white">
-              Marketplace
+              Links
             </h3>
             <ul className="flex flex-col space-y-1 dark:text-jacarta-300">
               <MarketplaceLinks />
             </ul>
           </div>
 
-          <div className="col-span-full sm:col-span-3 md:col-span-2">
+          {/* <div className="col-span-full sm:col-span-3 md:col-span-2 md:col-start-7 mt-7">
             <h3 className="mb-6 font-display text-sm text-jacarta-700 dark:text-white">
               Company
             </h3>
             <ul className="flex flex-col space-y-1 dark:text-jacarta-300">
               <CompanyLinks />
             </ul>
-          </div>
+          </div> */}
 
-          <div className="col-span-full sm:col-span-3 md:col-span-2">
+          <div className="col-span-full sm:col-span-3 md:col-span-2 mt-7">
             <h3 className="mb-6 font-display text-sm text-jacarta-700 dark:text-white">
-              My Account
+            Navigation
             </h3>
             <ul className="flex flex-col space-y-1 dark:text-jacarta-300">
-              <MyAccountKink />
+              <Navigation />
             </ul>
           </div>
         </div>
-        <div className="flex flex-col items-center justify-between space-y-2 py-8 sm:flex-row sm:space-y-0">
+        {/* <div className="flex flex-col items-center justify-between space-y-2 py-8 sm:flex-row sm:space-y-0">
           <ul className="flex flex-wrap space-x-4 text-sm dark:text-jacarta-400 justify-center items-center">
             <li>
               <a href="#" className="hover:text-accent">
@@ -209,7 +210,7 @@ export default function Footer1() {
               </a>
             </li>
           </ul>
-        </div>
+        </div> */}
       </div>
     </footer>
   );
