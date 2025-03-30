@@ -1,5 +1,5 @@
 import { Routes, Route, Link } from "react-router-dom";
-import { Checkout, ComingSoon, Faq, Home, PrivacyPolicy, TermsAndCondition } from "./pages/index.js";
+import { AboutUs, Checkout, ComingSoon, Faq, Home, PrivacyPolicy, TermsAndCondition } from "./pages/index.js";
 import Home2 from "./pages/home2.jsx";
 
 export default function App() {
@@ -13,7 +13,7 @@ export default function App() {
         <Route path="/faq" element={<Faq />} />
         <Route path="/terms-condition" element={<TermsAndCondition />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-
+        <Route path="/about-us" element={<AboutUs />} />
       </Routes>
   );
 }

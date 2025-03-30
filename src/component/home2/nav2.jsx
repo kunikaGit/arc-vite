@@ -54,7 +54,7 @@ export default function Nav2() {
 
             <li className="group">
                 <Link
-                    to="#"
+                    to="/about-us"
                     className={`dropdown-toggle flex items-center justify-between py-3.5 font-display text-base dark:text-white
                        ${isScrolled? "dark-text dark:text-white":""} 
                 hover:text-accent focus:text-accent text-jacarta-700 dark:hover:text-accent dark:focus:text-accent lg:px-5`}>

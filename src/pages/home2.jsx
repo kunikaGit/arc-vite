@@ -17,7 +17,7 @@ export default function Home2() {
 
     return (
         <>
-        <div className="main-landing-page">
+        <div className="main-landing-page dark-for-header">
             <Header2 />
             <Hero2 />
             <div className="hotbids-section" data-speed="1.2">
