@@ -374,6 +374,18 @@ color: #fff;
   align-items: center;
   justify-content: center;
 }
+@media only screen and (min-width: 1920px){
+  .hero-main h1{
+    font-size: 100px;
+    line-height: 120px;
+  }
+  .hero-main .hero-text{
+    max-width: 100%;
+  }
+  .hero-main .home-actions{
+    margin-bottom: 100px;
+  }
+}
 @media only screen and (max-width: 1280px){
   .hero-main h1{
     font-size: 55px;
