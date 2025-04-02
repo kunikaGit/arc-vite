@@ -1,0 +1,70 @@
+@use '../scss/abstract/mixins' as *;
+
+.about-us {
+    position: relative;
+
+    .mission-wrapped {
+        position: relative;
+        margin: 50px 0;
+
+        &.background-overlay-custom {
+            background-image: url(../images/mission.jpg);
+            background-repeat: no-repeat;
+            padding: 8% 0;
+            background-position: center;
+            background-size: cover;
+
+            .content {
+                color: #FFFFFF;
+                text-align: center;
+                z-index: 11;
+                position: relative;
+            }
+
+            &::after {
+                content: "";
+                background-color: #00000053;
+                position: absolute;
+                height: 100%;
+                width: 100%;
+                top: 0;
+            }
+        }
+    }
+
+    .roadmap {
+        background-color: #000;
+        text-align: center;
+        padding: 70px 0;
+        margin-top: 50px;
+
+        .roadmap-heading {
+            font-size: 50px;
+           font-weight: 700;
+           margin-bottom: 40px;
+        }
+        .main-btn{
+            background-color: #FFCC4A;
+            padding: 15px;
+            font-size: 22px;
+            color: #000;
+            font-weight: 500;
+            border-radius: 100px;
+            width: 300px;
+            display: block;
+            margin: auto;
+            box-shadow: 2px 4px 2px 3px #cccccc73;
+            transition: .3s;
+            border: 1px solid #FFCC4A;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            &:hover{
+                background-color: transparent;
+                box-shadow: none;
+                color: #FFFFFF;
+            }
+        }
+    }
+}

@@ -1,6 +1,7 @@
 import { Routes, Route, Link } from "react-router-dom";
 import { AboutUs, Checkout, ComingSoon, Faq, Home, PrivacyPolicy, TermsAndCondition } from "./pages/index.js";
 import Home2 from "./pages/home2.jsx";
+import './assets/scss/index.scss'
 
 export default function App() {
   return (
