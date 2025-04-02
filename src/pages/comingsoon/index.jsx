@@ -33,19 +33,19 @@ const ComingSoon = () => {
                             <button type="submit" className=" rounded-md text-white p-2 px-4">Submit</button>
                         </div>
                         <div className="menu">
-                            <ul>
+                            {/* <ul>
                                 <li className="text-sm"><Link to="#">About Us</Link></li>
                                 <li className="text-sm"><Link to="#">Our Work</Link></li>
                                 <li className="text-sm"><Link to="#">LinkedIn</Link></li>
                                 <li className="text-sm"><Link to="#">Contact Us</Link></li>
-                            </ul>
+                            </ul> */}
                             <hr className="bg-white text-white" />
                             <div className="copy flex justify-between mt-5">
                                 <span className="text-gray-300 text-xs">© 2025 ARC Trading. All rights reserved.Developed by ZENX TECHNOLOGY</span>
                                 <ul>
-                                <li className="text-gray-300 text-xs"><Link to="#">Privacy Policy</Link></li>
-                                <li className="text-gray-300 text-xs"><Link to="#">Terms of Service</Link></li>
-                                <li className="text-gray-300 text-xs"><Link to="#">Cookie Preferences</Link></li>
+                                <li className="text-gray-300 text-xs"><Link to="/privacy-policy">Privacy Policy</Link></li>
+                                <li className="text-gray-300 text-xs"><Link to="/terms-condition">Terms of Service</Link></li>
+                                {/* <li className="text-gray-300 text-xs"><Link to="#">Cookie Preferences</Link></li> */}
                             </ul>
                             </div>
                         </div>

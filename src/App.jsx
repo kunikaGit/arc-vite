@@ -10,7 +10,6 @@ export default function App() {
         <Route path="/" element={<Home2 />} />
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/coming-soon" element={<ComingSoon />} />
-        <Route path="/coming-soon" element={<ComingSoon />} />
         <Route path="/faq" element={<Faq />} />
         <Route path="/terms-condition" element={<TermsAndCondition />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
