@@ -21,8 +21,8 @@ const AboutBanner = () => {
                     </div>
                     <div className='grid md:grid-cols-2 grid-cols-1  py-10 gap-10 items-center   '>
                         <div className='' data-aos="fade-right" data-aos-duration={800} >
-                            <h2 className='mb-5 text-5xl font-display text-jacarta-700 dark:text-white'>Built by Traders,<br /> Backed by Professionals</h2>
-                            <p className='text-medium text-gray-600 '>
+                            <h2 className='mb-5 text-5xl font-display text-jacarta-700'>Built by Traders,<br /> Backed by Professionals</h2>
+                            <p className='text-medium text-gray-600'>
                                 At ARC, we understand the unique challenges of trading because we’ve been in your shoes.
                                 Built by traders and backed by industry professionals, we are a proprietary trading firm that
                                 provides real market liquidity, cutting-edge tools, and transparent support to traders worldwide.
