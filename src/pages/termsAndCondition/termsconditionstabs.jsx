@@ -13,7 +13,7 @@ const data = [
     label: "Introductory Provisions",
     value: "introductory-provisions",
     desc: <>
-      <ul className="list-inside space-y-2">
+      <ul className="list-inside space-y-2 text-jacarta-700 dark:text-white">
         <li> These GTC govern your ("Customer") use of services provided by ARC Capital.</li>
         <li> By registering or using the services, you enter into a contract with ARC Capital, agreeing to these terms.</li>
         <li> Services are only available to individuals over 18, residing in eligible countries. Access may be restricted based on local laws.</li>
@@ -29,7 +29,7 @@ const data = [
   {
     label: "Services and Their Order",
     value: "services-order",
-    desc: <ul className="list-disc list-inside space-y-2">
+    desc: <ul className="list-disc list-inside space-y-2 text-jacarta-700 dark:text-white">
     <li>You can order services through the ARC Capital website by completing a registration or order form. After registration, login details for the Client Section and/or Trading Platform will be provided.</li>
     <li>Services include the Free Trial, ARC Capital Challenge, and Verification, each differing in scope. The Free Trial is limited and does not grant access to other services.</li>
     <li>All provided data must be complete, accurate, and up to date. Customers are responsible for keeping their information current.</li>
@@ -49,7 +49,7 @@ const data = [
   {
     label: "Payment Terms",
     value: "payment-terms",
-    desc: <ul className="list-disc list-inside space-y-2">
+    desc: <ul className="list-disc list-inside space-y-2 text-jacarta-700 dark:text-white">
     <li>Fees for the ARC Capital Challenge are in euros, but payments can be made in other currencies listed on the website. If you pay in a different currency, conversion rates will apply.</li>
     <li>Prices include all applicable taxes. Entrepreneurs (traders) are responsible for handling their own tax obligations.</li>
     <li>Payments can be made via credit card, bank transfer, or other available payment methods listed on the website.</li>
@@ -60,7 +60,7 @@ const data = [
   {
     label: "Client Section and Trading Platform",
     value: "client-platform",
-    desc: <ul className="list-disc list-inside space-y-2">
+    desc: <ul className="list-disc list-inside space-y-2 text-jacarta-700 dark:text-white">
     <li>Each customer may have only one Client Section, where all services are managed.</li>
     <li>The number of ARC Capital Challenges and Verifications per Client Section may be limited based on initial capital and other parameters. Funds, performance, and service data cannot be transferred or combined between different products.</li>
     <li>Access credentials must not be shared. If registered as a business, employees/representatives may be granted access. Customers are responsible for all activity in their Client Section, and ARC Capital is not liable for misuse.</li>
@@ -72,7 +72,7 @@ const data = [
   {
     label: "Rules of Demo Trading, Risk Disclaimer",
     value: "demo-trading",
-    desc: <ul className="list-disc list-inside space-y-2">
+    desc: <ul className="list-disc list-inside space-y-2 text-jacarta-700 dark:text-white">
     <li>Customers may trade freely during demo trading unless they engage in Forbidden Trading Practices (see below). They must follow market-standard trading rules, including proper risk management. Additional restrictions may apply based on the trading platform's conditions.</li>
     <li>ARC Capital has access to all demo trade data and may share it with affiliated entities. This data can be used without further approval or compensation. Customers may stop demo trading at any time.</li>
     <li>ARC Capital is not responsible for any interruptions, delays, or inaccuracies in market information displayed on the Trading Platform.</li>
@@ -116,7 +116,7 @@ const data = [
   {
     label: "Risk Disclaimer",
     value: "risk-disclaimer",
-    desc: <ul className="list-disc list-inside space-y-2">
+    desc: <ul className="list-disc list-inside space-y-2 text-jacarta-700 dark:text-white">
     <li>Financial markets are volatile, and trading carries significant risk.</li>
     <li>Profits in demo trading do not guarantee future success.</li>
     <li>ARC Capital is not responsible for how customers use demo trading data in real trading.</li>
@@ -220,7 +220,7 @@ const data = [
   {
     label: "ARC Capital Trader",
     value: "arc-capital-trade",
-    desc: <ul className="list-disc list-inside space-y-2">
+    desc: <ul className="list-disc list-inside space-y-2 text-jacarta-700 dark:text-white">
     <li> If a customer successfully completes both the ARC Capital Challenge and Verification, they may be offered a contract by a third-party company to join the ARC Capital Trader Program.</li>
     <li> ARC Capital does not control or guarantee any agreement between the customer and the third-party company.</li>
     <li>  The customer acknowledges that their personal data may be shared with the third-party company for contract consideration.</li>
@@ -230,7 +230,7 @@ const data = [
   {
     label: "Use of Website, Services, and Other Content",
     value: "use-of-website",
-    desc: <ul className="list-disc list-inside space-y-2">
+    desc: <ul className="list-disc list-inside space-y-2 text-jacarta-700 dark:text-white">
     <li>
       <strong>Content Ownership & Usage:</strong> The ARC Capital website, services, and all content (texts, images, graphics, videos, etc.) are legally protected and owned by ARC Capital or its licensors. ARC Capital grants a limited, non-exclusive, and revocable permission to use the content only for personal use within the scope of the services provided.
     </li>
