@@ -3,7 +3,6 @@ import { Link, useLocation, useParams } from "react-router-dom";
 import imageMap from "../../utlis/helper";
 import Footer1 from "../../component/footer";
 import Header2 from "../../component/home2/header2";
-import { Button, Dialog, DialogBody, DialogFooter, DialogHeader } from "@material-tailwind/react";
 import { TermsContent } from "../../component";
 import { Box, Modal, Tooltip } from "@mui/material";
 
