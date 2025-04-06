@@ -2,9 +2,13 @@ import { Routes, Route, Link } from "react-router-dom";
 import { AboutUs, Checkout, ComingSoon, Faq, Home, PrivacyPolicy, TermsAndCondition } from "./pages/index.js";
 import Home2 from "./pages/home2.jsx";
 import './assets/scss/index.scss'
+import TermsConditionTabs from "./pages/termsAndCondition/termsconditionstabs.jsx";
+import ScrollToTop from "./component/common/scrolltop.jsx";
 
 export default function App() {
   return (
+    <>
+      <ScrollToTop />
       <Routes>
         {/* <Route path="/" element={<Home />} /> */}
         <Route path="/" element={<Home2 />} />
@@ -14,6 +18,8 @@ export default function App() {
         <Route path="/terms-condition" element={<TermsAndCondition />} />
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/terms-use" element={<TermsConditionTabs />} />
       </Routes>
+    </>
   );
 }

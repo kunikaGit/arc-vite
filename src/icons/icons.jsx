@@ -1,0 +1,3 @@
+export const QuestionRound = () => (
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-help ml-2 h-5 w-5 hover:bg-background/10 opacity-60 rounded-full cursor-pointer" role="button" aria-label="Help" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-:R2c7d9uakq:" data-state="closed"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><path d="M12 17h.01"></path></svg>
+)

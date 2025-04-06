@@ -71,16 +71,6 @@ export default function Nav2() {
                     Client Area
                 </Link>
             </li>
-
-            <li className="group">
-                <Link
-                    to="#"
-                    className={`dropdown-toggle flex items-center justify-between py-3.5 font-display text-base dark:text-white
-                  ${isScrolled? "dark-text dark:text-white":""} 
-                hover:text-accent focus:text-accent dark:hover:text-accent dark:focus:text-accent lg:px-5`}>
-                    Free Trial
-                </Link>
-            </li>
         </>
     );
 }

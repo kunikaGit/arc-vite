@@ -6,7 +6,7 @@ export const collections4 = [
     imageSrc: "/img/user1.jpg",
     avatarSrc: "/img/flag1.png",
     title: "Olivia Monroe",
-    subTitle: "Account Size : 8000",
+    subTitle: "Trade Smart",
     author: "Olivia Monroe",
   },
   {
@@ -14,7 +14,7 @@ export const collections4 = [
     imageSrc: "/img/user2.jpg",
     avatarSrc: "/img/flag2.png",
     title: "Liam Anderson",
-    subTitle: "Account Size : 15,000",
+    subTitle: "Risk Wisely",
     author: "Liam Anderson",
   },
   {
@@ -22,7 +22,7 @@ export const collections4 = [
     imageSrc: "/img/user3.jpg",
     avatarSrc: "/img/flag3.png",
     title: "Julian Hayes",
-    subTitle: "Account Size : 25,000",
+    subTitle: "Stay Disciplined",
     author: "Julian Hayes",
   },
   {
@@ -30,7 +30,7 @@ export const collections4 = [
     imageSrc: "/img/user4.jpg",
     avatarSrc: "/img/flag4.png",
     title: "Caleb Foster",
-    subTitle: "Account Size : 50,000",
+    subTitle: "Master Patience",
     author: "Caleb Foster",
   },
   {
@@ -38,7 +38,7 @@ export const collections4 = [
     imageSrc: "/img/user5.jpg",
     avatarSrc: "/img/flag5.png",
     title: "Riley Morgan",
-    subTitle: "Account Size : 25000",
+    subTitle: "Adapt & Win",
     author: "Riley Morgan",
   },
   {
@@ -46,7 +46,7 @@ export const collections4 = [
     imageSrc: "/img/user6.jpg",
     avatarSrc: "/img/flag6.png",
     title: "Jordan Blake",
-    subTitle: "Account Size : 8000",
+    subTitle: "Fearless Trading",
     author: "Jordan Blake",
   },
   {
@@ -54,7 +54,7 @@ export const collections4 = [
     imageSrc: "/img/user7.jpg",
     avatarSrc: "/img/flag7.png",
     title: "Taylor Quinn",
-    subTitle: "Account Size : 15,000",
+    subTitle: "Profit with Purpose",
     author: "Taylor Quinn",
   },
   {
@@ -62,7 +62,7 @@ export const collections4 = [
     imageSrc: "/img/user1.jpg",
     avatarSrc: "/img/flag1.png",
     title: "Alex Rowan",
-    subTitle: "Account Size : 25,000",
+    subTitle: "Market Moves",
     author: "Alex Rowan",
   },
   {
@@ -70,7 +70,7 @@ export const collections4 = [
     imageSrc: "/img/user2.jpg",
     avatarSrc: "/img/flag2.png",
     title: "Casey Elliott",
-    subTitle: "Account Size : 50,000",
+    subTitle: "Trust the Process",
     author: "Casey Elliott",
   },
   {
@@ -78,7 +78,7 @@ export const collections4 = [
     imageSrc: "/img/user3.jpg",
     avatarSrc: "/img/flag3.png",
     title: "Emily Vaughn",
-    subTitle: "Account Size : 15,000",
+    subTitle: "Edge Over Emotion",
     author: "Emily Vaughn",
   },
   {
@@ -86,7 +86,7 @@ export const collections4 = [
     imageSrc: "/img/user4.jpg",
     avatarSrc: "/img/flag4.png",
     title: "Jordan Blake",
-    subTitle: "Account Size : 8000",
+    subTitle: "Risk Wisely",
     author: "Jordan Blake",
   },
   {
@@ -94,7 +94,7 @@ export const collections4 = [
     imageSrc: "/img/user5.jpg",
     avatarSrc: "/img/flag5.png",
     title: "Etherium NFT Launching Lab",
-    subTitle: "051_Hart",
+    subTitle: "Stay Disciplined",
     author: "Etherium NFT Launching Lab",
   },
   {
@@ -102,7 +102,7 @@ export const collections4 = [
     imageSrc: "/img/user6.jpg",
     avatarSrc: "/img/flag6.png",
     title: "Riley Morgan",
-    subTitle: "Account Size : 8000",
+    subTitle: "Risk Wisely",
     author: "Riley Morgan",
   },
   {
@@ -110,7 +110,7 @@ export const collections4 = [
     imageSrc: "/img/user7.jpg",
     avatarSrc: "/img/flag7.png",
     title: "Casey Elliott",
-    subTitle: "Account Size : 50,000",
+    subTitle: "Stay Disciplined",
     author: "Casey Elliott",
   },
   {
@@ -118,7 +118,7 @@ export const collections4 = [
     imageSrc: "/img/user4.jpg",
     avatarSrc: "/img/flag4.png",
     title: "Emily Vaughn",
-    subTitle: "Account Size : 8000",
+    subTitle: "Risk Wisely",
     author: "Emily Vaughn",
   },
 ];
@@ -204,9 +204,9 @@ export default function CoverFlowSlider() {
                           {elm.title}
                         </span>
                       </Link>
-                      <a href="#" className="text-2xs text-accent">
+                      <div href="#" className="text-sm text-accent">
                         {elm.subTitle}
-                      </a>
+                      </div>
                     </div>
                   </div>
                 </div>

@@ -88,7 +88,7 @@ export default function AcrNav() {
                         ? "text-accent dark:text-accent"
                         : "text-jacarta-700 dark:text-white"
                         }  hover:text-accent focus:text-accent dark:hover:text-accent dark:focus:text-accent lg:px-5`}>
-                    Free Trial
+                    Learn More
                 </Link>
             </li>
         </>

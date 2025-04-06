@@ -489,36 +489,37 @@ select {
 }
 
 .container {
-    width: 100%;
+    max-width: 90%!important;
     margin-right: auto;
     margin-left: auto;
     padding-right: 1rem;
     padding-left: 1rem
 }
 
-@media (min-width: 575px) {
+/* @media (min-width: 575px) {
     .container {
         max-width:575px
     }
-}
+} */
 
-@media (min-width: 768px) {
+/* @media (min-width: 768px) {
     .container {
         max-width:768px
     }
-}
+} */
 
-@media (min-width: 1025px) {
+/* @media (min-width: 1025px) {
     .container {
         max-width:1025px
     }
-}
+} */
 
-@media (min-width: 1202px) {
+@media (min-width: 1920) {
     .container {
-        max-width:1202px
+        max-width:1400px!important
     }
 }
+
 
 .pointer-events-none {
     pointer-events: none

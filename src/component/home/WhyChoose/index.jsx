@@ -26,11 +26,7 @@ const Right = () => {
     )
   }
   const whychoose = [
-    {
-      name: "Profit Share from Challenge Phase",
-      arc: "15%",
-      fund: "0%",
-    },
+
     {
       name: "Account Profit Share",
       arc: "80% | 95% with Add-on",
@@ -52,9 +48,14 @@ const Right = () => {
       fund: <Cross />,
     },
     {
-      name: "Free Competitions",
+      name: "Free Merchandise",
       arc: <Right />,
       fund: <Cross />,
+    },
+    {
+      name: "Payout within 24 hours",
+      arc: <Right />,
+      fund: <Right />,
     },
     {
       name: "Global Meetup",
@@ -84,7 +85,7 @@ const Right = () => {
                   <tr className="border-t border-jacarta-100 py-2 px-4 transition-shadow hover:shadow-lg dark:border-jacarta-600 dark:bg-jacarta-900">
                     <th scope="col" className="px-6 py-3 dark:text-white">VARIABLES</th>
                     <th scope="col" className="px-6 py-3 text-center dark:text-white">ARC</th>
-                    <th scope="col" className="px-6 py-3 text-center dark:text-white">Fund</th>
+                    <th scope="col" className="px-6 py-3 text-center dark:text-white">FTMO</th>
                   </tr>
                 </thead>
                 <tbody>

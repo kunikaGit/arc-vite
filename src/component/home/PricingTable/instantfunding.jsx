@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { QuestionRound } from "../../../icons/icons";
 
 
 const Arrow = () => {
@@ -10,10 +11,10 @@ const Arrow = () => {
 }
 
 
-export default function InstantFunding() {
+export default function InstantFunding({selected}) {
   return (
     <div className="pricingtable">
-    <div className="upper-box border border-accent dark:bg-gray-900 bg-white dark:bg-jacarta-700">
+    {/* <div className="upper-box border border-accent dark:bg-gray-900 bg-white dark:bg-jacarta-700">
       <div className="sub-box">
         <div className="main-heading mb-5">
           <span className="animate-gradient text-2xl  font-bold text-jacarta-700 dark:text-white"> Instant Funding</span>
@@ -35,7 +36,18 @@ export default function InstantFunding() {
           <li><span><Arrow /> Maximum Overall Loss: </span><span> 3% </span></li>
         </ul>
       </div>
-    </div>
+    </div> */}
+      <div className="upper-box">
+        <div className="fund-info bg-accent ">
+          <h3 className="dark:text-jacarta-700  mb-2 text-md font-medium text-white ">Evaluation Stage</h3>
+          <h2 className="dark:text-jacarta-700  mb-2 text-2xl font-semibold text-white ">ARC Funded Traders </h2>
+          <ul className="space-y-2 dark:text-jacarta-700 text-white">
+            <li><span> Maximum Daily Loss <QuestionRound/> </span><span>{selected.dailyLossLimit}</span></li>
+            <li><span> Maximum Overall Loss <QuestionRound/> </span><span> {selected.drawdown} </span></li>
+            <li><span> Minimum Trading Days <QuestionRound/></span> <span>5 Days</span></li>
+          </ul>
+        </div>
+      </div>
 </div>
   );
 }

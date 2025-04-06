@@ -105,23 +105,6 @@ function Navigation() {
     );
   }
 
-function CompanyLinks() {
-    return (
-      <>
-        {menuItems.map((elm, i) => (
-          <li key={i}>
-            <Link
-              href={elm.href}
-              className="hover:text-accent dark:hover:text-white"
-            >
-              {elm.name}
-            </Link>
-          </li>
-        ))}
-      </>
-    );
-  }
-
 function MarketplaceLinks() {
     return (
       <>

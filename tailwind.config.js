@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
+const withMT = require("@material-tailwind/react/utils/withMT");
 
-module.exports = {
+module.exports = withMT({
     content: [
       "./pages/**/*.{js,ts,jsx,tsx,mdx}",
       "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -142,5 +143,5 @@ module.exports = {
       require("@tailwindcss/forms"),
       require("tailwindcss-custom-groups"),
     ],
-  };
+  });
   

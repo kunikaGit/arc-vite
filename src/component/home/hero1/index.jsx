@@ -52,7 +52,7 @@ export default function Hero1() {
             to="/create"
             className="mx-3 block rtl:!mr-6 w-44 rounded-full bg-white py-3 px-5 text-center font-semibold text-accent shadow-white-volume transition-all hover:bg-accent-dark hover:text-white hover:shadow-accent-volume"
           >
-            Free Trial
+            Learn More
           </Link>
           
         </div>
