@@ -1,5 +1,5 @@
 import { useState } from "react";
-import faqData from "./questions";
+import faqData from "./questions.jsx";
 import Header2 from "../../component/home2/header2";
 import Footer1 from "../../component/footer";
 

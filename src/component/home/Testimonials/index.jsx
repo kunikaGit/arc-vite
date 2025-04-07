@@ -46,7 +46,6 @@ export const testimonialsData = [
 export default function Testimonials() {
   return (
     <section className="bg-light-base py-20 dark:bg-jacarta-900 overflow-hidden" id="testimonial">
-      <div className="container relative overflow-hidden xl:left-[calc((100vw-1202px)/4)] xl:max-w-[calc(1202px+((100vw-1202px)/2))] xl:pr-[calc((100vw-1176px)/2)]">
         <div className="mx-auto mb-12 max-w-sm text-center">
           <h2 data-aos-duration={600} data-aos="fade-down" data-aos-anchor="#testimonial"
             className="mb-6 text-center font-display text-3xl font-medium text-jacarta-700 dark:text-white">
@@ -56,6 +55,7 @@ export default function Testimonials() {
             <span className="animate-gradient text-lg font-bold">10000+  </span> Customers those who already tried our services.
           </p>
         </div>
+      <div className="container relative overflow-hidden xl:left-[calc((100vw-1400px)/4)] x]">
         <div className="flex animate-marquee space-x-8">
           {testimonialsData.map((elm, i) => (
             <div

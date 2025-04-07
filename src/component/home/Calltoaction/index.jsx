@@ -3,10 +3,10 @@ import imageMap from "../../../utlis/helper";
 
 export default function Calltoaction() {
   return (
-    <div className="relative z-10 -mt-10 dark:bg-jacarta-900">
+    <div className="relative z-10 -mt-10 bg-white dark:bg-jacarta-900">
       <div className="container">
         <div className="relative overflow-hidden rounded-2.5xl px-16 pt-16 pb-8 shadow-md lg:px-24">
-          <picture className="pointer-events-none absolute inset-0 -z-10 dark:hidden">
+          <picture className="pointer-events-none absolute inset-0 -z-10 dark:hidden" data-aos="fade-down" data-aos-duration={600}>
             <img
               width={1920}
               height={789}
@@ -16,7 +16,7 @@ export default function Calltoaction() {
               className="h-full w-full"
             />
           </picture>
-          <picture className="pointer-events-none absolute inset-0 -z-10 hidden dark:block">
+          <picture className="pointer-events-none absolute inset-0 -z-10 hidden dark:block" data-aos="fade-down" data-aos-duration={600}>
             <img
               width={1920}
               height={900}
@@ -55,7 +55,7 @@ export default function Calltoaction() {
               data-aos="fade-down" data-aos-duration={600}
               width={340}
               height={300}
-              src={imageMap['cta_illustration.png']}
+              src='img/start.svg'
               alt="image"
             />
           </div>
