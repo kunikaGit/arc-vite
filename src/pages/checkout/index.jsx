@@ -53,6 +53,12 @@ export default function Checkout() {
         }));
     };
 
+    const handleCheckTc = () =>{
+        setCheckTc(!checkTc)
+        setTimeout(() => {
+            handleClose()
+        }, 500);
+    }
     const style = {
         position: 'absolute',
         top: '50%',
@@ -305,7 +311,8 @@ export default function Checkout() {
                         <TermsContent />
                         <div className="flex items-center gap-x-2 mt-8 justify-center">
                             <input type="checkbox"
-                                onChange={()=>setCheckTc(true)}
+                            checked={checkTc}
+                                onChange={handleCheckTc}
                                 className="h-6 w-6 m-0 self-start rounded border-jacarta-200 text-accent checked:bg-accent focus:ring-accent/20 focus:ring-offset-0 dark:border-jacarta-500 dark:bg-jacarta-600" />
                             <label className="flex items-center  m-0 text-md text-accent">I Agree to Terms and Conditions</label>
                         </div>
