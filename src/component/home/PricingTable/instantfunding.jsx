@@ -48,6 +48,9 @@ export default function InstantFunding({selected}) {
           </ul>
         </div>
       </div>
+      <div className="mb-8 flex justify-center mt-4" >
+                        <Link to="/terms-use" className="text-accent text-base">Please check Terms of Use for detailed info</Link>
+                    </div>
 </div>
   );
 }

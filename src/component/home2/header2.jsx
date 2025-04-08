@@ -44,24 +44,8 @@ export default function Header2() {
           {/* Logo */}
           <Link to="/" className="shrink-0">
           <h2 className="logo-text animate-gradient">ARC</h2>
-            {/* <img
-              width={80}
-              height={20}
-              src={images['dark-logo.svg']}
-              className=" dark:hidden"
-              alt="Xhibiter | NFT Marketplace"
-            /> */}
-            {/* <img
-              width={80}
-              height={20}
-              src={images['dark-logo.svg']}
-              className="hidden  dark:block"
-              alt="Xhibiter | NFT Marketplace"
-            /> */}
           </Link>
-
           {/* Search */}
-
           {/* Menu / Actions */}
           <div className="js-mobile-menu invisible lg:visible fixed inset-0 z-10 ml-auto items-center bg-white opacity-0 dark:bg-jacarta-800 lg:relative lg:inset-auto lg:flex lg:bg-transparent lg:opacity-100 dark:lg:bg-transparent ">
             {/* Mobile Logo / Menu Close */}

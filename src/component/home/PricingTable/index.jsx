@@ -21,7 +21,7 @@ export default function PricingTable() {
     const [selected, setSelected] = useState(accountSizes[2]); // Default to $25k
 
     return (
-        <section className="py-16 pricing-table bg-white dark:bg-jacarta-900" id="pricing">
+        <section className="py-16 pricing-table  bg-white dark:bg-black" id="pricing">
             <div className="container">
                 <div className="mx-auto mb-8 text-center">
                     <h2 data-aos-anchor="#pricing" data-aos-duration={600} data-aos="fade-down" className="mb-0 text-center font-display text-4xl font-medium text-jacarta-700 dark:text-white">
@@ -82,13 +82,7 @@ export default function PricingTable() {
                         {accountSizes.map((account, index) => (
                             <div onClick={() => setSelected(account)} key={index}>
                                 <label className="flex items-center space-x-2 cursor-pointer  text-black dark:text-white ">
-                                    {/* <input
-                                            type="radio"
-                                            name="accountSize"
-                                            className="accent-accent"
-                                            checked={selected.size === account.size}
-                                            onChange={() => setSelected(account)}
-                                            /> */}
+                                   
                                     <span
                                         className={`text-jacarta-700 dark:text-white rounded-md py-2 px-4  text-md transition-all ${selected.size === account.size
                                             ? "text-accent bg-accent text-white"
@@ -105,9 +99,7 @@ export default function PricingTable() {
                         {activeTab === "trending" && <TwoPhase selected={selected} />}
                         {activeTab === "sweeps" && <InstantFunding selected={selected} />}
                     </div>
-                    <div className="mb-8 flex justify-end" >
-                        <Link to="/terms-use" className="text-accent text-base">Please check Terms of Use for detailed info</Link>
-                    </div>
+                   
                     <div className="sub-box">
                         {/* <div className="main-heading mb-5">
                             <span className="animate-gradient text-2xl  font-bold"> Two Phase</span>

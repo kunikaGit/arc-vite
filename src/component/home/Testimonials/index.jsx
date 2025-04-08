@@ -45,7 +45,7 @@ export const testimonialsData = [
 ];
 export default function Testimonials() {
   return (
-    <section className="bg-light-base py-20 dark:bg-jacarta-900 overflow-hidden" id="testimonial">
+    <section className="bg-light-base py-20 dark:bg-black overflow-hidden" id="testimonial">
         <div className="mx-auto mb-12 max-w-sm text-center">
           <h2 data-aos-duration={600} data-aos="fade-down" data-aos-anchor="#testimonial"
             className="mb-6 text-center font-display text-3xl font-medium text-jacarta-700 dark:text-white">

@@ -21,7 +21,7 @@ const Right = () => {
   };
   const Cross = () => {
     return(
-      <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-green-500" viewBox="0 0 24 24" fill="currentColor">
+      <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-gray-400" viewBox="0 0 24 24" fill="currentColor">
         <path d="M11.9997 10.5865L16.9495 5.63672L18.3637 7.05093L13.4139 12.0007L18.3637 16.9504L16.9495 18.3646L11.9997 13.4149L7.04996 18.3646L5.63574 16.9504L10.5855 12.0007L5.63574 7.05093L7.04996 5.63672L11.9997 10.5865Z"/></svg>
     )
   }
@@ -52,22 +52,13 @@ const Right = () => {
       arc: <Right />,
       fund: <Cross />,
     },
-    {
-      name: "Payout within 24 hours",
-      arc: <Right />,
-      fund: <Right />,
-    },
-    {
-      name: "Global Meetup",
-      arc: "5 Countries",
-      fund: "0",
-    },
+
   
   ];
   export default function WhyChoose() {
   
     return (
-      <section className="relative py-24 why-choose-us dark:bg-jacarta-900" >
+      <section className="relative py-24 why-choose-us dark:bg-black" >
         <div className="container">
           <div className="mx-auto mb-16 max-w-xl text-center" data-aos-duration={600} data-aos="fade-down" >
             <h2 className="mb-2 text-center font-display text-3xl font-medium text-jacarta-700 dark:text-white">

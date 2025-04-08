@@ -82,7 +82,7 @@ const faqData = {
       id: 12,
       question: "What platforms can I trade on?",
       answer:
-        "We provide access to MetaTrader 4, MetaTrader 5, and Trader, along with custom dashboards for analytics.",
+        "We provide access to cTrader, along with custom dashboards for analytics.",
     },
     {
       id: 13,

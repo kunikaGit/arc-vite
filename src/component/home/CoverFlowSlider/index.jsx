@@ -126,7 +126,7 @@ import {Link} from "react-router-dom";
 
 export default function CoverFlowSlider() {
   return (
-    <div className="relative px-6 pb-16 sm:px-0 dark:bg-jacarta-900 slider-section" >
+    <div className="relative px-6 pb-16 sm:px-0 dark:bg-black slider-section" >
       <Swiper
         breakpoints={{
           // when window width is >= 640px

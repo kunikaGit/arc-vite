@@ -52,6 +52,9 @@ export default function TwoPhase({ selected }) {
           </ul>
         </div>
       </div>
+      <div className="mb-8 mt-4 flex justify-end" >
+                        <Link to="/terms-use" className="text-accent text-base">Please check Terms of Use for detailed info</Link>
+                    </div>
     </div>
   );
 }
