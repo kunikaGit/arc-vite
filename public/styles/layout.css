@@ -6308,7 +6308,9 @@ html[dir=rtl] .hover\:translate-x-1:hover {
 }
 
 :root {
-    --swiper-theme-color: #007aff
+    --swiper-theme-color: #007aff;
+    --color_171821:#171821;
+    --white_color:#FFFFFF;
 }
 
 :host {

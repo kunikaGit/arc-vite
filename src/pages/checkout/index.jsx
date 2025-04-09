@@ -5,6 +5,7 @@ import Footer1 from "../../component/footer";
 import Header2 from "../../component/home2/header2";
 import { TermsContent } from "../../component";
 import { Box, Modal, Tooltip } from "@mui/material";
+import { DollerIcon, DoubleUp, TrophyIcon } from "../../icons/icons";
 
 
 
@@ -171,7 +172,7 @@ export default function Checkout() {
                                     <div className="item1 flex  items-center gap-x-3.5 py-5 border-b border-jacarta-200 mb-5">
                                         <input type="radio" name="payment" />
                                         <div className="labels flex items-center justify-between w-full">
-                                            <span className="font-semibold text-jacarta-700">Crypto / Paypal</span>
+                                            <span className="font-semibold text-jacarta-700 dark:text-white">Crypto / Paypal</span>
                                             <div className="images flex gap-x-2.5">
                                                 <img src={imageMap['paypal.png']} className="w-[45px]" alt="pay" />
                                                 <img src={imageMap['crypto.png']} className="w-[45px]" alt="pay" />
@@ -191,11 +192,11 @@ export default function Checkout() {
                                             <h2 className="mb-0 font-display text-xl dark:text-jacarta-700 text-white">
                                                 Two Phase Funding</h2>
                                             <h2 className=" font-medium text-md dark:text-jacarta-700 text-white">
-                                                {selected.size} Accounts</h2>
+                                                {selected?.size} Accounts</h2>
                                         </div>
                                         <div className="w-3/12">
                                             <h2 className="m-0 font-display text-4xl dark:text-jacarta-700 text-white text-right">
-                                                <span className="animate-gradient font-display">${selectedState.price}</span></h2>
+                                                <span className="animate-gradient font-display">${selectedState?.price}</span></h2>
                                         </div>
                                     </div>
                                     <div className="info ">
@@ -218,7 +219,7 @@ export default function Checkout() {
                                     </div>
                                 </div>
                                 <div className=" mb-5 rounded-lg border border-jacarta-100 bg-white p-[1.1875rem] transition-shadow shadow-md dark:border-jacarta-700 dark:bg-jacarta-700">
-                                    <label htmlFor="profile-username" className="mb-1 block font-display text-base text-jacarta-700 dark:text-white">
+                                    <label htmlFor="profile-username" className="mb-1 text-base block font-display text-base text-jacarta-700 dark:text-white">
                                         Selected Add-on
                                     </label>
                                     <div className="flex flex-col gap-y-2 mt-3">
@@ -226,28 +227,28 @@ export default function Checkout() {
                                             <input
                                                 type="checkbox"
                                                 value="0.3"
-                                                className="h-5 w-5 self-start rounded border-jacarta-200 text-accent checked:bg-accent focus:ring-accent/20 focus:ring-offset-0 dark:border-jacarta-500 dark:bg-jacarta-600"
+                                                className="mr-4 h-5 w-5 self-start rounded border-jacarta-200 text-accent checked:bg-accent focus:ring-accent/20 focus:ring-offset-0 dark:border-jacarta-500 dark:bg-jacarta-600"
                                                 onChange={(e) => handleAddonChange(e)}
                                             />
-                                            Lifetime payout 95% (Price +30%)
+                                           <DollerIcon/> Lifetime payout 95% (Price +30%)
                                         </label>
                                         <label className="flex items-center gap-x-2 text-jacarta-700 dark:text-white mb-2">
                                             <input
                                                 type="checkbox"
                                                 value="0.1"
-                                                className="h-5 w-5 self-start rounded border-jacarta-200 text-accent checked:bg-accent focus:ring-accent/20 focus:ring-offset-0 dark:border-jacarta-500 dark:bg-jacarta-600"
+                                                className="mr-4 h-5 w-5 self-start rounded border-jacarta-200 text-accent checked:bg-accent focus:ring-accent/20 focus:ring-offset-0 dark:border-jacarta-500 dark:bg-jacarta-600"
                                                 onChange={(e) => handleAddonChange(e)}
                                             />
-                                            150% Reward (Price +10%)
+                                           <TrophyIcon/> 150% Reward (Price +10%)
                                         </label>
                                         <label className="flex items-center gap-x-2 text-jacarta-700 dark:text-white">
                                             <input
                                                 type="checkbox"
                                                 value="0.4"
-                                                className="h-5 w-5 self-start rounded border-jacarta-200 text-accent checked:bg-accent focus:ring-accent/20 focus:ring-offset-0 dark:border-jacarta-500 dark:bg-jacarta-600"
+                                                className="mr-4 h-5 w-5 self-start rounded border-jacarta-200 text-accent checked:bg-accent focus:ring-accent/20 focus:ring-offset-0 dark:border-jacarta-500 dark:bg-jacarta-600"
                                                 onChange={(e) => handleAddonChange(e)}
                                             />
-                                            Double Up (Price +40%)
+                                           <DoubleUp/> Double Up (Price +40%)
                                         </label>
                                     </div>
                                 </div>
@@ -271,7 +272,7 @@ export default function Checkout() {
                                 <div className="rounded-lg border border-jacarta-100 bg-white p-[1.1875rem] transition-shadow shadow-md dark:border-jacarta-700 dark:bg-jacarta-700">
                                     <div className="item flex items-center justify-between text-jacarta-700 dark:text-white mb-3 font-semibold">
                                         <span className="text-base">Sub Total</span>
-                                        <span className="text-base"> ${selectedState.price}</span>
+                                        <span className="text-base"> ${selectedState?.price}</span>
                                     </div>
                                     <div className="item flex items-center justify-between text-jacarta-700 dark:text-white mb-3 font-semibold">
                                         <span className="text-base"> Discount</span>
@@ -279,7 +280,7 @@ export default function Checkout() {
                                     </div>
                                     <div className="item flex items-center justify-between text-jacarta-700 dark:text-white font-semibold">
                                         <span className="text-base"> Total</span>
-                                        <span className="text-base"> ${selectedState.price} </span>
+                                        <span className="text-base"> ${selectedState?.price} </span>
                                     </div>
                                     <Tooltip title={`${!checkTc ? 'Please Check Terms and Condition First':'checkout'}`}>
                                     <button

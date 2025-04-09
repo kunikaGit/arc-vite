@@ -19,6 +19,7 @@
     "aos": "^2.3.4",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-pro-sidebar": "^1.1.0",
     "react-router-dom": "^7.3.0",
     "sass": "^1.86.1",
     "styled-components": "^6.1.17",

@@ -1,0 +1,143 @@
+@use './abstract/mixins' as *;
+ 
+.main-sidebar {
+  position: relative;
+  height: 100%;
+  display: flex;
+  main{
+    background-color:#171821;
+    color: var(--white_color);
+    padding: 50px;
+  }
+  @include media_1024{
+    display: none;
+  }
+  .toggle-button {
+    position: absolute;
+    left:-18px;
+    top: 18px;
+    height: 30px;
+    width: 30px;
+    padding: 0;
+    border-radius: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    z-index: 11;
+    svg {
+      transform: rotate(-90deg);
+      transition: transform 0.3s ease-in-out;
+      path {
+        fill: var(--white_color);
+      }
+    }
+
+  }
+  .ps-sidebar-container {
+    background-color: var(--Clarinet_01265D);
+    border-radius: 0px 22px 22px 0px;
+    // Custom scrollbar styles
+
+    &::-webkit-scrollbar {
+      width: 2px;
+    }
+
+    // Track
+    &::-webkit-scrollbar-track {
+      background: var(--Clarinet_01265D)
+    }
+
+    // Handle
+    &::-webkit-scrollbar-thumb {
+      background: #75869e10;
+    }
+  }
+
+  aside {
+    background-color: #000;
+    height: 100vh;
+    border: none;
+    &.ps-collapsed {
+      .name {
+        display: none;
+      }
+    }
+  }
+  .sidebar-menus{
+    .sidebar_icon_list {
+      .ps-submenu-expand-icon{
+        display: none;
+      }
+      ul{
+        display: flex;
+        flex-direction: column;
+        li {
+          .ps-menu-button{
+            height: unset;
+            padding: 8.5px 15px;
+            margin-bottom: 10px;
+            transition: .3s;
+            &:hover{
+              background-color: #4679BD40;
+              .name{
+              color: var(--theme-blue);
+              }
+              svg{
+                path{
+                  fill:var(--theme-blue) ;
+                }
+              }
+            }
+          }
+          &.active{
+            .ps-menu-button{
+              background-color: #4679BD40;
+              svg{
+                path{
+                  fill:var(--theme-blue) ;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+ 
+}
+
+.sidebar-menus {
+    .sidebarlogo {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 15px;
+        padding: 50px 0;
+        max-width: 65%;
+        margin: auto;
+        .name {
+            margin-top: 15px;
+        }
+    }
+    .sidebar_icon_list{
+        .sidebar_label{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .submenus-items {
+            padding-left: 10px;
+        }
+        .name{
+          color: var(--white_color);
+          line-height: 20px;
+          font-size: 18px;
+          font-weight: 400;
+          font-family: 'Inter'
+            a{
+            color:var(--white_color);
+            }
+        }
+    }
+}

@@ -14,34 +14,15 @@ const Arrow = () => {
 export default function InstantFunding({selected}) {
   return (
     <div className="pricingtable">
-    {/* <div className="upper-box border border-accent dark:bg-gray-900 bg-white dark:bg-jacarta-700">
-      <div className="sub-box">
-        <div className="main-heading mb-5">
-          <span className="animate-gradient text-2xl  font-bold text-jacarta-700 dark:text-white"> Instant Funding</span>
-        </div>
-        <div className="mb-5">
-          <h2 className="text-xl font-semibold text-jacarta-700 dark:text-white">$149</h2>
-          <h3 className="font-medium text-jacarta-700 dark:text-white">For 5k Account</h3>
-        </div>
-        <Link to='/checkout' className="w-full block text-base rounded-full bg-accent py-2   px-3 text-center font-semibold text-white shadow-accent-volume transition-all hover:bg-accent-dark">
-          Get Plan</Link>
-      </div>
-      <div className="fund-info">
-        <h2 className="text-jacarta-700 dark:text-white mb-4 text-xl font-semibold ">Two Phase - 5k Account</h2>
-        <ul className="space-y-2 text-jacarta-700 dark:text-white">
-          <li><span><Arrow /> Profit Target :</span>
-            <span> -</span>
-          </li>
-          <li><span><Arrow /> Maximum Daily Loss: </span><span>2%</span></li>
-          <li><span><Arrow /> Maximum Overall Loss: </span><span> 3% </span></li>
-        </ul>
-      </div>
-    </div> */}
+    
       <div className="upper-box">
         <div className="fund-info bg-accent ">
-          <h3 className="dark:text-jacarta-700  mb-2 text-md font-medium text-white ">Evaluation Stage</h3>
+          <h3 className="dark:text-jacarta-700  mb-2 text-md font-medium text-white ">Funded Stage</h3>
           <h2 className="dark:text-jacarta-700  mb-2 text-2xl font-semibold text-white ">ARC Funded Traders </h2>
           <ul className="space-y-2 dark:text-jacarta-700 text-white">
+          <li><span> Profit Target <QuestionRound/></span>
+              <span>-</span>
+            </li>
             <li><span> Maximum Daily Loss <QuestionRound/> </span><span>{selected.dailyLossLimit}</span></li>
             <li><span> Maximum Overall Loss <QuestionRound/> </span><span> {selected.drawdown} </span></li>
             <li><span> Minimum Trading Days <QuestionRound/></span> <span>5 Days</span></li>

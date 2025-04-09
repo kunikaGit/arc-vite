@@ -101,9 +101,6 @@ export default function PricingTable() {
                     </div>
                    
                     <div className="sub-box">
-                        {/* <div className="main-heading mb-5">
-                            <span className="animate-gradient text-2xl  font-bold"> Two Phase</span>
-                        </div> */}
                         <div className="mb-5">
                             <h2 className="text-5xl text-center font-semibold text-jacarta-700 dark:text-white">${selected.price} For {selected.size} Account</h2>
                         </div>
