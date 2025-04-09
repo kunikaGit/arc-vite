@@ -74,7 +74,7 @@ export default function Checkout() {
     return (
         <>
             <Header2 />
-            <section className="relative py-16 dark:bg-jacarta-800 md:pt-32">
+            <section className="relative py-16 bg-white dark:bg-black md:pt-32">
                 <div className="container">
                     <h2 className="mb-9 text-center font-display text-3xl text-jacarta-700  dark:text-white">
                         Checkout</h2>
