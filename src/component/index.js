@@ -6,5 +6,11 @@ export { default as AboutRoadmap } from "./aboutus/roadmap.jsx";
 export { default as TermsContent } from "./termscondition/termscontent.jsx";
 
 
+//acounts
+export { default as LineChart } from "./accounts/linechart.jsx";
+export { default as TradingObjective } from "./accounts/tradingobjective.jsx";
+
+
+
 
 

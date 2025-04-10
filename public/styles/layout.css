@@ -6311,6 +6311,7 @@ html[dir=rtl] .hover\:translate-x-1:hover {
     --swiper-theme-color: #007aff;
     --color_171821:#171821;
     --white_color:#FFFFFF;
+    --dark-purple:#18042b;
 }
 
 :host {
@@ -6759,4 +6760,17 @@ html[dir=rtl] .hover\:translate-x-1:hover {
     background: #fff;
     border-radius: 5px;
     margin-top: -6px
+}
+
+
+
+
+.bg-purple{
+    background-color: #18042b;
+}
+.bg-dark-purple{
+    background-color: #090111;
+}
+.bg-blackish{
+    background-color: #2B2B2B;
 }

@@ -15,13 +15,13 @@ const DashboardLayout = () => {
     }
 
     return (
-        <div className="main-sidebar">
+        <div className="main-box bg-purple">
             <Sidebar collapsed={isCollapsed}>
                 <MenuItems />
             </Sidebar>
-            <main className="flex-1 p-4 relative">
-            <button className="toggle-button bg-accent" onClick={togggleSidebar}>
-                    <DoubleUp/>
+            <main className="flex-1 p-4 relative bg-dark-purple">
+                <button className="toggle-button bg-accent" onClick={togggleSidebar}>
+                    <DoubleUp />
                 </button>
                 <Outlet />
             </main>

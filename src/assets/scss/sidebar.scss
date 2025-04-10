@@ -1,11 +1,11 @@
 @use './abstract/mixins' as *;
  
-.main-sidebar {
+.main-box {
   position: relative;
   height: 100%;
   display: flex;
+  font-family: "Inter";
   main{
-    background-color:#171821;
     color: var(--white_color);
     padding: 50px;
   }
@@ -55,7 +55,6 @@
   }
 
   aside {
-    background-color: #000;
     height: 100vh;
     border: none;
     &.ps-collapsed {

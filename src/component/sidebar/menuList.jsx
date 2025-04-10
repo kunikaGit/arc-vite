@@ -50,14 +50,12 @@ const MenuItems = () => {
 
     ]
     return (
-        <div className="sidebar-menus">
-            <Link to="/">
+        <div className="sidebar-menus ">
                 <div className="sidebarlogo">
                     <Link to="/" className="shrink-0">
                         <h2 className="logo-text animate-gradient text-left">ARC</h2>
                     </Link>
                 </div>
-            </Link>
 
             <Menu className="sidebar_icon_list ">
                 {SidebarItems.map((item, index) => (
