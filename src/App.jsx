@@ -2,7 +2,6 @@ import { Routes, Route, Link } from "react-router-dom";
 import { AboutUs, Checkout, ComingSoon, Faq, Home, PrivacyPolicy, TermsAndCondition } from "./pages/index.js";
 import Home2 from "./pages/home2.jsx";
 import './assets/scss/index.scss'
-import './assets/scss/abstract/index.scss'
 import TermsConditionTabs from "./pages/termsAndCondition/termsconditionstabs.jsx";
 import ScrollToTop from "./component/common/scrolltop.jsx";
 import Accounts from "./pages/dashboard/accounts.jsx";

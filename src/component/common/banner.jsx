@@ -11,7 +11,7 @@ const CommonBanner = ({ title }) => {
     return (
         <>
             <section className="relative pt-4">
-                <div className="absolute inset-0  overflow-hidden  -z-10 common-banner" style={{ height: '300px' }} >
+                <div className="absolute inset-0  overflow-hidden  -z-10 common-banner" style={{ height: '320px' }} >
                     <video
                         ref={videoRef}
                         autoPlay
