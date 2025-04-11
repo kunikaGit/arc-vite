@@ -6,6 +6,7 @@ import TermsConditionTabs from "./pages/termsAndCondition/termsconditionstabs.js
 import ScrollToTop from "./component/common/scrolltop.jsx";
 import Accounts from "./pages/dashboard/accounts.jsx";
 import DashboardLayout from "./pages/dashboard/layout.jsx";
+import StripeCheckoutDemo from "./component/stripe/stripe.jsx";
 
 export default function App() {
   return (
@@ -21,7 +22,8 @@ export default function App() {
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/terms-use" element={<TermsConditionTabs />} />
-        <Route path="/dashboard" element={<DashboardLayout />}>
+        <Route path="/dashboard" element={<DashboardLayout />}/>
+        <Route path="/stripe-payment" element={<StripeCheckoutDemo />}>
           <Route index element={<Accounts />} />
         </Route>
       </Routes>
