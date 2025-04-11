@@ -329,24 +329,32 @@ const TermsConditionTabs = () => {
           <Tabs
             value={selectedTab}
             onChange={(val) => setSelectedTab(val)}
-            orientation="vertical">
-            <TabsHeader className="w-[350px] text-left text-jacarta-700 dark:text-jacarta-200"
+            orientation="vertical"
+            className=''
+            >
+            <TabsHeader className="w-[350px] text-left text-jacarta-700 dark:text-jacarta-200 " 
               indicatorProps={{
                 className: "hidden",
               }}>
               {data.map(({ label, value }, index) => (
                 <Tab key={value}
+              
                   value={value}
                   onClick={() => setSelectedTab(value)}
-                  className={`text-left  ${selectedTab === value ? "active bg-accent text-white" : ""
+                  className={`text-left   ${selectedTab === value ? "active bg-accent text-white" : ""
                     }`}>
                   {index + 1}{" "}{label}
                 </Tab>
               ))}
             </TabsHeader>
-            <TabsBody className="px-10">
+            <TabsBody  
+              animate={{
+                mount: { transition: { duration: 0 } },
+                unmount: { transition: { duration: 0 } },
+              }}
+             className="px-10 ">
               {data.map(({ label, value, desc }, index) => (
-                <TabPanel key={value} value={value} className="py-0 text-lg tab-body dark:text-white font-medium">
+                <TabPanel key={value} value={value} className="py-0 text-lg tab-body dark:text-white font-medium ">
                   <h2 className=" font-display text-3xl font-medium text-jacarta-700 dark:text-white mb-5">
                     {index + 1}. {" "}{" "}{label}
                   </h2>

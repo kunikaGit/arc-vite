@@ -1,25 +1,13 @@
 import React from "react"
+import CommonBanner from "../common/banner";
 const AboutBanner = () => {
+
 
     return (
         <>
-            <section className="relative pt-4">
-                <div className="absolute inset-0  overflow-hidden  -z-10" style={{ height: '300px' }}>
-                    <video
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        className="w-full object-cover  -z-10 h-full "
-                        src="video/blue-bg.mp4"
-                    />
-                </div>
+        <CommonBanner title="About Us"/>
                 <div className="container">
-                    <div className="text-center flex items-center justify-center m-auto xl:max-w-4xl lg:max-w-full lg:text-6xl md:text-4xl sm:text-3xl"
-                        style={{ height: '300px' }} >
-                        <h2 className='font-display  font-medium dark:text-jacarta-700 text-white'>About Us</h2>
-                    </div>
-                    <div className='grid md:grid-cols-2 grid-cols-1  py-10 gap-10 items-center   '>
+                    <div className='grid md:grid-cols-2 grid-cols-1  py-10 gap-10 items-center'>
                         <div className='' data-aos="fade-right" data-aos-duration={800} >
                             <h2 className='mb-5 text-5xl font-display text-jacarta-700'>Built by Traders,<br /> Backed by Professionals</h2>
                             <p className='text-medium text-gray-600'>
@@ -41,7 +29,6 @@ const AboutBanner = () => {
                         </div>
                     </div>
                 </div>
-            </section>
         </>
     )
 }

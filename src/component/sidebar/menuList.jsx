@@ -8,7 +8,7 @@ const MenuItems = () => {
     const SidebarItems = [
         {
             name: 'Accounts',
-            link: '/',
+            link: '/dashboard',
             imgagepath: <HomeIcon />
         },
         {
@@ -29,7 +29,7 @@ const MenuItems = () => {
         {
             name: 'Setting',
             link: '/',
-            imgagepath: <SettingIcon/>
+            imgagepath: <SettingIcon />
         },
         {
             name: 'Leaderboard',
@@ -49,28 +49,32 @@ const MenuItems = () => {
 
     ]
     return (
-        <div className="sidebar-menus ">
-                <div className="sidebarlogo">
-                    <Link to="/" className="shrink-0">
-                        <h2 className="logo-text animate-gradient text-left">ARC</h2>
-                    </Link>
-                </div>
+        <div className="sidebar-menus">
+            <div className="sidebarlogo">
+                <Link to="/" className="w-full">
+                    <h2 className="animate-gradient text-left font-extrabold">ARC</h2>
+                </Link>
+            </div>
 
             <Menu className="sidebar_icon_list ">
-                {SidebarItems.map((item, index) => (
-                    <SubMenu key={index}
-                        label={
-                            <div className="sidebar_label">
-                                <div className="icon">
-                                    {item.imgagepath}
+                {SidebarItems.map((item, index) => {
+                    const isActive = location.pathname === item.link;
+                    return (
+                        <SubMenu key={index}
+                        className={`sidebar_label ${isActive ? "active" : ""}`}
+                            label={
+                                <div className="sidebar_label">
+                                    <div className="icon">
+                                        {item.imgagepath}
+                                    </div>
+                                    <div className="name">
+                                        {item.name}
+                                    </div>
                                 </div>
-                                <div className="name">
-                                    {item.name}
-                                </div>
-                            </div>
-                        }>
-                    </SubMenu>
-                ))}
+                            }>
+                        </SubMenu>
+                    )
+                })}
             </Menu>
         </div>
     );

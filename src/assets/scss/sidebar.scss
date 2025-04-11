@@ -1,20 +1,19 @@
 @use './abstract/mixins' as *;
- 
+
 .main-box {
   position: relative;
   height: 100%;
   display: flex;
   font-family: "Inter";
-  main{
+
+  main {
     color: var(--white_color);
-    padding: 50px;
+    padding: 30px;
   }
-  @include media_1024{
-    display: none;
-  }
+
   .toggle-button {
     position: absolute;
-    left:-18px;
+    left: -18px;
     top: 18px;
     height: 30px;
     width: 30px;
@@ -25,15 +24,18 @@
     justify-content: center;
 
     z-index: 11;
+
     svg {
       transform: rotate(-90deg);
       transition: transform 0.3s ease-in-out;
+
       path {
         fill: var(--white_color);
       }
     }
 
   }
+
   .ps-sidebar-container {
     background-color: var(--Clarinet_01265D);
     border-radius: 0px 22px 22px 0px;
@@ -54,47 +56,70 @@
     }
   }
 
+  .sidebarlogo {
+    .animate-gradient {
+      font-size: 50px;
+      font-weight: 800;
+      letter-spacing: -6px;
+      font-family: system-ui;
+    }
+  }
+
   aside {
     height: 100vh;
     border: none;
+
     &.ps-collapsed {
+      .sidebarlogo {
+        .animate-gradient {
+          font-size: 30px;
+        }
+      }
+
       .name {
         display: none;
       }
     }
   }
-  .sidebar-menus{
+
+  .sidebar-menus {
     .sidebar_icon_list {
-      .ps-submenu-expand-icon{
+      .ps-submenu-expand-icon {
         display: none;
       }
-      ul{
+
+      ul {
         display: flex;
         flex-direction: column;
+
         li {
-          .ps-menu-button{
+          .ps-menu-button {
             height: unset;
             padding: 8.5px 15px;
             margin-bottom: 10px;
             transition: .3s;
-            &:hover{
-              background-color: #4679BD40;
-              .name{
-              color: var(--theme-blue);
-              }
-              svg{
-                path{
-                  fill:var(--theme-blue) ;
+            border-radius: 20px;
+            margin: 5px 10px;
+            width: 100%;
+
+            &:hover {
+              background-color: #8358ff;
+
+              svg {
+                path {
+                  fill: #fff;
                 }
               }
             }
           }
-          &.active{
-            .ps-menu-button{
-              background-color: #4679BD40;
-              svg{
-                path{
-                  fill:var(--theme-blue) ;
+
+          &.active {
+            .ps-menu-button {
+              background-color: #8358ff;
+
+              svg {
+                path {
+                  fill: #fff;
                 }
               }
             }
@@ -103,40 +128,58 @@
       }
     }
   }
- 
+
 }
 
 .sidebar-menus {
-    .sidebarlogo {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        gap: 15px;
-        padding: 50px 0;
-        max-width: 65%;
-        margin: auto;
-        .name {
-            margin-top: 15px;
+  .sidebar_icon_list {
+    .icon {
+      svg {
+        height: 22px;
+        width: 22px;
+
+        path {
+          fill: #8358ff;
         }
+      }
     }
-    .sidebar_icon_list{
-        .sidebar_label{
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .submenus-items {
-            padding-left: 10px;
-        }
-        .name{
-          color: var(--white_color);
-          line-height: 20px;
-          font-size: 16px;
-          font-weight: 400;
-          font-family: 'Inter'
-            a{
-            color:var(--white_color);
-            }
-        }
+  }
+
+  .sidebarlogo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 20px 0;
+    max-width: 65%;
+    margin: auto;
+
+    .name {
+      margin-top: 15px;
     }
+  }
+
+  .sidebar_icon_list {
+    .sidebar_label {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .submenus-items {
+      padding-left: 10px;
+    }
+
+    .name {
+      color: var(--white_color);
+      line-height: 20px;
+      font-size: 14px;
+      font-weight: 400;
+      font-family: 'Inter'
+
+      a {
+        color: var(--white_color);
+      }
+    }
+  }
 }

@@ -76,7 +76,7 @@ const ApexChart = ({ title, value }) => {
 
 const TradingObjective = () => {
     return (
-        <div className="bg-2b2a33 theme_card" >
+        <div className="bg-2b2a33 theme_card mb-4" >
             <h2 className="card-title text-white font-semibold text-lg mb-4">Trading Objectives</h2>
             <div className="tradingobjective-cards">
                 <ApexChart title="Trading 1" value={76} />

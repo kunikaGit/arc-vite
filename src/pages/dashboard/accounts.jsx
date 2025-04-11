@@ -1,13 +1,20 @@
 import React from "react";
 import { LineChart, TradingObjective } from "../../component";
-import { EqualIcon, ProfiteIcon, UserHeart, WalletIcon } from "../../icons/icons";
+import { BarLineIcon, EqualIcon, LossIcon, ProfiteIcon, UserHeart, WalletIcon } from "../../icons/icons";
+import DateChart from "../../component/accounts/datechart";
 
 const accoundCrads = [
     {
-        title: 'Appointment',
+        title: 'Average Profit',
         number: '76',
         icon: <ProfiteIcon />,
         bgcolor: '#8358ff'
+    },
+    {
+        title: 'Average loss',
+        number: '76',
+        icon: <LossIcon />,
+        bgcolor: '#bc0505'
     },
     {
         title: 'Balance',
@@ -26,7 +33,14 @@ const accoundCrads = [
         number: '76',
         icon: <EqualIcon />,
         bgcolor: '#2781d5'
+    },
+    {
+        title: 'Number of Traders',
+        number: '76',
+        icon: <BarLineIcon />,
+        bgcolor: '#e99803'
     }
+
 ]
 const Accounts = () => {
     return (
@@ -37,7 +51,20 @@ const Accounts = () => {
                 </h2>
                 <div className="flex-box">
                     <div className="left-box">
-                        <div className="four-box">
+                        <TradingObjective />
+                        <LineChart />
+                    </div>
+                    <div className="right-box">
+                        <div className="account-info">
+                            <div className="theme_card bg-2b2a33 mb-5">
+                                <div className="flex gap-6 mb-4">
+                                    <div className="item flex items-center gap-2"><UserHeart /> <span className="text-sm">Active</span></div>
+                                    <div className="item flex items-center gap-2"><UserHeart /><span className="text-sm">ARC 100k Funded</span></div>
+                                </div>
+                                <div className="uppercase text-sm">LOGIN : 14444</div>
+                            </div>
+                        </div>
+                        <div className="four-box mb-4">
                             {accoundCrads?.map((item, index) => (
                                 <div className="media flex items-center justify-between" key={index}
                                     style={{ backgroundColor: item.bgcolor }}>
@@ -51,20 +78,9 @@ const Accounts = () => {
                                 </div>
                             ))}
                         </div>
-                        <LineChart />
-                    </div>
-                    <div className="right-box">
-                        <div className="account-info">
-                            <div className="theme_card bg-2b2a33 mb-5">
-                                <div className="flex gap-6 mb-4">
-                                    <div className="item flex items-center gap-2"><UserHeart /> <span className="text-sm">Active</span></div>
-                                    <div className="item flex items-center gap-2"><UserHeart /><span className="text-sm">ARC 100k Funded</span></div>
-                                </div>
-                                <div className="uppercase text-sm">LOGIN : 14444</div>
-                            </div>
+                        <div className="theme_card bg-2b2a33 mb-5">
+                            <DateChart />
                         </div>
-
-                        <TradingObjective/>
                     </div>
                 </div>
             </div>
