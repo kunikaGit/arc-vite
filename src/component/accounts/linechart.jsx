@@ -60,7 +60,7 @@ const LineChart = () => {
 
   return (
     <>
-        <div className="theme_card bg-purple">
+        <div className="theme_card bg-2b2a33">
           <div id="chart">
             <ReactApexChart
               options={data.options}

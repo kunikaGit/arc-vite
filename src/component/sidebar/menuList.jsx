@@ -2,50 +2,49 @@ import React from "react";
 import { Menu, SubMenu } from "react-pro-sidebar";
 // import { CampaignsIcon, CustomerIcon, FinanceIcon, HelpIcon, InsightIcon, LockIcon, LogisticIcon, NotificationsIcon, OrdersIcon, ProductsIcon, ReviewsIcon } from "../../../icons/icons";
 import { Link } from "react-router-dom";
-import { DoubleUp } from "../../icons/icons";
-import imageMap from "../../utlis/helper";
+import { BarchartIcon, FileIcon, HomeIcon, SettingIcon, UserIcon } from "../../icons/icons";
 
 const MenuItems = () => {
     const SidebarItems = [
         {
             name: 'Accounts',
             link: '/',
-            imgagepath: <DoubleUp />
+            imgagepath: <HomeIcon />
         },
         {
             name: 'Funded Longue',
             link: '/',
-            imgagepath: <DoubleUp />
+            imgagepath: <FileIcon />
         },
         {
             name: 'Account',
             link: '/',
-            imgagepath: <DoubleUp />
+            imgagepath: <UserIcon />
         },
         {
             name: 'Billing',
             link: '/',
-            imgagepath: <DoubleUp />
+            imgagepath: <FileIcon />
         },
         {
             name: 'Setting',
             link: '/',
-            imgagepath: <DoubleUp />
+            imgagepath: <SettingIcon/>
         },
         {
             name: 'Leaderboard',
             link: '/',
-            imgagepath: <DoubleUp />
+            imgagepath: <BarchartIcon />
         },
         {
             name: 'Insight',
             link: '/',
-            imgagepath: <DoubleUp />
+            imgagepath: <BarchartIcon />
         },
         {
             name: 'Merchandise',
             link: '/',
-            imgagepath: <DoubleUp />
+            imgagepath: <UserIcon />
         },
 
     ]

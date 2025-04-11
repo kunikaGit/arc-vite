@@ -55,7 +55,7 @@ const Accounts = () => {
                     </div>
                     <div className="right-box">
                         <div className="account-info">
-                            <div className="theme_card bg-purple mb-5">
+                            <div className="theme_card bg-2b2a33 mb-5">
                                 <div className="flex gap-6 mb-4">
                                     <div className="item flex items-center gap-2"><UserHeart /> <span className="text-sm">Active</span></div>
                                     <div className="item flex items-center gap-2"><UserHeart /><span className="text-sm">ARC 100k Funded</span></div>
