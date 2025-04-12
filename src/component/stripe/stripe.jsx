@@ -3,6 +3,7 @@ import React from "react";
 import "./stripe.scss";
 
 const StripeCheckoutDemo = () => {
+
     const handlePayment = () => {
         window.location.href = "checkout";
     };
@@ -59,8 +60,6 @@ const StripeCheckoutDemo = () => {
                             </label>
                         </div>
                     </div>
-
-
                     <button className="pay-btn" onClick={handlePayment}>
                         Pay MYR 2,500.00
                     </button>
