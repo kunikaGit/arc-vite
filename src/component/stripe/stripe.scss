@@ -72,8 +72,10 @@
 
         .checkout-section {
             margin-bottom: 2rem;
-
-            label {
+            label{
+                font-size: 14px;
+            }
+            .payme label {
                 display: block;
                 font-weight: bold;
                 margin-bottom: 0.3rem;
@@ -83,19 +85,29 @@
             input[type='tel'],
             input[type='text'] {
                 width: 100%;
-                padding: 0.75rem;
+                padding: 10px;
                 margin-bottom: 1rem;
                 border-radius: 6px;
                 border: 1px solid #ccc;
             }
 
-            .payment-method label {
-                display: flex;
-                align-items: center;
-                margin-bottom: 0.5rem;
+            .payment-method {
+                border-color: #aaa;
+                margin-bottom: 20px;
 
-                input {
-                    margin-right: 0.5rem;
+                .item {
+                    border-color: #aaa;
+                }
+
+                label {
+                    display: flex;
+                    align-items: center;
+                    margin-bottom: 0;
+                    font-size: 14px;
+
+                    input {
+                        margin-right: 0.5rem;
+                    }
                 }
             }
         }
