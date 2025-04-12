@@ -1,11 +1,13 @@
 // File: StripeCheckoutDemo.js
 import React from "react";
 import "./stripe.scss";
+import { useNavigate } from 'react-router-dom';
 
 const StripeCheckoutDemo = () => {
+    const navigate = useNavigate();
 
     const handlePayment = () => {
-        window.location.href = "checkout";
+        navigate('/checkout');
     };
 
     return (
@@ -16,7 +18,7 @@ const StripeCheckoutDemo = () => {
           alt="Logo"
           className="checkout-logo"
         /> */}
-                <h2>AURUMFX Mentorship Program</h2>
+                <h2>ARC Mentorship Program</h2>
                 <h1>MYR 2,500.00</h1>
                 <button className="change-amount">Change amount</button>
                 <div className="checkout-product-logo">
