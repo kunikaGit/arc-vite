@@ -42,8 +42,8 @@ export default function Header2() {
       >
         <div className="flex items-center px-6 xl:px-24">
           {/* Logo */}
-          <Link to="/" className="shrink-0">
-          <h2 className="logo-text animate-gradient">ARC</h2>
+          <Link to="/" >
+          <h2 className="logo-text animate-gradient w-36">ARC</h2>
           </Link>
           {/* Search */}
           {/* Menu / Actions */}

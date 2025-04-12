@@ -44,14 +44,18 @@ const StripeCheckoutDemo = () => {
 
 
                     <div className="checkout-section">
-                        <label>Payment method</label>
-                        <div className="payment-method">
-                            <label><input type="radio" name="method" /> Card</label>
-                            <label><input type="radio" name="method" /> GrabPay</label>
+                        <h3 className="mb-2 font-md font-medium">Payment method</h3>
+                        <div className="payment-method border rounded-md">
+                            <div className="p-3 border-b item">
+                                <label><input type="radio" name="method" /> Card</label>
+                            </div>
+                            <div className="p-3">
+                                <label><input type="radio" name="method" /> GrabPay</label>
+                            </div>
                         </div>
 
-                        <div className="save-info">
-                            <input type="checkbox" id="saveInfo" />
+                        <div className="save-info flex gap-4 ">
+                            <input type="checkbox" id="saveInfo" className="mt-1" />
                             <label htmlFor="saveInfo">
                                 Securely save my information for 1-click checkout<br />
                                 <small>Pay faster on Aurum Academy and everywhere Link is accepted.</small>

@@ -1,7 +1,7 @@
 .accounts{
     .flex-box{
         display: flex;
-        gap: 20px;
+        gap: 16px;
         .left-box{
             width: 55%;
         }
@@ -11,22 +11,22 @@
         .four-box{
             display: grid;
             grid-template-columns: repeat(2,1fr);
-            gap: 20px;
+            gap: 12px;
             margin-bottom: 20px;
             .media{
-                padding: 20px;
+                padding: 16px;
                 border-radius: 15px;
                 .icon-box{
                     background-color:#fffefe4d;
-                    height: 65px;
-                    width: 65px;
+                    height: 55px;
+                    width: 55px;
                     border-radius: 100%;
                     display: flex;
                     justify-content: center;
                     align-items: center;
                     svg{
-                        height: 40px;
-                        width: 40px;
+                        height: 35px;
+                        width: 35px;
        
                     }
                 }
