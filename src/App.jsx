@@ -22,10 +22,13 @@ export default function App() {
         <Route path="/privacy-policy" element={<PrivacyPolicy />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/terms-use" element={<TermsConditionTabs />} />
-        <Route path="/dashboard" element={<DashboardLayout />}/>
-        <Route path="/stripe-payment" element={<StripeCheckoutDemo />}>
+        <Route path="/stripe-payment" element={<StripeCheckoutDemo />} />
+
+        {/* -----------for dashboard routing--------------- */}
+        <Route path="/dashboard" element={<DashboardLayout />}>
           <Route index element={<Accounts />} />
         </Route>
+
       </Routes>
     </>
   );
