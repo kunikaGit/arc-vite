@@ -4,7 +4,7 @@ import "./stripe.scss";
 
 const StripeCheckoutDemo = () => {
     const handlePayment = () => {
-        window.location.href = "https://buy.stripe.com/aEU28cbfx5Ftb0kaEM";
+        window.location.href = "checkout";
     };
 
     return (

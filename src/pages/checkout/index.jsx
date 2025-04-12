@@ -71,6 +71,11 @@ export default function Checkout() {
         boxShadow: 24,
         borderRadius: '20px'
     };
+
+    const proceedPayment=async(e)=>{
+        e.preventDefault()
+        window.location.href = '/stripe-payment';
+    }
     return (
         <>
             <Header2 />
@@ -176,6 +181,15 @@ export default function Checkout() {
                                             <div className="images flex gap-x-2.5">
                                                 <img src={imageMap['paypal.png']} className="w-[45px]" alt="pay" />
                                                 <img src={imageMap['crypto.png']} className="w-[45px]" alt="pay" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className="item1 flex  items-center gap-x-3.5 py-5 border-b border-jacarta-200 mb-5">
+                                        <input type="radio" name="payment" />
+                                        <div className="labels flex items-center justify-between w-full">
+                                            <span className="font-semibold text-jacarta-700 dark:text-white">Stripe</span>
+                                            <div className="images flex gap-x-2.5">
+                                                <img src={imageMap['stripe-logo.svg']} className="w-[45px]" alt="pay" />
                                             </div>
                                         </div>
                                     </div>
@@ -287,7 +301,9 @@ export default function Checkout() {
                                         disabled={!checkTc}
                                         type="button"
                                         className={`mt-5 liquid-button w-full block text-base rounded-full bg-accent py-2 px-5 text-center font-semibold text-white shadow-accent-volume transition-all
-                                             hover:bg-accent-dark disabled:cursor-not-allowed disabled:opacity-50`}>
+                                             hover:bg-accent-dark disabled:cursor-not-allowed disabled:opacity-50`}
+                                             onClick={e=>{proceedPayment(e)}}
+                                             >
                                         Proceed to Payment
                                     </button>
                                     </Tooltip>
