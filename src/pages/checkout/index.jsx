@@ -6,6 +6,7 @@ import Header2 from "../../component/home2/header2";
 import { TermsContent } from "../../component";
 import { Box, Modal, Tooltip } from "@mui/material";
 import { DollerIcon, DoubleUp, TrophyIcon } from "../../icons/icons";
+import { useNavigate } from 'react-router-dom';
 
 
 
@@ -71,11 +72,13 @@ export default function Checkout() {
         boxShadow: 24,
         borderRadius: '20px'
     };
+    const navigate = useNavigate();
 
-    const proceedPayment=async(e)=>{
-        e.preventDefault()
-        window.location.href = '/stripe-payment';
-    }
+
+    const proceedPayment = async (e) => {
+        e.preventDefault();
+        navigate('/stripe-payment');
+      };
     return (
         <>
             <Header2 />
