@@ -4,6 +4,8 @@ import './pricingtable.css'
 import TwoPhase from "./twophasechallange";
 import InstantFunding from "./instantfunding";
 import { Link } from "react-router-dom";
+import useMessageData from "./message";
+import { Box, colors, Modal } from "@mui/material";
 
 const accountSizes = [
     { size: "$8k", price: 39, profitTarget: 500, dailyLossLimit: "4%", drawdown: "10%" },
@@ -13,13 +15,26 @@ const accountSizes = [
     { size: "100k", price: 529, profitTarget: 5000, dailyLossLimit: "4%", drawdown: "10%" },
 
 ];
+const style = {
+    position: 'absolute',
+    top: '50%',
+    left: '50%',
+    transform: 'translate(-50%, -50%)',
+    width: 500,
+    height: 'auto',
+    bgcolor: '#8358FF',
+    color:'#fff',
+    boxShadow: 24,
+    padding:4,
+    borderRadius: '20px',
+};
 export default function PricingTable() {
     useEffect(() => {
         tippy("[data-tippy-content]");
     }, []);
     const [activeTab, setActiveTab] = useState("trending"); // Default active tab
     const [selected, setSelected] = useState(accountSizes[2]); // Default to $25k
-
+    const {handleOpenModal,isModalOpen,modalContent,handleClose} = useMessageData()
     return (
         <section className="py-16 pricing-table  bg-white dark:bg-black" id="pricing">
             <div className="container">
@@ -96,7 +111,7 @@ export default function PricingTable() {
                         ))}
                     </div>
                     <div className="tab-content mb-2" data-aos="zoom-in" data-aos-duration={800} data-aos-delay="300">
-                        {activeTab === "trending" && <TwoPhase selected={selected} />}
+                        {activeTab === "trending" && <TwoPhase selected={selected} handleOpenModal={handleOpenModal}/>}
                         {activeTab === "sweeps" && <InstantFunding selected={selected} />}
                     </div>
                    
@@ -110,6 +125,17 @@ export default function PricingTable() {
                 </div>
 
             </div>
+            <Modal
+                open={isModalOpen }
+                onClose={handleClose}
+                aria-labelledby="modal-modal-title"
+                aria-describedby="modal-modal-description"
+                className="modal-large"
+            >
+                <Box sx={style}>
+                <p>{modalContent}</p>
+                </Box>
+            </Modal>
         </section>
     );
 }

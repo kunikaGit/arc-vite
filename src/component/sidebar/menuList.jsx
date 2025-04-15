@@ -61,7 +61,7 @@ const MenuItems = () => {
                     const isActive = location.pathname === item.link;
                     return (
                         <SubMenu key={index}
-                        className={`sidebar_label ${isActive ? "active" : ""}`}
+                            className={`sidebar_label ${isActive ? "active" : ""}`}
                             label={
                                 <div className="sidebar_label">
                                     <div className="icon">

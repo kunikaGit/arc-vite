@@ -9,6 +9,13 @@
   main {
     color: var(--white_color);
     padding: 30px;
+    position: relative;
+    &.width200{
+      width: calc( 100% - 200px);
+    }
+    &.width80{
+      width: calc( 100% - 80px);
+    }
   }
 
   .toggle-button {
@@ -68,7 +75,7 @@
   aside {
     height: 100vh;
     border: none;
-
+    width: 200px;
     &.ps-collapsed {
       .sidebarlogo {
         .animate-gradient {

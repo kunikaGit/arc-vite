@@ -1,20 +1,9 @@
 
-import { useState } from "react";
 import './pricingtable.css'
 import { Link } from "react-router-dom";
 import { QuestionRound } from "../../../icons/icons";
 
-export default function TwoPhase({ selected }) {
-
-  const [open, setOpen] = useState(false);
-  const [modalType, setModalType] = useState("");
-
-  const handleOpen = (type) => {
-    setModalType(type);
-    setOpen(true);
-  };
-
-  const handleClose = () => setOpen(false);
+export default function TwoPhase({ selected,handleOpenModal }) {
 
   return (
     <div className="pricingtable">
@@ -24,7 +13,7 @@ export default function TwoPhase({ selected }) {
           <h3 className="text-jacarta-700  mb-2 text-md font-medium dark:text-white ">Funded Stage</h3>
           <h2 className="text-jacarta-700  mb-2 text-2xl font-semibold dark:text-white ">Novice </h2>
           <ul className="space-y-2 text-jacarta-700 dark:text-white">
-            <li><span> Profit Target <QuestionRound /></span>
+            <li><span> Profit Target <button type='button' onClick={() => handleOpenModal("profitTarget")}><QuestionRound /></button></span>
               <span> ${selected.profitTarget}</span>
             </li>
             <li><span> Maximum Daily Loss <QuestionRound /> </span><span>{selected.dailyLossLimit}</span></li>
