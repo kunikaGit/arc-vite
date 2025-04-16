@@ -4,7 +4,7 @@ const useMessageData = () => {
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [modalContent, setModalContent] = useState("");
 
-    const handleClose = ()=>{
+    const handleClose = () => {
         setIsModalOpen(false)
     }
     const handleOpenModal = (type) => {
@@ -19,7 +19,7 @@ const useMessageData = () => {
                     If you reach the profit target before completing the 3 minimum trading days, 
                     it is allowed to execute 0.01 lot trades on the remaining days.`
                 break;
-            case "dailyDailyLoss":
+            case "dailyLoss":
                 content =
                     <div>
                         <p>The Maximum Daily Loss is the amount you are allowed to lose every day.</p>
@@ -49,6 +49,6 @@ const useMessageData = () => {
         setIsModalOpen(true);
     };
 
-    return { handleOpenModal,isModalOpen,modalContent ,handleClose}
+    return { handleOpenModal, isModalOpen, modalContent, handleClose }
 }
 export default useMessageData;

@@ -22,10 +22,9 @@ const style = {
     transform: 'translate(-50%, -50%)',
     width: 500,
     height: 'auto',
-    bgcolor: '#8358FF',
-    color:'#fff',
+    color: '#fff',
     boxShadow: 24,
-    padding:4,
+    padding: 3,
     borderRadius: '20px',
 };
 export default function PricingTable() {
@@ -34,7 +33,7 @@ export default function PricingTable() {
     }, []);
     const [activeTab, setActiveTab] = useState("trending"); // Default active tab
     const [selected, setSelected] = useState(accountSizes[2]); // Default to $25k
-    const {handleOpenModal,isModalOpen,modalContent,handleClose} = useMessageData()
+    const { handleOpenModal, isModalOpen, modalContent, handleClose } = useMessageData()
     return (
         <section className="py-16 pricing-table  bg-white dark:bg-black" id="pricing">
             <div className="container">
@@ -97,7 +96,7 @@ export default function PricingTable() {
                         {accountSizes.map((account, index) => (
                             <div onClick={() => setSelected(account)} key={index}>
                                 <label className="flex items-center space-x-2 cursor-pointer  text-black dark:text-white ">
-                                   
+
                                     <span
                                         className={`text-jacarta-700 dark:text-white rounded-md py-2 px-4  text-md transition-all ${selected.size === account.size
                                             ? "text-accent bg-accent text-white"
@@ -111,10 +110,10 @@ export default function PricingTable() {
                         ))}
                     </div>
                     <div className="tab-content mb-2" data-aos="zoom-in" data-aos-duration={800} data-aos-delay="300">
-                        {activeTab === "trending" && <TwoPhase selected={selected} handleOpenModal={handleOpenModal}/>}
+                        {activeTab === "trending" && <TwoPhase selected={selected} handleOpenModal={handleOpenModal} />}
                         {activeTab === "sweeps" && <InstantFunding selected={selected} />}
                     </div>
-                   
+
                     <div className="sub-box">
                         <div className="mb-5">
                             <h2 className="text-5xl text-center font-semibold text-jacarta-700 dark:text-white">${selected.price} For {selected.size} Account</h2>
@@ -126,14 +125,15 @@ export default function PricingTable() {
 
             </div>
             <Modal
-                open={isModalOpen }
+                open={isModalOpen}
                 onClose={handleClose}
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
-                className="modal-large"
             >
-                <Box sx={style}>
-                <p>{modalContent}</p>
+                <Box sx={style} className="modal-large bg-accent">
+                    <div>
+                        {modalContent}
+                    </div>
                 </Box>
             </Modal>
         </section>
