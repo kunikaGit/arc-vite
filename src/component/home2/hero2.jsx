@@ -90,7 +90,7 @@ export default function Hero2() {
                             </div>
 
                             <h3 className=" font-display  text-jacarta-700 dark:text-white">
-                                Up to 100k
+                                Up to 300k
                             </h3>
                             <p className="dark:text-jacarta-300 text-jacarta-700">trading accounts</p>
                         </div>

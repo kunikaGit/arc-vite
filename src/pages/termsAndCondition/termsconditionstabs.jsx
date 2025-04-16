@@ -7,6 +7,8 @@ import {
 } from "@material-tailwind/react";
 import Header2 from "../../component/home2/header2";
 import { useState } from "react";
+import { Link } from "react-router-dom";
+import { BackArrow } from "../../icons/icons";
 
 const data = [
   {
@@ -324,8 +326,11 @@ const TermsConditionTabs = () => {
       <Header2 />
       <div className="terms-condition-tabs py-24 bg-white dark:bg-jacarta-900">
         <div className="container">
+            <div className="flex gap-2 items-center mb-4"><BackArrow/> <Link to="/#pricing" className="text-base">Back to challenge</Link></div>
           <h2 className="text-center font-display text-4xl font-medium text-jacarta-700 dark:text-white mb-10">
             Terms and Conditions for Use in a Simulated Platform</h2>
+
+
           <Tabs
             value={selectedTab}
             onChange={(val) => setSelectedTab(val)}

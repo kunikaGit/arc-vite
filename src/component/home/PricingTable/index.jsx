@@ -6,6 +6,7 @@ import InstantFunding from "./instantfunding";
 import { Link } from "react-router-dom";
 import useMessageData from "./message";
 import { Box, colors, Modal } from "@mui/material";
+import { Cross } from "../../../icons/icons";
 
 const accountSizes = [
     { size: "$8k", price: 39, profitTarget: 500, dailyLossLimit: "4%", drawdown: "10%" },
@@ -111,7 +112,7 @@ export default function PricingTable() {
                     </div>
                     <div className="tab-content mb-2" data-aos="zoom-in" data-aos-duration={800} data-aos-delay="300">
                         {activeTab === "trending" && <TwoPhase selected={selected} handleOpenModal={handleOpenModal} />}
-                        {activeTab === "sweeps" && <InstantFunding selected={selected} />}
+                        {activeTab === "sweeps" && <InstantFunding selected={selected} handleOpenModal={handleOpenModal} />}
                     </div>
 
                     <div className="sub-box">
@@ -131,6 +132,9 @@ export default function PricingTable() {
                 aria-describedby="modal-modal-description"
             >
                 <Box sx={style} className="modal-large bg-accent">
+                <button type="button" className="bg-transparent border-0 absolute right-3 top-1.5" onClick={()=>handleClose()}>
+                    <Cross/>
+                </button>
                     <div>
                         {modalContent}
                     </div>

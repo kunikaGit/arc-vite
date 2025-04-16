@@ -9,12 +9,23 @@ import "aos/dist/aos.css";
 import { useEffect } from "react";
 import Hero2 from "../component/home2/hero2";
 import Header2 from "../component/home2/header2";
+import { useLocation } from "react-router-dom";
 
 export default function Home2() {
     useEffect(() => {
         AOS.init();
     }, []);
+    const location = useLocation();
 
+    useEffect(() => {
+      if (location.hash) {
+        const sectionId = location.hash.replace('#', '');
+        const el = document.getElementById(sectionId);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    }, [location]);
     return (
         <>
             <div className="main-landing-page dark-for-header">

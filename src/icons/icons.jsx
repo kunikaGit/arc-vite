@@ -1,5 +1,5 @@
 export const QuestionRound = () => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-help ml-2 h-5 w-5 hover:bg-background/10 opacity-60 rounded-full cursor-pointer" role="button" aria-label="Help" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-:R2c7d9uakq:" data-state="closed"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><path d="M12 17h.01"></path></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-circle-help ml-2 h-5 w-5 hover:bg-background/10 opacity-60 rounded-full cursor-pointer" role="button" aria-label="Help" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="radix-:R2c7d9uakq:" data-state="closed"><circle cx="12" cy="12" r="10"></circle><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"></path><path d="M12 17h.01"></path></svg>
 )
 export const DollerIcon = () => (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#8358ff" width="22" height="22">
@@ -19,14 +19,14 @@ export const UserHeart = () => (
 )
 export const ProfiteIcon = () => (
     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" role="img"
-        viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.25 18L9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0l-5.94-2.281m5.94 2.28l-2.28 5.942"></path></svg>
+        viewBox="0 0 24 24"><path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M2.25 18L9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0l-5.94-2.281m5.94 2.28l-2.28 5.942"></path></svg>
 )
 export const LossIcon = () => (
 <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img"
      viewBox="0 0 24 24"
      style={{transform:'rotate(80deg)'}}>
-  <path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-        stroke-width="1.5"
+  <path fill="none" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round"
+        strokeWidth="1.5"
         d="M2.25 18L9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0l-5.94-2.281m5.94 2.28l-2.28 5.942">
   </path>
 </svg>
@@ -65,4 +65,14 @@ export const SettingIcon = () => (
 
 export const BarchartIcon = () => (
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M2 13H8V21H2V13ZM9 3H15V21H9V3ZM16 8H22V21H16V8Z"></path></svg>
+)
+
+export const BackArrow = () => (
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" height={20} width={20}>
+<path d="M7.82843 10.9999H20V12.9999H7.82843L13.1924 18.3638L11.7782 19.778L4 11.9999L11.7782 4.22168L13.1924 5.63589L7.82843 10.9999Z"></path></svg>
+)
+
+export const Cross = () => (
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fff" height={20} width={20}>
+<path d="M11.9997 10.5865L16.9495 5.63672L18.3637 7.05093L13.4139 12.0007L18.3637 16.9504L16.9495 18.3646L11.9997 13.4149L7.04996 18.3646L5.63574 16.9504L10.5855 12.0007L5.63574 7.05093L7.04996 5.63672L11.9997 10.5865Z"></path></svg>
 )
