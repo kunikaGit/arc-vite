@@ -27,17 +27,17 @@ const WithdrawalStep3 = () => {
                         </div>
                         <h2 className="font-semibold text-lg mb-3">Payment Method</h2>
                         <div className="radio-btn theme_card bg-2b2a33">
-                            <div className="item1 flex  items-center gap-x-3.5 py-5 ">
+                            <div className="item1 flex  items-center gap-x-3.5 py-2 ">
                                 <input type="radio" name="payment" />
                                 <div className="w-full labels justify-between flex items-center">
-                                    <span className="font-semibold text-jacarta-700 dark:text-white"> Card Payment</span>
+                                    <span className="font-semibold text-white"> Card Payment</span>
                                     <div className="images"><img src={imageMap['cards.png']} /></div>
                                 </div>
                             </div>
-                            <div className="item1 flex  items-center gap-x-3.5 py-5">
+                            <div className="item1 flex  items-center gap-x-3.5 py-2">
                                 <input type="radio" name="payment" />
                                 <div className="labels flex items-center justify-between w-full">
-                                    <span className="font-semibold text-jacarta-700 dark:text-white">Crypto / Paypal</span>
+                                    <span className="font-semibold text-white">Crypto / Paypal</span>
                                     <div className="images flex gap-x-2.5">
                                         <img src={imageMap['paypal.png']} className="w-[45px]" alt="pay" />
                                         <img src={imageMap['crypto.png']} className="w-[45px]" alt="pay" />
