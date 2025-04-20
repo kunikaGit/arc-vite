@@ -1,0 +1,17 @@
+.withdrawal2-wrapped{
+    .flex-box{
+        display: flex;
+        gap: 20px;
+        .left-side{
+            width: 60%;
+        }
+        .right-side{
+            width: 40%;
+        }
+        .block1{
+            input{
+                background-color: transparent;
+            }
+        }
+    }
+}

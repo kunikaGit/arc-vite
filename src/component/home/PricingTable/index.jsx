@@ -8,14 +8,7 @@ import useMessageData from "./message";
 import { Box, colors, Modal } from "@mui/material";
 import { Cross } from "../../../icons/icons";
 
-const accountSizes = [
-    { size: "$8k", price: 39, profitTarget: 500, dailyLossLimit: "4%", drawdown: "10%" },
-    { size: "$15k", price: 75, profitTarget: 1000, dailyLossLimit: "4%", drawdown: "10%" },
-    { size: "$25k", price: 139, profitTarget: 2500, dailyLossLimit: "4%", drawdown: "10%" },
-    { size: "$50k", price: 269, profitTarget: 5000, dailyLossLimit: "4%", drawdown: "10%" },
-    { size: "100k", price: 529, profitTarget: 5000, dailyLossLimit: "4%", drawdown: "10%" },
 
-];
 const style = {
     position: 'absolute',
     top: '50%',
@@ -33,10 +26,9 @@ export default function PricingTable() {
         tippy("[data-tippy-content]");
     }, []);
     const [activeTab, setActiveTab] = useState("trending"); // Default active tab
-    const [selected, setSelected] = useState(accountSizes[2]); // Default to $25k
     const { handleOpenModal, isModalOpen, modalContent, handleClose } = useMessageData()
     return (
-        <section className="py-16 pricing-table  bg-white dark:bg-black" id="pricing">
+        <section className="py-16 pricing-table  bg-white dark:bg-jacarta-900" id="pricing">
             <div className="container">
                 <div className="mx-auto mb-8 text-center">
                     <h2 data-aos-anchor="#pricing" data-aos-duration={600} data-aos="fade-down" className="mb-0 text-center font-display text-4xl font-medium text-jacarta-700 dark:text-white">
@@ -93,34 +85,9 @@ export default function PricingTable() {
                             </button>
                         </li>
                     </ul>
-                    <div className="flex justify-center space-x-4 mb-6 common-nav-header dark:bg-jacarta-700  bg-[#f5f5fa]">
-                        {accountSizes.map((account, index) => (
-                            <div onClick={() => setSelected(account)} key={index}>
-                                <label className="flex items-center space-x-2 cursor-pointer  text-black dark:text-white ">
-
-                                    <span
-                                        className={`text-jacarta-700 dark:text-white rounded-md py-2 px-4  text-md transition-all ${selected.size === account.size
-                                            ? "text-accent bg-accent text-white"
-                                            : "  border-gray-400 dark:border-gray-500 text-gray-700 dark:text-white"
-                                            }`}
-                                    >
-                                        {account.size}
-                                    </span>
-                                </label>
-                            </div>
-                        ))}
-                    </div>
                     <div className="tab-content mb-2" data-aos="zoom-in" data-aos-duration={800} data-aos-delay="300">
-                        {activeTab === "trending" && <TwoPhase selected={selected} handleOpenModal={handleOpenModal} />}
-                        {activeTab === "sweeps" && <InstantFunding selected={selected} handleOpenModal={handleOpenModal} />}
-                    </div>
-
-                    <div className="sub-box">
-                        <div className="mb-5">
-                            <h2 className="text-5xl text-center font-semibold text-jacarta-700 dark:text-white">${selected.price} For {selected.size} Account</h2>
-                        </div>
-                        <Link to='/checkout' state={{ selected }} className="block mx-auto text-md rounded-full bg-accent py-2 w-[200px] text-center font-semibold text-white shadow-accent-volume transition-all hover:bg-accent-dark">
-                            Get Plan</Link>
+                        {activeTab === "trending" && <TwoPhase handleOpenModal={handleOpenModal} />}
+                        {activeTab === "sweeps" && <InstantFunding  handleOpenModal={handleOpenModal} />}
                     </div>
                 </div>
 

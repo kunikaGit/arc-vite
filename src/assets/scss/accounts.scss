@@ -1,43 +1,106 @@
-.accounts{
-    .flex-box{
+.accounts {
+    .flex-box {
         display: flex;
         gap: 16px;
-        .left-box{
-            width: 55%;
+
+        .left-box {
+            width: 60%;
         }
-        .right-box{
-            width: 45%;
+
+        .right-box {
+            width: 40%;
         }
-        .four-box{
+
+        .four-box {
             display: grid;
-            grid-template-columns: repeat(2,1fr);
+            grid-template-columns: repeat(2, 1fr);
             gap: 12px;
             margin-bottom: 20px;
-            .media{
+
+            .media {
                 padding: 16px;
                 border-radius: 15px;
-                .icon-box{
-                    background-color:#fffefe4d;
+
+                .icon-box {
+                    background-color: #fffefe4d;
                     height: 55px;
                     width: 55px;
                     border-radius: 100%;
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    svg{
+
+                    svg {
                         height: 35px;
                         width: 35px;
-       
+
                     }
                 }
             }
         }
+
     }
-    .tradingobjective-cards{
+
+    .tradingobjective-cards {
         display: flex;
         flex-wrap: wrap;
+
         .objective-graph {
             width: 25%;
         }
+    }
+}
+
+.calender-data {
+    margin-top: 20px;
+
+    .react-calendar {
+        background-color: transparent;
+        border: none;
+        width: 100%;
+        gap: 10px;
+
+        .react-calendar__tile {
+            border-radius: 8px;
+        }
+        .react-calendar {
+            border: none;
+            background-color: #1f1f27;
+            color: white;
+          }
+          
+          .react-calendar__month-view__days {
+            display: grid !important;
+            grid-template-columns: repeat(7, 1fr);
+            gap: 10px; /* <-- This adds the gap between tiles */
+          }
+          
+          .react-calendar__tile {
+            padding: 8px 0;
+            border-radius: 10px;
+            text-align: center;
+            background-color: #2e2e38;
+            transition: background-color 0.3s ease;
+            font-weight: 600;
+            font-size: 165x;
+          }
+          
+          /* Color-coded classes for profit/loss */
+          .profit-date {
+            background-color: #73ec6e ;
+            color: #257222!important;
+
+          }
+          
+          .loss-date {
+            background-color: #d45f5f ;
+            color: #9d0909;
+
+          }
+          
+          .react-calendar__tile--now {
+            background-color: #fef08a ;
+          }
+          
     }
 }

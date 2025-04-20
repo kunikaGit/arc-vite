@@ -5,8 +5,6 @@
 
     .mission-wrapped {
         position: relative;
-        margin: 50px 0;
-
         &.background-overlay-custom {
             background-image: url(../images/mission.jpg);
             background-repeat: no-repeat;
@@ -36,7 +34,6 @@
         background-color: #000;
         text-align: center;
         padding: 70px 0;
-        margin-top: 50px;
 
         .roadmap-heading {
             font-size: 50px;

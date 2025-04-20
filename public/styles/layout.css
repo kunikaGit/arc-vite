@@ -4947,6 +4947,9 @@ html[dir=rtl] .hover\:translate-x-1:hover {
 :is(.dark .dark\:bg-black) {
     background-color: #000;
 }
+:is(.dark .dark\:bg-darkblue) {
+    background-color: #23096b
+}
 :is(.dark .dark\:bg-white\/\[\.15\]) {
     background-color: hsla(0, 0%, 100%, .15)
 }

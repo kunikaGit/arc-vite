@@ -3,6 +3,8 @@ export { default as AboutMission } from "./aboutus/aboutMission.jsx";
 export { default as AboutVision } from "./aboutus/aboutVision.jsx";
 export { default as AboutRoadmap } from "./aboutus/roadmap.jsx";
 export { default as CommonBanner } from "./common/banner.jsx";
+export { default as DashboardHeader } from "./common/dashboardHeader.jsx";
+
 
 
 export { default as TermsContent } from "./termscondition/termscontent.jsx";

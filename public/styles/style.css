@@ -254,8 +254,11 @@ color: #fff;
 .why-choose-us{
   background: linear-gradient(to right, #f8e1e7, #e3effd, #f5f9f6)
 }
-.why-choose-us:is(.dark .dark\:bg-black){
+/* .why-choose-us:is(.dark .dark\:bg-black){
   background: #000
+} */
+.why-choose-us:is(.dark .dark\:bg-jacarta-900){
+  background: rgb(13 16 45/1)
 }
 .why-choose-us table th,td{
   color: oklch(0.551 0.027 264.364);
@@ -341,7 +344,7 @@ color: #fff;
   clip-path: ellipse(100% 100px at 50% 0%)
 }
 .slider-section:is(.dark .dark\:bg-black){
-  background: linear-gradient(to bottom, #1a031f, rgb(0 0 0));
+  background: linear-gradient(to bottom, #1a031f, rgb(13 16 45/1));
 }
 
 
@@ -396,6 +399,8 @@ color: #fff;
   align-items: center;
   justify-content: center;
 }
+
+
 @media only screen and (min-width: 1920px){
   .hero-main h1{
     font-size: 100px;

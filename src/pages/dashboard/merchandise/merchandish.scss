@@ -1,0 +1,38 @@
+.merchandise-wrapped{
+ .flex-box{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    .card-wrapped{
+        width: calc(25% - 20px);
+        padding: 15px;
+        border-radius: 15px;
+        .image{
+            margin-bottom: 10px;
+            img{
+                height: 200px;
+                width: 100%;
+                object-fit: cover;
+                border-radius: 10px;
+            }
+        }
+        .detail{
+            .title{
+                font-size: 25px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                span{
+                    font-size: 14px;
+                    font-weight: 400;
+                }
+            }
+            .buy-btn{
+                padding: 10px;
+                font-size: 16px;
+                border-radius: 50px;
+            }
+        }
+    }
+ }   
+}

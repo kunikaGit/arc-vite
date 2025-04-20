@@ -3,7 +3,7 @@ import imageMap from "../../../utlis/helper";
 
 export default function Calltoaction() {
   return (
-    <div className="relative z-10 -mt-10 bg-white dark:bg-black">
+    <div className="relative z-10 -mt-10 bg-white dark:bg-jacarta-900">
       <div className="container">
         <div className="relative overflow-hidden rounded-2.5xl px-16 pt-16 pb-8 shadow-md lg:px-24">
           <picture className="pointer-events-none absolute inset-0 -z-10 dark:hidden" data-aos="fade-down" data-aos-duration={600}>

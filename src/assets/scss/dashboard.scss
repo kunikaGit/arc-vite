@@ -1,12 +1,23 @@
 .dashboard-title{
     color: var(--color_white);
-    font-size: 30px;
+    font-size: 26px;
     font-weight: 600;
     font-family: "Dm-Sans";
 	font-weight: 600;
-    margin-bottom: 30px;
 }
 .theme_card{
     padding: 18px;
     border-radius: 8px;
+}
+.dahboard-header{
+    margin-bottom: 30px;
+    .profile{
+        img{
+            height: 50px;
+            width: 50px;
+            border-radius: 100%;
+            object-fit: cover;
+            margin-bottom: 5px;
+        }
+    }
 }

@@ -1,10 +1,11 @@
 import React from "react";
 import { Menu, SubMenu } from "react-pro-sidebar";
 // import { CampaignsIcon, CustomerIcon, FinanceIcon, HelpIcon, InsightIcon, LockIcon, LogisticIcon, NotificationsIcon, OrdersIcon, ProductsIcon, ReviewsIcon } from "../../../icons/icons";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { BarchartIcon, FileIcon, HomeIcon, SettingIcon, UserIcon } from "../../icons/icons";
 
 const MenuItems = () => {
+    const navigate = useNavigate()
     const SidebarItems = [
         {
             name: 'Accounts',
@@ -13,37 +14,37 @@ const MenuItems = () => {
         },
         {
             name: 'Funded Longue',
-            link: '/',
+            link: '/dashboard/withdrawal',
             imgagepath: <FileIcon />
         },
         {
-            name: 'Account',
-            link: '/',
+            name: 'Account Overview',
+            link: '/dashboard/account-overview',
             imgagepath: <UserIcon />
         },
         {
             name: 'Billing',
-            link: '/',
+            link: '#/',
             imgagepath: <FileIcon />
         },
         {
             name: 'Setting',
-            link: '/',
+            link: '#/',
             imgagepath: <SettingIcon />
         },
         {
             name: 'Leaderboard',
-            link: '/',
+            link: '/dashboard/leaderboard',
             imgagepath: <BarchartIcon />
         },
         {
             name: 'Insight',
-            link: '/',
+            link: '#/',
             imgagepath: <BarchartIcon />
         },
         {
             name: 'Merchandise',
-            link: '/',
+            link: '/dashboard/merchandise',
             imgagepath: <UserIcon />
         },
 
@@ -60,7 +61,7 @@ const MenuItems = () => {
                 {SidebarItems.map((item, index) => {
                     const isActive = location.pathname === item.link;
                     return (
-                        <SubMenu key={index}
+                        <SubMenu key={index}  onClick={()=>navigate(item.link)}
                             className={`sidebar_label ${isActive ? "active" : ""}`}
                             label={
                                 <div className="sidebar_label">

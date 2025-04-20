@@ -1,10 +1,10 @@
 import { Routes, Route, Link } from "react-router-dom";
-import { AboutUs, Checkout, ComingSoon, Faq, Home, PrivacyPolicy, TermsAndCondition } from "./pages/index.js";
+import { AboutUs, AccountOverview, Accounts, Checkout, ComingSoon, Faq, FundedLongue, Leaderboard, Merchandise, PrivacyPolicy, TermsAndCondition, WithdrawalStep2, WithdrawalStep3 } from "./pages/index.js";
 import Home2 from "./pages/home2.jsx";
 import './assets/scss/index.scss'
+import 'react-calendar/dist/Calendar.css';
 import TermsConditionTabs from "./pages/termsAndCondition/termsconditionstabs.jsx";
 import ScrollToTop from "./component/common/scrolltop.jsx";
-import Accounts from "./pages/dashboard/accounts.jsx";
 import DashboardLayout from "./pages/dashboard/layout.jsx";
 import StripeCheckoutDemo from "./component/stripe/stripe.jsx";
 
@@ -27,6 +27,12 @@ export default function App() {
         {/* -----------for dashboard routing--------------- */}
         <Route path="/dashboard" element={<DashboardLayout />}>
           <Route index element={<Accounts />} />
+          <Route path="/dashboard/account-overview" element={<AccountOverview />} />
+          <Route path="/dashboard/withdrawal" element={<FundedLongue />} />
+          <Route path="/dashboard/withdrawal/step2" element={<WithdrawalStep2 />} />
+          <Route path="/dashboard/withdrawal/step3" element={<WithdrawalStep3/>} />
+          <Route path="/dashboard/merchandise" element={<Merchandise/>} />
+          <Route path="/dashboard/leaderboard" element={<Leaderboard/>} />
         </Route>
 
       </Routes>

@@ -2,7 +2,7 @@ import React from "react"
 const AboutMission = () => {
     return (
         <>
-            <section className="background-overlay-custom mission-wrapped">
+            <section className="background-overlay-custom mission-wrapped ">
                 <div className="container">
                 <div className="content">
                     <h2 className="md:text-6xl text-3xl font-semibold mb-10" data-aos="fade-down" data-aos-duration={800} >Our Mission</h2>

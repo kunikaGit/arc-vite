@@ -58,7 +58,7 @@ const Right = () => {
   export default function WhyChoose() {
   
     return (
-      <section className="relative py-24 why-choose-us dark:bg-black" >
+      <section className="relative py-24 why-choose-us dark:bg-jacarta-900" >
         <div className="container">
           <div className="mx-auto mb-16 max-w-xl text-center" data-aos-duration={600} data-aos="fade-down" >
             <h2 className="mb-2 text-center font-display text-3xl font-medium text-jacarta-700 dark:text-white">

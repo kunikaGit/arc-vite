@@ -1,0 +1,17 @@
+@use '../../../assets/scss/abstract/mixins' as *;
+
+.accounts-overview-wrapped{
+    .theme_card{
+        width: 70%;
+        padding: 20px;
+        @include media_768{
+            width: 100%;
+        }
+        .icon{
+            svg{
+                height: 50px;
+                width: 50px;
+            }
+        }
+    }
+}
