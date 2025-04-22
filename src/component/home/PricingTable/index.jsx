@@ -30,11 +30,11 @@ export default function PricingTable() {
     return (
         <section className="py-16 pricing-table  bg-white dark:bg-jacarta-900" id="pricing">
             <div className="container">
-                <div className="mx-auto mb-8 text-center">
+                {/* <div className="mx-auto mb-8 text-center">
                     <h2 data-aos-anchor="#pricing" data-aos-duration={600} data-aos="fade-down" className="mb-0 text-center font-display text-4xl font-medium text-jacarta-700 dark:text-white">
                         March the ARC towards financial
                         independence</h2>
-                </div>
+                </div> */}
                 <div className="scrollbar-custom overflow-x-auto">
                     <ul
                         data-aos-duration={600} data-aos="fade-down"
@@ -89,6 +89,7 @@ export default function PricingTable() {
                         {activeTab === "trending" && <TwoPhase handleOpenModal={handleOpenModal} />}
                         {activeTab === "sweeps" && <InstantFunding  handleOpenModal={handleOpenModal} />}
                     </div>
+                    
                 </div>
 
             </div>

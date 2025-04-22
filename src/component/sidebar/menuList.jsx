@@ -8,9 +8,9 @@ const MenuItems = () => {
     const navigate = useNavigate()
     const SidebarItems = [
         {
-            name: 'Accounts',
-            link: '/dashboard',
-            imgagepath: <HomeIcon />
+            name: 'Account Overview',
+            link: '/dashboard/account-overview',
+            imgagepath: <UserIcon />
         },
         {
             name: 'Funded Longue',
@@ -18,30 +18,25 @@ const MenuItems = () => {
             imgagepath: <FileIcon />
         },
         {
-            name: 'Account Overview',
-            link: '/dashboard/account-overview',
-            imgagepath: <UserIcon />
-        },
-        {
             name: 'Billing',
             link: '#/',
             imgagepath: <FileIcon />
         },
-        {
-            name: 'Setting',
-            link: '#/',
-            imgagepath: <SettingIcon />
-        },
+        // {
+        //     name: 'Setting',
+        //     link: '#/',
+        //     imgagepath: <SettingIcon />
+        // },
         {
             name: 'Leaderboard',
             link: '/dashboard/leaderboard',
             imgagepath: <BarchartIcon />
         },
-        {
-            name: 'Insight',
-            link: '#/',
-            imgagepath: <BarchartIcon />
-        },
+        // {
+        //     name: 'Insight',
+        //     link: '#/',
+        //     imgagepath: <BarchartIcon />
+        // },
         {
             name: 'Merchandise',
             link: '/dashboard/merchandise',

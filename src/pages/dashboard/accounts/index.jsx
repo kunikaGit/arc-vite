@@ -7,15 +7,17 @@ import { DashboardHeader, LineChart, TradingObjective } from "../../../component
 const accoundCrads = [
     {
         title: 'Average Profit',
-        number: '76',
+        number: '70',
         icon: <ProfiteIcon />,
-        bgcolor: '#8358ff'
+        bgcolor: '#8358ff',
+        target: 'profit'
     },
     {
         title: 'Average loss',
-        number: '76',
+        number: '20',
         icon: <LossIcon />,
-        bgcolor: '#bc0505'
+        bgcolor: '#bc0505',
+        target: 'loss'
     },
     {
         title: 'Balance',
@@ -24,7 +26,7 @@ const accoundCrads = [
         bgcolor: '#76009f'
     },
     {
-        title: 'PnL',
+        title: 'Win Rate',
         number: '76',
         icon: <ProfiteIcon />,
         bgcolor: '#209f84'
@@ -40,23 +42,27 @@ const accoundCrads = [
         number: '76',
         icon: <BarLineIcon />,
         bgcolor: '#e99803'
-    }
-
+    },
+    {
+        title: 'Lots',
+        number: '76',
+        icon: <ProfiteIcon />,
+        bgcolor: '#8358ff'
+    },
+    {
+        title: 'Average RRS',
+        number: '76',
+        icon: <LossIcon />,
+        bgcolor: '#bc0505'
+    },
 ]
 const Accounts = () => {
     return (
         <>
-        <DashboardHeader title="Account Dashboard"/>
+            <DashboardHeader title="Account Dashboard" />
             <div className="accounts">
                 <div className="flex-box">
                     <div className="left-box">
-                        <TradingObjective />
-                        <LineChart />
-                        <div className="theme_card bg-2b2a33 mt-5">
-                            <DateChart />
-                        </div>
-                    </div>
-                    <div className="right-box">
                         <div className="account-info">
                             <div className="theme_card bg-2b2a33 mb-5">
                                 <div className="flex gap-6 mb-4">
@@ -66,27 +72,40 @@ const Accounts = () => {
                                 <div className="uppercase text-sm">LOGIN : 14444</div>
                             </div>
                         </div>
+                        {/* <LineChart /> */}
+                        <div className="theme_card bg-2b2a33 mt-5">
+                            <DateChart />
+                        </div>
+                        <div className="calender-data theme_card bg-2b2a33">
+                            <h2>Profit / Loss Calendar</h2>
+                            <DailyCalender />
+                        </div>
+                    </div>
+                    <div className="right-box">
+                    <TradingObjective />
                         <div className="four-box mb-4">
                             {accoundCrads?.map((item, index) => (
                                 <div className="media flex items-center justify-between" key={index}
-                                    style={{ backgroundColor: item.bgcolor }}>
+                                    style={{ backgroundColor: '#8358ff' }}>
                                     <div className="me-3 icon-box">
                                         {item.icon}
                                     </div>
                                     <div className="media-body text-white text-end">
                                         <p className="mb-1">{item.title}</p>
-                                        <h3 className="text-white">{item.number}</h3>
+                                        <h3 className={`font-semibold text-lg ${item.target === 'loss' ? 'text-red-400' :
+                                                item.target === 'profit' ? 'text-green-300' :
+                                                    'text-white'
+                                            }`}>{item.number}</h3>
                                     </div>
                                 </div>
                             ))}
                         </div>
-                        <div className="calender-data theme_card bg-2b2a33">
-                        <h2>Profit / Loss Calendar</h2>
-                                <DailyCalender/>
-                            </div>
-                        
+                     
+
                     </div>
                 </div>
+
+                
             </div>
         </>
     )

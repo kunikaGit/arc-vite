@@ -1,8 +1,7 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import faqData from "./questions.jsx";
 import Header2 from "../../component/home2/header2";
 import Footer1 from "../../component/footer";
-import { CommonBanner } from "../../component/index.js";
 
 const Faq = () => {
     const faqCategories = Object.keys(faqData);
@@ -15,25 +14,57 @@ const Faq = () => {
     const toggleAccordion = (id) => {
         setOpenQuestion(openQuestion === id ? null : id);
     };
+    const videoRef = useRef(null);
 
+    useEffect(() => {
+        if (videoRef.current) {
+            videoRef.current.playbackRate = 0.4; // 0.5x speed (half speed)
+        }
+    }, []);
     return (
         <>
             <div className="dark-for-header relative">
                 <Header2 />
-                <CommonBanner title="FAQ" />
-                <section className="relative py-10 bg-white dark:bg-jacarta-800">
-                    {/* <div
-                className="relative bg-cover bg-center bg-no-repeat py-32 mb-14 after:absolute after:inset-0 after:bg-jacarta-900/60"
-                style={{
-                    backgroundImage: "url(img/knowledge_base_banner.jpg)",
-                }}
-            >
-                <div className="container relative z-10">
-                    <h1 className="text-center font-display text-4xl font-medium text-white">
-                            Frequently Asked Questions
-                    </h1>
+
+                <section className="relative pt-4">
+                    <div className="absolute inset-0  overflow-hidden  -z-10 common-banner" style={{ height: '320px' }} >
+                        <video
+                            ref={videoRef}
+                            autoPlay
+                            loop
+                            muted
+                            playsInline
+                            className="w-full object-cover  -z-10 h-full "
+                            src="video/graphs.mp4"
+                        />
+                    </div>
+                </section>
+                <div className="text-center flex flex-col items-center justify-center m-auto xl:max-w-4xl lg:max-w-full lg:text-6xl md:text-4xl sm:text-3xl"
+                    style={{ height: '300px' }} >
+                    <h2 className='font-display  font-bold dark:text-jacarta-700 text-white'>FAQ</h2>
+                    <form
+                        className="relative  w-full ">
+                        <input
+                            type="search"
+                            className="w-full rounded-2xl border border-jacarta-100 py-3 px-4 pl-10 text-white placeholder-jacarta-500  bg-white/[.15] placeholder-white"
+                            placeholder="Search"
+                        />
+                        <span className="absolute left-0 top-4 flex h-full w-12 items-center justify-center rounded-2xl">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                width="24"
+                                height="24"
+                                className="h-4 w-4 dark:fill-jacarta-500 fill-white"
+                            >
+                                <path fill="none" d="M0 0h24v24H0z" />
+                                <path d="M18.031 16.617l4.283 4.282-1.415 1.415-4.282-4.283A8.96 8.96 0 0 1 11 20c-4.968 0-9-4.032-9-9s4.032-9 9-9 9 4.032 9 9a8.96 8.96 0 0 1-1.969 5.617zm-2.006-.742A6.977 6.977 0 0 0 18 11c0-3.868-3.133-7-7-7-3.868 0-7 3.132-7 7 0 3.867 3.132 7 7 7a6.977 6.977 0 0 0 4.875-1.975l.15-.15z" />
+                            </svg>
+                        </span>
+                    </form>
                 </div>
-            </div> */}
+
+                <section className="relative py-10 bg-white dark:bg-gradient">
                     <div className="container mx-auto px-4">
 
                         <div className="flex flex-col lg:flex-row lg:space-x-10">

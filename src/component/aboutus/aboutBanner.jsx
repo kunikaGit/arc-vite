@@ -4,7 +4,7 @@ const AboutBanner = () => {
 
     return (
         <>
-        <section className="bg-white dark:bg-jacarta-900">
+        <section className="bg-white dark:bg-gradient">
                 <div className="container">
                     <div className='grid md:grid-cols-2 grid-cols-1  py-10 gap-10 items-center'>
                         <div className='' data-aos="fade-right" data-aos-duration={800} >

@@ -79,10 +79,10 @@ const TradingObjective = () => {
         <div className="bg-2b2a33 theme_card mb-4" >
             <h2 className="card-title text-white font-semibold text-lg mb-4">Trading Objectives</h2>
             <div className="tradingobjective-cards">
-                <ApexChart title="Trading 1" value={76} />
-                <ApexChart title="Trading 2" value={63} />
-                <ApexChart title="Trading 3" value={88} />
-                <ApexChart title="Trading 4" value={45} />
+                <ApexChart title="Profit target" value={76} />
+                <ApexChart title="Max drawdown (Daily)" value={63} />
+                <ApexChart title="Max drawdown (Overall)" value={88} />
+                <ApexChart title="Minimum trading days" value={45} />
             </div>
         </div>
     );

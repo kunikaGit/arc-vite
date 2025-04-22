@@ -1,37 +1,65 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
+import { format } from 'date-fns';
 
-const DailyCalender = () => {
+const tradeData = {
+  '2021-06-01': { profit: 100, trades: 3 },
+  '2021-06-02': { profit: 99, trades: 5 },
+  '2021-06-03': { profit: 796, trades: 6 },
+  '2021-06-04': { profit: -66, trades: 1 },
+  '2021-06-05': { profit: -128, trades: 6 },
+  '2021-06-09': { profit: 515, trades: 6 },
+  '2021-06-10': { profit: 515, trades: 6 },
+  '2021-06-24': { profit: 796, trades: 6 },
+};
 
-  const today = new Date();
+const DailyCalender = ({handleClose}) => {
+  const [value, setValue] = useState(new Date(2021, 5)); // June 2021
+  console.log('Selected Date:', value);
 
-  // Static profit/loss data (format: 'YYYY-MM-DD': 'profit' or 'loss')
-  const profitLossData = {
-    '2025-04-01': 'profit',
-    '2025-04-02': 'loss',
-    '2025-04-04': 'profit',
-    '2025-04-06': 'loss',
-    '2025-04-08': 'profit',
-    '2025-04-09': 'loss',
-    '2025-04-10': 'profit',
+  
+  const tileClassName = ({ date, view }) => {
+    const isSelected = format(date, 'yyyy-MM-dd') === format(value, 'yyyy-MM-dd');
+    if (view === 'month') {
+      const key = format(date, 'yyyy-MM-dd');
+      const data = tradeData[key];
+      if (data) {
+        return `${data.profit >= 0 ? 'green-tile' : 'red-tile'} ${isSelected ? 'selected-tile' : ''}`;
+      }
+    }
+    return isSelected ? 'selected-tile' : null;
   };
 
-  const formatDate = (date) => date.toISOString().split('T')[0];
-
-  const tileClassName = ({ date, view }) => {
+  const tileContent = ({ date, view }) => {
     if (view === 'month') {
-      const dateStr = formatDate(date);
-      if (date < today) {
-        if (profitLossData[dateStr] === 'profit') return 'profit-date';
-        if (profitLossData[dateStr] === 'loss') return 'loss-date';
+      const key = format(date, 'yyyy-MM-dd');
+      const data = tradeData[key];
+
+      if (data) {
+        return (
+          <div className={`tile-box ${data.profit >= 0 ? 'green' : 'red'}`}>
+            <div className="profit">{data.profit >= 0 ? `+$${data.profit}` : `-$${Math.abs(data.profit)}`}</div>
+            <div className="trades">{data.trades} trades</div>
+          </div>
+        );
       }
     }
     return null;
   };
 
   return (
-    <div>
-      <Calendar tileClassName={tileClassName} />
+    <div className="calendar-container">
+      <Calendar
+        onChange={(date) => {
+          setValue(date);
+          if (handleClose) handleClose(); 
+        }}
+        
+        value={value}
+        tileContent={tileContent}
+        tileClassName={tileClassName}
+      />
     </div>
   );
 };

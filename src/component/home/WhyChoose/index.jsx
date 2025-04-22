@@ -1,3 +1,4 @@
+import { useState } from "react";
 
 
 const Right = () => {
@@ -26,37 +27,54 @@ const Right = () => {
     )
   }
   const whychoose = [
-
-    {
-      name: "Account Profit Share",
-      arc: "80% | 95% with Add-on",
-      fund: "80%",
-    },
-    {
-      name: "Profit Target",
-      arc: "8%/5%",
-      fund: "10%/5%",
-    },
-    {
-      name: "Account Reset Option",
-      arc: <Right />,
-      fund: <Cross />,
-    },
-    {
-      name: "One Step Challenge",
-      arc: <Right />,
-      fund: <Cross />,
-    },
-    {
-      name: "Free Merchandise",
-      arc: <Right />,
-      fund: <Cross />,
-    },
-
-  
+    { name: "Account Profit Share", arc: "80% | 95% with Add-on" },
+    { name: "Profit Target", arc: "8% / 5%" },
+    { name: "Account Reset Option", arc: <Right /> },
+    { name: "One Step Challenge", arc: <Right /> },
+    { name: "Free Merchandise", arc: <Right /> },
   ];
-  export default function WhyChoose() {
   
+  // Data for other platforms
+  const otherPlatforms = {
+    FTMO: [
+      "80%",
+      "10% / 5%",
+      <Cross />,
+      <Cross />,
+      <Cross />
+    ],
+    FundedNext: [
+      "80% | 90% with Add-on",
+      "10% / 5%",
+      "Yes (Fee)",
+      <Right/>,
+      "Merch for top performers"
+    ],
+    "Funding Pips": [
+      "80%",
+      "10% / 5%",
+      <Right/>,
+      <Right/>,
+      <Cross />
+    ],
+    Fxify: [
+      "80% | 90%+",
+      "8% / 5%",
+      <Right/>,
+      <Right/>,
+      <Cross />
+    ],
+    MyFundedFX: [
+      "80% | 90% after milestone",
+      "8% / 5%",
+      <Right/>,
+      <Right/>,
+      <Right/>
+    ]
+  };
+  
+  export default function WhyChoose() {
+    const [selectedCompany, setSelectedCompany] = useState("FTMO");
     return (
       <section className="relative py-24 why-choose-us dark:bg-jacarta-900" >
         <div className="container">
@@ -76,34 +94,46 @@ const Right = () => {
                   <tr className="border-t border-jacarta-100 py-2 px-4 transition-shadow hover:shadow-lg dark:border-jacarta-600 dark:bg-jacarta-900">
                     <th scope="col" className="px-6 py-3 dark:text-white">VARIABLES</th>
                     <th scope="col" className="px-6 py-3 text-center dark:text-white">ARC</th>
-                    <th scope="col" className="px-6 py-3 text-center dark:text-white">FTMO</th>
+                    <th scope="col" className="px-6 py-3 text-center dark:text-white">
+                    <select
+                      value={selectedCompany}
+                      onChange={(e) => setSelectedCompany(e.target.value)}
+                      className="bg-transparent dark:bg-gray-900 outline-none border-none font-semibold dark:text-white focus:border-transparent focus:outline-none focus:shadow-none">
+                      {Object.keys(otherPlatforms).map((platform) => (
+                        <option key={platform} value={platform}>
+                          {platform}
+                        </option>
+                      ))}
+                    </select>
+                    </th>
                   </tr>
                 </thead>
                 <tbody>
-                  {whychoose.map((item, index) => (
-                    <tr
-                      key={index}
-                      className="border-t border-jacarta-100 py-2 px-4 transition-shadow hover:shadow-lg dark:border-jacarta-600 dark:bg-jacarta-900"
+                {whychoose.map((item, index) => (
+                  <tr
+                    key={index}
+                    className="border-t border-jacarta-100 py-2 px-4 transition-shadow hover:shadow-lg dark:border-jacarta-600 dark:bg-jacarta-900"
+                  >
+                    <th
+                      scope="row"
+                      className="text-gray-500 w-1/3 px-6 py-4 font-medium whitespace-nowrap dark:text-white text-base"
                     >
-                      <th
-                        scope="row"
-                        className="text-gray-500 w-1/3 px-6 py-4 font-medium  whitespace-nowrap dark:text-white text-base"
-                      >
-                        {item.name}
-                      </th>
-                      <td className="w-1/3 px-6 py-4 text-center dark:text-white">
-                        <div className="flex justify-center items-center">
-                          {item.arc}
-                        </div>
-                      </td>
-                      <td className="w-1/3 px-6 py-4 text-center dark:text-white">
-                        <div className="flex justify-center items-center">
-                          {item.fund}
-                        </div>
-                      </td>
-                    </tr>
-                  ))}
-                </tbody>
+                      {item.name}
+                    </th>
+                    <td className="w-1/3 px-6 py-4 text-center dark:text-white">
+                      <div className="flex justify-center items-center">
+                        {item.arc}
+                      </div>
+                    </td>
+                    <td className="w-1/3 px-6 py-4 text-center dark:text-white">
+                      <div className="flex justify-center items-center">
+                        {otherPlatforms[selectedCompany][index]}
+                      </div>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+
               </table>
             </div>
           </div>

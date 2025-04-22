@@ -3686,6 +3686,10 @@ input[type=search]::-webkit-search-results-decoration {
     background-color: rgb(231 232 236/var(--tw-bg-opacity))
 }
 
+:is(.dark .dark\:bg-gradient){
+    background: linear-gradient(to bottom, #29062c, rgb(13 16 45 / 1))
+  }
+
 :is(.dark .scrollbar-custom)::-webkit-scrollbar-track {
     --tw-bg-opacity: 1;
     background-color: rgb(16 20 54/var(--tw-bg-opacity))

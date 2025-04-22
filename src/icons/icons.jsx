@@ -76,3 +76,24 @@ export const Cross = () => (
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#fff" height={20} width={20}>
 <path d="M11.9997 10.5865L16.9495 5.63672L18.3637 7.05093L13.4139 12.0007L18.3637 16.9504L16.9495 18.3646L11.9997 13.4149L7.04996 18.3646L5.63574 16.9504L10.5855 12.0007L5.63574 7.05093L7.04996 5.63672L11.9997 10.5865Z"></path></svg>
 )
+
+export const CalenderIcon = () => (
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+      <path d="M19.5 3.75H4.5C4.08579 3.75 3.75 4.08579 3.75 4.5V19.5C3.75 19.9142 4.08579 20.25 4.5 20.25H19.5C19.9142 20.25 20.25 19.9142 20.25 19.5V4.5C20.25 4.08579 19.9142 3.75 19.5 3.75Z" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M16.5 2.25V5.25" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M7.5 2.25V5.25" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M3.75 8.25H20.25" stroke="#fff" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+    </svg>
+  )
+
+  
+// export const FilterIcon = () => (
+// <svg xmlns="http://www.w3.org/2000/svg" width="20" height="21" viewBox="0 0 20 21" fill="none">
+// <mask id="mask0_1_139380" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="1" y="3" width="18" height="16">
+// <path d="M2.5 4.25L8.5 11.2575V16.5183L11.5 18V11.2575L17.5 4.25H2.5Z" fill="#555555" stroke="white" stroke-width="2" stroke-linejoin="round"/>
+// </mask>
+// <g mask="url(#mask0_1_139380)">
+// <path d="M0 0.5H20V20.5H0V0.5Z" fill="#647C9B"/>
+// </g>
+// </svg>
+// )
