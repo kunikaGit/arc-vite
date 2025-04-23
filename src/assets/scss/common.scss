@@ -1,0 +1,31 @@
+@use './abstract/mixins' as *;
+
+.select-mui-vs {
+    .MuiOutlinedInput-root {
+        // border: 1px solid var(--light-blue) !important;
+        font-weight: 300;
+        font-size: var(--font_16);
+        color: #fff;
+        border-radius: 3px;
+        padding: 10px;
+        width: 100%;
+        outline: none;
+        padding: 0 !important;
+        background-color: #505058;
+    }
+
+    .MuiAutocomplete-input {
+        padding-right: 30px !important;
+        border-radius: 3px;
+        @include media_1280 {
+            font-size: var(--font_12);
+        }
+    }
+
+    .MuiOutlinedInput-notchedOutline {
+        border: none;
+        border-radius: 3px;
+
+    }
+
+}

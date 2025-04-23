@@ -39,7 +39,31 @@
                 }
             }
         }
-
+        .data-table{
+          table{
+            tbody{
+              tr{
+                border-bottom: 0.5px solid #cccccc9a;
+                &:last-child{
+                  border: none;
+                }
+              }
+              td{
+                text-align: center;
+                padding: 12px;
+              }
+            }
+            thead{
+              tr{
+                border-bottom: 0.5px solid #cccccc9a;
+              }
+              th{
+                text-align: center;
+                padding: 12px;
+              }
+            }
+          }
+        }
     }
 
     .tradingobjective-cards {

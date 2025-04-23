@@ -82,7 +82,7 @@ const Accounts = () => {
                         </div>
                     </div>
                     <div className="right-box">
-                    <TradingObjective />
+                        <TradingObjective />
                         <div className="four-box mb-4">
                             {accoundCrads?.map((item, index) => (
                                 <div className="media flex items-center justify-between" key={index}
@@ -93,19 +93,52 @@ const Accounts = () => {
                                     <div className="media-body text-white text-end">
                                         <p className="mb-1">{item.title}</p>
                                         <h3 className={`font-semibold text-lg ${item.target === 'loss' ? 'text-red-400' :
-                                                item.target === 'profit' ? 'text-green-300' :
-                                                    'text-white'
+                                            item.target === 'profit' ? 'text-green-300' :
+                                                'text-white'
                                             }`}>{item.number}</h3>
                                     </div>
                                 </div>
                             ))}
                         </div>
-                     
-
+                        <div className="theme_card bg-2b2a33 data-table">
+                            <table className="w-full">
+                                <thead>
+                                    <tr>
+                                        <th>Position</th>
+                                        <th>Lot</th>
+                                        <th>Entry</th>
+                                        <th>Tp</th>
+                                        <th>SL</th>
+                                        <th>Pips</th>
+                                        <th>Profit/Loss</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                    </tr>
+                                    <tr>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                        <td>-</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
 
-                
+
             </div>
         </>
     )

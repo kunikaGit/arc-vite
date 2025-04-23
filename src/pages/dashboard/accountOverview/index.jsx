@@ -3,67 +3,69 @@ import React from "react";
 import { DashboardHeader } from "../../../component";
 import { Link } from "react-router-dom";
 import './accountOverview.scss'
-import { Box, FormControl, InputLabel, MenuItem, Select } from "@mui/material";
+import { Autocomplete, Box, FormControl, InputLabel, MenuItem, Select, TextField } from "@mui/material";
 import { styled } from '@mui/material/styles';
 import { UserHeart } from "../../../icons/icons";
+import { FilterIcon } from "lucide-react";
 
 
-const CustomSelect = styled(Select)(({ theme }) => ({
-    backgroundColor: '#2b2a33',
-    color: '#fff',
-    borderRadius: '4px',
-    padding: '10px 32px 10px 12px', // left/right padding to make room for custom arrow
-    '& .MuiSelect-select': {
-      padding: '10px 12px',
-      display: 'flex',
-      alignItems: 'center',
-      color: '#fff',
-    },
-    '& .MuiSelect-icon': {
-      display: 'none', // Hide default arrow
-    },
-    '& fieldset': {
-      border: 'none', // Remove default border
-    },
-    '&:hover': {
-      backgroundColor: '#2b2a33',
-    },
-    '&:focus': {
-      backgroundColor: '#2b2a33',
-    },
-    '& .Mui-disabled': {
-      color: '#fff', // keep text white even when disabled
-    },
-  }));
+const accTypeOption = [{ title: 'Novoice' }, { title: 'Expert' }, { title: 'Funded' }]
+const accStatusOption = [{ title: 'Active' }, { title: 'Inactive' }, { title: 'Breached' }]
+
 const Accounts = () => {
     const [accType, setAccType] = React.useState('');
+    const [accStatus, setAccStatus] = React.useState('');
+
 
     const handleAccTypeChange = (event) => {
         setAccType(event.target.value);
+    };
+    const handleAccSatusChange = (event) => {
+        setAccStatus(event.target.value);
     };
     return (
         <>
             <DashboardHeader title="Account Overview" />
             <div className="accounts-overview-wrapped">
-                {/* <div className="filter">
-                    <Box sx={{ minWidth: 120,width:120 }}>
-                        <FormControl fullWidth>
-                        <InputLabel id="demo-simple-select-label" shrink={false}>Age</InputLabel>
-                            <CustomSelect
-                                variant="filled"
+                <div className="filters">
+                    <div className='input-main-data select-mui-vs '>
+                        <Autocomplete
+                            autoComplete={false}
+                            options={accTypeOption.map(option => option)}
+                            getOptionLabel={(option) => option.title}
+                            disableClearable
+                            popupIcon={<FilterIcon />}
+                            onChange={handleAccTypeChange}
+                            renderInput={(params) =>
+                            (<TextField
                                 value={accType}
-                                label="Account Type"
-                                onChange={handleAccTypeChange}
-                                
-                            >
-                                <MenuItem value={10}>Novoice</MenuItem>
-                                <MenuItem value={20}>Expert</MenuItem>
-                                <MenuItem value={30}>Funded</MenuItem>
-                            </CustomSelect>
-                        </FormControl>
-                    </Box>
-                </div> */}
-                <div className="theme_card bg-2b2a33 mb-5 flex items-center gap-5">
+                                {...params} placeholder='Account Type' sx={{ width: '200px' }} />)}
+                        />
+                    </div>
+                    <div className='input-main-data select-mui-vs '>
+                        <Autocomplete
+
+                            autoComplete={false}
+                            options={accStatusOption.map(option => option)}
+                            getOptionLabel={(option) => option.title}
+                            disableClearable
+                            popupIcon={<FilterIcon />}
+                            onChange={handleAccSatusChange}
+                            renderInput={(params) =>
+                            (<TextField
+                                value={accStatus}
+                                {...params} placeholder='Account Satus' sx={{ width: '200px' }} />)}
+                        />
+                    </div>
+                </div>
+                <div className="theme_card bg-2b2a33 mb-5 flex items-center gap-5 card-content">
+                    <input
+                        type="radio"
+                        name="table-data"
+                        value="0.1"
+                        checked
+                        className="mr-2 h-6 w-6 items-center rounded-full border-jacarta-200 text-accent checked:bg-accent focus:ring-accent/20 focus:ring-offset-0 dark:border-jacarta-500 dark:bg-jacarta-600"
+                    />
                     <div className="icon"><UserHeart /> </div>
                     <div className="overview flex justify-between w-full">
                         <div>
@@ -81,7 +83,13 @@ const Accounts = () => {
                     </div>
                 </div>
 
-                <div className="theme_card bg-2b2a33 mb-5 flex items-center gap-5">
+                <div className="theme_card bg-2b2a33 mb-5 flex items-center gap-5 card-content">
+                    <input
+                        type="radio"
+                        name="table-data"
+                        value="0.1"
+                        className="mr-2 h-6 w-6 items-center rounded-full border-jacarta-200 text-accent checked:bg-accent focus:ring-accent/20 focus:ring-offset-0 dark:border-jacarta-500 dark:bg-jacarta-600"
+                    />
                     <div className="icon"><UserHeart /> </div>
                     <div className="overview flex justify-between w-full">
                         <div>
@@ -99,7 +107,13 @@ const Accounts = () => {
                     </div>
                 </div>
 
-                <div className="theme_card bg-2b2a33 mb-5 flex items-center gap-5">
+                <div className="theme_card bg-2b2a33 mb-5 flex items-center gap-5 card-content">
+                    <input
+                        type="radio"
+                        name="table-data"
+                        value="0.1"
+                        className="mr-2 h-6 w-6 items-center rounded-full border-jacarta-200 text-accent checked:bg-accent focus:ring-accent/20 focus:ring-offset-0 dark:border-jacarta-500 dark:bg-jacarta-600"
+                    />
                     <div className="icon"><UserHeart /> </div>
                     <div className="overview flex justify-between w-full">
                         <div>
@@ -115,6 +129,42 @@ const Accounts = () => {
                             </Link>
                         </div>
                     </div>
+                </div>
+
+                <div className="theme_card bg-2b2a33 data-table">
+                    <table className="w-full">
+                        <thead>
+                            <tr>
+                                <th>Position</th>
+                                <th>Lot</th>
+                                <th>Entry</th>
+                                <th>Tp</th>
+                                <th>SL</th>
+                                <th>Pips</th>
+                                <th>Profit/Loss</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                            <tr>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                                <td>-</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </>
