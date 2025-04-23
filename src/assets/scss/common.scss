@@ -6,17 +6,24 @@
         font-weight: 300;
         font-size: var(--font_16);
         color: #fff;
-        border-radius: 3px;
+        border-radius: 25px;
         padding: 10px;
         width: 100%;
         outline: none;
-        padding: 0 !important;
-        background-color: #505058;
+        padding: 4px 10px !important;
+        /* background-color: #2b2a33; */
+        border: 1px solid #8257fe;
     }
 
     .MuiAutocomplete-input {
         padding-right: 30px !important;
         border-radius: 3px;
+
+        &:focus {
+            border: none !important;
+            box-shadow: none;
+        }
+
         @include media_1280 {
             font-size: var(--font_12);
         }
@@ -28,4 +35,40 @@
 
     }
 
+}
+
+.why-choose-us {
+    .select-mui-vs {
+        .MuiOutlinedInput-root {
+            font-weight: 600;
+            font-size: var(--font_16);
+            color: #697284;
+            border: none;
+            text-align: center;
+            svg{
+                path{
+                fill: #697284;
+                }
+            }
+        }
+
+        &:is(.dark .dark\:mui-dark) {
+            .MuiOutlinedInput-root {
+                color: #fff;
+            }
+            svg{
+                path{
+                fill: #fff;
+                }
+            }
+        }
+        .MuiAutocomplete-input {
+            cursor: pointer;
+            &:focus {
+                border: none !important;
+                box-shadow: none;
+            }
+        }
+
+    }
 }

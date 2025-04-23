@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import './accountOverview.scss'
 import { Autocomplete, Box, FormControl, InputLabel, MenuItem, Select, TextField } from "@mui/material";
 import { styled } from '@mui/material/styles';
-import { UserHeart } from "../../../icons/icons";
+import { DownIcon, UserHeart } from "../../../icons/icons";
 import { FilterIcon } from "lucide-react";
 
 
@@ -28,7 +28,7 @@ const Accounts = () => {
             <DashboardHeader title="Account Overview" />
             <div className="accounts-overview-wrapped">
                 <div className="filters">
-                    <div className='input-main-data select-mui-vs '>
+                    <div className='input-main-data select-mui-vs'>
                         <Autocomplete
                             autoComplete={false}
                             options={accTypeOption.map(option => option)}
@@ -44,7 +44,6 @@ const Accounts = () => {
                     </div>
                     <div className='input-main-data select-mui-vs '>
                         <Autocomplete
-
                             autoComplete={false}
                             options={accStatusOption.map(option => option)}
                             getOptionLabel={(option) => option.title}
