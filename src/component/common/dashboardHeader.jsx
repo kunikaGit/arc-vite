@@ -16,7 +16,7 @@ const DashboardHeader = ({ title }) => {
             </h2>
             <div className='profile flex item' onClick={handleShowDropDown} onBlur={()=>setShowMenu(false)}>
                 <div>
-                    <img src={imageMap['man1.jpg']} alt='img' />
+                    <img src={imageMap['man1.jpg']} alt='img2' />
                     <h3 className='text-white text-base'>Verified</h3>
                 </div>
                 <div className='mt-5'>

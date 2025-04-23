@@ -11,6 +11,7 @@ export default function Calltoaction() {
               width={1920}
               height={789}
               src="/img/gradient_light.jpg"
+              
               priority
               alt="gradient"
               className="h-full w-full"
