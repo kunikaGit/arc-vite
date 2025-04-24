@@ -15,6 +15,8 @@ export { default as WithdrawalStep2 } from "./dashboard/withdrawalStep2";
 export { default as WithdrawalStep3 } from "./dashboard/withdrawalstep3";
 export { default as Merchandise } from "./dashboard/merchandise";
 export { default as Leaderboard } from "./dashboard/leaderboard";
+export { default as MyProfile } from "./myprofile";
+
 
 
 

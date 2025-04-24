@@ -1,41 +1,85 @@
 @use './abstract/mixins' as *;
 
-.select-mui-vs {
-    .MuiOutlinedInput-root {
-        // border: 1px solid var(--light-blue) !important;
+.input-main-data {
+    position: relative;
+    &.select-mui-vs {
+        .MuiOutlinedInput-root {
+            // border: 1px solid var(--light-blue) !important;
+            font-weight: 300;
+            font-size: var(--font_16);
+            color: #fff;
+            border-radius: 25px;
+            padding: 10px;
+            width: 100%;
+            outline: none;
+            padding: 4px 10px !important;
+            /* background-color: #2b2a33; */
+            border: 1px solid #8257fe;
+        }
+    
+        .MuiAutocomplete-input {
+            padding-right: 30px !important;
+            border-radius: 3px;     
+            border: none;
+            &:focus {
+                border: none !important;
+                box-shadow: none;
+            }
+    
+            @include media_1280 {
+                font-size: var(--font_12);
+            }
+        }
+    
+        .MuiOutlinedInput-notchedOutline {
+            border: none;
+            border-radius: 3px;
+    
+        }
+    
+    }
+    label {
+        color: var(--color_647C9B);
+        display: block;
+        font-weight: 400;
+        font-size: 16px;
+        margin-bottom: 6px;
+
+        .asterisk {
+            font-size: 16px;
+            color: #F44336;
+        }
+    }
+
+    input {
+        border: 1px solid #ccc;
         font-weight: 300;
-        font-size: var(--font_16);
-        color: #fff;
-        border-radius: 25px;
+        font-size: 16px;
+        color: var(--black-color);
+        border-radius: 3px;
         padding: 10px;
         width: 100%;
         outline: none;
-        padding: 4px 10px !important;
-        /* background-color: #2b2a33; */
-        border: 1px solid #8257fe;
+        background-color: transparent;
     }
 
-    .MuiAutocomplete-input {
-        padding-right: 30px !important;
+    select {
+        word-wrap: normal;
+        border: 1px solid #8257fe;
+        font-weight: 300;
+        font-size: 16px;
+        color: var(--black-color);
         border-radius: 3px;
+        padding: 10px;
+        width: 100%;
+        outline: none;
 
         &:focus {
-            border: none !important;
-            box-shadow: none;
-        }
-
-        @include media_1280 {
-            font-size: var(--font_12);
+            border-color: var(--orange-color);
         }
     }
-
-    .MuiOutlinedInput-notchedOutline {
-        border: none;
-        border-radius: 3px;
-
-    }
-
 }
+
 
 .why-choose-us {
     .select-mui-vs {

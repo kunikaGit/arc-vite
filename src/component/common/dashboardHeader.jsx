@@ -26,7 +26,7 @@ const DashboardHeader = ({ title }) => {
             {showMenu &&
             <div className='dropdown'>
                 <ul>
-                    <li><Link to="#" className='flex items-center gap-2'><UserIcon />Profile</Link></li>
+                    <li><Link to="/dashboard/myprofile" className='flex items-center gap-2'><UserIcon />Profile</Link></li>
                     <li><Link to="#" className='flex items-center gap-2'><Logout/>Logout</Link></li>
                 </ul>
             </div>

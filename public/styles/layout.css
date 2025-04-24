@@ -6319,6 +6319,7 @@ html[dir=rtl] .hover\:translate-x-1:hover {
     --color_171821:#171821;
     --white_color:#FFFFFF;
     --dark-purple:#18042b;
+    --theme-purple: #8257fe;
 }
 
 :host {

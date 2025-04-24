@@ -1,5 +1,5 @@
 import { Routes, Route, Link } from "react-router-dom";
-import { AboutUs, AccountOverview, Accounts, Checkout, ComingSoon, Faq, FundedLongue, Leaderboard, Merchandise, PrivacyPolicy, TermsAndCondition, WithdrawalStep2, WithdrawalStep3 } from "./pages/index.js";
+import { AboutUs, AccountOverview, Accounts, Checkout, ComingSoon, Faq, FundedLongue, Leaderboard, Merchandise, MyProfile, PrivacyPolicy, TermsAndCondition, WithdrawalStep2, WithdrawalStep3 } from "./pages/index.js";
 import Home2 from "./pages/home2.jsx";
 import './assets/scss/index.scss'
 import 'react-calendar/dist/Calendar.css';
@@ -33,6 +33,8 @@ export default function App() {
           <Route path="/dashboard/withdrawal/step3" element={<WithdrawalStep3/>} />
           <Route path="/dashboard/merchandise" element={<Merchandise/>} />
           <Route path="/dashboard/leaderboard" element={<Leaderboard/>} />
+          <Route path="/dashboard/myprofile" element={<MyProfile/>} />
+
         </Route>
 
       </Routes>

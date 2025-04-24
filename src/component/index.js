@@ -14,6 +14,12 @@ export { default as TermsContent } from "./termscondition/termscontent.jsx";
 export { default as LineChart } from "./accounts/linechart.jsx";
 export { default as TradingObjective } from "./accounts/tradingobjective.jsx";
 
+//my profile
+export { default as PersonalInfo } from "./myprofile/personalInfo.jsx";
+export { default as ChangePassword } from "./myprofile/changepassword.jsx";
+
+
+
 
 
 
