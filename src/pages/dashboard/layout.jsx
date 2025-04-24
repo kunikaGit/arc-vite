@@ -16,7 +16,7 @@ const DashboardLayout = () => {
 
     return (
         <div className="main-box bg-2b2a33">
-            <Sidebar collapsed={isCollapsed} >
+            <Sidebar collapsed={isCollapsed} width="200">
                 <MenuItems />
             </Sidebar>
             <main className={`${isCollapsed ? 'width80':'width200'}`} style={{ backgroundColor: '#1e1e1e' }}>
