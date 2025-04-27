@@ -19,7 +19,7 @@ const MenuItems = () => {
         },
         {
             name: 'Billing',
-            link: '#/',
+            link: '/dashboard/billing',
             imgagepath: <FileIcon />
         },
         // {
