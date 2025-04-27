@@ -17,6 +17,10 @@ export { default as TradingObjective } from "./accounts/tradingobjective.jsx";
 //my profile
 export { default as PersonalInfo } from "./myprofile/personalInfo.jsx";
 export { default as ChangePassword } from "./myprofile/changepassword.jsx";
+export { default as LeaderboardCards } from "./leaderboard/leaderboardCards.jsx";
+export { default as LeaderboardTable } from "./leaderboard/leaderboardTable.jsx";
+
+
 
 
 

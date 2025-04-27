@@ -7,7 +7,7 @@ import { useState } from 'react';
 export default function TwoPhase({ handleOpenModal }) {
   const accountSizes = [
     { size: "$8k", price: 39, profitTarget: '$640 (8%)', profitTarget2: '$400 (5%)', dailyLossLimit: "$400 (5%)", drawdown: "$800 (10%)" },
-    { size: "$15k", price: 75, profitTarget: '$1,200 (8%)', profitTarget2: '$750 (5%)', dailyLossLimit: "$750 (5%)", drawdown: "$1,500 (10%)" },
+    { size: "$15k", price: 79, profitTarget: '$1,200 (8%)', profitTarget2: '$750 (5%)', dailyLossLimit: "$750 (5%)", drawdown: "$1,500 (10%)" },
     { size: "$25k", price: 139, profitTarget: '$2,000 (8%)', profitTarget2: '$1,250 (5%)', dailyLossLimit: "$1,250 (5%)", drawdown: "$2,500 (10%)" },
     { size: "$50k", price: 269, profitTarget: '$4,000 (8%)', profitTarget2: '$2,500 (5%)', dailyLossLimit: "$2,500 (5%)", drawdown: "$5,000 (10%)" },
     { size: "$100k", price: 529, profitTarget: '$8,000 (8%)', profitTarget2: '$5,000 (5%)', dailyLossLimit: "$5,000 (5%)", drawdown: "$10,000 (10%)" },

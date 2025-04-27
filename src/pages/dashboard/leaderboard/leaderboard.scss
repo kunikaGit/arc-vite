@@ -1,0 +1,41 @@
+.leaderboard-wrapped{
+    .MuiTabPanel-root {
+        padding: 20px 0;
+    }
+    .MuiTabs-list{
+        button{
+            color: #fff;
+        }
+    }
+    .data-table{
+        width: 100%;
+        overflow-x: auto;
+        table{
+          tbody{
+            tr{
+              border-bottom: 0.5px solid #cccccc9a;
+              &:last-child{
+                border: none;
+              }
+            }
+            td{
+              text-align: center;
+              padding: 12px;
+              color: #ffffffd0;
+              span{
+                color: #ffffffd0;
+              }
+            }
+          }
+          thead{
+            tr{
+              border-bottom: 0.5px solid #cccccc9a;
+            }
+            th{ 
+              text-align: center;
+              padding: 12px;
+            }
+          }
+        }
+      }
+}
