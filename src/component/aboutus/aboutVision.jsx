@@ -1,11 +1,12 @@
 import React from 'react'
+import imageMap from '../../utlis/helper'
 
 const AboutVision = () => {
     return (
         <>
         <section className="bg-white dark:bg-jacarta-900">
             <div className='container'>
-                <div className='grid md:grid-cols-2 grid-cols-1  py-10 gap-10 items-center'>
+                <div className='grid md:grid-cols-2 grid-cols-1  py-3 gap-10 items-center'>
                     <div className='' data-aos="fade-right" data-aos-duration={800} >
                         <h2 className='mb-5 text-5xl font-display text-jacarta-700 dark:text-white'>Our Vision</h2>
                         <p className='text-medium text-gray-600 dark:text-white'>
@@ -17,7 +18,8 @@ const AboutVision = () => {
                         </p>
                     </div>
                     <div className='' data-aos="fade-left" data-aos-duration={800}>
-                        <img src='img/vision.jpg' alt='vision' className='h-full w-full rounded-lg'/>
+                        {/* <img src='img/vision.jpg' alt='vision' className='h-full w-full rounded-lg'/> */}
+                        <img src={imageMap['vision.png']} alt='vision' className='h-full w-full rounded-lg'/>
                     </div>
                 </div>
             </div>

@@ -5,6 +5,7 @@
 
     .mission-wrapped {
         position: relative;
+
         &.background-overlay-custom {
             background-image: url(../images/mission.jpg);
             background-repeat: no-repeat;
@@ -31,16 +32,30 @@
     }
 
     .roadmap {
-        background-color: #000;
+        // background-color: #000;
+        position: relative;
         text-align: center;
-        padding: 70px 0;
+        padding: 100px 0;
+
+        .ovarlay-video {
+            &::after{
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            background-color: #00000047;
+            height: 100%;
+            width: 100%;
+            }
+        }
 
         .roadmap-heading {
-            font-size: 50px;
-           font-weight: 700;
-           margin-bottom: 40px;
+            font-size: 60px;
+            font-weight: 700;
+            margin-bottom: 40px;
         }
-        .main-btn{
+
+        .main-btn {
             background-color: #FFCC4A;
             padding: 15px;
             font-size: 22px;
@@ -57,7 +72,8 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
-            &:hover{
+
+            &:hover {
                 background-color: transparent;
                 box-shadow: none;
                 color: #FFFFFF;
