@@ -22,7 +22,7 @@ export default function TwoPhase({ handleOpenModal }) {
             <label className="flex items-center space-x-2 cursor-pointer  text-black dark:text-white ">
 
               <span
-                className={`text-jacarta-700 dark:text-white rounded-md py-2 px-4  text-md transition-all ${selected.size === account.size
+                className={`text-jacarta-700 dark:text-white rounded-md md:py-2 md:px-4 py-2 px-1  md:text-md text-sm transition-all ${selected.size === account.size
                   ? "text-accent bg-accent text-white"
                   : "  border-gray-400 dark:border-gray-500 text-gray-700 dark:text-white"
                   }`}
@@ -119,7 +119,7 @@ export default function TwoPhase({ handleOpenModal }) {
 
       <div className="sub-box">
         <div className="mb-5">
-          <h2 className="text-5xl text-center font-semibold text-jacarta-700 dark:text-white">${selected.price} For {selected.size} Account</h2>
+          <h2 className="lg:text-5xl md:text-3xl text-xl text-center font-semibold text-jacarta-700 dark:text-white">${selected.price} For {selected.size} Account</h2>
         </div>
         <Link to='/checkout' state={{ selected }} className="block mx-auto text-md rounded-full bg-accent py-2 w-[200px] text-center font-semibold text-white shadow-accent-volume transition-all hover:bg-accent-dark">
           Get Plan</Link>

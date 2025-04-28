@@ -38,12 +38,12 @@ export default function PricingTable() {
                 <div className="scrollbar-custom overflow-x-auto">
                     <ul
                         data-aos-duration={600} data-aos="fade-down"
-                        className="bg-[#f5f5fa] common-nav-header nav nav-tabs mb-8 flex items-center space-x-1 sm:space-x-3 justify-center  dark:bg-jacarta-700"
+                        className="bg-[#f5f5fa] p-0 common-nav-header nav nav-tabs mb-8 flex items-center space-x-1 sm:space-x-3 justify-center  dark:bg-jacarta-700"
                         role="tablist">
                         {/* Trending */}
                         <li className="nav-item" role="presentation">
                             <button
-                                className={`tab-button rounded-sm nav-link relative flex items-center whitespace-nowrap py-2 px-3 font-medium
+                                className={`tab-button rounded-sm nav-link relative flex items-center whitespace-nowrap py-2 md:px-3 px-2 font-medium
                                     ${activeTab === "trending"
                                         ? "active text-jacarta-700 dark:text-white"
                                         : "text-jacarta-400 dark:text-jacarta-200 hover:text-jacarta-700 dark:hover:text-white"
@@ -56,7 +56,7 @@ export default function PricingTable() {
                                 aria-controls="trending"
                                 aria-selected="true"
                                 onClick={() => setActiveTab("trending")}>
-                                <span className="font-medium xl:text-medium text-medium">
+                                <span className="font-medium md:text-medium text-sm">
                                     Two-Phase Challenge
                                 </span>
                             </button>
@@ -65,7 +65,7 @@ export default function PricingTable() {
                         {/* Sweeps */}
                         <li className="nav-item" role="presentation" >
                             <button
-                                className={`tab-button rounded-sm nav-link relative flex items-center whitespace-nowrap py-2 px-3 font-medium
+                                className={`tab-button rounded-sm nav-link relative flex items-center whitespace-nowrap py-2 md:px-3 px-2 font-medium
                                     ${activeTab === "sweeps"
                                         ? "active text-jacarta-700 dark:text-white"
                                         : "text-jacarta-400 dark:text-jacarta-200 hover:text-jacarta-700 dark:hover:text-white"
@@ -79,7 +79,7 @@ export default function PricingTable() {
                                 aria-selected="false"
                                 tabIndex="-1"
                                 onClick={() => setActiveTab("sweeps")}>
-                                <span className="font-medium text-medium ">
+                                <span className="font-medium md:text-medium text-sm">
                                     Instant Funding
                                 </span>
                             </button>

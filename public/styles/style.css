@@ -124,6 +124,11 @@ html[dir="rtl"] .hover\:translate-x-1:hover {
 }
 .home-cards{
   box-shadow: 4px 4px 10px 0px #73717157;
+  margin-top: -40px;
+}
+.home-cards .home-icon{
+  height: 48px;
+  width: 48px;
 }
 .hover-text-white{
   transition: .3s;
@@ -294,6 +299,7 @@ color: #fff;
   box-shadow: 4px 4px 10px 0 #73717157;
   position: absolute;
   top: 0px;
+  padding: 10px;
 }
 .hero-main .main-cards:first-child{
   box-shadow: 0 6px 0 0 #590054;
@@ -459,9 +465,34 @@ box-shadow: none;
   .hero-main .four-cards{
     max-width: 100%;
   }
+  .hero-main .home-actions{
+    margin-bottom:40px;
+  }
 
 }
 
+@media only screen and (max-width: 768px){
+  .hero-main h1{
+    font-size: 40px;
+    line-height: 44px;
+    margin-bottom: 20px;
+  }
+  .home-cards .home-icon{
+    height: 38px;
+    width: 38px;
+  }
+}
+
 @media only screen and (max-width: 576px){
-  
+  .hero-main .btn-epic{
+    padding: 15px 0;
+  }
+  .home-cards{
+    box-shadow: 4px 4px 10px 0px #73717157;
+    margin-top: -18px;
+  }
+  .home-cards .home-icon{
+    height: 32px;
+    width: 32px;
+  }
 }

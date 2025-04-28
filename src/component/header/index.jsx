@@ -59,9 +59,9 @@ export default function Header() {
           {/* Search */}
 
           {/* Menu / Actions */}
-          <div className="js-mobile-menu invisible lg:visible fixed inset-0 z-10 ml-auto items-center bg-white opacity-0 dark:bg-jacarta-800 lg:relative lg:inset-auto lg:flex lg:bg-transparent lg:opacity-100 dark:lg:bg-transparent ">
+          <div className="js-mobile-menu invisible lg:visible fixed inset-0 z-10 ml-auto items-center bg-white opacity-0 bg-jacarta-900 lg:relative lg:inset-auto lg:flex lg:bg-transparent lg:opacity-100 dark:lg:bg-transparent ">
             {/* Mobile Logo / Menu Close */}
-            <div className="t-0 fixed left-0 z-10 flex w-full items-center justify-between bg-white p-6 dark:bg-jacarta-800 lg:hidden">
+            <div className="t-0 fixed left-0 z-10 flex w-full items-center justify-between bg-jacarta-900 lg:hidden">
               {/* Mobile Logo */}
               <Link to="/" className="shrink-0">
                 <img

@@ -5,13 +5,13 @@ export default function Calltoaction() {
   return (
     <div className="relative z-10 -mt-10 bg-white dark:bg-jacarta-900">
       <div className="container">
-        <div className="relative overflow-hidden rounded-2.5xl px-16 pt-16 pb-8 shadow-md lg:px-24">
+        <div className="relative overflow-hidden rounded-2.5xl md:px-16 px-6 pt-16 pb-8 shadow-md lg:px-24">
           <picture className="pointer-events-none absolute inset-0 -z-10 dark:hidden" data-aos="fade-down" data-aos-duration={600}>
             <img
               width={1920}
               height={789}
               src="/img/gradient_light.jpg"
-              
+
               priority
               alt="gradient"
               className="h-full w-full"
@@ -38,15 +38,15 @@ export default function Calltoaction() {
                 <Link
                   data-aos="fade-up" data-aos-duration={600}
                   href="/create"
-                  className=" w-44 block text-md rounded-full bg-accent py-3
-             px-5 text-center font-semibold text-white shadow-accent-volume transition-all hover:bg-accent-dark"
+                  className=" md:w-44 w-30 block md:text-md text-sm rounded-full bg-accent py-3
+             md:px-5 px-2 text-center font-semibold text-white shadow-accent-volume transition-all hover:bg-accent-dark"
                 >
                   Start Challenge
                 </Link>
                 <Link
                   data-aos="fade-up" data-aos-duration={600}
                   href="/create"
-                  className="mx-3 block rtl:!mr-6 w-44 rounded-full bg-white py-3 px-5 text-center font-semibold text-accent shadow-white-volume transition-all hover:bg-accent-dark hover:text-white hover:shadow-accent-volume"
+                  className="md:mx-3 mx-1 block rtl:!mr-6  md:w-44 w-30  md:text-md  text-sm rounded-full bg-white py-3 md:px-5 px-2 text-center font-semibold text-accent shadow-white-volume transition-all hover:bg-accent-dark hover:text-white hover:shadow-accent-volume"
                 >
                   Learn More
                 </Link>

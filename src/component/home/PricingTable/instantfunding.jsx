@@ -20,7 +20,7 @@ export default function InstantFunding({ handleOpenModal }) {
             <label className="flex items-center space-x-2 cursor-pointer  text-black dark:text-white ">
 
               <span
-                className={`text-jacarta-700 dark:text-white rounded-md py-2 px-4  text-md transition-all ${selected.size === account.size
+                className={`text-jacarta-700 dark:text-white rounded-md md:py-2 md:px-4 py-2 px-2  md:text-md text-sm transition-all ${selected.size === account.size
                   ? "text-accent bg-accent text-white"
                   : "  border-gray-400 dark:border-gray-500 text-gray-700 dark:text-white"
                   }`}

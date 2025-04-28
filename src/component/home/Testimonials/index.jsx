@@ -60,12 +60,11 @@ export default function Testimonials() {
           {testimonialsData.map((elm, i) => (
             <div
               key={i}
-              className="flex flex-shrink-0 items-center justify-center rounded-2.5xl border border-jacarta-100 bg-white dark:bg-jacarta-700 p-6 w-1/2 gap-6">
+              className="flex md:flex-row flex-col flex-shrink-0 items-center justify-center rounded-2.5xl border border-jacarta-100 bg-white dark:bg-jacarta-700 p-6 md:w-1/2 w-full gap-6">
               <img
-                width={50} height={50}
                 src={elm.imageSrc}
                 alt="image"
-                className="w-28 self-start rounded-2.5xl "
+                className="md:w-28 w-full h-24 self-start rounded-2.5xl "
               />
               <div className="-ml-14 -mt-4 flex h-16 w-16 shrink-0 items-center justify-center rounded-full border-[5px] border-white bg-accent dark:border-jacarta-700 md:mb-0 md:w-16">
                 <svg

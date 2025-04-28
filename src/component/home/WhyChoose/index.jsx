@@ -145,12 +145,12 @@ export default function WhyChoose() {
                     >
                       {item.name}
                     </th>
-                    <td className="w-1/3 px-6 py-4 text-center dark:text-white">
+                    <td className="w-1/3 px-6 py-4 text-center dark:text-white min-w-36">
                       <div className="flex justify-center items-center">
                         {item.arc}
                       </div>
                     </td>
-                    <td className="w-1/3 px-6 py-4 text-center dark:text-white">
+                    <td className="w-1/3 px-6 py-4 text-center dark:text-white min-w-30">
                       <div className="flex justify-center items-center">
                         {otherPlatforms[selectedCompany][index]}
                       </div>
