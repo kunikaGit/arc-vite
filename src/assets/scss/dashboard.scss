@@ -1,3 +1,5 @@
+@use '../../assets/scss/abstract/mixins' as *;
+
 .dashboard-title{
     color: var(--color_white);
     font-size: 26px;
@@ -12,6 +14,13 @@
 .dahboard-header{
     margin-bottom: 30px;
     position: relative;
+    .mobile-toggle{
+        background-color: transparent;
+        display: none;
+        @include media_1024{
+            display: block;
+        }
+    }
     .dropdown{
         background-color: #fff;
         right: 0;

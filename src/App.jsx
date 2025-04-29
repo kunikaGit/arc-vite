@@ -3,6 +3,7 @@ import { AboutUs, AccountOverview, Accounts, Billing, Checkout, ComingSoon, Faq,
 import Home2 from "./pages/home2.jsx";
 import './assets/scss/index.scss'
 import 'react-calendar/dist/Calendar.css';
+import 'react-modern-drawer/dist/index.css'
 import TermsConditionTabs from "./pages/termsAndCondition/termsconditionstabs.jsx";
 import ScrollToTop from "./component/common/scrolltop.jsx";
 import DashboardLayout from "./pages/dashboard/layout.jsx";

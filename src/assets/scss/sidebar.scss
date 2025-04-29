@@ -6,15 +6,23 @@
   display: flex;
   font-family: "Inter";
 
+  .sidebar-wrapped {
+    @include media_1024 {
+      display: none;
+    }
+  }
+
   main {
     color: var(--white_color);
     padding: 30px;
     position: relative;
-    &.width200{
-      width: calc( 100% - 200px);
+
+    &.width200 {
+      width: calc(100% - 200px);
     }
-    &.width80{
-      width: calc( 100% - 80px);
+
+    &.width80 {
+      width: calc(100% - 80px);
     }
   }
 
@@ -75,6 +83,7 @@
     height: 100vh;
     border: none;
     width: 200px;
+
     &.ps-collapsed {
       .sidebarlogo {
         .animate-gradient {

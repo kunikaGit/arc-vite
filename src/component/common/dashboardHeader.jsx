@@ -1,7 +1,9 @@
 import React, { useState } from 'react'
 import imageMap from '../../utlis/helper'
-import { DownIcon, Logout, UserIcon } from '../../icons/icons'
+import { DownIcon, Logout, MenuIcon, UserIcon } from '../../icons/icons'
 import { Link } from 'react-router-dom'
+import Drawer from "react-modern-drawer";
+import MenuItems from '../sidebar/menuList';
 
 const DashboardHeader = ({ title }) => {
 
@@ -9,29 +11,46 @@ const DashboardHeader = ({ title }) => {
     const handleShowDropDown = () => {
         setShowMenu(!showMenu)
     }
+    const [showMToggle, setShowMToggle] = useState(false);
+    const toggleMenu = () => {
+        setShowMToggle((prevState) => !prevState)
+    }
     return (
-        <div className='dahboard-header flex justify-between'>
-            <h2 className="dashboard-title">
-                {title}
-            </h2>
-            <div className='profile flex item' onClick={handleShowDropDown} onBlur={()=>setShowMenu(false)}>
-                <div>
-                    <img src={imageMap['man1.jpg']} alt='img2' />
-                    <h3 className='text-white text-base'>Verified</h3>
+        <>
+            <div className='dahboard-header flex justify-between'>
+                <button className="mobile-toggle" onClick={toggleMenu}>
+                    <MenuIcon />
+                </button>
+                <h2 className="dashboard-title">
+                    {title}
+                </h2>
+                <div className='profile flex item' onClick={handleShowDropDown} onBlur={() => setShowMenu(false)}>
+                    <div>
+                        <img src={imageMap['man1.jpg']} alt='img2' />
+                        <h3 className='text-white text-base'>Verified</h3>
+                    </div>
+                    <div className='mt-5'>
+                        <DownIcon />
+                    </div>
                 </div>
-                <div className='mt-5'>
-                <DownIcon/>
-                </div>
+                {showMenu &&
+                    <div className='dropdown'>
+                        <ul>
+                            <li><Link to="/dashboard/myprofile" className='flex items-center gap-2'><UserIcon />Profile</Link></li>
+                            <li><Link to="#" className='flex items-center gap-2'><Logout />Logout</Link></li>
+                        </ul>
+                    </div>
+                }
             </div>
-            {showMenu &&
-            <div className='dropdown'>
-                <ul>
-                    <li><Link to="/dashboard/myprofile" className='flex items-center gap-2'><UserIcon />Profile</Link></li>
-                    <li><Link to="#" className='flex items-center gap-2'><Logout/>Logout</Link></li>
-                </ul>
-            </div>
-}
-        </div>
+            <Drawer
+                open={showMToggle}
+                onClose={toggleMenu}
+                direction='left'
+                className='mobile-menu'
+                style={{ width: "200px"}}>
+                <MenuItems />
+            </Drawer>
+        </>
     )
 }
 

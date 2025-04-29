@@ -16,10 +16,12 @@ const DashboardLayout = () => {
 
     return (
         <div className="main-box bg-2b2a33">
+            <div className="sidebar-wrapped">
             <Sidebar collapsed={isCollapsed} width="200">
                 <MenuItems />
             </Sidebar>
-            <main className={`${isCollapsed ? 'width80':'width200'}`} style={{ backgroundColor: '#1e1e1e' }}>
+            </div>
+            <main className={`${isCollapsed ? 'width80' : 'width200'}`} style={{ backgroundColor: '#1e1e1e' }}>
                 <button className="toggle-button bg-accent" onClick={togggleSidebar}>
                     <DoubleUp />
                 </button>

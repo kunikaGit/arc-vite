@@ -56,7 +56,7 @@ const MenuItems = () => {
                 {SidebarItems.map((item, index) => {
                     const isActive = location.pathname === item.link;
                     return (
-                        <SubMenu key={index}  onClick={()=>navigate(item.link)}
+                        <SubMenu key={index} onClick={() => navigate(item.link)}
                             className={`sidebar_label ${isActive ? "active" : ""}`}
                             label={
                                 <div className="sidebar_label">
