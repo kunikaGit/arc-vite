@@ -148,7 +148,10 @@ color: #fff;
 .hero .four-cards .accent:hover svg {
   fill: #8358FF;
 }
-
+.error-message{
+  color: #E33629;
+  font-size: 12px;
+}
 
   
 
