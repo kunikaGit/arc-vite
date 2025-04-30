@@ -44,7 +44,7 @@ export default function Hero2() {
                         </a>
                         <Link
                             to="/create"
-                            className="btn-epic mx-3 text-lg relative block rtl:!mr-6 w-52 rounded-full bg-white py-3 px-5 text-center font-semibold text-accent shadow-white-volume"
+                            className="btn-epic md:mx-3 mx-1 text-lg relative block rtl:!mr-6 w-52 rounded-full bg-white py-3 px-5 text-center font-semibold text-accent shadow-white-volume"
                         >
                             <div>
                                 <span className=" font-semibold text-[#fff]">  Learn More</span>

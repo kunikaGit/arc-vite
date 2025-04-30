@@ -18,16 +18,18 @@ const DashboardHeader = ({ title }) => {
     return (
         <>
             <div className='dahboard-header flex justify-between'>
-                <button className="mobile-toggle" onClick={toggleMenu}>
-                    <MenuIcon />
-                </button>
-                <h2 className="dashboard-title">
-                    {title}
-                </h2>
+                <div className='flex items-center gap-x-2'>
+                    <button className="mobile-toggle" onClick={toggleMenu}>
+                        <MenuIcon />
+                    </button>
+                    <h2 className="dashboard-title">
+                        {title}
+                    </h2>
+                </div>
                 <div className='profile flex item' onClick={handleShowDropDown} onBlur={() => setShowMenu(false)}>
                     <div>
                         <img src={imageMap['man1.jpg']} alt='img2' />
-                        <h3 className='text-white text-base'>Verified</h3>
+                        <h3 className='text-white md:text-base text-sm'>Verified</h3>
                     </div>
                     <div className='mt-5'>
                         <DownIcon />
@@ -47,7 +49,7 @@ const DashboardHeader = ({ title }) => {
                 onClose={toggleMenu}
                 direction='left'
                 className='mobile-menu'
-                style={{ width: "200px"}}>
+                style={{ width: "200px" ,backgroundColor:'#2b2a33'}}>
                 <MenuItems />
             </Drawer>
         </>

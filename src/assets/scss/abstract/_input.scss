@@ -52,6 +52,10 @@
             outline: none;
             padding: 0 !important;
             font-family: var(--Quicksand);
+            @include media_1024 {
+                font-size: 14px;
+                padding: 0px 5px !important;
+            }
         }
 
 

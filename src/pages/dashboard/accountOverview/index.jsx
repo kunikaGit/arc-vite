@@ -39,7 +39,8 @@ const Accounts = () => {
                             renderInput={(params) =>
                             (<TextField
                                 value={accType}
-                                {...params} placeholder='Account Type' sx={{ width: '200px' }} />)}
+                                {...params} placeholder='Account Type'
+                            />)}
                         />
                     </div>
                     <div className='input-main-data select-mui-vs '>
@@ -53,79 +54,80 @@ const Accounts = () => {
                             renderInput={(params) =>
                             (<TextField
                                 value={accStatus}
-                                {...params} placeholder='Account Satus' sx={{ width: '200px' }} />)}
+                                {...params} placeholder='Account Satus' />)}
                         />
                     </div>
                 </div>
-                <div className="theme_card bg-2b2a33 mb-5 flex items-center gap-5 card-content">
-                    <input
-                        type="radio"
-                        name="table-data"
-                        value="0.1"
-                        className="mr-2 h-6 w-6 items-center rounded-full border-jacarta-200 text-accent checked:bg-accent focus:ring-accent/20 focus:ring-offset-0 dark:border-jacarta-500 dark:bg-jacarta-600"
-                    />
-                    <div className="icon"><UserHeart /> </div>
-                    <div className="overview flex justify-between w-full">
-                        <div>
+                <div className="theme_card bg-2b2a33 mb-5 flex items-center gap-5 card-content justify-between">
+                    <div className="overview flex items-center gap-x-3 w-full">
+                        <input
+                            type="radio"
+                            name="table-data"
+                            value="0.1"
+                            className=" h-5 w-5 items-center rounded-full border-jacarta-200 text-accent checked:bg-accent focus:ring-accent/20 focus:ring-offset-0 dark:border-jacarta-500 dark:bg-jacarta-600"
+                        />
+                        <div className="icon"><UserHeart /> </div>
+                        <div className="text-content">
                             <h3 className="font-light mb-1">ARC_100k Novoice</h3>
                             <h4 className="font-light">Balance : $106.600</h4>
                         </div>
-                        <div className="btn">
-                            <Link
-                                to="/dashboard"
-                                className=" w-44 block text-base rounded-full bg-accent py-3
+
+                    </div>
+                    <div className="btn">
+                        <Link
+                            to="/dashboard"
+                            className="block text-sm rounded-full bg-accent py-3
                                 px-4 text-center font-medium text-white shadow-accent-volume transition-all hover:bg-accent-dark">
-                                Dashboard
-                            </Link>
-                        </div>
+                            Dashboard
+                        </Link>
                     </div>
                 </div>
 
                 <div className="theme_card bg-2b2a33 mb-5 flex items-center gap-5 card-content">
-                    <input
-                        type="radio"
-                        name="table-data"
-                        value="0.1"
-                        className="mr-2 h-6 w-6 items-center rounded-full border-jacarta-200 text-accent checked:bg-accent focus:ring-accent/20 focus:ring-offset-0 dark:border-jacarta-500 dark:bg-jacarta-600"
-                    />
-                    <div className="icon"><UserHeart /> </div>
-                    <div className="overview flex justify-between w-full">
-                        <div>
+                    <div className="overview flex items-center gap-x-3 w-full">
+                        <input
+                            type="radio"
+                            name="table-data"
+                            value="0.1"
+                            className=" h-5 w-5 items-center rounded-full border-jacarta-200 text-accent checked:bg-accent focus:ring-accent/20 focus:ring-offset-0 dark:border-jacarta-500 dark:bg-jacarta-600"
+                        />
+                        <div className="icon"><UserHeart /> </div>
+                        <div className="text-content">
                             <h3 className="font-light mb-1">ARC_100k Expert</h3>
                             <h4 className="font-light">Balance : $106.600</h4>
                         </div>
-                        <div className="btn">
-                            <Link
-                                to="/dashboard"
-                                className=" w-44 block text-base rounded-full bg-accent py-3
+                    </div>
+                    <div className="btn">
+                        <Link
+                            to="/dashboard"
+                            className="block text-sm rounded-full bg-accent py-3
                                 px-4 text-center font-medium text-white shadow-accent-volume transition-all hover:bg-accent-dark">
-                                Dashboard
-                            </Link>
-                        </div>
+                            Dashboard
+                        </Link>
                     </div>
                 </div>
 
                 <div className="theme_card bg-2b2a33 mb-5 flex items-center gap-5 card-content">
-                    <input
-                        type="radio"
-                        name="table-data"
-                        value="0.1"
-                        className="mr-2 h-6 w-6 items-center rounded-full border-jacarta-200 text-accent checked:bg-accent focus:ring-accent/20 focus:ring-offset-0 dark:border-jacarta-500 dark:bg-jacarta-600"
-                    />
-                    <div className="icon"><UserHeart /> </div>
-                    <div className="overview flex justify-between w-full">
-                        <div>
+                    <div className="overview flex  gap-x-3 w-full items-center">
+                        <input
+                            type="radio"
+                            name="table-data"
+                            value="0.1"
+                            className=" h-5 w-5 items-center rounded-full border-jacarta-200 text-accent checked:bg-accent focus:ring-accent/20 focus:ring-offset-0 dark:border-jacarta-500 dark:bg-jacarta-600"
+                        />
+                        <div className="icon"><UserHeart /> </div>
+                        <div className="text-content">
                             <h3 className="font-light mb-1">ARC_100k Funded</h3>
                             <h4 className="font-light">Balance : $106.600</h4>
                         </div>
-                        <div className="btn">
-                            <Link
-                                to="/dashboard"
-                                className=" w-44 block text-base rounded-full bg-accent py-3
+                    </div>
+                    <div className="btn">
+                        <Link
+                            to="/dashboard"
+                            className="block text-sm rounded-full bg-accent py-3
                                 px-4 text-center font-medium text-white shadow-accent-volume transition-all hover:bg-accent-dark">
-                                Dashboard
-                            </Link>
-                        </div>
+                            Dashboard
+                        </Link>
                     </div>
                 </div>
 

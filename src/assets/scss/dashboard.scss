@@ -6,10 +6,16 @@
     font-weight: 600;
     font-family: "Dm-Sans";
 	font-weight: 600;
+    @include media_1024{
+       font-size: 16px;
+    }
 }
 .theme_card{
     padding: 18px;
     border-radius: 8px;
+    @include media_768{
+        padding: 10px;
+     }
 }
 .dahboard-header{
     margin-bottom: 30px;
@@ -63,6 +69,10 @@
             border-radius: 100%;
             object-fit: cover;
             margin-bottom: 5px;
+            @include media_1024{
+                height: 40px;
+                width: 40px;
+            }
         }
     }
 }

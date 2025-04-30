@@ -127,6 +127,7 @@ export default function Footer1() {
     <footer className="page-footer bg-white dark:bg-jacarta-900">
       <div className="container">
         <div className="grid grid-cols-6 gap-x-7 gap-y-14 pt-24 pb-12 md:grid-cols-12">
+
           <div className="col-span-full sm:col-span-3 md:col-span-4">
             <Link to="/" className="shrink-0">
               <h2 className="logo-text animate-gradient">ARC</h2>
@@ -140,24 +141,16 @@ export default function Footer1() {
             </div>
           </div>
 
-          <div className="col-span-full sm:col-span-3 md:col-span-2 md:col-start-7 mt-8">
+          {/* <div className="col-span-full sm:col-span-3 md:col-span-2 md:col-start-7 mt-8">
             <h3 className="mb-6 font-display text-sm text-jacarta-700 dark:text-white">
               Links
             </h3>
             <ul className="flex flex-col space-y-1 dark:text-jacarta-300">
               <MarketplaceLinks />
             </ul>
-          </div>
-
-          {/* <div className="col-span-full sm:col-span-3 md:col-span-2 md:col-start-7 mt-7">
-            <h3 className="mb-6 font-display text-sm text-jacarta-700 dark:text-white">
-              Company
-            </h3>
-            <ul className="flex flex-col space-y-1 dark:text-jacarta-300">
-              <CompanyLinks />
-            </ul>
           </div> */}
-
+          <div className=" sm:col-span-3 md:col-span-4 md:block hidden">
+          </div>
           <div className="col-span-full sm:col-span-3 md:col-span-2 mt-7">
             <h3 className="mb-6 font-display text-sm text-jacarta-700 dark:text-white">
               Navigation

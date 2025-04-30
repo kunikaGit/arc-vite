@@ -411,6 +411,7 @@ box-shadow: none;
 }
 
 
+
 @media only screen and (min-width: 1920px){
   .hero-main h1{
     font-size: 100px;
@@ -468,7 +469,14 @@ box-shadow: none;
   .hero-main .home-actions{
     margin-bottom:40px;
   }
-
+  .js-page-header--is-sticky .js-mobile-menu{
+    background-color: #fff;
+  }
+  .js-mobile-menu{
+    background-color: rgb(16 20 54/1);
+    width: 90%;
+  }
+  
 }
 
 @media only screen and (max-width: 768px){
@@ -494,5 +502,12 @@ box-shadow: none;
   .home-cards .home-icon{
     height: 32px;
     width: 32px;
+  }
+  .hero-main .btn-epic span{
+    font-size: 14px;    
+    top: -6px;
+    }
+    .hero-main .main-cards p {
+      font-size: 12px;
   }
 }

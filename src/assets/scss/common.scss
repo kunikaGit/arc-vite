@@ -2,11 +2,12 @@
 
 .input-main-data {
     position: relative;
+
     &.select-mui-vs {
         .MuiOutlinedInput-root {
             // border: 1px solid var(--light-blue) !important;
             font-weight: 300;
-            font-size: var(--font_16);
+            font-size: 16px;
             color: #fff;
             border-radius: 25px;
             padding: 10px;
@@ -15,29 +16,36 @@
             padding: 4px 10px !important;
             /* background-color: #2b2a33; */
             border: 1px solid #8257fe;
+
+            @include media_1024 {
+                font-size: 14px;
+                padding: 0px 5px !important;
+            }
         }
-    
+
         .MuiAutocomplete-input {
             padding-right: 30px !important;
-            border-radius: 3px;     
+            border-radius: 3px;
             border: none;
+
             &:focus {
                 border: none !important;
                 box-shadow: none;
             }
-    
+
             @include media_1280 {
                 font-size: var(--font_12);
             }
         }
-    
+
         .MuiOutlinedInput-notchedOutline {
             border: none;
             border-radius: 3px;
-    
+
         }
-    
+
     }
+
     label {
         color: var(--color_647C9B);
         display: block;
@@ -85,13 +93,14 @@
     .select-mui-vs {
         .MuiOutlinedInput-root {
             font-weight: 600;
-            font-size: var(--font_16);
+            font-size: 16px;
             color: #697284;
             border: none;
             text-align: center;
-            svg{
-                path{
-                fill: #697284;
+
+            svg {
+                path {
+                    fill: #697284;
                 }
             }
         }
@@ -100,14 +109,17 @@
             .MuiOutlinedInput-root {
                 color: #fff;
             }
-            svg{
-                path{
-                fill: #fff;
+
+            svg {
+                path {
+                    fill: #fff;
                 }
             }
         }
+
         .MuiAutocomplete-input {
             cursor: pointer;
+
             &:focus {
                 border: none !important;
                 box-shadow: none;

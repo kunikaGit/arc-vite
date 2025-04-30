@@ -19,10 +19,16 @@
 
     &.width200 {
       width: calc(100% - 200px);
+      @include media_1024{
+        width: 100%;
+      }
     }
 
     &.width80 {
       width: calc(100% - 80px);
+      @include media_1024{
+        width: 100%;
+      }
     }
   }
 
@@ -38,6 +44,9 @@
     align-items: center;
     justify-content: center;
     z-index: 11;
+    @include media_1024{
+      display: none;
+    }
 
     svg {
       transform: rotate(-90deg);

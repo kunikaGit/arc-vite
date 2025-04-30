@@ -47,9 +47,9 @@ export default function Header2() {
           </Link>
           {/* Search */}
           {/* Menu / Actions */}
-          <div className="js-mobile-menu invisible lg:visible fixed inset-0 z-10 ml-auto items-center  opacity-0 bg-jacarta-800 lg:relative lg:inset-auto lg:flex lg:opacity-100 lg:bg-transparent ">
+          <div className="js-mobile-menu invisible lg:visible fixed inset-0 z-10 ml-auto items-center  opacity-0 lg:relative lg:inset-auto lg:flex lg:opacity-100 lg:bg-transparent ">
             {/* Mobile Logo / Menu Close */}
-            <div className="t-0 left-0 z-10 flex w-full items-center justify-between  p-6 pl-0 dark:bg-jacarta-800 lg:hidden">
+            <div className="t-0 left-0 z-10 flex w-full items-center justify-between  p-6 pl-0 dark:bg-jacarta-800 lg:hidden mobile-menu">
               {/* Mobile Logo */}
               <Link to="/" >
                 <h2 className="logo-text animate-gradient w-36">ARC</h2>
