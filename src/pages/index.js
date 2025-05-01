@@ -18,6 +18,11 @@ export { default as Leaderboard } from "./dashboard/leaderboard";
 export { default as MyProfile } from "./myprofile";
 export { default as Billing } from "./billing";
 
+export { default as Login } from "./login";
+export { default as Signup } from "./signup";
+
+
+
 
 
 
