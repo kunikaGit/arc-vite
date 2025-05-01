@@ -54,6 +54,11 @@
   padding: 8px;
   /* background-color: #c380e52a; */
 }
+.modal-data{
+  p{
+    font-size: 14px;
+  }
+}
 
 
 

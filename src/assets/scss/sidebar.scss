@@ -16,7 +16,9 @@
     color: var(--white_color);
     padding: 30px;
     position: relative;
-
+    @include media_768{
+     padding: 10px;
+    }
     &.width200 {
       width: calc(100% - 200px);
       @include media_1024{

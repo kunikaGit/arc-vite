@@ -3,7 +3,6 @@ import tippy from "tippy.js";
 import './pricingtable.css'
 import TwoPhase from "./twophasechallange";
 import InstantFunding from "./instantfunding";
-import { Link } from "react-router-dom";
 import useMessageData from "./message";
 import { Box, colors, Modal } from "@mui/material";
 import { Cross } from "../../../icons/icons";
@@ -14,7 +13,6 @@ const style = {
     top: '50%',
     left: '50%',
     transform: 'translate(-50%, -50%)',
-    width: 500,
     height: 'auto',
     color: '#fff',
     boxShadow: 24,
@@ -28,7 +26,7 @@ export default function PricingTable() {
     const [activeTab, setActiveTab] = useState("trending"); // Default active tab
     const { handleOpenModal, isModalOpen, modalContent, handleClose } = useMessageData()
     return (
-        <section className="py-16 pricing-table  bg-white dark:bg-jacarta-900" id="pricing">
+        <section className="md:py-16 py-5 pricing-table  bg-white dark:bg-jacarta-900" id="pricing">
             <div className="container">
                 {/* <div className="mx-auto mb-8 text-center">
                     <h2 data-aos-anchor="#pricing" data-aos-duration={600} data-aos="fade-down" className="mb-0 text-center font-display text-4xl font-medium text-jacarta-700 dark:text-white">
@@ -94,16 +92,18 @@ export default function PricingTable() {
 
             </div>
             <Modal
+                size="lg"
                 open={isModalOpen}
                 onClose={handleClose}
                 aria-labelledby="modal-modal-title"
                 aria-describedby="modal-modal-description"
+                className="large-modal"
             >
                 <Box sx={style} className="modal-large bg-accent">
                 <button type="button" className="bg-transparent border-0 absolute right-3 top-1.5" onClick={()=>handleClose()}>
                     <Cross/>
                 </button>
-                    <div>
+                    <div className="modal-data">
                         {modalContent}
                     </div>
                 </Box>

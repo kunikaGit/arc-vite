@@ -64,7 +64,7 @@ export default function Testimonials() {
               <img
                 src={elm.imageSrc}
                 alt="image"
-                className="md:w-28 w-full h-24 self-start rounded-2.5xl "
+                className="md:w-28 w-full h-28 self-start rounded-2.5xl "
               />
               <div className="-ml-14 -mt-4 flex h-16 w-16 shrink-0 items-center justify-center rounded-full border-[5px] border-white bg-accent dark:border-jacarta-700 md:mb-0 md:w-16">
                 <svg
@@ -131,7 +131,7 @@ export default function Testimonials() {
                     <path d="M12 17l-5.878 3.59 1.598-6.7-5.23-4.48 6.865-.55L12 2.5l2.645 6.36 6.866.55-5.231 4.48 1.598 6.7z" />
                   </svg>
                 </div>
-                <p className="text-md leading-normal text-jacarta-700 dark:text-white">
+                <p className="md:text-base text-sm leading-normal text-jacarta-700 dark:text-white">
                   {elm.text}
                 </p>
                 <span className="mt-6 block font-display text-sm font-medium text-jacarta-700 dark:text-white">
