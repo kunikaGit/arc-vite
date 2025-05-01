@@ -38,14 +38,14 @@
         padding: 100px 0;
 
         .ovarlay-video {
-            &::after{
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 0;
-            background-color: #00000047;
-            height: 100%;
-            width: 100%;
+            &::after {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 0;
+                background-color: #00000047;
+                height: 100%;
+                width: 100%;
             }
         }
 
@@ -53,6 +53,10 @@
             font-size: 60px;
             font-weight: 700;
             margin-bottom: 40px;
+
+            @include media_768 {
+                font-size: 40px;
+            }
         }
 
         .main-btn {
@@ -72,6 +76,12 @@
             align-items: center;
             justify-content: center;
             gap: 10px;
+
+            @include media_768 {
+                padding: 10px;
+                font-size: 18px;
+                width: 220px;
+            }
 
             &:hover {
                 background-color: transparent;

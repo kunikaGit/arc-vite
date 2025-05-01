@@ -4,9 +4,12 @@
   @media #{breakpoints.$media_320} {
     @content
   }
+};
+@mixin media_375 {
+  @media #{breakpoints.$media_320} {
+    @content
+  }
 }
-
-;
 
 @mixin media_480 {
   @media #{breakpoints.$media_480} {

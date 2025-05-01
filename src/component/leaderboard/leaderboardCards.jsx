@@ -18,8 +18,8 @@ const LeaderboardCards = ({ leadercard }) => {
                                                 ? imageMap["copper.png"]
                                                 : ""
                                 } />
-                                <div>
-                                    <h2 className="text-xl mb-1 font-semibold capitalize text-black">{item.name}</h2>
+                                <div className='card-heading'>
+                                    <h2 className="text-xl mb-1 font-semibold capitalize text-black title">{item.name}</h2>
                                     <div className='country flex gap-2'>
                                         <img src={`/img/${item.flag}`} className='flag rounded-full h-4 w-4' alt='trophy' />
                                         <h3 className='text-sm m-0'>{item.country}</h3>

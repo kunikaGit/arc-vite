@@ -1,15 +1,64 @@
-.withdrawal2-wrapped{
-    .flex-box{
+@use '../../../assets/scss/abstract/mixins' as *;
+
+.withdrawal2-wrapped {
+    .withdra-btn{
+        font-size: 16px;
+        @include media_768 {
+            font-size: 14px;
+            width: 100%;
+        }
+    }
+    .flex-box {
         display: flex;
         gap: 20px;
-        .left-side{
+
+        .item1 {
+            span {
+                font-size: 16px;
+
+                @include media_768 {
+                    font-size: 14px;
+                }
+            }
+
+            .card-image {
+                max-width: 120px;
+                @include media_768 {
+                    max-width: 80px;
+                }
+            }
+            .images{
+                .card-icon {
+                    max-width: 45px;
+                    @include media_768 {
+                        max-width: 25px;
+                    }
+                }
+            }
+        }
+
+        @include media_768 {
+            flex-direction: column;
+        }
+
+        .left-side {
             width: 60%;
+
+            @include media_768 {
+                width: 100%;
+            }
         }
-        .right-side{
+
+        .right-side {
             width: 40%;
+
+            @include media_768 {
+                width: 100%;
+            }
         }
-        .block1{
-            input{
+
+        .block1 {
+            input {
                 background-color: transparent;
             }
         }

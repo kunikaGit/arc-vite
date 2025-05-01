@@ -25,7 +25,7 @@ const CommonBanner = ({ title }) => {
             </section>
             <div className="text-center flex items-center justify-center m-auto xl:max-w-4xl lg:max-w-full lg:text-6xl md:text-4xl sm:text-3xl"
                 style={{ height: '300px' }} >
-                <h2 className='font-display  font-bold dark:text-jacarta-700 text-white'>{title}</h2>
+                <h2 className='font-display main-banner-heading font-bold dark:text-jacarta-700 text-white'>{title}</h2>
             </div>
         </>
     )

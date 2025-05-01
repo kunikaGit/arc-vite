@@ -148,6 +148,12 @@ color: #fff;
 .hero .four-cards .accent:hover svg {
   fill: #8358FF;
 }
+.main-banner-heading{
+  font-size: 40px;
+}
+
+
+
 
 
   
@@ -489,6 +495,9 @@ box-shadow: none;
     height: 38px;
     width: 38px;
   }
+  .main-banner-heading{
+    font-size: 30px;
+  }
 }
 
 @media only screen and (max-width: 576px){
@@ -510,4 +519,5 @@ box-shadow: none;
     .hero-main .main-cards p {
       font-size: 12px;
   }
+
 }

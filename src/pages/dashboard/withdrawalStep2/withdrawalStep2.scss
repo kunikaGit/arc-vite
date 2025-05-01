@@ -1,14 +1,33 @@
+@use '../../../assets/scss/abstract/mixins' as *;
 .withdrawal-wrapped{
     .flex-box{
         display: flex;
         gap: 20px;
+        @include media_768{
+            flex-direction: column;
+        }
         .left-side{
             width: 60%;
+            @include media_768{
+                width: 100%;
+            }
         }
         .right-side{
             width: 40%;
+            .withdraw-btn{
+                @include media_768{
+                    width: 100%;
+                }
+            }
+            @include media_768{
+                width: 100%;
+            }
         }
         .payout{
+            .theme_card {
+                width: 100%;
+                overflow-x: auto;
+            }
             table{
                 thead{
                     tr{

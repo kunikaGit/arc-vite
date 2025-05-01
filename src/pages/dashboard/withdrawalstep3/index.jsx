@@ -15,7 +15,7 @@ const WithdrawalStep3 = () => {
                             <h2 className="font-semibold text-lg mb-3">Amount</h2>
                             <div className="theme_card bg-2b2a33">
                                 <h3 className="mb-4">Account : <strong>1234567896</strong></h3>
-                                <h3 className="mb-3 text-md">Withdrawal Amount</h3>
+                                <h3 className="mb-3 md: text-sm">Withdrawal Amount</h3>
                                 <input
                                     type="text"
                                     className="w-full rounded-lg border-jacarta-100 py-2.5 hover:ring-2 mb-1
@@ -30,17 +30,17 @@ const WithdrawalStep3 = () => {
                             <div className="item1 flex  items-center gap-x-3.5 py-2 ">
                                 <input type="radio" name="payment" />
                                 <div className="w-full labels justify-between flex items-center">
-                                    <span className="font-semibold text-white"> Card Payment</span>
-                                    <div className="images"><img src={imageMap['cards.png']} /></div>
+                                    <span className="font-semibold text-white card-text"> Card Payment</span>
+                                    <div className="images"><img src={imageMap['cards.png']} className="card-image"/></div>
                                 </div>
                             </div>
                             <div className="item1 flex  items-center gap-x-3.5 py-2">
                                 <input type="radio" name="payment" />
                                 <div className="labels flex items-center justify-between w-full">
-                                    <span className="font-semibold text-white">Crypto / Paypal</span>
+                                    <span className="font-semibold text-white card-text">Crypto / Paypal</span>
                                     <div className="images flex gap-x-2.5">
-                                        <img src={imageMap['paypal.png']} className="w-[45px]" alt="pay" />
-                                        <img src={imageMap['crypto.png']} className="w-[45px]" alt="pay" />
+                                        <img src={imageMap['paypal.png']} className="card-icon" alt="pay" />
+                                        <img src={imageMap['crypto.png']} className="card-icon" alt="pay" />
                                     </div>
                                 </div>
                             </div>
@@ -55,7 +55,7 @@ const WithdrawalStep3 = () => {
                     </div>
                 </div>
                 <Link to="#/"
-                    className="w-fit block  text-md rounded-full bg-accent py-3 px-6 text-center font-medium text-white shadow-accent-volume transition-all hover:bg-accent-dark">
+                    className="w-fit withdra-btn block  rounded-full bg-accent py-3 px-6 text-center font-medium text-white shadow-accent-volume transition-all hover:bg-accent-dark">
                     Withdraw
                 </Link>
             </div>

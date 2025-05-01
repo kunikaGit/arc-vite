@@ -1,3 +1,4 @@
+@use '../../../assets/scss/abstract/mixins' as *;
 .merchandise-wrapped{
  .flex-box{
     display: flex;
@@ -7,6 +8,12 @@
         width: calc(25% - 20px);
         padding: 15px;
         border-radius: 15px;
+        @include media_768 {
+           width: calc(50% - 20px);
+        }
+        @include media_576 {
+            width: 100%;
+         }
         .image{
             margin-bottom: 10px;
             img{

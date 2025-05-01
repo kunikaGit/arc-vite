@@ -41,15 +41,15 @@ const Faq = () => {
                 </section>
                 <div className="text-center flex flex-col items-center justify-center m-auto xl:max-w-4xl lg:max-w-full lg:text-6xl md:text-4xl sm:text-3xl"
                     style={{ height: '300px' }} >
-                    <h2 className='font-display  font-bold dark:text-jacarta-700 text-white'>FAQ</h2>
+                    <h2 className='font-display  font-bold dark:text-jacarta-700 text-white main-banner-heading'>FAQ</h2>
                     <form
-                        className="relative  w-full ">
+                        className="relative w-3/4 mx-auto">
                         <input
                             type="search"
                             className="w-full rounded-2xl border border-jacarta-100 py-3 px-4 pl-10 text-white placeholder-jacarta-500  bg-white/[.15] placeholder-white"
                             placeholder="Search"
                         />
-                        <span className="absolute left-0 top-4 flex h-full w-12 items-center justify-center rounded-2xl">
+                        <span className="absolute left-0 md:top-4 top-0 flex h-full w-12 items-center justify-center rounded-2xl">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 24 24"
