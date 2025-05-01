@@ -4,10 +4,13 @@ import { DownIcon, Logout, MenuIcon, UserIcon } from '../../icons/icons'
 import { Link } from 'react-router-dom'
 import Drawer from "react-modern-drawer";
 import MenuItems from '../sidebar/menuList';
+import { logout } from '../../redux/slice/authSlice'
+import { useDispatch } from 'react-redux'
 
 const DashboardHeader = ({ title }) => {
 
     const [showMenu, setShowMenu] = useState(false)
+    const dispatch = useDispatch()
     const handleShowDropDown = () => {
         setShowMenu(!showMenu)
     }
@@ -15,6 +18,10 @@ const DashboardHeader = ({ title }) => {
     const toggleMenu = () => {
         setShowMToggle((prevState) => !prevState)
     }
+    const handleLogout = () => {
+        dispatch(logout());
+        navigate("/");
+    };
     return (
         <>
             <div className='dahboard-header flex justify-between'>
@@ -39,7 +46,7 @@ const DashboardHeader = ({ title }) => {
                     <div className='dropdown'>
                         <ul>
                             <li><Link to="/dashboard/myprofile" className='flex items-center gap-2'><UserIcon />Profile</Link></li>
-                            <li><Link to="#" className='flex items-center gap-2'><Logout />Logout</Link></li>
+                            <li><Link  className='flex items-center gap-2' onClick={handleLogout}><Logout />Logout</Link></li>
                         </ul>
                     </div>
                 }
