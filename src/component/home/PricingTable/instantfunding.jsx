@@ -1,17 +1,24 @@
 import { Link } from "react-router-dom";
 import { QuestionRound } from "../../../icons/icons";
 import { useState } from "react";
-
+import usePricingTableUtiles from "./priceTableUtiles"
 
 
 export default function InstantFunding({ handleOpenModal }) {
   const accountSizes = [
-    { size: "$5k", price: 99 },
-    { size: "$8k", price: 159 },
-    { size: "$10k", price: 189 },
+    { size: "$5k", price: 99,profit_target:'Unlimitted',max_daily_loss:'3 %',max_overall_loss:'6 %',min_trading_days:'5 Days' },
+    { size: "$8k", price: 159,profit_target:'Unlimitted',max_daily_loss:'3 %',max_overall_loss:'6 %',min_trading_days:'5 Days' },
+    { size: "$10k", price: 189,profit_target:'Unlimitted',max_daily_loss:'3 %',max_overall_loss:'6 %',min_trading_days:'5 Days' },
 
   ];
   const [selected, setSelected] = useState(accountSizes[2]);
+
+  const {  twoPhasePlans,
+    instantFundingPlans}= usePricingTableUtiles()
+
+    console.log(  twoPhasePlans,
+      instantFundingPlans)
+
   return (
     <>
       <div className="flex justify-center space-x-4 mb-6 common-nav-header dark:bg-jacarta-700  bg-[#f5f5fa]">

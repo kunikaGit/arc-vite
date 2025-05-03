@@ -5,14 +5,18 @@ import { useDispatch, useSelector } from "react-redux";
 
 import Joi from "joi";
 import { useNavigate } from "react-router-dom";
+import {jwtDecode} from 'jwt-decode';
+
 import { login } from "../../redux/action/authAction";
 
 const useLoginUtils = () => {
+
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const { loading, error } = useSelector((state) => state.auth);
 
-  const [formData, setFormData] = useState({ email: "", password: "" });
+
+  const [formData, setFormData] = useState({ email: "", password: "",auth_type:"email" });
   const [formErrors, setFormErrors] = useState({});
   const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 
@@ -42,13 +46,13 @@ const useLoginUtils = () => {
       password: Joi.string().required().messages({
         "any.required": "Password is required.",
       }),
-    });
+    }).unknown(true); // 👈 This allows auth_type and any other extra fields
+    
 
     const validationResponse = await validateFormData(
       formData,
       validationSchema
     );
-
     // If validation fails, set the errors
     if (!validationResponse.status) {
       setFormErrors(validationResponse.errors);
@@ -57,6 +61,18 @@ const useLoginUtils = () => {
     dispatch(login({ formData  , navigate}));
   
   };
+
+      const handleGoogleSuccess = async (credentialResponse) => {
+          const decoded = jwtDecode(credentialResponse.credential);
+          let payload = JSON.stringify({
+              email: decoded.email,
+              name: decoded.given_name,
+              surname: decoded.family_name,
+              auth_type: 'google',
+            })
+            dispatch(login({ formData:payload  , navigate}));
+  
+        };
 
   return {
     formData,
@@ -67,6 +83,7 @@ const useLoginUtils = () => {
     handleChange,
     setIsPasswordVisible,
     handleSubmit,
+    handleGoogleSuccess
   };
 };
 

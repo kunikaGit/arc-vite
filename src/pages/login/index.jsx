@@ -3,7 +3,7 @@ import './login.scss'
 import { Link } from 'react-router-dom'
 import { EyeIcon, EyeoffIcon } from '../../icons/icons'
 import useLoginUtils from './loginUtils'
-
+import { GoogleLogin } from '@react-oauth/google';
 const Login = () => {
 
     const {
@@ -13,6 +13,7 @@ const Login = () => {
         handleChange,
         setIsPasswordVisible,
         handleSubmit,
+        handleGoogleSuccess
     } = useLoginUtils();
 
     return (
@@ -60,6 +61,24 @@ const Login = () => {
                             </div>
                             <button type='submit' className='login-btn'>Login</button>
                         </form>
+                        <div style={{ textAlign: 'center', marginTop: '20px' }}>
+                            <div style={{ margin: '20px 0', display: 'flex', alignItems: 'center' }}>
+                                <hr style={{ flexGrow: 1 }} />
+                                <span style={{ margin: '0 10px', color: '#999' }}>OR</span>
+                                <hr style={{ flexGrow: 1 }} />
+                            </div>
+
+                            <GoogleLogin
+                                onSuccess={handleGoogleSuccess}
+                                onError={() => console.log('Google Login Failed')}
+                            />
+                        </div>
+
+                        <div style={{ margin: '20px 0', display: 'flex', alignItems: 'center' }}>
+                            <hr style={{ flexGrow: 0 }} />
+                            <span style={{ margin: '0 10px', color: '#999' }}></span>
+                            <hr style={{ flexGrow: 0 }} />
+                        </div>
                         <div className='signup-text'>
                             <p>Don’t have an account? <Link to="/signup">Signup</Link></p>
                         </div>

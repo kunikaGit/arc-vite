@@ -1,9 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { login } from "../action/authAction";
-
-var isAuthenticated = localStorage.getItem("arc_accessToken")
-  ? true
-  : false;
+var isAuthenticated = localStorage.getItem("auth_token") ? true : false;
 
 // let user =   JSON.parse( localStorage.getItem("logged_in_user"))
 
@@ -11,34 +8,37 @@ const initialState = {
   loading: false,
   error: null,
   success: false,
-  // user:user?user:null,
   customerDetails: null,
   settingData: null,
   settingloading: null,
   isAuthenticated: isAuthenticated,
+  auth_token: localStorage.getItem("auth_token") || null,  // 👈 new line
   vrfyOtpEmail: null,
 };
+
 
 const authSlice = createSlice({
   name: "auth",
   initialState,
   reducers: {
     isloginSuccess(state) {
-      if (localStorage.getItem("arc_accessToken") != null) {
+      const token = localStorage.getItem("auth_token");
+      if (token) {
         return {
           ...state,
           loading: false,
           isAuthenticated: true,
+          auth_token: token,  // 👈 store token in state
           error: null,
         };
       }
-    },
+    },    
     logout(state) {
       state.isAuthenticated = false;
       state.customerDetails = null;
+      state.auth_token = null; // clear token from redux
       localStorage.clear();
-
-    },
+    },    
   },
 
   extraReducers: (builder) => {

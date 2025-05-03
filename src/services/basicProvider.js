@@ -6,18 +6,21 @@ import {
 import axios from "./axios";
 
 class BasicProvider {
-  constructor(url = "", navigate, isUser = false, dispatch = false) {
+  constructor(url = "", navigate, isUser = false, dispatch = false, authToken = "") {
     this.url = url;
     this.navigate = navigate;
     this.isUser = isUser;
     this.dispatch = dispatch;
+    this.authToken = authToken;
   }
+
 
   // Common function to get headers
   async getHeaders() {
     const config = { ...getHeader() };
-    config.headers.access_token =  sessionStorage.getItem("arc_accessToken");
-    return config;
+    if (this.authToken) {
+      config.headers.access_token = this.authToken;
+    }    return config;
   }
 
   // GET request post Method
