@@ -18,20 +18,31 @@ const location = useLocation();
     const [instantFundingPlans,setInstantFundingPlans] = useState([])
 
     const fetchApiData = async () => {
-        console.log("fetchApiData")
         try {
             const instantFundingRes = await fetchData(API_ENDPOINTS.instantFunding, null, "GET");
-            if (instantFundingRes?.data) setInstantFundingPlans(instantFundingRes.data);
-
+            if (instantFundingRes?.data) {
+              const updatedInstantPlans = instantFundingRes.data.map((item) => ({
+                ...item,
+                table_name: "insted_funding_plans"
+              }));
+              setInstantFundingPlans(updatedInstantPlans);
+            }
+            
             const rwoPhaseRes = await fetchData(API_ENDPOINTS.twoPhase, null, "GET");
-            if (rwoPhaseRes?.data) setTwoPhasePlans(rwoPhaseRes.data);
+            if (rwoPhaseRes?.data) {
+              const updatedTwoPhasePlans = rwoPhaseRes.data.map((item) => ({
+                ...item,
+                table_name: "two_phases_plans"
+              }));
+              setTwoPhasePlans(updatedTwoPhasePlans);
+            }
+            
         } catch (error) {
             console.error("Dropdown fetch error", error);
         }
     };
 
     useEffect(() => {
-        alert(3333)
         fetchApiData();
     }, []);
 

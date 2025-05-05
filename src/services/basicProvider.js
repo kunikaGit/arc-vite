@@ -11,6 +11,7 @@ class BasicProvider {
     this.navigate = navigate;
     this.isUser = isUser;
     this.dispatch = dispatch;
+    console.log(authToken,"?")
     this.authToken = authToken;
   }
 
@@ -19,8 +20,9 @@ class BasicProvider {
   async getHeaders() {
     const config = { ...getHeader() };
     if (this.authToken) {
-      config.headers.access_token = this.authToken;
-    }    return config;
+      config.headers.Authorization = `Bearer ${this.authToken}`; // ✅ Correct way
+    }
+       return config;
   }
 
   // GET request post Method

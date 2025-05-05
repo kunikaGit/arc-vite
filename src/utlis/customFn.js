@@ -1,4 +1,5 @@
 import toast from "react-hot-toast";
+
 // const importAll = (r) => {
 //   let images = {};
 //   r.keys().map((item) => {
@@ -13,9 +14,10 @@ export const toastLoading = "Loading..."
 export const resolveTime = 1000
 
 export const getHeader = () => {
+
   const config = {
     headers: {
-      authorization: localStorage.getItem("arc_accessToken"),
+      Authorization: `Bearer ${localStorage.getItem("auth_token")}`,
     },
   };
   return config;

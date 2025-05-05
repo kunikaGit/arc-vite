@@ -3,31 +3,41 @@ import './pricingtable.css'
 import { Link } from "react-router-dom";
 import { QuestionRound } from "../../../icons/icons";
 import { useState } from 'react';
+import usePricingTableUtiles from "./priceTableUtiles"
+import { useEffect } from "react"
 
 export default function TwoPhase({ handleOpenModal }) {
-  const accountSizes = [
-    { size: "$8k", price: 39, profitTarget: '$640 (8%)', profitTarget2: '$400 (5%)', dailyLossLimit: "$400 (5%)", drawdown: "$800 (10%)" },
-    { size: "$15k", price: 79, profitTarget: '$1,200 (8%)', profitTarget2: '$750 (5%)', dailyLossLimit: "$750 (5%)", drawdown: "$1,500 (10%)" },
-    { size: "$25k", price: 139, profitTarget: '$2,000 (8%)', profitTarget2: '$1,250 (5%)', dailyLossLimit: "$1,250 (5%)", drawdown: "$2,500 (10%)" },
-    { size: "$50k", price: 269, profitTarget: '$4,000 (8%)', profitTarget2: '$2,500 (5%)', dailyLossLimit: "$2,500 (5%)", drawdown: "$5,000 (10%)" },
-    { size: "$100k", price: 529, profitTarget: '$8,000 (8%)', profitTarget2: '$5,000 (5%)', dailyLossLimit: "$5,000 (5%)", drawdown: "$10,000 (10%)" },
-  ];
-  const [selected, setSelected] = useState(accountSizes[2]);
+  // const accountSizes = [
+  //   { size: "$8k", price: 39, profitTarget: '$640 (8%)', profitTarget2: '$400 (5%)', dailyLossLimit: "$400 (5%)", drawdown: "$800 (10%)" },
+  //   { size: "$15k", price: 79, profitTarget: '$1,200 (8%)', profitTarget2: '$750 (5%)', dailyLossLimit: "$750 (5%)", drawdown: "$1,500 (10%)" },
+  //   { size: "$25k", price: 139, profitTarget: '$2,000 (8%)', profitTarget2: '$1,250 (5%)', dailyLossLimit: "$1,250 (5%)", drawdown: "$2,500 (10%)" },
+  //   { size: "$50k", price: 269, profitTarget: '$4,000 (8%)', profitTarget2: '$2,500 (5%)', dailyLossLimit: "$2,500 (5%)", drawdown: "$5,000 (10%)" },
+  //   { size: "$100k", price: 529, profitTarget: '$8,000 (8%)', profitTarget2: '$5,000 (5%)', dailyLossLimit: "$5,000 (5%)", drawdown: "$10,000 (10%)" },
+  // ];
 
+  const {
+    twoPhasePlans } = usePricingTableUtiles()
+  const [selected, setSelected] = useState(twoPhasePlans.length > 0 ? twoPhasePlans[2] : {});
+
+  useEffect(() => {
+    if (twoPhasePlans.length > 2) {
+      setSelected(twoPhasePlans[2]);
+    }
+  }, [twoPhasePlans]);
   return (
     <>
       <div className="flex justify-center space-x-4 mb-6 common-nav-header dark:bg-jacarta-700  bg-[#f5f5fa]">
-        {accountSizes.map((account, index) => (
+        {twoPhasePlans.map((account, index) => (
           <div onClick={() => setSelected(account)} key={index}>
             <label className="flex items-center space-x-2 cursor-pointer  text-black dark:text-white ">
 
               <span
-                className={`text-jacarta-700 dark:text-white rounded-md md:py-2 md:px-4 py-2 px-1  md:text-md text-sm transition-all ${selected.size === account.size
+                className={`text-jacarta-700 dark:text-white rounded-md md:py-2 md:px-4 py-2 px-1  md:text-md text-sm transition-all ${selected.account_size === account.account_size
                   ? "text-accent bg-accent text-white"
                   : "  border-gray-400 dark:border-gray-500 text-gray-700 dark:text-white"
                   }`}
               >
-                {account.size}
+                {account.account_size}
               </span>
             </label>
           </div>
@@ -44,11 +54,11 @@ export default function TwoPhase({ handleOpenModal }) {
                 <span>Profit Target
                   <button type='button' onClick={() => handleOpenModal("profitTarget")}><QuestionRound /></button>
                 </span>
-                <span> {selected.profitTarget}</span>
+                <span> {selected.profit_target}</span>
               </li>
               <li><span>Maximum Daily Loss
                 <button type='button' onClick={() => handleOpenModal("dailyLoss")}><QuestionRound /></button></span>
-                <span>{selected.dailyLossLimit}</span>
+                <span>{selected.daily_loss_limit}</span>
               </li>
               <li><span> Maximum Overall Loss
                 <button type='button' onClick={() => handleOpenModal("maxloss")}><QuestionRound /></button></span>
@@ -64,12 +74,12 @@ export default function TwoPhase({ handleOpenModal }) {
             <ul className="space-y-2 text-jacarta-700 dark:text-white">
               <li><span>Profit Target
                 <button type='button' onClick={() => handleOpenModal("profitTarget")}><QuestionRound /></button></span>
-                <span> ${selected.profitTarget2}</span>
+                <span> ${selected.profit_target2}</span>
               </li>
               <li>
                 <span>Maximum Daily Loss
                   <button type='button' onClick={() => handleOpenModal("dailyLoss")}><QuestionRound /></button></span>
-                <span>{selected.dailyLossLimit}</span>
+                <span>{selected.daily_loss_limit}</span>
               </li>
               <li>
                 <span> Maximum Overall Loss
@@ -96,7 +106,7 @@ export default function TwoPhase({ handleOpenModal }) {
               <li>
                 <span>Maximum Daily Loss
                   <button type='button' onClick={() => handleOpenModal("dailyLoss")}><QuestionRound /></button></span>
-                <span>{selected.dailyLossLimit}</span>
+                <span>{selected.daily_loss_limit}</span>
               </li>
               <li><span> Maximum Overall Loss
                 <button type='button' onClick={() => handleOpenModal("maxloss")}><QuestionRound /></button></span>

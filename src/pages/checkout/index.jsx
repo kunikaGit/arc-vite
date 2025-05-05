@@ -7,13 +7,19 @@ import { TermsContent } from "../../component";
 import { Box, Modal, Tooltip } from "@mui/material";
 import { DollerIcon, DoubleUp, TrophyIcon } from "../../icons/icons";
 import { useNavigate } from 'react-router-dom';
-
-
+import { API_ENDPOINTS } from "../../constants/endPoints";
+import useApiRequest from "../../hook/useApiRequest";
+import { successMsg } from "../../utlis/customFn";
+import { loadStripe } from '@stripe/stripe-js';
+import Web3 from 'web3';
 
 export default function Checkout() {
+    const stripePromise = loadStripe('pk_test_51RKiCLPDRB8z2YTff6ztYYkt8JDbjfTanRjQVE0zG1WYhykLobRbhmYV7AUdveZmbo82NP35gDEIRIWcAzqJHsFP00BmwF6W0O'); // Use your public key
+
     const location = useLocation();
     const selected = location.state?.selected;
     const [checkTc, setCheckTc] = useState(false)
+    const { loading, fetchData } = useApiRequest();
 
     const [open, setOpen] = React.useState(false);
 
@@ -32,7 +38,6 @@ export default function Checkout() {
         price: selected?.price || 0,
         addons: [],
     });
-
     const handleAddonChange = (e) => {
         const percent = parseFloat(e.target.value);
         const checked = e.target.checked;
@@ -55,7 +60,7 @@ export default function Checkout() {
         }));
     };
 
-    const handleCheckTc = () =>{
+    const handleCheckTc = () => {
         setCheckTc(!checkTc)
         setTimeout(() => {
             handleClose()
@@ -75,10 +80,149 @@ export default function Checkout() {
     const navigate = useNavigate();
 
 
+
+    const [countries, setCountries] = useState([])
+    const [paymentMethods, setPaymentMethods] = useState([])
+
+
+    const fetchApis = async () => {
+        try {
+            const instantFundingRes = await fetchData(API_ENDPOINTS.countries, navigate(), "GET");
+            if (instantFundingRes?.data) setCountries(instantFundingRes.data);
+
+            const payemtnMethodRes = await fetchData(API_ENDPOINTS.paymentMethods, navigate(), "GET");
+            if (payemtnMethodRes?.data) setPaymentMethods(payemtnMethodRes.data);
+
+        } catch (error) {
+            console.error("Dropdown fetch error", error);
+        }
+    }
+    useEffect(() => {
+        fetchApis()
+    }, [])
+
+    const [formData, setFormData] = useState({
+        first_name: '',
+        last_name: '',
+        contact_number: '',
+        email: '',
+        country_id: '',
+        confirmNonUS: false,
+        paymentMethodId: '',
+        plan_type: selectedState.table_name,
+        id: selectedState.id,
+        price:selectedState.price
+    });
+    const [errors, setErrors] = useState({});
+
+    const handleChange = (e) => {
+        const { name, value, type, checked } = e.target;
+        console.log(value)
+        setFormData(prev => ({
+            ...prev,
+            [name]: type === 'checkbox' ? checked : value
+        }));
+    };
+
+    const validateForm = () => {
+        const newErrors = {};
+
+        if (!formData.first_name.trim()) newErrors.first_name = 'First name is required.';
+        if (!formData.last_name.trim()) newErrors.last_name = 'Last name is required.';
+
+        if (!formData.contact_number.trim()) {
+            newErrors.contact_number = 'Contact number is required.';
+        } else if (!/^[0-9]{10,15}$/.test(formData.contact_number)) {
+            newErrors.contact_number = 'Enter a valid contact number.';
+        }
+
+        if (!formData.email.trim()) {
+            newErrors.email = 'Email is required.';
+        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+            newErrors.email = 'Enter a valid email address.';
+        }
+
+        if (!formData.country_id) newErrors.country_id = 'Country is required.';
+        if (!formData.paymentMethodId) newErrors.paymentMethodId = 'Select a payment method.';
+        if (!formData.confirmNonUS) newErrors.confirmNonUS = 'You must confirm not being a U.S. citizen.';
+        setErrors(newErrors);
+        return Object.keys(newErrors).length === 0;
+    };
+
+    const USDT_ADDRESS = "0xf4c1Af502Bb26bd19CfCcA612ADba7C4308F2F64"; // USDT Token Contract Address
+    const USDT_ABI = 
+    [{"inputs":[],"stateMutability":"nonpayable","type":"constructor"},{"inputs":[{"internalType":"address","name":"spender","type":"address"},{"internalType":"uint256","name":"allowance","type":"uint256"},{"internalType":"uint256","name":"needed","type":"uint256"}],"name":"ERC20InsufficientAllowance","type":"error"},{"inputs":[{"internalType":"address","name":"sender","type":"address"},{"internalType":"uint256","name":"balance","type":"uint256"},{"internalType":"uint256","name":"needed","type":"uint256"}],"name":"ERC20InsufficientBalance","type":"error"},{"inputs":[{"internalType":"address","name":"approver","type":"address"}],"name":"ERC20InvalidApprover","type":"error"},{"inputs":[{"internalType":"address","name":"receiver","type":"address"}],"name":"ERC20InvalidReceiver","type":"error"},{"inputs":[{"internalType":"address","name":"sender","type":"address"}],"name":"ERC20InvalidSender","type":"error"},{"inputs":[{"internalType":"address","name":"spender","type":"address"}],"name":"ERC20InvalidSpender","type":"error"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"owner","type":"address"},{"indexed":true,"internalType":"address","name":"spender","type":"address"},{"indexed":false,"internalType":"uint256","name":"value","type":"uint256"}],"name":"Approval","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"internalType":"address","name":"from","type":"address"},{"indexed":true,"internalType":"address","name":"to","type":"address"},{"indexed":false,"internalType":"uint256","name":"value","type":"uint256"}],"name":"Transfer","type":"event"},{"inputs":[{"internalType":"address","name":"owner","type":"address"},{"internalType":"address","name":"spender","type":"address"}],"name":"allowance","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"spender","type":"address"},{"internalType":"uint256","name":"value","type":"uint256"}],"name":"approve","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"account","type":"address"}],"name":"balanceOf","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"decimals","outputs":[{"internalType":"uint8","name":"","type":"uint8"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"name","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"symbol","outputs":[{"internalType":"string","name":"","type":"string"}],"stateMutability":"view","type":"function"},{"inputs":[],"name":"totalSupply","outputs":[{"internalType":"uint256","name":"","type":"uint256"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"value","type":"uint256"}],"name":"transfer","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address","name":"from","type":"address"},{"internalType":"address","name":"to","type":"address"},{"internalType":"uint256","name":"value","type":"uint256"}],"name":"transferFrom","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"nonpayable","type":"function"}]
+    ;
+    
     const proceedPayment = async (e) => {
         e.preventDefault();
-        navigate('/stripe-payment');
-      };
+    
+        if (validateForm()) {
+            try {
+                const checkoutRes = await fetchData(API_ENDPOINTS.checkout, navigate, "POST", formData);
+    
+                // Save session_id
+                if (checkoutRes?.data) {
+                    localStorage.setItem("session_id", checkoutRes.data);
+                }
+    
+                if (formData.paymentMethodId == 3) {
+                    // Stripe Flow
+                    const stripe = await stripePromise;
+                    await stripe.redirectToCheckout({ sessionId: checkoutRes.data });
+    
+                } else if (formData.paymentMethodId == 2) {
+                    // MetaMask USDT Transfer
+                    if (window.ethereum) {
+                        // Initialize Web3 with the window.ethereum provider (MetaMask)
+                        const web3 = new Web3(window.ethereum);
+                        
+                        try {
+                            // Request accounts
+                            await window.ethereum.request({ method: "eth_requestAccounts" });
+                            
+                            // Get the user's address
+                            const accounts = await web3.eth.getAccounts();
+                            const userAddress = accounts[0]; // This will give the current MetaMask address
+                            
+                            // Create the USDT contract instance
+                            const usdt = new web3.eth.Contract(USDT_ABI, USDT_ADDRESS);
+                            
+                            // Get the decimals for USDT (usually 6 for USDT)
+                            const decimals = await usdt.methods.decimals().call();
+                            
+                            // Calculate the amount to send (convert price to the proper amount based on decimals)
+                            console.log(formData.price)
+                            const amount = web3.utils.toWei(formData.price.toString(), 'mwei'); // 'mwei' represents 6 decimals
+                            
+                            // Send the transaction
+                            const tx = await usdt.methods.transfer("0xc9A2C082BAA60743216220cf78899d48FcEf5b3c", amount).send({ from: userAddress });
+                            
+                            // Wait for the transaction to be mined (optional but useful for confirmation)
+                            console.log("Transaction Hash:", tx.transactionHash);
+                    
+                            // Redirect to success page with transaction hash
+                            navigate('/success', {
+                                state: {
+                                    txHash: tx.transactionHash, // Web3.js gives this
+                                }
+                            });
+                    
+                        } catch (error) {
+                            console.error("Error during transaction:", error);
+                            alert("Transaction failed or MetaMask rejected the request.");
+                        }
+                    } else {
+                        alert("MetaMask not detected");
+                    }
+                }
+    
+            } catch (error) {
+                console.error("Payment Error:", error);
+            }
+        }
+    };
+
     return (
         <>
             <Header2 />
@@ -103,7 +247,12 @@ export default function Checkout() {
                                             className="w-full rounded-lg border-jacarta-100 py-2.5 hover:ring-2 hover:ring-accent/10 focus:ring-accent dark:border-jacarta-600 dark:bg-jacarta-700 dark:text-white dark:placeholder:text-jacarta-300"
                                             placeholder="Enter First Name"
                                             required
+                                            name="first_name"
+                                            value={formData.first_name}
+                                            onChange={handleChange}
                                         />
+                                        {errors.first_name && <p className="text-red-500 text-sm mt-1">{errors.first_name}</p>}
+
                                     </div>
                                     <div className="w-1/2">
                                         <label htmlFor="profile-username" className="mb-1 block font-display text-base text-jacarta-700 dark:text-white">
@@ -114,19 +263,29 @@ export default function Checkout() {
                                             className="w-full rounded-lg border-jacarta-100 py-2.5 hover:ring-2 hover:ring-accent/10 focus:ring-accent dark:border-jacarta-600 dark:bg-jacarta-700 dark:text-white dark:placeholder:text-jacarta-300"
                                             placeholder="Enter Last Name"
                                             required
+                                            name="last_name"
+                                            value={formData.last_name}
+                                            onChange={handleChange}
                                         />
+                                        {errors.last_name && <p className="text-red-500 text-sm mt-1">{errors.last_name}</p>}
+
                                     </div>
                                 </div>
                                 <div className="w-full mb-6">
                                     <label htmlFor="profile-username" className="mb-1 block font-display text-base text-jacarta-700 dark:text-white">
-                                        Phone<span className="text-red">*</span>
+                                        Contact Number<span className="text-red">*</span>
                                     </label>
                                     <input
                                         type="text"
                                         className="w-full rounded-lg border-jacarta-100 py-2.5 hover:ring-2 hover:ring-accent/10 focus:ring-accent dark:border-jacarta-600 dark:bg-jacarta-700 dark:text-white dark:placeholder:text-jacarta-300"
                                         placeholder="Enter Last Name"
                                         required
+                                        name="contact_number"
+                                        value={formData.contact_number}
+                                        onChange={handleChange}
                                     />
+                                    {errors.contact_number && <p className="text-red-500 text-sm mt-1">{errors.contact_number}</p>}
+
                                 </div>
                                 <div className="w-full mb-6">
                                     <label htmlFor="profile-username" className="mb-1 block font-display text-base text-jacarta-700 dark:text-white">
@@ -137,26 +296,35 @@ export default function Checkout() {
                                         className="w-full rounded-lg border-jacarta-100 py-2.5 hover:ring-2 hover:ring-accent/10 focus:ring-accent dark:border-jacarta-600 dark:bg-jacarta-700 dark:text-white dark:placeholder:text-jacarta-300"
                                         placeholder="Enter Last Name"
                                         required
+                                        name="email"
+                                        value={formData.email}
+                                        onChange={handleChange}
                                     />
+                                    {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email}</p>}
+
                                 </div>
                                 <div className="mb-6 w-full">
                                     <label htmlFor="profile-username" className="mb-1 block font-display text-base text-jacarta-700 dark:text-white">
                                         Country <span className="text-red">*</span>
                                     </label>
                                     <select id="large"
-                                        className="w-full rounded-lg border-jacarta-100 py-2.5 hover:ring-2 hover:ring-accent/10 focus:ring-accent dark:border-jacarta-600 dark:bg-jacarta-700 dark:text-white dark:placeholder:text-jacarta-300"                            >
+                                        className="w-full rounded-lg border-jacarta-100 py-2.5 hover:ring-2 hover:ring-accent/10 focus:ring-accent dark:border-jacarta-600 dark:bg-jacarta-700 dark:text-white dark:placeholder:text-jacarta-300"
+                                        name="country_id"
+                                        value={formData.country}
+                                        onChange={handleChange}                     >
                                         <option selected disabled >Choose a country</option>
-                                        <option value="US">United States</option>
-                                        <option value="CA">Canada</option>
-                                        <option value="FR">France</option>
-                                        <option value="DE">Germany</option>
+                                        {countries.map((c) => (
+                                            <option key={c.id} value={c.id}>{c.name}</option>
+                                        ))}
                                     </select>
                                 </div>
                                 <div className="flex items-center space-x-2">
                                     <input
                                         type="checkbox"
-                                        id="contact-form-consent-input"
-                                        name="agree-to-terms"
+                                        id="confirmNonUS"
+                                        name="confirmNonUS"
+                                        checked={formData.confirmNonUS}
+                                        onChange={handleChange}
                                         className="h-5 w-5 self-start rounded border-jacarta-200 text-accent checked:bg-accent focus:ring-accent/20 focus:ring-offset-0 dark:border-jacarta-500 dark:bg-jacarta-600"
                                     />
                                     <label
@@ -170,29 +338,41 @@ export default function Checkout() {
                                 <h2 className="py-2  mb-5 font-display text-lg font-medium text-jacarta-700 dark:text-white">
                                     Choose Payment Method</h2>
                                 <div className="radio-btn">
-                                    <div className="item1 flex  items-center gap-x-3.5 py-5  border-b border-jacarta-200">
-                                        <input type="radio" name="payment" />
+
+                                    <div key={paymentMethods[0]?.id} className="item1 flex  items-center gap-x-3.5 py-5  border-b border-jacarta-200">
+                                        <input
+                                            name="paymentMethodId"
+                                            value={paymentMethods[0]?.id}
+                                            checked={formData.paymentMethodId === paymentMethods[0]?.id}
+                                            onChange={handleChange}
+                                            type="radio" />
                                         <div className="w-full labels justify-between flex items-center">
-                                            <span className="font-semibold text-jacarta-700 dark:text-white"> Card Payment</span>
-                                            <div className="images"><img src={imageMap['cards.png']} /></div>
+                                            <span className="font-semibold text-jacarta-700 dark:text-white"> {paymentMethods[0]?.name}</span>
+                                            <div className="images"><img src={imageMap[paymentMethods[0]?.icon]} /></div>
                                         </div>
                                     </div>
                                     <div className="item1 flex  items-center gap-x-3.5 py-5 border-b border-jacarta-200">
-                                        <input type="radio" name="payment" />
+                                        <input type="radio" name="paymentMethodId"
+                                            value={paymentMethods[1]?.id}
+                                            checked={formData.paymentMethodId === paymentMethods[1]?.id}
+                                            onChange={handleChange} />
                                         <div className="labels flex items-center justify-between w-full">
-                                            <span className="font-semibold text-jacarta-700 dark:text-white">Crypto / Paypal</span>
+                                            <span className="font-semibold text-jacarta-700 dark:text-white">{paymentMethods[1]?.name}</span>
                                             <div className="images flex gap-x-2.5">
-                                                <img src={imageMap['paypal.png']} className="w-[45px]" alt="pay" />
-                                                <img src={imageMap['crypto.png']} className="w-[45px]" alt="pay" />
+                                                <img src={imageMap[paymentMethods[1]?.icon]} className="w-[45px]" alt="pay" />
+                                                <img src={imageMap[paymentMethods[1]?.image]} className="w-[45px]" alt="pay" />
                                             </div>
                                         </div>
                                     </div>
                                     <div className="item1 flex  items-center gap-x-3.5 py-5 border-b border-jacarta-200 mb-5">
-                                        <input type="radio" name="payment" />
+                                        <input type="radio" name="paymentMethodId"
+                                            value={paymentMethods[2]?.id}
+                                            checked={formData.paymentMethodId === paymentMethods[2]?.id}
+                                            onChange={handleChange} />
                                         <div className="labels flex items-center justify-between w-full">
-                                            <span className="font-semibold text-jacarta-700 dark:text-white">Stripe</span>
+                                            <span className="font-semibold text-jacarta-700 dark:text-white">{paymentMethods[2]?.name}</span>
                                             <div className="images flex gap-x-2.5">
-                                                <img src={imageMap['stripe-logo.svg']} className="w-[45px]" alt="pay" />
+                                                <img src={imageMap[paymentMethods[2]?.icon]} className="w-[45px]" alt="pay" />
                                             </div>
                                         </div>
                                     </div>
@@ -209,21 +389,21 @@ export default function Checkout() {
                                             <h2 className="mb-0 font-display text-xl dark:text-jacarta-700 text-white">
                                                 Two Phase Funding</h2>
                                             <h2 className=" font-medium text-md dark:text-jacarta-700 text-white">
-                                                {selected?.size} Accounts</h2>
+                                                {selected?.account_size} Accounts</h2>
                                         </div>
                                         <div className="w-3/12">
                                             <h2 className="m-0 font-display text-4xl dark:text-jacarta-700 text-white text-right">
-                                                <span className="animate-gradient font-display">${selectedState?.price}</span></h2>
+                                                <span className="animate-gradient font-display">${parseFloat(selectedState?.price).toFixed(0)}</span></h2>
                                         </div>
                                     </div>
                                     <div className="info ">
                                         <div className="item flex items-center justify-between dark:text-jacarta-700 text-white mb-2">
                                             <span className="text-base"> Profit Target :</span>
-                                            <span className="text-base"> $500</span>
+                                            <span className="text-base"> {selectedState?.profit_target}</span>
                                         </div>
                                         <div className="item flex items-center justify-between dark:text-jacarta-700 text-white mb-2">
                                             <span className="text-base"> Maximum Daily Loss:</span>
-                                            <span className="text-base"> 4%</span>
+                                            <span className="text-base"> {selectedState?.daily_loss_limit}</span>
                                         </div>
                                         <div className="item flex items-center justify-between dark:text-jacarta-700 text-white mb-2">
                                             <span className="text-base">  Maximum Overall Loss:</span>
@@ -247,7 +427,7 @@ export default function Checkout() {
                                                 className="mr-4 h-5 w-5 self-start rounded border-jacarta-200 text-accent checked:bg-accent focus:ring-accent/20 focus:ring-offset-0 dark:border-jacarta-500 dark:bg-jacarta-600"
                                                 onChange={(e) => handleAddonChange(e)}
                                             />
-                                           <DollerIcon/> Lifetime payout 95% (Price +30%)
+                                            <DollerIcon /> Lifetime payout 95% (Price +30%)
                                         </label>
                                         <label className="flex items-center gap-x-2 text-jacarta-700 dark:text-white mb-2">
                                             <input
@@ -256,7 +436,7 @@ export default function Checkout() {
                                                 className="mr-4 h-5 w-5 self-start rounded border-jacarta-200 text-accent checked:bg-accent focus:ring-accent/20 focus:ring-offset-0 dark:border-jacarta-500 dark:bg-jacarta-600"
                                                 onChange={(e) => handleAddonChange(e)}
                                             />
-                                           <TrophyIcon/> 150% Reward (Price +10%)
+                                            <TrophyIcon /> 150% Reward (Price +10%)
                                         </label>
                                         <label className="flex items-center gap-x-2 text-jacarta-700 dark:text-white">
                                             <input
@@ -265,7 +445,7 @@ export default function Checkout() {
                                                 className="mr-4 h-5 w-5 self-start rounded border-jacarta-200 text-accent checked:bg-accent focus:ring-accent/20 focus:ring-offset-0 dark:border-jacarta-500 dark:bg-jacarta-600"
                                                 onChange={(e) => handleAddonChange(e)}
                                             />
-                                           <DoubleUp/> Double Up (Price +40%)
+                                            <DoubleUp /> Double Up (Price +40%)
                                         </label>
                                     </div>
                                 </div>
@@ -289,7 +469,7 @@ export default function Checkout() {
                                 <div className="rounded-lg border border-jacarta-100 bg-white p-[1.1875rem] transition-shadow shadow-md dark:border-jacarta-700 dark:bg-jacarta-700">
                                     <div className="item flex items-center justify-between text-jacarta-700 dark:text-white mb-3 font-semibold">
                                         <span className="text-base">Sub Total</span>
-                                        <span className="text-base"> ${selectedState?.price}</span>
+                                        <span className="text-base"> ${parseFloat(selectedState?.price).toFixed(0)}</span>
                                     </div>
                                     <div className="item flex items-center justify-between text-jacarta-700 dark:text-white mb-3 font-semibold">
                                         <span className="text-base"> Discount</span>
@@ -297,18 +477,18 @@ export default function Checkout() {
                                     </div>
                                     <div className="item flex items-center justify-between text-jacarta-700 dark:text-white font-semibold">
                                         <span className="text-base"> Total</span>
-                                        <span className="text-base"> ${selectedState?.price} </span>
+                                        <span className="text-base"> ${parseFloat(selectedState?.price).toFixed(0)} </span>
                                     </div>
-                                    <Tooltip title={`${!checkTc ? 'Please Check Terms and Condition First':'checkout'}`}>
-                                    <button
-                                        disabled={!checkTc}
-                                        type="button"
-                                        className={`mt-5 liquid-button w-full block text-base rounded-full bg-accent py-2 px-5 text-center font-semibold text-white shadow-accent-volume transition-all
+                                    <Tooltip title={`${!checkTc ? 'Please Check Terms and Condition First' : 'checkout'}`}>
+                                        <button
+                                            disabled={!checkTc}
+                                            type="button"
+                                            className={`mt-5 liquid-button w-full block text-base rounded-full bg-accent py-2 px-5 text-center font-semibold text-white shadow-accent-volume transition-all
                                              hover:bg-accent-dark disabled:cursor-not-allowed disabled:opacity-50`}
-                                             onClick={e=>{proceedPayment(e)}}
-                                             >
-                                        Proceed to Payment
-                                    </button>
+                                            onClick={e => { proceedPayment(e) }}
+                                        >
+                                            Proceed to Payment
+                                        </button>
                                     </Tooltip>
                                 </div>
                             </div>
@@ -331,7 +511,7 @@ export default function Checkout() {
                         <TermsContent />
                         <div className="flex items-center gap-x-2 mt-8 justify-center">
                             <input type="checkbox"
-                            checked={checkTc}
+                                checked={checkTc}
                                 onChange={handleCheckTc}
                                 className="h-6 w-6 m-0 self-start rounded border-jacarta-200 text-accent checked:bg-accent focus:ring-accent/20 focus:ring-offset-0 dark:border-jacarta-500 dark:bg-jacarta-600" />
                             <label className="flex items-center  m-0 text-md text-accent">I Agree to Terms and Conditions</label>

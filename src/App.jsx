@@ -9,6 +9,9 @@ import ScrollToTop from "./component/common/scrolltop.jsx";
 import DashboardLayout from "./pages/dashboard/layout.jsx";
 import StripeCheckoutDemo from "./component/stripe/stripe.jsx";
 import { Toaster } from "react-hot-toast";
+import SuccessStatus from "./pages/status/successStatus.jsx";
+import FailedStatus from "./pages/status/failedStatus.jsx";
+
 
 export default function App() {
   return (
@@ -29,6 +32,8 @@ export default function App() {
 
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/success" element={<SuccessStatus/>}/>
+        <Route path="/failed" element={<FailedStatus/>}/>
 
         {/* -----------for dashboard routing--------------- */}
         <Route path="/dashboard" element={<DashboardLayout />}>

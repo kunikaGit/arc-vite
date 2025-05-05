@@ -3,9 +3,9 @@ import BasicProvider from "../services/basicProvider";
 import { useSelector } from "react-redux";
 
 const useApiRequest = () => {
-  const [loading, setLoading] = useState(false);
-  const auth_token = useSelector((state) => state.auth.token); // adjust path based on your store
 
+  const [loading, setLoading] = useState(false);
+  const auth_token = useSelector((state) => state.auth.auth_token); // adjust path based on your store
   const fetchData = async (
     url,
     navigate,
@@ -20,7 +20,7 @@ const useApiRequest = () => {
         method === "GET"
           ? await provider.getRequest()
           : method === "POST"
-            ? await provider.postRequest(data)
+            ? auth_token?await provider.getPostPutDelRequest(data):await provider.postRequest(data)
             : method === "PATCH"
               ? await provider.patchRequest(data)
               : null;
