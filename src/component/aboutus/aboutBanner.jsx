@@ -19,11 +19,11 @@ const AboutBanner = () => {
                         </div>
                         <div className='three-img flex gap-x-5' data-aos="fade-left" data-aos-duration={800}>
                             <div className='image w-1/2'>
-                                <img src='test/img/ceo1.jpg' alt='img' />
-                                <img src='test/img/ceo3.jpg' alt='img' />
+                                <img src='img/ceo1.jpg' alt='img' />
+                                <img src='img/ceo3.jpg' alt='img' />
                             </div>
                             <div className='image w-1/2'>
-                                <img src='test/img/ceo2.jpg' alt='img' />
+                                <img src='img/ceo2.jpg' alt='img' />
                             </div>
                         </div>
                     </div>

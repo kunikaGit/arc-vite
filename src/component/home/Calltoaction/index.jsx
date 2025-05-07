@@ -56,7 +56,7 @@ export default function Calltoaction() {
               data-aos="fade-down" data-aos-duration={600}
               width={340}
               height={300}
-              src='test/img/start.svg'
+              src='img/start.svg'
               alt="image"
             />
           </div>

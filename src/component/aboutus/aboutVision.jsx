@@ -18,7 +18,7 @@ const AboutVision = () => {
                         </p>
                     </div>
                     <div className='' data-aos="fade-left" data-aos-duration={800}>
-                        {/* <img src='test/img/vision.jpg' alt='vision' className='h-full w-full rounded-lg'/> */}
+                        {/* <img src='img/vision.jpg' alt='vision' className='h-full w-full rounded-lg'/> */}
                         <img src={imageMap['vision.png']} alt='vision' className='h-full w-full rounded-lg'/>
                     </div>
                 </div>
