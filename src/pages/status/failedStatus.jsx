@@ -7,16 +7,16 @@ const FailedStatus = () => {
   const { updateStatusApi } = useStatusUtils();
   const navigate = useNavigate();
 
-  // useEffect(() => {
-  //   const timeout = setTimeout(async () => {
-  //     await updateStatusApi(3);
-  //     setTimeout(() => {
-  //       navigate('/');
-  //     }, 2000);
-  //   }, 3000);
+  useEffect(() => {
+    const timeout = setTimeout(async () => {
+      await updateStatusApi(3);
+      setTimeout(() => {
+        navigate('/');
+      }, 2000);
+    }, 3000);
 
-  //   return () => clearTimeout(timeout);
-  // }, []);
+    return () => clearTimeout(timeout);
+  }, []);
 
   return (
     <div className='login'>

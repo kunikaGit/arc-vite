@@ -2,7 +2,8 @@ import { Link } from "react-router-dom";
 import { QuestionRound } from "../../../icons/icons";
 import { useState } from "react";
 import usePricingTableUtiles from "./priceTableUtiles"
-
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 import {useEffect} from "react"
 export default function InstantFunding({ handleOpenModal }) {
   // const accountSizes = [
@@ -11,6 +12,7 @@ export default function InstantFunding({ handleOpenModal }) {
   //   { size: "$10k", price: 189,profit_target:'Unlimitted',max_daily_loss:'3 %',max_overall_loss:'6 %',min_trading_days:'5 Days' },
 
   // ];
+  const navigate = useNavigate();
 
   const { 
     instantFundingPlans}= usePricingTableUtiles()
@@ -22,6 +24,16 @@ export default function InstantFunding({ handleOpenModal }) {
     }
   }, [instantFundingPlans]);
 
+
+    const auth_token = useSelector((state) => state.auth.auth_token); // adjust path as per your state
+  
+    const handleClick = () => {
+      if (auth_token) {
+        navigate('/checkout', { state: { selected } });
+      } else {
+        navigate('/login');
+      }
+    };
   return (
     <>
       <div className="flex justify-center space-x-4 mb-6 common-nav-header dark:bg-jacarta-700  bg-[#f5f5fa]">
@@ -74,10 +86,14 @@ export default function InstantFunding({ handleOpenModal }) {
       </div>
       <div className="sub-box">
         <div className="mb-5">
-          <h2 className="text-5xl text-center font-semibold text-jacarta-700 dark:text-white">${parseFloat(selected.price).toFixed(1)} For {selected.account_size} Account</h2>
+          <h2 className="text-5xl text-center font-semibold text-jacarta-700 dark:text-white">${parseFloat(selected.price).toFixed(0)} For {selected.account_size} Account</h2>
         </div>
-        <Link to='/checkout' state={{ selected }} className="block mx-auto text-md rounded-full bg-accent py-2 w-[200px] text-center font-semibold text-white shadow-accent-volume transition-all hover:bg-accent-dark">
-          Get Plan</Link>
+        <button
+      onClick={handleClick}
+      className="block mx-auto text-md rounded-full bg-accent py-2 w-[200px] text-center font-semibold text-white shadow-accent-volume transition-all hover:bg-accent-dark"
+    >
+      Get Plan
+    </button>
       </div>
     </>
   );

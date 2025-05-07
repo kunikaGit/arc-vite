@@ -5,6 +5,8 @@ import { QuestionRound } from "../../../icons/icons";
 import { useState } from 'react';
 import usePricingTableUtiles from "./priceTableUtiles"
 import { useEffect } from "react"
+import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 export default function TwoPhase({ handleOpenModal }) {
   // const accountSizes = [
@@ -14,6 +16,7 @@ export default function TwoPhase({ handleOpenModal }) {
   //   { size: "$50k", price: 269, profitTarget: '$4,000 (8%)', profitTarget2: '$2,500 (5%)', dailyLossLimit: "$2,500 (5%)", drawdown: "$5,000 (10%)" },
   //   { size: "$100k", price: 529, profitTarget: '$8,000 (8%)', profitTarget2: '$5,000 (5%)', dailyLossLimit: "$5,000 (5%)", drawdown: "$10,000 (10%)" },
   // ];
+  const navigate = useNavigate();
 
   const {
     twoPhasePlans } = usePricingTableUtiles()
@@ -24,6 +27,18 @@ export default function TwoPhase({ handleOpenModal }) {
       setSelected(twoPhasePlans[2]);
     }
   }, [twoPhasePlans]);
+
+
+  const auth_token = useSelector((state) => state.auth.auth_token); // adjust path as per your state
+
+  const handleClick = () => {
+    if (auth_token) {
+      navigate('/checkout', { state: { selected } });
+    } else {
+      navigate('/login');
+    }
+  };
+
   return (
     <>
       <div className="flex justify-center space-x-4 mb-6 common-nav-header dark:bg-jacarta-700  bg-[#f5f5fa]">
@@ -74,7 +89,7 @@ export default function TwoPhase({ handleOpenModal }) {
             <ul className="space-y-2 text-jacarta-700 dark:text-white">
               <li><span>Profit Target
                 <button type='button' onClick={() => handleOpenModal("profitTarget")}><QuestionRound /></button></span>
-                <span> ${selected.profit_target2}</span>
+                <span> {selected.profit_target2}</span>
               </li>
               <li>
                 <span>Maximum Daily Loss
@@ -129,10 +144,14 @@ export default function TwoPhase({ handleOpenModal }) {
 
       <div className="sub-box">
         <div className="mb-5">
-          <h2 className="lg:text-5xl md:text-3xl text-xl text-center font-semibold text-jacarta-700 dark:text-white">${selected.price} For {selected.size} Account</h2>
+          <h2 className="lg:text-5xl md:text-3xl text-xl text-center font-semibold text-jacarta-700 dark:text-white">${parseFloat(selected.price).toFixed(0)} For {selected.account_size} Account</h2>
         </div>
-        <Link to='/checkout' state={{ selected }} className="block mx-auto text-md rounded-full bg-accent py-2 w-[200px] text-center font-semibold text-white shadow-accent-volume transition-all hover:bg-accent-dark">
-          Get Plan</Link>
+           <button
+      onClick={handleClick}
+      className="block mx-auto text-md rounded-full bg-accent py-2 w-[200px] text-center font-semibold text-white shadow-accent-volume transition-all hover:bg-accent-dark"
+    >
+      Get Plan
+    </button>
       </div>
     </>
   );

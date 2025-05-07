@@ -10,11 +10,10 @@ const SuccessStatus = () => {
   useEffect(() => {
     const timeout = setTimeout(async () => {
    let data= location.state?.txHash
-   console.log("????/")
       await updateStatusApi(1,data);
-      // setTimeout(() => {
-      //   navigate('/');
-      // }, 2000);
+      setTimeout(() => {
+        navigate('/');
+      }, 2000);
     }, 3000);
 
     return () => clearTimeout(timeout);

@@ -1,48 +1,102 @@
-import React from 'react'
+import React,{useState} from 'react'
 import { Link } from 'react-router-dom';
 
 
-const PersonalInfo = () => {
+const PersonalInfo = ({ countries, formData, setFormData,handleSubmit }) => {
+    const handleInputChange = (e) => {
+        setFormData({
+            ...formData,
+            [e.target.name]: e.target.value,
+        });
+    };
+    const [copied, setCopied] = useState(false);
 
+    const inviteLink = `${import.meta.env.VITE_SHARE_LINK}${formData.unique_id || ''}`;
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText(inviteLink);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000); // reset icon after 2s
+  };
     return (
         <div className='add-user-form'>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <div className='two-grid'>
                     <div className='input-main-data'>
                         <label>First Name<span className='asterisk'>*</span></label>
-                        <input type='text' placeholder='Enter the first name' />
+                        <input name="name" type='text' placeholder='Enter the first name' value={formData.name || ''} // bind to country_id
+                            onChange={handleInputChange} />
                     </div>
                     <div className='input-main-data'>
                         <label>Last Name<span className='asterisk'>*</span></label>
-                        <input type='text' placeholder='Enter the last name' />
+                        <input name="surname" type='text' placeholder='Enter the last name' value={formData.surname || ''} // bind to country_id
+                            onChange={handleInputChange} />
                     </div>
                 </div>
                 <div className='two-grid'>
                     <div className='input-main-data'>
                         <label>Email<span className='asterisk'>*</span></label>
-                        <input type='text' placeholder='sample@fairbay.lk   ' />
+                        <input name="email" type='text' placeholder='sample@fairbay.lk' value={formData.email || ''} // bind to country_id
+                        />
                     </div>
                     <div className='input-main-data'>
                         <label>Phone Number<span className='asterisk'>*</span></label>
-                        <input type='text' placeholder='Add phone number' />
+                        <input name="contact_number" type='text' placeholder='Add phone number' value={formData.contact_number || ''} // bind to country_id
+                            onChange={handleInputChange} />
                     </div>
                 </div>
                 <div className='two-grid'>
                     <div className='input-main-data'>
-                        <label>City<span className='asterisk'>*</span></label>
-                        <input type='text' placeholder='sample@fairbay.lk   ' />
+                        <label>Country<span className='asterisk'>*</span></label>
+                        <select
+                            name="country_id"
+                            value={formData.country_id || ''} // bind to country_id
+                            onChange={handleInputChange}
+                        >
+                            <option value="" disabled>Select Country</option>
+                            {countries.map((country) => (
+                                <option key={country.id} value={country.id}>
+                                    {country.name}
+                                </option>
+                            ))}
+                        </select>
                     </div>
                     <div className='input-main-data'>
-                        <label>Date of birth<span className='asterisk'>*</span></label>
-                        <input type='date' placeholder='Add phone number' />
+                        <label>Age<span className='asterisk'>*</span></label>
+                        <input name='age' type='number' placeholder='Age' value={formData.age || ''} // bind to country_id
+                            onChange={handleInputChange} />
                     </div>
                 </div>
-                <Link
-                    to="#/"
+
+
+                <div className='two-grid'>
+                    <div className='input-main-data'>
+                        <label>Share Link (Invite link)<span className='asterisk'></span></label>
+                        <input  readOnly
+            value={inviteLink} // bind to country_id
+                            />
+                        <button
+            type="button"
+            onClick={handleCopy}
+            style={{
+              background: 'transparent',
+              border: 'none',
+              cursor: 'pointer',
+              fontSize: '18px',
+            }}
+            title={copied ? "Copied!" : "Copy to clipboard"}
+          >
+            {copied ? '✔️' : '📋'}
+          </button>
+                    </div>
+                </div>
+                <button type="submit"
+
                     className="ml-auto  w-44 block text-base rounded-full bg-accent py-3
                                 px-4 text-center font-medium text-white shadow-accent-volume transition-all hover:bg-accent-dark">
                     Save
-                </Link>
+                </button>
+               
             </form>
         </div>
     )

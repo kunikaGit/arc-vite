@@ -35,10 +35,7 @@ const location = useLocation();
 
     useEffect(() => {
         const searchParams = new URLSearchParams(location.search);
-        console.log(searchParams)
         const ref = searchParams.get('ref');
-        console.log(ref)
-
         if (ref) {
             setFormData((prev) => ({ ...prev, referred_by: ref }));
         }
@@ -139,6 +136,7 @@ const location = useLocation();
             email: decoded.email,
             name: decoded.given_name,
             surname: decoded.family_name,
+            referred_by:formData.referred_by,
             auth_type: 'google',
           })
         const url = API_ENDPOINTS.signup;

@@ -1,5 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { useSelector } from 'react-redux';
 
 export const menu = [{ id: 1, href: "/arc-home", text: "ARC Home" }];
 
@@ -7,7 +8,7 @@ export default function Nav2() {
     const location = useLocation();
     const [isScrolled, setIsScrolled] = useState(false);
     const isHome2 = location.pathname.includes("/home");
-
+    const isLogin = useSelector((state) => state.auth.isAuthenticated); // adjust path as per your state
     useEffect(() => {
         const handleScroll = () => {
             if (window.scrollY > 50) { // Change color after scrolling 50px
@@ -63,13 +64,20 @@ export default function Nav2() {
             </li>
 
             <li className="group">
-                <Link
+               {isLogin? <Link
                     to="/dashboard/account-overview"
                     className={`dropdown-toggle flex items-center justify-between py-3.5 font-display text-base dark:text-white
                     ${isScrolled? "dark-text dark:text-white":""}  
                 hover:text-accent focus:text-accent text-jacarta-700 dark:hover:text-accent dark:focus:text-accent lg:px-5`}>
                     Client Area
-                </Link>
+                </Link>:
+                 <Link
+                 to="/login"
+                 className={`dropdown-toggle flex items-center justify-between py-3.5 font-display text-base dark:text-white
+                 ${isScrolled? "dark-text dark:text-white":""}  
+             hover:text-accent focus:text-accent text-jacarta-700 dark:hover:text-accent dark:focus:text-accent lg:px-5`}>
+                 Client Area
+             </Link>}
             </li>
         </>
     );

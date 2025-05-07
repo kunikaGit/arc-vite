@@ -34,7 +34,7 @@ export default function Home2() {
                 <div className="hotbids-section" data-speed="1.2">
                     <CoverFlowSlider />
                 </div>
-                <div className="hotbids-section" data-speed="1.5">
+                <div id="pricing" className="hotbids-section" data-speed="1.5">
                     <PricingTable />
                 </div>
                 <div className="collections-section" data-speed="2">

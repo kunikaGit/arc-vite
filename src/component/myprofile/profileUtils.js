@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import useApiRequest from "../../hook/useApiRequest";
 import { API_ENDPOINTS } from "../../constants/endPoints";
 import { validateFormData } from "../../utlis/validation";
-import { successMsg } from "../../utlis/customFn";
+import { successMsg,errorMsg } from "../../utlis/customFn";
 
 const useProfileUtils = () => {
   const navigate = useNavigate();

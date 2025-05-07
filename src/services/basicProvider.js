@@ -47,9 +47,9 @@ class BasicProvider {
       if (status == 403) {
         if (this.dispatch != false) {
           if (this.isUser) {
-            // this.dispatch(userSetIsLogout());
+           // this.dispatch(userSetIsLogout());
           } else {
-            // this.dispatch(adminSetIsLogout());
+          // this.dispatch(adminSetIsLogout());
           }
         }
       }
@@ -57,6 +57,35 @@ class BasicProvider {
       return handleCatchErrors(error, this.navigate);
     }
   }
+
+  async getPutDelRequest(formdata = {}) {
+    try {
+
+      let headers = await this.getHeaders();
+      const isFormData = formdata instanceof FormData;
+  
+      // If FormData, remove 'Content-Type' so axios sets it automatically
+      if (isFormData && headers.headers['Content-Type']) {
+        delete headers.headers['Content-Type'];
+      }  
+      const response = await axios.put(this.url, formdata, headers);
+      return response.data;
+    } catch (error) {
+      const { status } = error.response || {};
+      if (status === 403) {
+        if (this.dispatch !== false) {
+          if (this.isUser) {
+            // this.dispatch(userSetIsLogout());
+          } else {
+            // this.dispatch(adminSetIsLogout());
+          }
+        }
+      }
+  
+      return handleCatchErrors(error, this.navigate);
+    }
+  }
+  
 
   // POST request
   async postRequest(data) {

@@ -6,8 +6,10 @@ import Drawer from "react-modern-drawer";
 import MenuItems from '../sidebar/menuList';
 import { logout } from '../../redux/slice/authSlice'
 import { useDispatch } from 'react-redux'
+import { useNavigate } from 'react-router-dom';
 
 const DashboardHeader = ({ title }) => {
+    const navigate = useNavigate();
 
     const [showMenu, setShowMenu] = useState(false)
     const dispatch = useDispatch()

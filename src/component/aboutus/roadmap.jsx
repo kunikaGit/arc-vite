@@ -30,7 +30,7 @@ const AboutRoadmap = () => {
                             </Link>
                         </div>
                         <div className="max-w-[400px]">
-                            <img src='img/start.svg' alt="roadmap" />
+                            <img src='test/img/start.svg' alt="roadmap" />
                         </div>
                     </div>
                 </div> */}

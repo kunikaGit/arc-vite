@@ -21,6 +21,8 @@ const useApiRequest = () => {
           ? await provider.getRequest()
           : method === "POST"
             ? auth_token?await provider.getPostPutDelRequest(data):await provider.postRequest(data)
+            :method === "PUT"
+            ? auth_token?await provider.getPutDelRequest(data):await provider.postRequest(data)
             : method === "PATCH"
               ? await provider.patchRequest(data)
               : null;
@@ -29,6 +31,7 @@ const useApiRequest = () => {
         return response;
       } else {
         console.log("sfagaga");
+        return response;
       }
     } catch (err) {
       console.log(err)

@@ -57,6 +57,14 @@ const Accounts = () => {
                                 {...params} placeholder='Account Satus' />)}
                         />
                     </div>
+                    <div className="btn">
+                        <Link
+                            to="/#pricing"
+                            className="block text-sm rounded-full bg-accent py-3
+                                px-4 text-center font-medium text-white shadow-accent-volume transition-all hover:bg-accent-dark">
+                            Get Plan
+                        </Link>
+                    </div>
                 </div>
                 <div className="theme_card bg-2b2a33 mb-5 flex items-center gap-5 card-content justify-between">
                     <div className="overview flex items-center gap-x-3 w-full">
