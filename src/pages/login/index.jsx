@@ -50,7 +50,7 @@ const Login = () => {
                                 )}
                             </div>
                             <div className='forgot'>
-                                <Link to="/forgot">Forgot Passwords</Link>
+                                <Link to="/forget-password">Forgot Passwords</Link>
                             </div>
                             <div className='tc'>
                                 <p>By logging in you are accepting the terms and conditions of this site</p>

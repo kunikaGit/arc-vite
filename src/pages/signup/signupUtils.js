@@ -2,7 +2,6 @@ import { useEffect,useState } from "react"
 import Joi from "joi";
 import { useNavigate } from "react-router-dom";
 import {jwtDecode} from 'jwt-decode';
-
 import { API_ENDPOINTS } from "../../constants/endPoints";
 import useApiRequest from "../../hook/useApiRequest";
 import { validateFormData } from "../../utlis/validation";

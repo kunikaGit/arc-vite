@@ -11,6 +11,9 @@ import StripeCheckoutDemo from "./component/stripe/stripe.jsx";
 import { Toaster } from "react-hot-toast";
 import SuccessStatus from "./pages/status/successStatus.jsx";
 import FailedStatus from "./pages/status/failedStatus.jsx";
+import ForgetPassword from "./pages/forgetAndResetPassword/forgetPassword.jsx";
+import ResetPassword from "./pages/forgetAndResetPassword/resetPassword.jsx";
+import EmailVerification from "./pages/status/emailVerification.jsx";
 
 
 export default function App() {
@@ -34,6 +37,12 @@ export default function App() {
         <Route path="/signup" element={<Signup />} />
         <Route path="/success" element={<SuccessStatus/>}/>
         <Route path="/failed" element={<FailedStatus/>}/>
+
+        <Route path="/forget-password" element={<ForgetPassword/>}/>
+        <Route path="/reset-password" element={<ResetPassword/>}/>
+
+        <Route path="/verify-email" element={<EmailVerification/>}/>
+
 
         {/* -----------for dashboard routing--------------- */}
         <Route path="/dashboard" element={<DashboardLayout />}>

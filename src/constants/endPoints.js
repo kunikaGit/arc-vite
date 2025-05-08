@@ -3,7 +3,7 @@ export const API_ENDPOINTS = {
     signup:'/register',
     send_resetOtp:'/forgotpasword',
     verify_resetOtp:'/verifyotp',
-    resetPassword:'/resetpasword',
+    resetPassword:'/reset-password',
     countries:'/countries',
     professions:'/professions',
     profile_get:"/profile",
@@ -17,6 +17,7 @@ export const API_ENDPOINTS = {
     couponCode:"/payment/apply-coupon-code",
     getProfile:"/profile",
     updateProfile:"/profile",
-    changePassowrd:"/profile/change-password"
-
+    changePassowrd:"/profile/change-password",
+    forgotPassword:"/forgot-password",
+    verifyEmail:"/verify-email"
 }

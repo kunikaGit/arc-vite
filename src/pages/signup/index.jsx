@@ -96,7 +96,6 @@ const Signup = () => {
                                 {formErrors?.profession_id && <div className="error-message text-danger">{formErrors.profession_id}</div>}
                             </div>
 
-{console.log(formData.referred_by)}
                             {!formData.referred_by && (
                                 <div className='input-main-data'>
                                     <label>Referred by</label>
