@@ -42,7 +42,8 @@ export default function Checkout() {
         addOnAmounts: [],
         addOnAmount: 0,
         discountAmount: 0,
-        couponCodeAppied: false
+        couponCodeAppied: false,
+        fees: 0
     });
     const handleAddonChange = (e, id) => {
         try {
@@ -63,7 +64,8 @@ export default function Checkout() {
 
 
             const additional = selectedState.basePrice * updatedAddons.reduce((sum, p) => sum + p, 0);
-            const newPrice = (parseFloat(selectedState.basePrice) + parseFloat(additional / 100)) - selectedState?.discountAmount;
+            let newPrice = (parseFloat(selectedState.basePrice) + parseFloat(additional / 100)) - selectedState?.discountAmount;
+            newPrice=selectedState?.fees>0?newPrice+parseFloat((newPrice*parseInt(selectedState?.fees)/100)):newPrice
             let newAddon = (selectedState.basePrice * percent) / 100
             if (checked) {
                 updateAddOnAmounts.push(parseFloat(additional / 100));
@@ -111,9 +113,7 @@ export default function Checkout() {
     const [paymentMethods, setPaymentMethods] = useState([])
     const [addOns, setAddOns] = useState([])
     const [couponCode, setCouponCode] = useState('')
-
-
-
+    const [currencies, setCurrencies] = useState([])
     const fetchApis = async () => {
         seLoading(true)
         try {
@@ -126,6 +126,10 @@ export default function Checkout() {
 
             const addOnsRes = await fetchData(API_ENDPOINTS.addOns, navigate(), "GET");
             if (addOnsRes?.data) setAddOns(addOnsRes.data);
+            seLoading(false)
+
+            const currenciesRes = await fetchData(API_ENDPOINTS.currencies, navigate(), "GET");
+            if (currenciesRes?.data) setCurrencies(currenciesRes.data);
             seLoading(false)
 
         } catch (error) {
@@ -150,17 +154,26 @@ export default function Checkout() {
         id: selectedState.id,
         price: selectedState.price,
         addOnIds: selectedState.addOnIds,
-        couponCode
+        couponCode,
+        crypto_currency_id: ''
     });
     const [errors, setErrors] = useState({});
 
     const handleChange = (e) => {
         const { name, value, type, checked } = e.target;
-        console.log(value)
         setFormData(prev => ({
             ...prev,
             [name]: type === 'checkbox' ? checked : value
         }));
+
+        if (name == "paymentMethodId") {
+            setSelectedState(prev => ({
+                ...prev,
+                fees: paymentMethods[value - 1].fees,
+                price:paymentMethods[value - 1].fees>0?parseFloat(selectedState?.price)+parseFloat((selectedState?.price* parseInt(paymentMethods[value - 1].fees))/100):selectedState?.price
+            }));
+            setSelectedCurrency(null)
+        }
     };
 
     const validateForm = () => {
@@ -184,14 +197,11 @@ export default function Checkout() {
         if (!formData.country_id) newErrors.country_id = 'Country is required.';
         if (!formData.paymentMethodId) newErrors.paymentMethodId = 'Select a payment method.';
         if (!formData.confirmNonUS) newErrors.confirmNonUS = 'You must confirm not being a U.S. citizen.';
+        if (formData.paymentMethodId == 2 && !formData.crypto_currency_id) newErrors.crypto_currency_id = 'Please choose a crypto currency in which you want to pay.';
+
         setErrors(newErrors);
         return Object.keys(newErrors).length === 0;
     };
-
-    const USDT_ADDRESS = "0xf4c1Af502Bb26bd19CfCcA612ADba7C4308F2F64"; // USDT Token Contract Address
-    const USDT_ABI =
-        [{ "inputs": [], "stateMutability": "nonpayable", "type": "constructor" }, { "inputs": [{ "internalType": "address", "name": "spender", "type": "address" }, { "internalType": "uint256", "name": "allowance", "type": "uint256" }, { "internalType": "uint256", "name": "needed", "type": "uint256" }], "name": "ERC20InsufficientAllowance", "type": "error" }, { "inputs": [{ "internalType": "address", "name": "sender", "type": "address" }, { "internalType": "uint256", "name": "balance", "type": "uint256" }, { "internalType": "uint256", "name": "needed", "type": "uint256" }], "name": "ERC20InsufficientBalance", "type": "error" }, { "inputs": [{ "internalType": "address", "name": "approver", "type": "address" }], "name": "ERC20InvalidApprover", "type": "error" }, { "inputs": [{ "internalType": "address", "name": "receiver", "type": "address" }], "name": "ERC20InvalidReceiver", "type": "error" }, { "inputs": [{ "internalType": "address", "name": "sender", "type": "address" }], "name": "ERC20InvalidSender", "type": "error" }, { "inputs": [{ "internalType": "address", "name": "spender", "type": "address" }], "name": "ERC20InvalidSpender", "type": "error" }, { "anonymous": false, "inputs": [{ "indexed": true, "internalType": "address", "name": "owner", "type": "address" }, { "indexed": true, "internalType": "address", "name": "spender", "type": "address" }, { "indexed": false, "internalType": "uint256", "name": "value", "type": "uint256" }], "name": "Approval", "type": "event" }, { "anonymous": false, "inputs": [{ "indexed": true, "internalType": "address", "name": "from", "type": "address" }, { "indexed": true, "internalType": "address", "name": "to", "type": "address" }, { "indexed": false, "internalType": "uint256", "name": "value", "type": "uint256" }], "name": "Transfer", "type": "event" }, { "inputs": [{ "internalType": "address", "name": "owner", "type": "address" }, { "internalType": "address", "name": "spender", "type": "address" }], "name": "allowance", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "spender", "type": "address" }, { "internalType": "uint256", "name": "value", "type": "uint256" }], "name": "approve", "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "account", "type": "address" }], "name": "balanceOf", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "decimals", "outputs": [{ "internalType": "uint8", "name": "", "type": "uint8" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "name", "outputs": [{ "internalType": "string", "name": "", "type": "string" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "symbol", "outputs": [{ "internalType": "string", "name": "", "type": "string" }], "stateMutability": "view", "type": "function" }, { "inputs": [], "name": "totalSupply", "outputs": [{ "internalType": "uint256", "name": "", "type": "uint256" }], "stateMutability": "view", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "to", "type": "address" }, { "internalType": "uint256", "name": "value", "type": "uint256" }], "name": "transfer", "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }], "stateMutability": "nonpayable", "type": "function" }, { "inputs": [{ "internalType": "address", "name": "from", "type": "address" }, { "internalType": "address", "name": "to", "type": "address" }, { "internalType": "uint256", "name": "value", "type": "uint256" }], "name": "transferFrom", "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }], "stateMutability": "nonpayable", "type": "function" }]
-        ;
 
     const proceedPayment = async (e) => {
         e.preventDefault();
@@ -204,99 +214,37 @@ export default function Checkout() {
             couponCode
         };
 
-        //if (validateForm()) {
-        //   seLoading(true)
-        try {
-            const checkoutRes = await fetchData(API_ENDPOINTS.checkout, navigate, "POST", updatedData);
-
-            console.log(checkoutRes)
-            return
-            // Save session_id
-            if (checkoutRes?.data) {
-                localStorage.setItem("session_id", checkoutRes.data);
-            }
-
-            if (updatedData.paymentMethodId == 3) {
-                // Stripe Flow
-                const stripe = await stripePromise;
-                await stripe.redirectToCheckout({ sessionId: checkoutRes.data });
-
-            } else if (updatedData.paymentMethodId == 2) {
-                // MetaMask USDT Transfer
-                if (window.ethereum) {
-                    // Initialize Web3 with the window.ethereum provider (MetaMask)
-                    const web3 = new Web3(window.ethereum);
-
-                    try {
-                        // Request accounts
-                        await window.ethereum.request({ method: "eth_requestAccounts" });
-
-                        // Get the user's address
-                        const accounts = await web3.eth.getAccounts();
-                        const userAddress = accounts[0]; // This will give the current MetaMask address
-
-                        // Create the USDT contract instance
-                        const usdt = new web3.eth.Contract(USDT_ABI, USDT_ADDRESS);
-
-                        // Get the decimals for USDT (usually 6 for USDT)
-                        const decimals = await usdt.methods.decimals().call();
-
-                        // Calculate the amount to send (convert price to the proper amount based on decimals)
-                        const amount = web3.utils.toWei(updatedData.price.toString(), 'mwei'); // 'mwei' represents 6 decimals
-
-                        // Send the transaction
-                        const transfer = await usdt.methods.transfer("0xc9A2C082BAA60743216220cf78899d48FcEf5b3c", amount)
-                        let encoded_tx = transfer.encodeABI();
-
-                        let gasPrice = await web3.eth.getGasPrice();
-
-                        let gasLimit = await web3.eth.estimateGas({
-                            gasPrice: web3.utils.toHex(gasPrice),
-                            to: USDT_ADDRESS,
-                            from: userAddress,
-                            data: encoded_tx,
-                        });
-
-                        let tx = await web3.eth.sendTransaction({
-                            gasPrice: web3.utils.toHex(gasPrice),
-                            gas: web3.utils.toHex(gasLimit),
-                            to: USDT_ADDRESS,
-                            from: userAddress,
-                            data: encoded_tx,
-                        });
-
-                        if (tx.transactionHash) {
-                            // Wait for the transaction to be mined (optional but useful for confirmation)
-                            console.log("Transaction Hash:", tx.transactionHash);
-
-                            // Redirect to success page with transaction hash
-                            navigate('/success', {
-                                state: {
-                                    txHash: tx.transactionHash, // Web3.js gives this
-                                }
-                            });
-                        } else {
-                            alert("Something went wrong. Please try again later")
-                        }
-
-
-                    } catch (error) {
-                        console.error("Error during transaction:", error);
-                        alert("Transaction failed or MetaMask rejected the request.");
-                    }
-                } else {
-                    alert("MetaMask not detected");
-                }
-            }
-
-            seLoading(false)
-
-        } catch (error) {
-            console.error("Payment Error:", error);
-            seLoading(false)
-
+        if (validateForm()) {
+            console.log(updatedData)
         }
-        // }
+
+        if (validateForm()) {
+            seLoading(true)
+            try {
+                const checkoutRes = await fetchData(API_ENDPOINTS.checkout, navigate, "POST", updatedData);
+
+                // Save session_id
+                if (checkoutRes?.data) {
+                    localStorage.setItem("session_id", checkoutRes.data);
+                }
+
+                if (updatedData.paymentMethodId == 3) {
+                    // Stripe Flow
+                    const stripe = await stripePromise;
+                    await stripe.redirectToCheckout({ sessionId: checkoutRes.data });
+
+                } else if (updatedData.paymentMethodId == 2) {
+ window.location.href =  checkoutRes.data; // redirects in same tab
+                }
+
+                seLoading(false)
+
+            } catch (error) {
+                console.error("Payment Error:", error);
+                seLoading(false)
+
+            }
+        }
     };
 
     const handleCouponCode = async (e) => {
@@ -310,9 +258,10 @@ export default function Checkout() {
             const couponCodeRes = await fetchData(API_ENDPOINTS.couponCode, navigate, "POST", { code: couponCode });
             if (couponCodeRes.success) {
                 successMsg(couponCodeRes.message)
-                let newPrice = selectedState.price;
+                let newPrice = parseFloat(selectedState?.basePrice) + parseFloat(selectedState?.addOnAmount);
                 let discountedAmount = (newPrice * couponCodeRes.data) / 100
                 newPrice = newPrice - parseFloat(discountedAmount)
+                newPrice=selectedState?.fees>0?newPrice+parseFloat((newPrice*parseInt(selectedState?.fees))/100):newPrice
                 setSelectedState((prev) => ({ ...prev, couponCodeAppied: true, discountAmount: discountedAmount, price: newPrice }))
             } else {
                 errorMsg(couponCodeRes.message)
@@ -321,6 +270,18 @@ export default function Checkout() {
             console.log(error)
         }
     }
+
+    const [selectedCurrency, setSelectedCurrency] = useState(null);
+    const [isOpen, setIsOpen] = useState(false);
+
+    const handleSelect = (currency) => {
+        setSelectedCurrency(currency);
+        setFormData(prev => ({
+            ...prev,
+            crypto_currency_id: currency.org_id
+        }));
+        setIsOpen(false);
+    };
 
     return (
         <>
@@ -417,6 +378,7 @@ export default function Checkout() {
                                                 <option key={c.id} value={c.id}>{c.name}</option>
                                             ))}
                                         </select>
+                                        {errors.country_id && <p className="text-red-500 text-sm mt-1">{errors.country_id}</p>}
                                     </div>
                                     <div className="flex items-center space-x-2">
                                         <input
@@ -432,6 +394,8 @@ export default function Checkout() {
                                             className="text-sm dark:text-jacarta-200">
                                             Confirmation that the individual is not a U.S. citizen
                                         </label>
+                                        {errors.confirmNonUS && <p className="text-red-500 text-sm mt-1">{errors.confirmNonUS}</p>}
+
                                     </div>
                                 </div>
                                 <div className="rounded-lg border border-jacarta-100 bg-white p-[1.1875rem] transition-shadow shadow-md dark:border-jacarta-700 dark:bg-jacarta-700">
@@ -476,6 +440,7 @@ export default function Checkout() {
                                                 </div>
                                             </div>
                                         </div>
+                                        {errors.paymentMethodId && <p className="text-red-500 text-sm mt-1">{errors.paymentMethodId}</p>}
                                     </div>
 
 
@@ -585,6 +550,67 @@ export default function Checkout() {
                                         <button type="button" onClick={() => handleOpen("md")} className="text-accent font-medium">
                                             Check Terms and conditions Before Checkout</button>
                                     </div>
+
+                                    {formData?.paymentMethodId == 2 &&
+                                        <div className="mb-2 rounded-lg border border-jacarta-100 bg-white p-[1.1875rem] transition-shadow shadow-md dark:border-jacarta-700 dark:bg-jacarta-700">
+                                            <label className="mb-1 block font-display text-base text-jacarta-700 dark:text-white">
+                                                Select Crypto Currency
+                                            </label>
+
+                                            <div className="relative">
+                                                <button
+                                                    onClick={() => setIsOpen(!isOpen)}
+                                                    type="button"
+                                                    className={`w-full flex items-center justify-between rounded-lg border border-jacarta-100 bg-white py-2.5 px-3
+                                                    ${errors?.crypto_currency_id
+                                                            ? "border-red-500 dark:border-red-500"
+                                                            : "border-jacarta-100 dark:border-jacarta-600"
+                                                        }
+                                                    dark:bg-jacarta-700 dark:border-jacarta-600 dark:text-white`}
+                                                >
+                                                    {selectedCurrency ? (
+                                                        <div className="flex items-center gap-2">
+                                                            <img src={selectedCurrency?.logo?.imageUrl} alt="" className="w-6 h-6 rounded-full" />
+                                                            <span>{selectedCurrency.name} ({selectedCurrency.symbol})</span>
+                                                        </div>
+                                                    ) : (
+                                                        <span className="text-jacarta-400">Select Currency</span>
+                                                    )}
+                                                    <svg
+                                                        className={`w-4 h-4 transform transition-transform ${isOpen ? "rotate-180" : ""
+                                                            }`}
+                                                        fill="none"
+                                                        stroke="currentColor"
+                                                        viewBox="0 0 24 24"
+                                                    >
+                                                        <path d="M19 9l-7 7-7-7" />
+                                                    </svg>
+                                                </button>
+
+                                                {isOpen && (
+                                                    <div className="absolute z-10 mt-1 w-full rounded-lg border border-jacarta-100 bg-white dark:bg-jacarta-700 dark:border-jacarta-600 shadow-lg">
+                                                        {currencies.map((currency) => (
+                                                            <div
+                                                                key={currency.org_id}
+                                                                onClick={() => handleSelect(currency)}
+                                                                className="flex items-center gap-3 p-2 hover:bg-jacarta-100 dark:hover:bg-jacarta-600 cursor-pointer"
+                                                            >
+                                                                <img src={currency?.logo?.imageUrl} alt="" className="w-6 h-6 rounded-full" />
+                                                                <div className="text-jacarta-700 dark:text-white">
+                                                                    <div className="font-medium">{currency.name}</div>
+                                                                    <div className="text-xs text-jacarta-400">{currency.symbol}</div>
+                                                                </div>
+                                                            </div>
+                                                        ))}
+                                                    </div>
+                                                )}
+                                            </div>
+                                            {errors?.crypto_currency_id && (
+                                                <p className="mt-2 text-sm text-red-600 dark:text-red-400">
+                                                    {errors?.crypto_currency_id}
+                                                </p>
+                                            )}
+                                        </div>}
                                     <div className="rounded-lg border border-jacarta-100 bg-white p-[1.1875rem] transition-shadow shadow-md dark:border-jacarta-700 dark:bg-jacarta-700">
                                         <div className="item flex items-center justify-between text-jacarta-700 dark:text-white mb-3 font-semibold">
                                             <span className="text-base">Sub Total</span>
@@ -604,10 +630,18 @@ export default function Checkout() {
                                             <span className="text-base"> Discount</span>
                                             <span className="text-base">${parseFloat(selectedState?.discountAmount).toFixed(2)}</span>
                                         </div>
+
+                                        {selectedState?.fees > 0 && <div className="item flex items-center justify-between text-jacarta-700 dark:text-white mb-3 font-semibold">
+                                            <span className="text-base"> Fees</span>
+                                            <span className="text-base">{selectedState?.fees}%</span>
+                                        </div>}
+
                                         <div className="item flex items-center justify-between text-jacarta-700 dark:text-white font-semibold">
                                             <span className="text-base"> Total</span>
                                             <span className="text-base"> ${parseFloat(selectedState?.price).toFixed(2)} </span>
                                         </div>
+
+
                                         <Tooltip title={`${!checkTc ? 'Please Check Terms and Condition First' : 'checkout'}`}>
                                             <button
                                                 disabled={!checkTc}
