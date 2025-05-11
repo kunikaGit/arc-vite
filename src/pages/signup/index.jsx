@@ -26,9 +26,11 @@ const Signup = () => {
             <div className='login'>
                 <div className='upper-body'>
                     <div className='form-box'>
-                    <div className='logo-box'>
-                        <h1 className="logo-text animate-gradient mb-5"> ARC</h1>
-                    </div>
+                        <div className='logo-box'>
+                            <Link to='/' className='logo-text animate-gradient mb-5 block text-center'>
+                                ARC
+                            </Link>
+                        </div>
                         <h2 className='main-heading'>Register your account</h2>
                         <form onSubmit={submitForm}>
                             <div className='flex gap-x-2'>

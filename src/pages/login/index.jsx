@@ -22,10 +22,15 @@ const Login = () => {
                 {/* <CommonBanner pagename="Login" bgimage={bgimage} breadcrumbdata={breadcrumbdata} /> */}
                 <div className='upper-body' >
                     <div className='form-box'>
-                <div className='logo-box'>
-                        <h1 className="logo-text animate-gradient mb-5"> ARC</h1>
-                    </div>
-                        <h2 className='main-heading'>Login to your account</h2>
+                        <div className='logo-box'>
+                            <Link to='/' className='logo-text animate-gradient mb-5 block text-center'>
+                                ARC
+                            </Link>
+                        </div>
+
+                        <h2 className='main-heading' style={{ marginBottom: '40px' }}>
+                            Welcome Back!<br />
+                            Login to your account</h2>
                         <form onSubmit={handleSubmit}>
                             <div className='input-main-data'>
                                 <label>Email</label>

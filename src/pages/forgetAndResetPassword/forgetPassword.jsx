@@ -1,6 +1,7 @@
 import React from 'react'
 import useLoginUtils from './forgetAndResetPasswordUtils'
 import OverlayLoading from "../../component/common/overlayLoader";
+import { Link } from 'react-router-dom';
 
 const ForgetPassword = () => {
 
@@ -18,7 +19,9 @@ const ForgetPassword = () => {
                     <div className='upper-body' >
                         <div className='form-box'>
                             <div className='logo-box'>
-                                <h1 className="logo-text animate-gradient mb-5"> ARC</h1>
+                            <Link to='/' className='logo-text animate-gradient mb-5 block text-center'>
+                                ARC
+                            </Link>
                             </div>
                             <h2 className='main-heading'>Forget Password</h2>
                             <form onSubmit={handleSubmitForget}>
