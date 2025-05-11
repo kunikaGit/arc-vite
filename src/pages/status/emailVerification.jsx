@@ -39,9 +39,9 @@ const EmailVerification = () => {
                 setResult(true); // Token missing, treat as failure
             }
     
-            // setTimeout(() => {
-            //     navigate('/login');
-            // }, 2000);
+            setTimeout(() => {
+                navigate('/login');
+            }, 2000);
         }, 3000);
     
         return () => clearTimeout(timeout);

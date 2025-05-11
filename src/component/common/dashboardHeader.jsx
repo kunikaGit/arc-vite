@@ -48,7 +48,7 @@ const DashboardHeader = ({ title }) => {
                     <div className='dropdown'>
                         <ul>
                             <li><Link to="/dashboard/myprofile" className='flex items-center gap-2'><UserIcon />Profile</Link></li>
-                            <li><Link  className='flex items-center gap-2' onClick={handleLogout}><Logout />Logout</Link></li>
+                            <li><Link to="/" className='flex items-center gap-2' onClick={handleLogout}><Logout />Logout</Link></li>
                         </ul>
                     </div>
                 }
