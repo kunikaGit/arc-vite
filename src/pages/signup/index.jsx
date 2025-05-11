@@ -17,7 +17,8 @@ const Signup = () => {
         isConfirmPasswordVisible,
         isPasswordVisible,
         setIsPasswordVisible,
-        handleGoogleSuccess
+        handleGoogleSuccess,
+        isRefFromUrl
     } = useSignupUtils();
 
     return (
@@ -96,7 +97,7 @@ const Signup = () => {
                                 {formErrors?.profession_id && <div className="error-message text-danger">{formErrors.profession_id}</div>}
                             </div>
 
-                            {!formData.referred_by && (
+                            {!isRefFromUrl && (
                                 <div className='input-main-data'>
                                     <label>Referred by</label>
                                     <input type='text' onChange={handleChange} name='referred_by' />

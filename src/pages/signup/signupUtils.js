@@ -32,10 +32,13 @@ const location = useLocation();
         auth_type: "email"
     });
 
+    const [isRefFromUrl,setIsRefFromUrl] =useState(false)
+
     useEffect(() => {
         const searchParams = new URLSearchParams(location.search);
         const ref = searchParams.get('ref');
         if (ref) {
+            setIsRefFromUrl(true)
             setFormData((prev) => ({ ...prev, referred_by: ref }));
         }
     }, [location.search]);
@@ -160,7 +163,8 @@ const location = useLocation();
         setIsPasswordVisible,
         isConfirmPasswordVisible,
         setIsConfirmPasswordVisible,
-        handleGoogleSuccess
+        handleGoogleSuccess,
+        isRefFromUrl
 
     };
 }
