@@ -7,7 +7,6 @@ export const menu = [{ id: 1, href: "/arc-home", text: "ARC Home" }];
 export default function Nav2() {
     const location = useLocation();
     const [isScrolled, setIsScrolled] = useState(false);
-    const isHome2 = location.pathname.includes("/home");
     const isLogin = useSelector((state) => state.auth.isAuthenticated); // adjust path as per your state
     useEffect(() => {
         const handleScroll = () => {
@@ -22,11 +21,7 @@ export default function Nav2() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
-    const isActiveParentMenu = (menus) => {
-        return menus.some(
-            (elm) => elm.href.split("/")[1] === location.pathname.split("/")[1]
-        );
-    };
+
 
     return (
         <>

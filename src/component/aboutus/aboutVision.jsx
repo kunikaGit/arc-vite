@@ -9,7 +9,7 @@ const AboutVision = () => {
                 <div className='grid md:grid-cols-2 grid-cols-1  py-3 gap-10 items-center'>
                     <div className='' data-aos="fade-right" data-aos-duration={800} >
                         <h2 className='mb-5 text-5xl font-display text-jacarta-700 dark:text-white'>Our Vision</h2>
-                        <p className='text-medium text-gray-600 dark:text-white'>
+                        <p className='text-medium  text-jacarta-500 dark:text-white'>
                             At ARC, we strive to set a new standard in proprietary trading. Our vision is to be the leading
                             firm where transparency, authenticity, and professionalism meet. By offering real market liquidity,
                             fostering continuous education, and maintaining a trader-first mentality, we aspire to be the most

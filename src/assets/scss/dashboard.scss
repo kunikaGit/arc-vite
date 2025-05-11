@@ -28,7 +28,7 @@
         }
     }
     .dropdown{
-        background-color: #fff;
+        background-color: var(--color_white);
         right: 0;
         top: 60px;
         position: absolute;
@@ -58,9 +58,9 @@
     .profile{
         cursor: pointer;
         svg{
-            fill: #fff;
+            fill: var(--color_white);
             path{
-                fill: #fff;
+                fill: var(--color_white);
             }
         }
         img{

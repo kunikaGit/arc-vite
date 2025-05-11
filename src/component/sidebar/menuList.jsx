@@ -43,6 +43,7 @@ const MenuItems = () => {
             imgagepath: <UserIcon />
         },
 
+
     ]
     return (
         <div className="sidebar-menus">
@@ -56,21 +57,37 @@ const MenuItems = () => {
                 {SidebarItems.map((item, index) => {
                     const isActive = location.pathname === item.link;
                     return (
-                        <SubMenu key={index} onClick={() => navigate(item.link)}
-                            className={`sidebar_label ${isActive ? "active" : ""}`}
-                            label={
-                                <div className="sidebar_label">
-                                    <div className="icon">
-                                        {item.imgagepath}
+                        <>
+                            <SubMenu key={index} onClick={() => navigate(item.link)}
+                                className={`sidebar_label ${isActive ? "active" : ""}`}
+                                label={
+                                    <div className="sidebar_label">
+                                        <div className="icon">
+                                            {item.imgagepath}
+                                        </div>
+                                        <div className="name">
+                                            {item.name}
+                                        </div>
                                     </div>
-                                    <div className="name">
-                                        {item.name}
-                                    </div>
-                                </div>
-                            }>
-                        </SubMenu>
+                                }>
+                            </SubMenu>
+
+                        </>
                     )
                 })}
+                <SubMenu onClick={() => window.open("https://arc-partner-portal.vercel.app/", "_blank")}
+                    className={`sidebar_label`}
+                    label={
+                        <div className="sidebar_label">
+                            <div className="icon">
+                                <UserIcon />
+                            </div>
+                            <div className="name">
+                                Partners
+                            </div>
+                        </div>
+                    }>
+                </SubMenu>
             </Menu>
         </div>
     );

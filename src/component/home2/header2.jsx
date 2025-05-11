@@ -6,7 +6,6 @@ import {
 } from "../../utlis/mobileMenuToggle"
 import { handleDarkMode } from "../../utlis/handleDarkMode";
 import { Link } from "react-router-dom";
-import images from '../../utlis/helper'
 import Nav2 from "./nav2";
 
 export default function Header2() {
