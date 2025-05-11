@@ -22,6 +22,9 @@ const Login = () => {
                 {/* <CommonBanner pagename="Login" bgimage={bgimage} breadcrumbdata={breadcrumbdata} /> */}
                 <div className='upper-body' >
                     <div className='form-box'>
+                <div className='logo-box'>
+                        <h1 className="logo-text animate-gradient mb-5"> ARC</h1>
+                    </div>
                         <h2 className='main-heading'>Login to your account</h2>
                         <form onSubmit={handleSubmit}>
                             <div className='input-main-data'>
@@ -32,7 +35,7 @@ const Login = () => {
                                     onChange={handleChange}
                                 />
                                 {formErrors.email && (
-                                    <div className="error-message text-danger">{formErrors.email}</div>
+                                    <div className="error-message">{formErrors.email}</div>
                                 )}
                             </div>
                             <div className='input-main-data'>
@@ -46,7 +49,7 @@ const Login = () => {
                                     {isPasswordVisible ? <EyeoffIcon /> : <EyeIcon />}
                                 </div>
                                 {formErrors.password && (
-                                    <div className="error-message text-danger">{formErrors.password}</div>
+                                    <div className="error-message">{formErrors.password}</div>
                                 )}
                             </div>
                             <div className='forgot'>

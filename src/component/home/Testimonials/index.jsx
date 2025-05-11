@@ -64,9 +64,11 @@ export default function Testimonials() {
               <img
                 src={elm.imageSrc}
                 alt="image"
-                className="md:w-28 w-full h-24 self-start rounded-2.5xl "
+                className="md:w-28 w-full h-full self-start rounded-2.5xl object-cover"
+                style={{height:'200px'}}
               />
-              <div className="-ml-14 -mt-4 flex h-16 w-16 shrink-0 items-center justify-center rounded-full border-[5px] border-white bg-accent dark:border-jacarta-700 md:mb-0 md:w-16">
+              <div className="-ml-14 -mt-4 flex h-16 w-16 shrink-0 items-center justify-center rounded-full border-[5px]
+               border-white bg-accent dark:border-jacarta-700 md:mb-0 md:w-16">
                 <svg
                   width="22"
                   height="19"

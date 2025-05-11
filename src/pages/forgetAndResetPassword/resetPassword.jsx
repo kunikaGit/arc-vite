@@ -1,5 +1,4 @@
 import React from 'react'
-import './login.scss'
 import { EyeIcon, EyeoffIcon } from '../../icons/icons'
 import useForgetResetPasswordUtils from './forgetAndResetPasswordUtils'
 import OverlayLoading from "../../component/common/overlayLoader";

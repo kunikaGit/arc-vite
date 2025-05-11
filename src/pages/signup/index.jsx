@@ -26,30 +26,33 @@ const Signup = () => {
             <div className='login'>
                 <div className='upper-body'>
                     <div className='form-box'>
+                    <div className='logo-box'>
+                        <h1 className="logo-text animate-gradient mb-5"> ARC</h1>
+                    </div>
                         <h2 className='main-heading'>Register your account</h2>
                         <form onSubmit={submitForm}>
-                            <div className='input-main-data'>
-                                <label>Enter first name <span className="text-danger">*</span></label>
-                                <input type='text' onChange={handleChange} name='name' />
-                                {formErrors?.name && <div className="error-message text-danger">{formErrors.name}</div>}
+                            <div className='flex gap-x-2'>
+                                <div className='input-main-data w-1/2'>
+                                    <label>First name <span className="text-danger">*</span></label>
+                                    <input type='text' onChange={handleChange} name='name' />
+                                    {formErrors?.name && <div className="error-message">{formErrors.name}</div>}
+                                </div>
+                                <div className='input-main-data w-1/2'>
+                                    <label>Last name <span className="text-danger">*</span></label>
+                                    <input type='text' onChange={handleChange} name='surname' />
+                                    {formErrors?.surname && <div className="error-message">{formErrors.surname}</div>}
+                                </div>
                             </div>
-
-                            <div className='input-main-data'>
-                                <label>Enter last name <span className="text-danger">*</span></label>
-                                <input type='text' onChange={handleChange} name='surname' />
-                                {formErrors?.surname && <div className="error-message text-danger">{formErrors.surname}</div>}
-                            </div>
-
                             <div className='input-main-data'>
                                 <label>Email address <span className="text-danger">*</span></label>
                                 <input type='email' onChange={handleChange} name='email' />
-                                {formErrors?.email && <div className="error-message text-danger">{formErrors.email}</div>}
+                                {formErrors?.email && <div className="error-message">{formErrors.email}</div>}
                             </div>
 
                             <div className='input-main-data'>
                                 <label>Mobile number <span className="text-danger">*</span></label>
                                 <input type='text' onChange={handleChange} name='contact_number' maxLength={10} />
-                                {formErrors?.contact_number && <div className="error-message text-danger">{formErrors.contact_number}</div>}
+                                {formErrors?.contact_number && <div className="error-message">{formErrors.contact_number}</div>}
                             </div>
 
                             <div className='input-main-data'>
@@ -60,7 +63,7 @@ const Signup = () => {
                                     <option value="female">Female</option>
                                     <option value="other">Other</option>
                                 </select>
-                                {formErrors?.gender && <div className="error-message text-danger">{formErrors.gender}</div>}
+                                {formErrors?.gender && <div className="error-message">{formErrors.gender}</div>}
                             </div>
 
                             <div className='input-main-data'>
@@ -72,7 +75,7 @@ const Signup = () => {
                                     onChange={handleChange}
                                     name='age'
                                 />
-                                {formErrors?.age && <div className="error-message text-danger">{formErrors.age}</div>}
+                                {formErrors?.age && <div className="error-message">{formErrors.age}</div>}
                             </div>
 
                             <div className='input-main-data'>
@@ -83,7 +86,7 @@ const Signup = () => {
                                         <option key={country.id} value={country.id}>{country.name}</option>
                                     ))}
                                 </select>
-                                {formErrors?.country_id && <div className="error-message text-danger">{formErrors.country_id}</div>}
+                                {formErrors?.country_id && <div className="error-message">{formErrors.country_id}</div>}
                             </div>
 
                             <div className='input-main-data'>
@@ -94,7 +97,7 @@ const Signup = () => {
                                         <option key={prof.id} value={prof.id}>{prof.name}</option>
                                     ))}
                                 </select>
-                                {formErrors?.profession_id && <div className="error-message text-danger">{formErrors.profession_id}</div>}
+                                {formErrors?.profession_id && <div className="error-message">{formErrors.profession_id}</div>}
                             </div>
 
                             {!isRefFromUrl && (
@@ -116,7 +119,7 @@ const Signup = () => {
                                 <div className="eyeicon" onClick={() => setIsPasswordVisible(!isPasswordVisible)}>
                                     {isPasswordVisible ? <EyeoffIcon /> : <EyeIcon />}
                                 </div>
-                                {formErrors?.password && <div className="error-message text-danger">{formErrors.password}</div>}
+                                {formErrors?.password && <div className="error-message">{formErrors.password}</div>}
                             </div>
 
                             <div className='input-main-data'>
@@ -130,7 +133,7 @@ const Signup = () => {
                                 <div className="eyeicon" onClick={() => setIsConfirmPasswordVisible(!isConfirmPasswordVisible)}>
                                     {isConfirmPasswordVisible ? <EyeoffIcon /> : <EyeIcon />}
                                 </div>
-                                {formErrors?.confirm_password && <div className="error-message text-danger">{formErrors.confirm_password}</div>}
+                                {formErrors?.confirm_password && <div className="error-message">{formErrors.confirm_password}</div>}
                             </div>
 
                             <button type='submit' className='login-btn'>Sign up</button>
@@ -150,10 +153,10 @@ const Signup = () => {
                         </div>
 
                         <div style={{ margin: '20px 0', display: 'flex', alignItems: 'center' }}>
-                                <hr style={{ flexGrow: 0 }} />
-                                <span style={{ margin: '0 10px', color: '#999' }}></span>
-                                <hr style={{ flexGrow: 0 }} />
-                            </div>
+                            <hr style={{ flexGrow: 0 }} />
+                            <span style={{ margin: '0 10px', color: '#999' }}></span>
+                            <hr style={{ flexGrow: 0 }} />
+                        </div>
 
                         <div className='signup-text'>
                             <p>Already have an account? <Link to="/login">Login</Link></p>

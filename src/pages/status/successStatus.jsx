@@ -1,7 +1,8 @@
 import React, { useEffect } from 'react';
-import './login.scss';
+import './status.scss';
 import { useNavigate,useLocation } from 'react-router-dom';
 import useStatusUtils from './statusUtils';
+import imageMap from '../../utlis/helper';
 
 const SuccessStatus = () => {
   const { updateStatusApi } = useStatusUtils();
@@ -20,15 +21,17 @@ const SuccessStatus = () => {
   }, []);
 
   return (
-    <div className='login'>
+    <div className='status-wrapped'>
       <div className='upper-body'>
         <div className='form-box'>
-          <h2 className='main-heading'>Payment Status</h2>
+          <h2 className='main-heading'>Payment Status Success</h2>
+          <div className='icon'>
+            <img src='/img/success.gif' alt='success'/>
+          </div>
           <p className='success-message'>
-            🎉 Congratulations! Your payment has been successful.
-            <br />
-            An email will be sent to you shortly.
+            🎉<strong> Congratulations! </strong> Your payment has been successful.
           </p>
+          <p className='info'>An email will be sent to you shortly.</p>
         </div>
       </div>
     </div>

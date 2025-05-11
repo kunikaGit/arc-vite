@@ -2,23 +2,32 @@
 
 .login {
     background-color: #F5F5F5;
-
+    min-height: 100vh;
     .upper-body {
-        padding: 100px 0;
+        padding: 50px 0;
+        background-color: rgb(245 248 252);
 
         @include media_1024 {
             padding: 50px 0;
         }
+    }
 
+    .logo-box {
+        h1 {
+            font-size: 50px;
+            text-align: center;
+            margin: 0;
+        }
     }
 
     .form-box {
         background-color: var(--white-color);
-        width: 50%;
+        width: 40%;
         margin: auto;
-        padding: 30px 70px;
+        padding: 20px 50px;
         border-radius: 16px;
-
+        background-color: #fff;
+        box-shadow: 0 0px 6px 4px #cccccc6b;
         @include media_1024 {
             width: 80%;
             padding: 30px 50px;
@@ -31,18 +40,19 @@
 
         form {
             margin-bottom: 50px;
+
             @include media_768 {
-               margin-bottom: 20px;
+                margin-bottom: 20px;
             }
         }
 
         .main-heading {
-            font-size: 32px;
+            font-size: 28px;
             color: #333333;
-            font-weight: 500;
-            text-align: center;
+            font-weight: 700;
+            text-align: left;
             margin-bottom: 20px;
-
+            text-align: center;
             @include media_768 {
                 font-size: 22px;
             }
@@ -51,19 +61,23 @@
         .input-main-data {
             margin-bottom: 20px;
             position: relative;
-            .eyeicon{
+
+            .eyeicon {
                 position: absolute;
                 right: 10px;
                 top: 40px;
                 cursor: pointer;
             }
+
             @include media_768 {
-               margin-bottom: 15px;
+                margin-bottom: 15px;
             }
+
             input {
                 width: 100%;
+
                 @include media_768 {
-                  padding: 7px;
+                    padding: 7px;
                 }
             }
         }
@@ -77,9 +91,10 @@
                 font-size: 16px;
                 font-weight: 300;
                 display: block;
+
                 @include media_768 {
                     font-size: 14px;
-                  }
+                }
             }
         }
 
@@ -87,9 +102,10 @@
             p {
                 font-weight: 300;
                 margin-bottom: 10px;
+
                 @include media_768 {
-                   font-size: 14px;
-                 }
+                    font-size: 14px;
+                }
             }
         }
 
@@ -116,6 +132,7 @@
             padding: 10px;
             color: #fff;
             border-radius: 10px;
+
             @include media_768 {
                 font-size: 14px;
                 padding: 10px 20px;

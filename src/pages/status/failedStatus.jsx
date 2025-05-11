@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import './login.scss';
 import { useNavigate } from 'react-router-dom';
 import useStatusUtils from './statusUtils';
 
@@ -19,13 +18,17 @@ const FailedStatus = () => {
   }, []);
 
   return (
-    <div className='login'>
+    <div className='status-wrapped'>
       <div className='upper-body'>
         <div className='form-box'>
-          <h2 className='main-heading'>Payment Status</h2>
-          <p className='error-message'>
-            ❌ Oops! Your payment has failed.
-            <br />
+          <h2 className='main-heading failed'>Payment Failed</h2>
+          <div className='text-center text-5xl py-10'>
+            ❌
+          </div>
+          <p className='success-message'>
+             Oops! Your payment has failed.
+          </p>
+          <p className='info'>
             Please try again or contact support.
           </p>
         </div>

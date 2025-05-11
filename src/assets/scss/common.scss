@@ -69,6 +69,10 @@
         width: 100%;
         outline: none;
         background-color: transparent;
+        &:focus{
+            border-color: var(--theme-purple);
+            box-shadow: none;
+        }
     }
 
     select {

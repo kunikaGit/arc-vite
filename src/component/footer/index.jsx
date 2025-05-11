@@ -132,8 +132,8 @@ export default function Footer1() {
             <Link to="/" className="shrink-0">
               <h2 className="logo-text animate-gradient">ARC</h2>
             </Link>
-            <p className="mb-12 dark:text-jacarta-300">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aspernatur, ipsum.
+            <p className="mb-12 dark:text-jacarta-300 text-md font-semibold">
+            Built for Traders, <br/> Backed by Professionals!
             </p>
 
             <div className="flex space-x-5">
