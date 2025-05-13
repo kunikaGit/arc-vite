@@ -20,5 +20,5 @@ export const API_ENDPOINTS = {
     changePassowrd:"/profile/change-password",
     forgotPassword:"/forgot-password",
     verifyEmail:"/verify-email",
-    currencies:"/payment/crypto-currencies?status=active"
+    currencies:"/payment/crypto-currencies?status=active",
 }

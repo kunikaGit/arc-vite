@@ -9,6 +9,10 @@ import { successMsg } from "../../utlis/customFn";
 import { useLocation } from 'react-router-dom'; // add this
 
 const useSignupUtils = () => {
+
+
+
+
     const [isPasswordVisible, setIsPasswordVisible] = useState(false);
 const [isConfirmPasswordVisible, setIsConfirmPasswordVisible] = useState(false);
 const location = useLocation();

@@ -21,6 +21,38 @@ const Signup = () => {
         isRefFromUrl
     } = useSignupUtils();
 
+    const { password } = formData;
+
+    const passwordChecks = {
+        length: password.length >= 8,
+        uppercase: /[A-Z]/.test(password),
+        lowercase: /[a-z]/.test(password),
+        number: /\d/.test(password),
+        specialChar: /[@$!%*?#&_]/.test(password),
+    };
+
+    const requirementList = [
+        { label: "At least 8 characters", passed: passwordChecks.length },
+        { label: "At least one uppercase", passed: passwordChecks.uppercase },
+        { label: "At least one lowercase", passed: passwordChecks.lowercase },
+        { label: "At least one number", passed: passwordChecks.number },
+        { label: "At least one special char", passed: passwordChecks.specialChar },
+    ];
+    const PasswordRequirement = ({ label, passed }) => (
+        // <div className="requirement">
+        //     <span className={`dot ${passed ? 'dot-passed' : 'dot-not-passed'}`}></span>
+        //     {label}
+        // </div>
+
+         <div className={`requirement ${passed ? 'passed' : 'not-passed'}`}>
+        {passed ? '✅' : '❌'} {label}
+    </div>
+
+
+    );
+
+    
+
     return (
         <OverlayLoading isLoading={loading}>
             <div className='login'>
@@ -121,6 +153,21 @@ const Signup = () => {
                                 <div className="eyeicon" onClick={() => setIsPasswordVisible(!isPasswordVisible)}>
                                     {isPasswordVisible ? <EyeoffIcon /> : <EyeIcon />}
                                 </div>
+
+                                {/* Custom 3-2 Layout */}
+                                <div className="password-requirements">
+                                    <div className="requirement-row">
+                                        {requirementList.slice(0, 3).map((req, i) => (
+                                            <PasswordRequirement key={i} label={req.label} passed={req.passed} />
+                                        ))}
+                                    </div>
+                                    <div className="requirement-row">
+                                        {requirementList.slice(3).map((req, i) => (
+                                            <PasswordRequirement key={i + 3} label={req.label} passed={req.passed} />
+                                        ))}
+                                    </div>
+                                </div>
+
                                 {formErrors?.password && <div className="error-message">{formErrors.password}</div>}
                             </div>
 

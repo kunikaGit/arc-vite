@@ -27,17 +27,17 @@ const MyProfile = () => {
         seLoading(true)
         try {
 
-            const countriesRes = await fetchData(API_ENDPOINTS.countries, navigate(), "GET");
+            const countriesRes = await fetchData(API_ENDPOINTS.countries, navigate, "GET");
             if (countriesRes?.data) setCountries(countriesRes.data);
 
-            const profileRes = await fetchData(API_ENDPOINTS.getProfile, navigate(), "GET");
+            const profileRes = await fetchData(API_ENDPOINTS.getProfile, navigate, "GET");
             if (profileRes?.data) setFormData(profileRes.data);
 
-            const imageBaseUrl = import.meta.env.REACT_APP_IMAGE_BASE_URL || '';
+            //const imageBaseUrl = import.meta.env.REACT_APP_IMAGE_BASE_URL || '';
 
             if (profileRes?.data?.profile_picture) {
-                const sanitizedUrl = `${imageBaseUrl.replace(/\/+$/, '')}/${profileRes.data.profile_picture.replace(/^\/+/, '')}`;
-                setImage(sanitizedUrl);
+              //  const sanitizedUrl = `${imageBaseUrl.replace(/\/+$/, '')}/${profileRes.data.profile_picture.replace(/^\/+/, '')}`;
+                setImage(profileRes?.data?.profile_picture);
             }
             seLoading(false)
 
@@ -51,10 +51,11 @@ const MyProfile = () => {
         fetchApis()
     }, [])
 
-
+    const [imageFile, setImageFile] = useState(null)
     const handleImageUpload = (event) => {
         const file = event.target.files[0];
         if (file) {
+            setImageFile(file)
             const reader = new FileReader();
             reader.onload = () => {
                 setImage(reader.result);
@@ -71,8 +72,8 @@ const MyProfile = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            
-    
+
+
             const data = new FormData();
             data.append("name", formData.name || '');
             data.append("surname", formData.surname || '');
@@ -80,9 +81,8 @@ const MyProfile = () => {
             data.append("contact_number", formData.contact_number || '');
             data.append("country_id", formData.country_id || '');
             data.append("age", formData.age || '');
-
-            if (image && typeof image !== "string") {
-                data.append("profile_picture", image);
+            if (imageFile) {
+                data.append("profile_picture", imageFile);
             }
 
             const res = await fetchData(API_ENDPOINTS.updateProfile, navigate, "PUT", data); // `true` to send as multipart/form-data
@@ -137,8 +137,8 @@ const MyProfile = () => {
                             <TabPanel value="1">
                                 <PersonalInfo countries={countries}
                                     formData={formData}
-                                    setFormData={setFormData} 
-                                    handleSubmit={handleSubmit}/>
+                                    setFormData={setFormData}
+                                    handleSubmit={handleSubmit} />
                             </TabPanel>
                             <TabPanel value="2">
                                 <ChangePassword />

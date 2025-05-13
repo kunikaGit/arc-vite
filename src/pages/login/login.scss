@@ -3,6 +3,7 @@
 .login {
     background-color: #F5F5F5;
     min-height: 100vh;
+
     .upper-body {
         padding: 50px 0;
         background-color: rgb(245 248 252);
@@ -20,6 +21,50 @@
         }
     }
 
+    .password-requirements {
+        margin-top: 10px;
+        padding: 12px 16px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        background-color: #fefefe;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: fit-content;
+        margin-inline: auto;
+
+        .requirement-row {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 6px;
+            justify-content: center;
+        }
+
+        .requirement {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            font-size: 13px;
+        }
+
+        .dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        .dot-passed {
+            background-color: green;
+        }
+
+        .dot-not-passed {
+            background-color: red;
+        }
+    }
+
+
+
     .form-box {
         background-color: var(--white-color);
         width: 40%;
@@ -28,6 +73,7 @@
         border-radius: 16px;
         background-color: #fff;
         box-shadow: 0 0px 6px 4px #cccccc6b;
+
         @include media_1024 {
             width: 80%;
             padding: 30px 50px;
@@ -53,6 +99,7 @@
             text-align: left;
             margin-bottom: 20px;
             text-align: center;
+
             @include media_768 {
                 font-size: 22px;
             }

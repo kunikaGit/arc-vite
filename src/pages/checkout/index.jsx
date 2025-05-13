@@ -65,7 +65,7 @@ export default function Checkout() {
 
             const additional = selectedState.basePrice * updatedAddons.reduce((sum, p) => sum + p, 0);
             let newPrice = (parseFloat(selectedState.basePrice) + parseFloat(additional / 100)) - selectedState?.discountAmount;
-            newPrice=selectedState?.fees>0?newPrice+parseFloat((newPrice*parseInt(selectedState?.fees)/100)):newPrice
+            newPrice = selectedState?.fees > 0 ? newPrice + parseFloat((newPrice * parseInt(selectedState?.fees) / 100)) : newPrice
             let newAddon = (selectedState.basePrice * percent) / 100
             if (checked) {
                 updateAddOnAmounts.push(parseFloat(additional / 100));
@@ -170,7 +170,7 @@ export default function Checkout() {
             setSelectedState(prev => ({
                 ...prev,
                 fees: paymentMethods[value - 1].fees,
-                price:paymentMethods[value - 1].fees>0?parseFloat(selectedState?.price)+parseFloat((selectedState?.price* parseInt(paymentMethods[value - 1].fees))/100):selectedState?.price
+                price: paymentMethods[value - 1].fees > 0 ?(( parseFloat(selectedState?.basePrice) + parseFloat((selectedState?.basePrice * parseInt(paymentMethods[value - 1].fees)) / 100))+selectedState?.addOnAmount)-selectedState?.discountAmount: (selectedState?.basePrice+selectedState?.addOnAmount)-selectedState?.discountAmount
             }));
             setSelectedCurrency(null)
         }
@@ -234,7 +234,7 @@ export default function Checkout() {
                     await stripe.redirectToCheckout({ sessionId: checkoutRes.data });
 
                 } else if (updatedData.paymentMethodId == 2) {
- window.location.href =  checkoutRes.data; // redirects in same tab
+                    window.location.href = checkoutRes.data; // redirects in same tab
                 }
 
                 seLoading(false)
@@ -261,7 +261,7 @@ export default function Checkout() {
                 let newPrice = parseFloat(selectedState?.basePrice) + parseFloat(selectedState?.addOnAmount);
                 let discountedAmount = (newPrice * couponCodeRes.data) / 100
                 newPrice = newPrice - parseFloat(discountedAmount)
-                newPrice=selectedState?.fees>0?newPrice+parseFloat((newPrice*parseInt(selectedState?.fees))/100):newPrice
+                newPrice = selectedState?.fees > 0 ? newPrice + parseFloat((newPrice * parseInt(selectedState?.fees)) / 100) : newPrice
                 setSelectedState((prev) => ({ ...prev, couponCodeAppied: true, discountAmount: discountedAmount, price: newPrice }))
             } else {
                 errorMsg(couponCodeRes.message)
