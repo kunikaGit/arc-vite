@@ -4,6 +4,7 @@ import useSignupUtils from './signupUtils'
 import OverlayLoading from '../../component/common/overlayLoader.jsx'
 import { EyeIcon, EyeoffIcon } from '../../icons/icons'
 import { GoogleLogin } from '@react-oauth/google';
+import TelegramLogin from './telegramLogin.jsx';
 const Signup = () => {
     const {
         submitForm,
@@ -199,6 +200,8 @@ const Signup = () => {
                                 onSuccess={handleGoogleSuccess}
                                 onError={() => console.log('Google Login Failed')}
                             />
+
+                            <TelegramLogin/>
                         </div>
 
                         <div style={{ margin: '20px 0', display: 'flex', alignItems: 'center' }}>
