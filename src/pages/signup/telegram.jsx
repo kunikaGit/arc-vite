@@ -1,18 +1,15 @@
 import { useEffect } from 'react';
 
-const TelegramLogin = () => {
+const TelegramLogin = ({redirectUrl}) => {
   useEffect(() => {
-    // ✅ Define the global handler BEFORE the script is added
     window.onTelegramAuth = function (user) {
       alert(`Logged in as ${user.first_name} (${user.id})`);
       console.log("Telegram User:", user);
     };
 
-    // ✅ Remove previous scripts if any
     const existing = document.getElementById("telegram-login-script");
     if (existing) existing.remove();
 
-    // ✅ Add Telegram script
     const script = document.createElement('script');
     script.id = "telegram-login-script";
     script.src = "https://telegram.org/js/telegram-widget.js?22";
@@ -21,12 +18,19 @@ const TelegramLogin = () => {
     script.setAttribute("data-size", "large");
     script.setAttribute("data-userpic", "false");
     script.setAttribute("data-request-access", "write");
-    script.setAttribute("data-onauth", "onTelegramAuth");
+    script.setAttribute("data-auth-url", redirectUrl);
 
-    document.getElementById("telegram-login").appendChild(script);
+    const container = document.getElementById("telegram-login");
+    if (container) container.appendChild(script);
+
+    return () => {
+      window.onTelegramAuth = null;
+      const cleanup = document.getElementById("telegram-login-script");
+      if (cleanup) cleanup.remove();
+    };
   }, []);
 
-  return <div id="telegram-login"></div>;
+  return <div id="telegram-login" style={{ display: 'flex', justifyContent: 'center', marginTop: '20px' }}></div>;
 };
 
 export default TelegramLogin;

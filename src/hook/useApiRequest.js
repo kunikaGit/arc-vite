@@ -30,12 +30,11 @@ const useApiRequest = () => {
       if (response?.status || response?.success) {
         return response;
       } else {
-        console.log("sfagaga");
-        return response;
+        return {response,message:"Email Or telegram Id already registered. Please try to login."};
       }
     } catch (err) {
       console.log(err)
-      console.log("sfagaga");
+      return err;
     } finally {
       setTimeout(() => {
         setLoading(false);

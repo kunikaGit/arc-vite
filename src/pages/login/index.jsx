@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom'
 import { EyeIcon, EyeoffIcon } from '../../icons/icons'
 import useLoginUtils from './loginUtils'
 import { GoogleLogin } from '@react-oauth/google';
+import TelegramLogin from '../signup/telegram';
+
 const Login = () => {
 
     const {
@@ -80,6 +82,8 @@ const Login = () => {
                                 onSuccess={handleGoogleSuccess}
                                 onError={() => console.log('Google Login Failed')}
                             />
+                            <TelegramLogin redirectUrl={'https://arcforyou.com/telegram-login-auth'}/>
+
                         </div>
 
                         <div style={{ margin: '20px 0', display: 'flex', alignItems: 'center' }}>

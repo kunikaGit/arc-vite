@@ -1,21 +1,24 @@
-import { useEffect,useState } from "react"
+import { useEffect, useState } from "react"
 import Joi from "joi";
 import { useNavigate } from "react-router-dom";
-import {jwtDecode} from 'jwt-decode';
+import { jwtDecode } from 'jwt-decode';
 import { API_ENDPOINTS } from "../../constants/endPoints";
 import useApiRequest from "../../hook/useApiRequest";
 import { validateFormData } from "../../utlis/validation";
 import { successMsg } from "../../utlis/customFn";
 import { useLocation } from 'react-router-dom'; // add this
+import { isloginSuccess } from "../slice/authSlice";
+import { useDispatch } from "react-redux";
 
 const useSignupUtils = () => {
 
 
+  const dispatch = useDispatch();
 
 
     const [isPasswordVisible, setIsPasswordVisible] = useState(false);
-const [isConfirmPasswordVisible, setIsConfirmPasswordVisible] = useState(false);
-const location = useLocation();
+    const [isConfirmPasswordVisible, setIsConfirmPasswordVisible] = useState(false);
+    const location = useLocation();
     const [formErrors, setFormErrors] = useState({});
     const { loading, fetchData } = useApiRequest();
     const navigate = useNavigate();
@@ -36,7 +39,7 @@ const location = useLocation();
         auth_type: "email"
     });
 
-    const [isRefFromUrl,setIsRefFromUrl] =useState(false)
+    const [isRefFromUrl, setIsRefFromUrl] = useState(false)
 
     useEffect(() => {
         const searchParams = new URLSearchParams(location.search);
@@ -78,7 +81,7 @@ const location = useLocation();
 
     const submitForm = async (e) => {
         e.preventDefault();
-    
+
         try {
             const validationSchema = Joi.object({
                 name: Joi.string().required().label("First Name"),
@@ -109,21 +112,21 @@ const location = useLocation();
                     }),
                 gender: Joi.string().valid("male", "female", "other").required().label("Gender"),
                 age: Joi.number().integer().min(1).required().label("Age"),
-                country_id: Joi.string().required().label("Country").messages({"string.empty":"This Field is required."}).strict(false),
-                profession_id: Joi.string().required().label("Profession").messages({"string.empty":"This Field is required."}).strict(false),
+                country_id: Joi.string().required().label("Country").messages({ "string.empty": "This Field is required." }).strict(false),
+                profession_id: Joi.string().required().label("Profession").messages({ "string.empty": "This Field is required." }).strict(false),
                 referred_by: Joi.string().optional().allow("").label("Referred By"),
             }).options({ abortEarly: false, allowUnknown: true });
-    
+
             const { errors, status } = await validateFormData(formData, validationSchema);
             setFormErrors(errors);
-    
+
             if (!status) return;
-    
+
             const payload = {
                 ...formData,
                 auth_type: "email", // fixed field
             };
-    
+
             const url = API_ENDPOINTS.signup;
             const response = await fetchData(url, navigate, "POST", payload);
             if (response) {
@@ -142,19 +145,23 @@ const location = useLocation();
             email: decoded.email,
             name: decoded.given_name,
             surname: decoded.family_name,
-            referred_by:formData.referred_by,
+            referred_by: formData.referred_by,
             auth_type: 'google',
-          })
+        })
         const url = API_ENDPOINTS.signup;
         const response = await fetchData(url, navigate, "POST", payload);
         if (response) {
+            localStorage.setItem("auth_token", response?.data.token);
+
+            dispatch(isloginSuccess());
+            navigate("/")
             successMsg(response?.message);
             navigate("/dashboard/myprofile");
             setFormData({});
         }
 
-      };
-    
+    };
+
     return {
         submitForm,
         handleChange,

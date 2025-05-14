@@ -4,7 +4,7 @@ import useSignupUtils from './signupUtils'
 import OverlayLoading from '../../component/common/overlayLoader.jsx'
 import { EyeIcon, EyeoffIcon } from '../../icons/icons'
 import { GoogleLogin } from '@react-oauth/google';
-import TelegramLogin from './telegramLogin.jsx';
+import TelegramLogin from './telegram.jsx';
 const Signup = () => {
     const {
         submitForm,
@@ -201,7 +201,7 @@ const Signup = () => {
                                 onError={() => console.log('Google Login Failed')}
                             />
 
-                            <TelegramLogin/>
+                            <TelegramLogin redirectUrl={'https://arcforyou.com/telegram-auth'}/>
                         </div>
 
                         <div style={{ margin: '20px 0', display: 'flex', alignItems: 'center' }}>

@@ -14,6 +14,8 @@ import FailedStatus from "./pages/status/failedStatus.jsx";
 import ForgetPassword from "./pages/forgetAndResetPassword/forgetPassword.jsx";
 import ResetPassword from "./pages/forgetAndResetPassword/resetPassword.jsx";
 import EmailVerification from "./pages/status/emailVerification.jsx";
+import TelegramSignup from "./pages/signup/telegramSignup.jsx";
+import TelegramLoginStatus from "./pages/status/telegramLoginStatus.jsx";
 
 
 export default function App() {
@@ -42,6 +44,8 @@ export default function App() {
         <Route path="/reset-password" element={<ResetPassword/>}/>
 
         <Route path="/verify-email" element={<EmailVerification/>}/>
+        <Route path="/telegram-auth" element={<TelegramSignup/>}/>
+        <Route path="/telegram-login-auth" element={<TelegramLoginStatus/>}/>
 
 
         {/* -----------for dashboard routing--------------- */}
