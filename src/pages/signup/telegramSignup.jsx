@@ -80,12 +80,14 @@ const TelegramSignup = () => {
                 photo_url: telegramData.photo_url,
                 auth_type: 'telegram'
             };
+             const signUpRes = await fetchData(API_ENDPOINTS.signup, navigate, "POST", payload);
 
-            const signUpRes = await fetchData(API_ENDPOINTS.signup, navigate, "POST", payload);
             if (signUpRes?.success) {
                 successMsg(signUpRes?.message)
-                            dispatch(isloginSuccess());
-                            navigate("/dashboard/myprofile");
+        localStorage.setItem("auth_token", signUpRes?.data.token);
+
+        dispatch(isloginSuccess());
+        navigate("/")
             } else {
                 errorMsg(signUpRes?.message ? signUpRes?.message :signUpRes)
             }

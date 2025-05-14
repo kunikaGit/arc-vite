@@ -13,7 +13,7 @@ export const API_ENDPOINTS = {
     paymentMethods:"/payment/methods",
     addOns:"/payment/add-ons",
     checkout:"/payment/create-checkout-session",
-    updateStatus:"/payment/update-session-status",
+    updateStatus:"/payment/update-stripe-session-status",
     couponCode:"/payment/apply-coupon-code",
     getProfile:"/profile",
     updateProfile:"/profile",

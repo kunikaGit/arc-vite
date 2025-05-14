@@ -11,8 +11,8 @@ const TelegramLoginStatus = () => {
     const location = useLocation();
     const navigate = useNavigate();
     const [telegramData, setTelegramData] = useState(null);
-    const [loading, setLoading] = useState(false);
-    const [result, setResult] = useState(false)
+    const [loading, setLoading] = useState(true);
+    const [result, setResult] = useState(true)
 
     // Extract Telegram data from URL query string
     useEffect(() => {
@@ -30,7 +30,7 @@ const TelegramLoginStatus = () => {
                 last_name: telegramUser.last_name || '',
                 photo_url: telegramUser.photo_url || '',
             });
-            submitForm()
+
         } else {
             setResult(false)
             setLoading(false)
@@ -38,13 +38,22 @@ const TelegramLoginStatus = () => {
         }
     }, [location.search]);
 
+  // 🕒 Call submitForm after 3 seconds of telegramData being set
+  useEffect(() => {
+    if (telegramData) {
+      const timeout = setTimeout(() => {
+        submitForm();
+      }, 3000);
 
-    const submitForm = async () => {
-        if (!telegramData) {
-            errorMsg('Telegram authentication data missing.');
-            return;
-        }
-
+      return () => clearTimeout(timeout); // clean up
+    }
+  }, [telegramData]);
+      const submitForm = async () => {
+    if (!telegramData) {
+        errorMsg('Telegram authentication data missing.');
+        setTimeout(() => navigate('/login'), 2000); // Redirect after 2s if data is missing
+        return;
+    }
         try {
             setLoading(true);
 
@@ -64,7 +73,9 @@ const TelegramLoginStatus = () => {
             setResult(false)
             setLoading(false)
             errorMsg(err)
-        } finally {
+   // ⏳ Redirect to login after 2 seconds if there's an error
+        setTimeout(() => navigate('/login'), 2000);
+            } finally {
             setLoading(false);
         }
     };
