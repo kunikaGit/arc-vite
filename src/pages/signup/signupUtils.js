@@ -7,7 +7,7 @@ import useApiRequest from "../../hook/useApiRequest";
 import { validateFormData } from "../../utlis/validation";
 import { successMsg } from "../../utlis/customFn";
 import { useLocation } from 'react-router-dom'; // add this
-import { isloginSuccess } from "../slice/authSlice";
+import { isloginSuccess } from "../../redux/slice/authSlice";
 import { useDispatch } from "react-redux";
 
 const useSignupUtils = () => {

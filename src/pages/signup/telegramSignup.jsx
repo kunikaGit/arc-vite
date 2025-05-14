@@ -5,7 +5,7 @@ import { API_ENDPOINTS } from "../../constants/endPoints";
 import useApiRequest from "../../hook/useApiRequest";
 import { errorMsg, successMsg } from "../../utlis/customFn";
 import { useDispatch } from "react-redux";
-import { isloginSuccess } from "../slice/authSlice";
+import { isloginSuccess } from "../../redux/slice/authSlice.js";
 
 const TelegramSignup = () => {
     const { fetchData } = useApiRequest();
