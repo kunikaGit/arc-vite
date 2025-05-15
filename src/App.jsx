@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import { AboutUs, AccountOverview, Accounts, Billing, Checkout, ComingSoon, Faq, FundedLongue, Leaderboard, Login, Merchandise, MyProfile, PrivacyPolicy, Signup, TermsAndCondition, WithdrawalStep2, WithdrawalStep3 } from "./pages/index.js";
 import Home2 from "./pages/home2.jsx";
@@ -16,9 +17,23 @@ import ResetPassword from "./pages/forgetAndResetPassword/resetPassword.jsx";
 import EmailVerification from "./pages/status/emailVerification.jsx";
 import TelegramSignup from "./pages/signup/telegramSignup.jsx";
 import TelegramLoginStatus from "./pages/status/telegramLoginStatus.jsx";
-
-
+import { useNavigate } from 'react-router-dom';
+import { logout } from '../src/redux/slice/authSlice.js'
+import { useDispatch, useSelector } from 'react-redux'
+import {autoLogout} from "../src/utlis/autoLogout.js"
 export default function App() {
+    const navigate = useNavigate();
+  const { auth_token } = useSelector((state) => state.auth);
+    const dispatch = useDispatch()
+
+useEffect(() => {
+  if (auth_token) {
+    autoLogout(auth_token, () => {
+      dispatch(logout());
+      navigate("/login");
+    });
+  }
+}, [auth_token, dispatch, navigate]);
   return (
     <>
       <ScrollToTop />

@@ -170,7 +170,7 @@ export default function Checkout() {
             setSelectedState(prev => ({
                 ...prev,
                 fees: paymentMethods[value - 1].fees,
-                price: paymentMethods[value - 1].fees > 0 ?(( parseFloat(selectedState?.basePrice) + parseFloat((selectedState?.basePrice * parseInt(paymentMethods[value - 1].fees)) / 100))+selectedState?.addOnAmount)-selectedState?.discountAmount: (selectedState?.basePrice+selectedState?.addOnAmount)-selectedState?.discountAmount
+                price: paymentMethods[value - 1].fees > 0 ? ((parseFloat(selectedState?.basePrice) + parseFloat((selectedState?.basePrice * parseInt(paymentMethods[value - 1].fees)) / 100)) + selectedState?.addOnAmount) - selectedState?.discountAmount : (selectedState?.basePrice + selectedState?.addOnAmount) - selectedState?.discountAmount
             }));
             setSelectedCurrency(null)
         }
@@ -222,7 +222,6 @@ export default function Checkout() {
             seLoading(true)
             try {
                 const checkoutRes = await fetchData(API_ENDPOINTS.checkout, navigate, "POST", updatedData);
-
                 // Save session_id
                 if (checkoutRes?.data) {
                     localStorage.setItem("session_id", checkoutRes.data);
