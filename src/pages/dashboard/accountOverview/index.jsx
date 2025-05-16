@@ -62,7 +62,7 @@ const Accounts = () => {
                             to="/#pricing"
                             className="block text-sm rounded-full bg-accent py-3
                                 px-4 text-center font-medium text-white shadow-accent-volume transition-all hover:bg-accent-dark">
-                            Get Plan
+                            Start Now
                         </Link>
                     </div>
                 </div>
