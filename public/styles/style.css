@@ -391,7 +391,20 @@ color: #fff;
 box-shadow: none;
 }
 
-
+.purple_bordered{
+  background-color: transparent;
+  border: 1px solid var(--theme-purple);
+  padding: 10px 20px;
+  border-radius: 50px;
+  transition: .3s;
+  display: block;
+  text-align: center;
+  width: fit-content;
+  min-width: 120px;
+}
+.purple_bordered:hover{
+  background-color: var(--theme-purple);
+}
 
 @media only screen and (min-width: 1920px){
   .hero-main h1{
@@ -728,6 +741,7 @@ color: #fff;
   font-size: 80px;
   line-height: 80px;
   margin-bottom: 40px;
+  font-weight: 600;
 }
 .hero-main .main-cards{
   height: 140px;

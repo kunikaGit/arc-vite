@@ -35,31 +35,54 @@ const WithdrawalStep2 = () => {
                     <div className="left-side">
                         <div className="block1 mb-4">
                             <h2 className="font-semibold text-lg mb-3">Contract</h2>
-                            <div className="theme_card bg-2b2a33">
+                            <div className="theme_card bg-grey">
                                 <div className="flex justify-between mb-2"><span>1. Contract 1</span>
                                     <Link to="#"
-                                        className="w-fit block text-sm rounded-full bg-accent py-2 px-4 text-center font-medium text-white shadow-accent-volume transition-all hover:bg-accent-dark">
+                                        className="purple_bordered">
                                         View
                                     </Link>
                                 </div>
                                 <div className="flex justify-between mb-2"><span>2. Contract 2</span>
                                     <Link to="#"
-                                        className="w-fit block text-sm rounded-full bg-accent py-2 px-4 text-center font-medium text-white shadow-accent-volume transition-all hover:bg-accent-dark">
+                                        className="purple_bordered">
                                         View
                                     </Link>
                                 </div>
                                 <div className="flex justify-between"><span>3. Contract 3</span>
                                     <Link to="#"
-                                        className="w-fit block text-sm rounded-full bg-accent py-2 px-4 text-center font-medium text-white shadow-accent-volume transition-all hover:bg-accent-dark">
+                                        className="purple_bordered">
                                         View
                                     </Link>
                                 </div>
                             </div>
                         </div>
-                        <div className="payout">
+                      
+                    </div>
+                    <div className="right-side">
+                        <div className="mb-4">
+                            <h2 className="font-semibold text-lg mb-3 flex items-center">Profit Split <span className="text-base">(14 days)</span>
+                            <button type="button" className="bg-transparent border-none block" style={{marginLeft:'10px'}}
+                             onClick={handleOpenModal}><CalenderIcon/></button>
+                            </h2>
+                            <Link to="/dashboard/withdrawal/step3"
+                                className="purple_bordered">
+                                Withdraw
+                            </Link>
+                        </div>
+                        <div>
+                            <h2 className="font-semibold text-lg mb-3">Withdrawal Steps <span className="text-base">2 days left</span></h2>
+                            <div className="flex md:gap-x-4 gap-x-2 theme_card bg-grey justify-around">
+                                <div className=" border border-accent px-4 py-2 rounded-3xl md:text-base text-sm md:px-4">Step 1</div>
+                                <div className=" border border-accent px-4 py-2 rounded-3xl md:text-base text-sm md:px-4">Step 2</div>
+                                <div className=" border border-accent px-4 py-2 rounded-3xl md:text-base text-sm md:px-4">Step 3</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                  <div className="payout">
                             <h2 className="font-semibold text-lg mb-3">Payouts</h2>
     
-                            <div className="theme_card bg-2b2a33 ">
+                            <div className="theme_card bg-grey ">
                                 <table className="w-full">
                                     <thead>
                                         <tr>
@@ -88,29 +111,6 @@ const WithdrawalStep2 = () => {
                                 </table>
                             </div>
                         </div>
-                    </div>
-                    <div className="right-side">
-                        <div className="mb-4">
-                            <h2 className="font-semibold text-lg mb-3 flex items-center">Profit Split <span className="text-base">(14 days)</span>
-                            <button type="button" className="bg-transparent border-none block" style={{marginLeft:'10px'}}
-                             onClick={handleOpenModal}><CalenderIcon/></button>
-                            </h2>
-                            <Link to="/dashboard/withdrawal/step3"
-                                className="withdraw-btn md:w-fit block md:text-base text-sm rounded-full bg-accent py-3 px-8 text-center font-medium text-white shadow-accent-volume transition-all hover:bg-accent-dark">
-                                Withdraw
-                            </Link>
-                        </div>
-                        <div>
-                            <h2 className="font-semibold text-lg mb-3">Withdrawal Steps <span className="text-base">2 days left</span></h2>
-                            <div className="flex md:gap-x-4 gap-x-2 theme_card bg-2b2a33 justify-around">
-                                <div className=" border border-accent px-2 py-2 rounded-3xl md:text-base text-sm md:px-4">Step 1</div>
-                                <div className=" border border-accent px-2 py-2 rounded-3xl md:text-base text-sm md:px-4">Step 2</div>
-                                <div className=" border border-accent px-2 py-2 rounded-3xl md:text-base text-sm md:px-4">Step 3</div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
             </div>
 
             <Modal
@@ -123,7 +123,7 @@ const WithdrawalStep2 = () => {
                     <button type="button" className="bg-transparent border-0 absolute right-3 top-1.5" onClick={() => handleClose()}>
                         <Cross />
                     </button>
-                    <div className="theme_card bg-2b2a33 calender-data mt-0" style={{ marginTop: '0' }}>
+                    <div className="theme_card bg-grey calender-data mt-0" style={{ marginTop: '0' }}>
                         <DailyCalender handleClose={handleClose}/>
                     </div>
                 </Box>

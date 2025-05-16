@@ -4,7 +4,7 @@
   position: relative;
   height: 100%;
   display: flex;
-  font-family: "Inter";
+  font-family: "outfit";
 
   .sidebar-wrapped {
     @include media_1024 {
@@ -16,27 +16,31 @@
     color: var(--white_color);
     padding: 30px;
     position: relative;
-    @include media_768{
-     padding: 10px;
+
+    @include media_768 {
+      padding: 10px;
     }
+
     &.width200 {
       width: calc(100% - 200px);
-      @include media_1024{
+
+      @include media_1024 {
         width: 100%;
       }
     }
 
     &.width80 {
       width: calc(100% - 80px);
-      @include media_1024{
+
+      @include media_1024 {
         width: 100%;
       }
     }
   }
 
   .toggle-button {
-    position: absolute;
-    left: -18px;
+    position: fixed;
+    left: 185px;
     top: 18px;
     height: 30px;
     width: 30px;
@@ -46,7 +50,8 @@
     align-items: center;
     justify-content: center;
     z-index: 11;
-    @include media_1024{
+
+    @include media_1024 {
       display: none;
     }
 
@@ -94,6 +99,8 @@
     height: 100vh;
     border: none;
     width: 200px;
+    position: sticky;
+    top: 0;
 
     &.ps-collapsed {
       .sidebarlogo {
@@ -199,7 +206,7 @@
     .name {
       color: var(--white_color);
       line-height: 20px;
-      font-size: 14px;
+      font-size: 16px;
       font-weight: 400;
       font-family: 'Inter'
 

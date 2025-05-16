@@ -28,7 +28,8 @@ html {
 
 body {
     margin: 0;
-    line-height: inherit
+    line-height: inherit;
+    font-weight: 400;
 }
 
 hr {
@@ -6275,6 +6276,7 @@ html[dir=rtl] .hover\:translate-x-1:hover {
     --white_color:#FFFFFF;
     --dark-purple:#18042b;
     --theme-purple: #8257fe;
+    --bg-grey:#1b1b1b;
 }
 
 :host {
@@ -6739,4 +6741,7 @@ html[dir=rtl] .hover\:translate-x-1:hover {
 }
 .bg-2b2a33{
     background-color: #2b2a33;
+}
+.bg-grey{
+    background-color: var(--bg-grey);
 }

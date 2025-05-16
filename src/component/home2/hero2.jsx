@@ -35,20 +35,20 @@ export default function Hero2() {
                     <div className="flex items-center justify-center md:max-h-full gap-x-4 home-actions">
                         <a
                             href="#pricing"
-                            className="btn-epic w-52 block text-lg rounded-full bg-accent py-3 px-5 text-center font-semibold text-white shadow-accent-volume transition-all "
+                            className="btn-epic w-52 block text-lg rounded-full bg-accent py-3 px-5 text-center font-medium text-white shadow-accent-volume transition-all "
                         >
                             <div>
-                                <span className=" font-semibold">Start Challenge</span>
-                                <span className=" font-semibold">Start Challenge</span>
+                                <span className=" font-medium">Start Challenge</span>
+                                <span className=" font-medium">Start Challenge</span>
                             </div>
                         </a>
                         <Link
                             to="/create"
-                            className="btn-epic md:mx-3 mx-1 text-lg relative block rtl:!mr-6 w-52 rounded-full bg-white py-3 px-5 text-center font-semibold text-accent shadow-white-volume"
+                            className="btn-epic md:mx-3 mx-1 text-lg relative block rtl:!mr-6 w-52 rounded-full bg-white py-3 px-5 text-center font-medium text-accent shadow-white-volume"
                         >
                             <div>
-                                <span className=" font-semibold text-[#fff]">  Learn More</span>
-                                <span className=" font-semibold ">  Learn More</span>
+                                <span className=" font-medium text-[#fff]">  Learn More</span>
+                                <span className=" font-medium ">  Learn More</span>
 
                             </div>
                         </Link>

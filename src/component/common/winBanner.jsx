@@ -1,10 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../../assets/scss/winbanner.scss'
 import { Cross } from '../../icons/icons'
 const WinBanner = () => {
+  const [showBanner,setShowBanner] = useState(true)
+
+  const closeBanner = () =>{
+    setShowBanner(false)
+  }
   return (
+    <>
+    {showBanner &&
     <div className='win-banner'>
-      <button type='button' className='cross'><Cross/></button>
+      <button type='button' className='cross' onClick={()=>closeBanner()}><Cross/></button>
       <div className='content'>
         <h2>Win a Free $100k Trading Challenge!</h2>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -15,6 +22,8 @@ const WinBanner = () => {
         <button type='button' className='grey-btn'>I am not Interested</button>
       </div>
     </div>
+    }
+    </>
   )
 }
 

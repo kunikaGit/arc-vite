@@ -75,7 +75,7 @@ const MenuItems = () => {
                         </>
                     )
                 })}
-                <SubMenu onClick={() => window.open("https://arc-partner-portal.vercel.app/", "_blank")}
+                <SubMenu onClick={() => window.open("https://arc-partner-portal.vercel.app/")}
                     className={`sidebar_label`}
                     label={
                         <div className="sidebar_label">

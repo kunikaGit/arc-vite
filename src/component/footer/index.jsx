@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import './footer.scss'
 
 const links = [
   { id: 1, name: "Home", href: "/" },
@@ -95,7 +96,7 @@ function Navigation() {
         <li key={i}>
           <Link
             to={elm.href}
-            className="hover:text-accent dark:hover:text-white"
+            className="hover:text-accent dark:hover:text-white text-white"
           >
             {elm.name}
           </Link>
@@ -105,34 +106,18 @@ function Navigation() {
   );
 }
 
-function MarketplaceLinks() {
-  return (
-    <>
-      {nftCategories.map((elm, i) => (
-        <li key={i}>
-          <Link
-            href={elm.href}
-            className="hover:text-accent dark:hover:text-white"
-          >
-            {elm.name}
-          </Link>
-        </li>
-      ))}
-    </>
-  );
-}
 
 export default function Footer1() {
   return (
-    <footer className="page-footer bg-white dark:bg-jacarta-900">
+    <footer className="page-footer  dark:bg-jacarta-900">
       <div className="container">
-        <div className="grid grid-cols-6 gap-x-7 gap-y-14 pt-24 pb-12 md:grid-cols-12">
+        <div className="grid grid-cols-6 gap-x-7 gap-y-14 pt-16 pb-12 md:grid-cols-12">
 
           <div className="col-span-full sm:col-span-3 md:col-span-4">
             <Link to="/" className="shrink-0">
               <h2 className="logo-text animate-gradient">ARC</h2>
             </Link>
-            <p className="mb-12 dark:text-jacarta-300 text-md font-semibold">
+            <p className="mb-12 dark:text-jacarta-300 text-white text-md font-semibold">
             Built for Traders, <br/> Backed by Professionals!
             </p>
 
@@ -152,7 +137,7 @@ export default function Footer1() {
           <div className=" sm:col-span-3 md:col-span-4 md:block hidden">
           </div>
           <div className="col-span-full sm:col-span-3 md:col-span-2 mt-7">
-            <h3 className="mb-6 font-display text-sm text-jacarta-700 dark:text-white">
+            <h3 className="mb-6 font-display text-sm text-jacarta-700 dark:text-white text-white">
               Navigation
             </h3>
             <ul className="flex flex-col space-y-1 dark:text-jacarta-300">
