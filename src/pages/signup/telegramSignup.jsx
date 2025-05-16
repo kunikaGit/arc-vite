@@ -9,11 +9,11 @@ import { isloginSuccess } from "../../redux/slice/authSlice.js";
 
 const TelegramSignup = () => {
     const { fetchData } = useApiRequest();
-  const dispatch = useDispatch();
+    const dispatch = useDispatch();
 
     const location = useLocation();
     const navigate = useNavigate();
-    const [formData, setFormData] = useState({ email: '' });
+    const [formData, setFormData] = useState({ email: '' ,isNotUsCitizen:false});
     const [formErrors, setFormErrors] = useState({});
     const [telegramData, setTelegramData] = useState(null);
     const [loading, setLoading] = useState(false);
@@ -39,10 +39,20 @@ const TelegramSignup = () => {
         }
     }, [location.search]);
 
-    const handleChange = (e) => {
-        setFormData({ ...formData, [e.target.name]: e.target.value });
-        setFormErrors({});
-    };
+const handleChange = (e) => {
+    const { name, type, value, checked } = e.target;
+
+    setFormData((prev) => ({
+        ...prev,
+        [name]: type === "checkbox" ? checked : value,
+    }));
+
+    setFormErrors((prev) => ({
+        ...prev,
+        [name]: "",
+    }));
+};
+
 
     const validateForm = () => {
         const errors = {};
@@ -51,6 +61,8 @@ const TelegramSignup = () => {
             errors.email = 'Email is required';
         } else if (!emailRegex.test(formData.email)) {
             errors.email = 'Enter a valid email address';
+        }else if (!formData.isNotUsCitizen) {
+            errors.email = 'You must confirm you are not a US citizen.';
         }
         return errors;
     };
@@ -78,18 +90,19 @@ const TelegramSignup = () => {
                 name: telegramData.first_name,
                 surname: telegramData.last_name,
                 photo_url: telegramData.photo_url,
-                auth_type: 'telegram'
+                auth_type: 'telegram',
+                isNotUsCitizen:formData.isNotUsCitizen
             };
-             const signUpRes = await fetchData(API_ENDPOINTS.signup, navigate, "POST", payload);
+            const signUpRes = await fetchData(API_ENDPOINTS.signup, navigate, "POST", payload);
 
             if (signUpRes?.success) {
                 successMsg(signUpRes?.message)
-        localStorage.setItem("auth_token", signUpRes?.data.token);
+                localStorage.setItem("auth_token", signUpRes?.data.token);
 
-        dispatch(isloginSuccess());
-        navigate("/")
+                dispatch(isloginSuccess());
+                navigate("/")
             } else {
-                errorMsg(signUpRes?.message ? signUpRes?.message :signUpRes)
+                errorMsg(signUpRes?.message ? signUpRes?.message : signUpRes)
             }
 
 
@@ -121,7 +134,20 @@ const TelegramSignup = () => {
                                 <input type='email' name='email' onChange={handleChange} value={formData.email} />
                                 {formErrors?.email && <div className="error-message">{formErrors.email}</div>}
                             </div>
-
+                            <div className='input-main-data'>
+                                <label className='flex items-center gap-2'>
+                                    <input
+                                        type='checkbox'
+                                        name='isNotUsCitizen'
+                                        checked={formData.isNotUsCitizen}
+                                        onChange={handleChange}
+                                    />
+                                    I confirm that I am <strong>not a US citizen</strong> <span className="text-danger">*</span>
+                                </label>
+                                {formErrors?.isNotUsCitizen && (
+                                    <div className="error-message">{formErrors.isNotUsCitizen}</div>
+                                )}
+                            </div>
                             <button type='submit' className='login-btn'>Sign up</button>
                         </form>
 

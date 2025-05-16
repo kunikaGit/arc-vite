@@ -92,7 +92,7 @@ export default function InstantFunding({ handleOpenModal }) {
       onClick={handleClick}
       className="block mx-auto text-md rounded-full bg-accent py-2 w-[200px] text-center font-semibold text-white shadow-accent-volume transition-all hover:bg-accent-dark"
     >
-      Get Plan
+      Start Now
     </button>
       </div>
     </>

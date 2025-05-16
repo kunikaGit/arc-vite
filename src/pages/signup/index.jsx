@@ -13,7 +13,7 @@ const Signup = () => {
         formData,
         loading,
         countries,
-        professions,
+        // professions,
         setIsConfirmPasswordVisible,
         isConfirmPasswordVisible,
         isPasswordVisible,
@@ -45,14 +45,14 @@ const Signup = () => {
         //     {label}
         // </div>
 
-         <div className={`requirement ${passed ? 'passed' : 'not-passed'}`}>
-        {passed ? '✅' : '❌'} {label}
-    </div>
+        <div className={`requirement ${passed ? 'passed' : 'not-passed'}`}>
+            {passed ? '✅' : '❌'} {label}
+        </div>
 
 
     );
 
-    
+
 
     return (
         <OverlayLoading isLoading={loading}>
@@ -101,7 +101,7 @@ const Signup = () => {
                                 {formErrors?.gender && <div className="error-message">{formErrors.gender}</div>}
                             </div>
 
-                            <div className='input-main-data'>
+                            {/* <div className='input-main-data'>
                                 <label>Age <span className="text-danger">*</span></label>
                                 <input
                                     type='number'
@@ -111,7 +111,7 @@ const Signup = () => {
                                     name='age'
                                 />
                                 {formErrors?.age && <div className="error-message">{formErrors.age}</div>}
-                            </div>
+                            </div> */}
 
                             <div className='input-main-data'>
                                 <label>Country <span className="text-danger">*</span></label>
@@ -124,7 +124,7 @@ const Signup = () => {
                                 {formErrors?.country_id && <div className="error-message">{formErrors.country_id}</div>}
                             </div>
 
-                            <div className='input-main-data'>
+                            {/* <div className='input-main-data'>
                                 <label>Profession <span className="text-danger">*</span></label>
                                 <select name='profession_id' onChange={handleChange}>
                                     <option value="">Select Profession</option>
@@ -133,7 +133,7 @@ const Signup = () => {
                                     ))}
                                 </select>
                                 {formErrors?.profession_id && <div className="error-message">{formErrors.profession_id}</div>}
-                            </div>
+                            </div> */}
 
                             {!isRefFromUrl && (
                                 <div className='input-main-data'>
@@ -186,6 +186,23 @@ const Signup = () => {
                                 {formErrors?.confirm_password && <div className="error-message">{formErrors.confirm_password}</div>}
                             </div>
 
+                            <div className='input-main-data'>
+                                                                    <input
+                                    className='checkbox'
+                                        type='checkbox'
+                                        name='isNotUsCitizen'
+                                        checked={formData.isNotUsCitizen}
+                                        onChange={handleChange}
+                                    />
+                                <label className='flex items-center gap-2'>
+                                    I confirm that I am <strong>not a US citizen</strong> <span className="text-danger">*</span>
+                                </label>
+                                {formErrors?.isNotUsCitizen && (
+                                    <div className="error-message">{formErrors.isNotUsCitizen}</div>
+                                )}
+                            </div>
+
+
                             <button type='submit' className='login-btn'>Sign up</button>
                         </form>
 
@@ -201,7 +218,7 @@ const Signup = () => {
                                 onError={() => console.log('Google Login Failed')}
                             />
 
-                            <TelegramLogin redirectUrl={'https://arcforyou.com/telegram-auth'}/>
+                            <TelegramLogin redirectUrl={'https://arcforyou.com/telegram-auth'} />
                         </div>
 
                         <div style={{ margin: '20px 0', display: 'flex', alignItems: 'center' }}>
