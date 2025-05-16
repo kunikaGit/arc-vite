@@ -10,6 +10,7 @@ import { useEffect } from "react";
 import Hero2 from "../component/home2/hero2";
 import Header2 from "../component/home2/header2";
 import { useLocation } from "react-router-dom";
+import WinBanner from "../component/common/winBanner";
 
 export default function Home2() {
     useEffect(() => {
@@ -50,6 +51,7 @@ export default function Home2() {
                     <div className="liquid"></div>
                 </div>
                 <Footer1 />
+                <WinBanner/>
             </div>
         </>
     );

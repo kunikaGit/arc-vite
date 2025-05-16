@@ -1,0 +1,54 @@
+.win-banner {
+    position: fixed;
+    bottom: 20px;
+    padding: 40px 30px;
+    background-color: #fff;
+    border-radius: 20px;
+    z-index: 1200;
+    background-color: #b16cd3;
+    color: #fff;
+    transform: translate(0, -50px);
+    transform: translate(-50%, 0);
+    left: 50%;
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+    .cross{
+        position: absolute;
+        right: 0;
+        top: -10px;
+        background-color: red;
+        padding: 5px;
+        border-radius: 100%;
+        svg{
+            height: 24px;
+            width: 24px;
+        }
+    }
+    .content{
+        width: 60%;
+        h2{
+            font-size: 28px;
+            font-weight: 700;
+        }
+        p{
+            font-size: 20px;
+        }
+    }
+    .buttons{
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        button{
+            padding: 15px;
+            border-radius: 10px;
+            font-size: 18px;
+            &.purple-btn{
+                background-color: var(--theme-purple);
+            }
+            &.grey-btn{
+                background-color: #f1f6ff36;
+            }
+        }
+    }
+}

@@ -27,7 +27,7 @@ export default function Hero2() {
                 <div className="container">
                     <div className=" text-center m-auto xl:max-w-4xl lg:max-w-full hero-text">
                         <h1 data-aos="fade-up" data-aos-duration={800}
-                            className="mb-5 font-display  dark:text-jacarta-700 text-white ">
+                            className="mb-5   dark:text-jacarta-700 text-white ">
                             Built for Traders, <br />Backed by
                             <span className="animate-gradient"> Professionals!</span>
                         </h1>
