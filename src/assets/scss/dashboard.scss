@@ -1,7 +1,7 @@
 @use '../../assets/scss/abstract/mixins' as *;
 
 .dashboard-title{
-    color: var(--color_white);
+    color: var(--text_black);
     font-size: 26px;
     font-weight: 600;
 	font-weight: 600;
@@ -57,9 +57,9 @@
     .profile{
         cursor: pointer;
         svg{
-            fill: var(--color_white);
+            fill: var(--text_black);
             path{
-                fill: var(--color_white);
+                fill: var(--text_black);
             }
         }
         img{

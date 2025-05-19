@@ -30,14 +30,14 @@ const WithdrawalStep3 = () => {
                             <div className="item1 flex  items-center gap-x-3.5 py-2 ">
                                 <input type="radio" name="payment" />
                                 <div className="w-full labels justify-between flex items-center">
-                                    <span className="font-semibold text-white card-text"> Card Payment</span>
+                                    <span className="font-semibold card-text"> Card Payment</span>
                                     <div className="images"><img src={imageMap['cards.png']} className="card-image"/></div>
                                 </div>
                             </div>
                             <div className="item1 flex  items-center gap-x-3.5 py-2">
                                 <input type="radio" name="payment" />
                                 <div className="labels flex items-center justify-between w-full">
-                                    <span className="font-semibold text-white card-text">Crypto / Paypal</span>
+                                    <span className="font-semibold card-text">Crypto / Paypal</span>
                                     <div className="images flex gap-x-2.5">
                                         <img src={imageMap['paypal.png']} className="card-icon" alt="pay" />
                                         <img src={imageMap['crypto.png']} className="card-icon" alt="pay" />

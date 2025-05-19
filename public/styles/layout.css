@@ -6277,6 +6277,19 @@ html[dir=rtl] .hover\:translate-x-1:hover {
     --dark-purple:#18042b;
     --theme-purple: #8257fe;
     --bg-grey:#1b1b1b;
+
+    --bg_white:#fff;
+    --text_black:#000;
+    --bg-light: #f0f8fe;
+    --text-ffffffc9:#ffffffc9
+}
+
+html.dark{
+    --bg_white:#1b1b1b;
+    --text_black:#fff;
+     --bg-light: #000;
+    --white_color:#FFFFFF;
+
 }
 
 :host {
@@ -6743,5 +6756,5 @@ html[dir=rtl] .hover\:translate-x-1:hover {
     background-color: #2b2a33;
 }
 .bg-grey{
-    background-color: var(--bg-grey);
+    background-color: var(--bg_white);
 }

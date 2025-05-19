@@ -8,7 +8,7 @@
             // border: 1px solid var(--light-blue) !important;
             font-weight: 300;
             font-size: 16px;
-            color: #fff;
+            color: var(--text_black);
             border-radius: 25px;
             padding: 10px;
             width: 100%;
@@ -111,12 +111,12 @@
 
         &:is(.dark .dark\:mui-dark) {
             .MuiOutlinedInput-root {
-                color: #fff;
+                color: var(--text_black);
             }
 
             svg {
                 path {
-                    fill: #fff;
+                    fill: var(--text_black);
                 }
             }
         }

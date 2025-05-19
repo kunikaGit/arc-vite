@@ -5,6 +5,7 @@
   height: 100%;
   display: flex;
   font-family: "outfit";
+  background-color: var(--bg_white);
 
   .sidebar-wrapped {
     @include media_1024 {
@@ -13,16 +14,17 @@
   }
 
   main {
-    color: var(--white_color);
+    color: var(--text_black);
     padding: 30px;
     position: relative;
+    background-color: var(--bg-light);
 
     @include media_768 {
       padding: 10px;
     }
 
     &.width200 {
-      width: calc(100% - 200px);
+      width: calc(100% - 220px);
 
       @include media_1024 {
         width: 100%;
@@ -40,7 +42,7 @@
 
   .toggle-button {
     position: fixed;
-    left: 185px;
+    left: 200px;
     top: 18px;
     height: 30px;
     width: 30px;
@@ -98,7 +100,7 @@
   aside {
     height: 100vh;
     border: none;
-    width: 200px;
+    width: 220px;
     position: sticky;
     top: 0;
 
@@ -129,14 +131,17 @@
           .ps-menu-button {
             height: unset;
             padding: 8.5px 15px;
-            margin-bottom: 10px;
             transition: .3s;
             border-radius: 20px;
-            margin: 5px 10px;
+            margin: 15px 10px;
             width: 100%;
 
             &:hover {
               background-color: #8358ff;
+
+              .name {
+                color: #fff;
+              }
 
               svg {
                 path {
@@ -149,6 +154,10 @@
           &.active {
             .ps-menu-button {
               background-color: #8358ff;
+
+              .name {
+                color: #fff;
+              }
 
               svg {
                 path {
@@ -204,7 +213,7 @@
     }
 
     .name {
-      color: var(--white_color);
+      color: var(--text_black);
       line-height: 20px;
       font-size: 16px;
       font-weight: 400;

@@ -89,11 +89,11 @@ const Accounts = () => {
                                     <div className="me-3 icon-box">
                                         {item.icon}
                                     </div>
-                                    <div className="media-body text-white text-end">
+                                    <div className="media-body text-end">
                                         <p className="mb-1">{item.title}</p>
                                         <h3 className={`font-semibold text-lg ${item.target === 'loss' ? 'text-red-400' :
                                             item.target === 'profit' ? 'text-green-300' :
-                                                'text-white'
+                                                ''
                                             }`}>{item.number}</h3>
                                     </div>
                                 </div>

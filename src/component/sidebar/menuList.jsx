@@ -2,10 +2,16 @@ import React from "react";
 import { Menu, SubMenu } from "react-pro-sidebar";
 // import { CampaignsIcon, CustomerIcon, FinanceIcon, HelpIcon, InsightIcon, LockIcon, LogisticIcon, NotificationsIcon, OrdersIcon, ProductsIcon, ReviewsIcon } from "../../../icons/icons";
 import { Link, useNavigate } from "react-router-dom";
-import { BarchartIcon, FileIcon, HomeIcon, SettingIcon, UserIcon } from "../../icons/icons";
+import { BarchartIcon, FileIcon, HomeIcon, Logout, SettingIcon, UserIcon } from "../../icons/icons";
+import { logout } from "../../redux/slice/authSlice";
+import { LogOut } from "lucide-react";
 
 const MenuItems = () => {
     const navigate = useNavigate()
+        const handleLogout = () => {
+            dispatch(logout());
+            navigate("/");
+        };
     const SidebarItems = [
         {
             name: 'Account Overview',
@@ -84,6 +90,19 @@ const MenuItems = () => {
                             </div>
                             <div className="name">
                                 Partners
+                            </div>
+                        </div>
+                    }>
+                </SubMenu>
+                  <SubMenu onClick={() => handleLogout}
+                    className={`sidebar_label`}
+                    label={
+                        <div className="sidebar_label">
+                            <div className="icon">
+                                <Logout />
+                            </div>
+                            <div className="name">
+                                Logout
                             </div>
                         </div>
                     }>

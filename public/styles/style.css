@@ -404,6 +404,7 @@ box-shadow: none;
 }
 .purple_bordered:hover{
   background-color: var(--theme-purple);
+  color: #fff;
 }
 
 @media only screen and (min-width: 1920px){
