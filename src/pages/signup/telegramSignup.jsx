@@ -13,7 +13,7 @@ const TelegramSignup = () => {
 
     const location = useLocation();
     const navigate = useNavigate();
-    const [formData, setFormData] = useState({ email: '' ,isNotUsCitizen:false});
+    const [formData, setFormData] = useState({ email: '', isNotUsCitizen: false });
     const [formErrors, setFormErrors] = useState({});
     const [telegramData, setTelegramData] = useState(null);
     const [loading, setLoading] = useState(false);
@@ -39,19 +39,19 @@ const TelegramSignup = () => {
         }
     }, [location.search]);
 
-const handleChange = (e) => {
-    const { name, type, value, checked } = e.target;
+    const handleChange = (e) => {
+        const { name, type, value, checked } = e.target;
 
-    setFormData((prev) => ({
-        ...prev,
-        [name]: type === "checkbox" ? checked : value,
-    }));
+        setFormData((prev) => ({
+            ...prev,
+            [name]: type === "checkbox" ? checked : value,
+        }));
 
-    setFormErrors((prev) => ({
-        ...prev,
-        [name]: "",
-    }));
-};
+        setFormErrors((prev) => ({
+            ...prev,
+            [name]: "",
+        }));
+    };
 
 
     const validateForm = () => {
@@ -61,7 +61,7 @@ const handleChange = (e) => {
             errors.email = 'Email is required';
         } else if (!emailRegex.test(formData.email)) {
             errors.email = 'Enter a valid email address';
-        }else if (!formData.isNotUsCitizen) {
+        } else if (!formData.isNotUsCitizen) {
             errors.email = 'You must confirm you are not a US citizen.';
         }
         return errors;
@@ -91,7 +91,7 @@ const handleChange = (e) => {
                 surname: telegramData.last_name,
                 photo_url: telegramData.photo_url,
                 auth_type: 'telegram',
-                isNotUsCitizen:formData.isNotUsCitizen
+                isNotUsCitizen: formData.isNotUsCitizen
             };
             const signUpRes = await fetchData(API_ENDPOINTS.signup, navigate, "POST", payload);
 
@@ -135,13 +135,14 @@ const handleChange = (e) => {
                                 {formErrors?.email && <div className="error-message">{formErrors.email}</div>}
                             </div>
                             <div className='input-main-data'>
+                                <input
+                                    className='checkbox'
+                                    type='checkbox'
+                                    name='isNotUsCitizen'
+                                    checked={formData.isNotUsCitizen}
+                                    onChange={handleChange}
+                                />
                                 <label className='flex items-center gap-2'>
-                                    <input
-                                        type='checkbox'
-                                        name='isNotUsCitizen'
-                                        checked={formData.isNotUsCitizen}
-                                        onChange={handleChange}
-                                    />
                                     I confirm that I am <strong>not a US citizen</strong> <span className="text-danger">*</span>
                                 </label>
                                 {formErrors?.isNotUsCitizen && (
