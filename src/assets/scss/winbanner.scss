@@ -2,7 +2,7 @@
 .win-banner {
     position: fixed;
     bottom: 15px;
-    padding: 40px 30px;
+    padding: 25px 30px;
     background-color: #fff;
     border-radius: 20px;
     z-index: 1200;
@@ -11,11 +11,12 @@
     transform: translate(0, -50px);
     transform: translate(-50%, 0);
     left: 50%;
-    width: 90%;
+    width: 70%;
     display: flex;
     justify-content: space-between;
     box-shadow: 0 1px 10px 5px #cccccc9c;
      @include media_768{
+            width: 90%;
             flex-direction: column;
             gap: 10px;
             padding: 10px;
@@ -39,14 +40,14 @@
             width: 100%;
         }
         h2{
-            font-size: 28px;
+            font-size: 24px;
             font-weight: 700;
              @include media_768{
            font-size: 18px;
         }
         }
         p{
-            font-size: 20px;
+            font-size: 18px;
              @include media_768{
             font-size: 14px;
         }
@@ -63,7 +64,7 @@
         button{
             padding: 15px;
             border-radius: 10px;
-            font-size: 18px;
+            font-size: 16px;
              @include media_768{
             font-size: 14px;
             width: 100%;

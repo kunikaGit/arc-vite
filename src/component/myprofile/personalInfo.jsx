@@ -1,8 +1,9 @@
-import React,{useState} from 'react'
+import { CopyIcon } from 'lucide-react';
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom';
 
 
-const PersonalInfo = ({ countries, formData, setFormData,handleSubmit }) => {
+const PersonalInfo = ({ countries, formData, setFormData, handleSubmit }) => {
     const handleInputChange = (e) => {
         setFormData({
             ...formData,
@@ -13,11 +14,11 @@ const PersonalInfo = ({ countries, formData, setFormData,handleSubmit }) => {
 
     const inviteLink = `${import.meta.env.VITE_SHARE_LINK}${formData.unique_id || ''}`;
 
-  const handleCopy = () => {
-    navigator.clipboard.writeText(inviteLink);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000); // reset icon after 2s
-  };
+    const handleCopy = () => {
+        navigator.clipboard.writeText(inviteLink);
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000); // reset icon after 2s
+    };
     return (
         <div className='add-user-form'>
             <form onSubmit={handleSubmit}>
@@ -72,31 +73,34 @@ const PersonalInfo = ({ countries, formData, setFormData,handleSubmit }) => {
                 <div className='two-grid'>
                     <div className='input-main-data'>
                         <label>Share Link (Invite link)<span className='asterisk'></span></label>
-                        <input  readOnly
-            value={inviteLink} // bind to country_id
-                            />
+                        <div className='relative'>
+                        <input readOnly
+                            value={inviteLink} // bind to country_id
+                            className='pr-8'
+                        />
                         <button
-            type="button"
-            onClick={handleCopy}
-            style={{
-              background: 'transparent',
-              border: 'none',
-              cursor: 'pointer',
-              fontSize: '18px',
-            }}
-            title={copied ? "Copied!" : "Copy to clipboard"}
-          >
-            {copied ? '✔️' : '📋'}
-          </button>
+                            type="button"
+                            onClick={handleCopy}
+                            style={{
+                                background: 'transparent',
+                                border: 'none',
+                                cursor: 'pointer',
+                                fontSize: '18px',
+                                position:'absolute',
+                                right:'5px',
+                                top:'10px'
+                            }}
+                            title={copied ? "Copied!" : "Copy to clipboard"}
+                        >
+                            {copied ? '✔️' : <CopyIcon/>}
+                        </button>
+                        </div>
                     </div>
                 </div>
-                <button type="submit"
-
-                    className="ml-auto  w-44 block text-base rounded-full bg-accent py-3
-                                px-4 text-center font-medium text-white shadow-accent-volume transition-all hover:bg-accent-dark">
+                <button type="submit" className="purple_bordered ml-auto">
                     Save
                 </button>
-               
+
             </form>
         </div>
     )
