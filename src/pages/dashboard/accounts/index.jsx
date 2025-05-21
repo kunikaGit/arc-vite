@@ -64,7 +64,7 @@ const Accounts = () => {
                 <div className="flex-box">
                     <div className="left-box">
                         <div className="account-info">
-                            <div className="theme_card bg-2b2a33 mb-5">
+                            <div className="theme_card bg-grey mb-5">
                                 <div className="flex gap-6 mb-4">
                                     <div className="item flex items-center gap-2"><UserHeart /> <span className="text-sm">Active</span></div>
                                     <div className="item flex items-center gap-2"><UserHeart /><span className="text-sm">ARC 100k Funded</span></div>
@@ -73,10 +73,10 @@ const Accounts = () => {
                             </div>
                         </div>
                         {/* <LineChart /> */}
-                        <div className="theme_card bg-2b2a33 mt-5">
+                        <div className="theme_card bg-grey mt-5">
                             <DateChart />
                         </div>
-                        <div className="calender-data theme_card bg-2b2a33">
+                        <div className="calender-data theme_card bg-grey">
                             <h2>Profit / Loss Calendar</h2>
                             <DailyCalender />
                         </div>
@@ -85,22 +85,21 @@ const Accounts = () => {
                         <TradingObjective />
                         <div className="four-box mb-4">
                             {accoundCrads?.map((item, index) => (
-                                <div className="media flex items-center justify-between" key={index}
-                                    style={{ backgroundColor: '#8358ff' }}>
+                                <div className="media bg-grey flex items-center justify-between" key={index}>
                                     <div className="me-3 icon-box">
                                         {item.icon}
                                     </div>
-                                    <div className="media-body text-white text-end">
+                                    <div className="media-body text-end">
                                         <p className="mb-1">{item.title}</p>
                                         <h3 className={`font-semibold text-lg ${item.target === 'loss' ? 'text-red-400' :
                                             item.target === 'profit' ? 'text-green-300' :
-                                                'text-white'
+                                                ''
                                             }`}>{item.number}</h3>
                                     </div>
                                 </div>
                             ))}
                         </div>
-                        <div className="theme_card bg-2b2a33 data-table">
+                        <div className="theme_card bg-grey data-table">
                             <table className="w-full">
                                 <thead>
                                     <tr>

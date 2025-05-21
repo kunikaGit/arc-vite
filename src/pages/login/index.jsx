@@ -5,6 +5,7 @@ import { EyeIcon, EyeoffIcon } from '../../icons/icons'
 import useLoginUtils from './loginUtils'
 import { GoogleLogin } from '@react-oauth/google';
 import TelegramLogin from '../signup/telegram';
+import imageMap from '../../utlis/helper'
 
 const Login = () => {
 
@@ -20,16 +21,10 @@ const Login = () => {
 
     return (
         <>
-            <div className='login'>
+            <div className='login login-designed'>
                 {/* <CommonBanner pagename="Login" bgimage={bgimage} breadcrumbdata={breadcrumbdata} /> */}
                 <div className='upper-body' >
                     <div className='form-box'>
-                        <div className='logo-box'>
-                            <Link to='/' className='logo-text animate-gradient mb-5 block text-center'>
-                                ARC
-                            </Link>
-                        </div>
-
                         <h2 className='main-heading' style={{ marginBottom: '40px' }}>
                             Welcome Back!<br />
                             Login to your account</h2>
@@ -63,11 +58,11 @@ const Login = () => {
                                 <Link to="/forget-password">Forgot Passwords</Link>
                             </div>
                             <div className='tc'>
-                                <p>By logging in you are accepting the terms and conditions of this site</p>
-                                <div className='checkbox'>
+                                <p className='my-4'>By logging in you are accepting the terms and conditions of this site</p>
+                                {/* <div className='checkbox'>
                                     <input type='checkbox' />
                                     <label>Stay signed in</label>
-                                </div>
+                                </div> */}
                             </div>
                             <button type='submit' className='login-btn'>Login</button>
                         </form>
@@ -77,13 +72,11 @@ const Login = () => {
                                 <span style={{ margin: '0 10px', color: '#999' }}>OR</span>
                                 <hr style={{ flexGrow: 1 }} />
                             </div>
-
                             <GoogleLogin
                                 onSuccess={handleGoogleSuccess}
                                 onError={() => console.log('Google Login Failed')}
                             />
-                            <TelegramLogin redirectUrl={'https://arcforyou.com/telegram-login-auth'}/>
-
+                            <TelegramLogin redirectUrl={'https://arcforyou.com/telegram-login-auth'} />
                         </div>
 
                         <div style={{ margin: '20px 0', display: 'flex', alignItems: 'center' }}>
@@ -94,6 +87,18 @@ const Login = () => {
                         <div className='signup-text'>
                             <p>Don’t have an account? <Link to="/signup">Signup</Link></p>
                         </div>
+                    </div>
+                    <div className='login-banner'>
+                        <div className='logo-box'>
+                            <Link to='/' className='logo-text animate-gradient mb-5 block text-center'>
+                                ARC
+                            </Link>
+                            <h2  className="mb-5  dark:text-jacarta-700 text-black text-center ">
+                            Built for Traders, <br />Backed by Professionals
+                        </h2>
+                        <img  src={imageMap['login.png']} alt='img' style={{maxWidth:'350px'}} className='m-auto'/>
+                        </div>
+
                     </div>
                 </div>
             </div>

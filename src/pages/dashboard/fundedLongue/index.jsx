@@ -8,7 +8,7 @@ const FundedLongue = () => {
         <>
             <DashboardHeader title="Traders Withdrawal" />
             <div className="accounts-overview-wrapped">
-                <div className="theme_card  md:flex-row flex-col bg-2b2a33 mb-5 flex items-center gap-5 ">
+                <div className="theme_card  md:flex-row flex-col bg-grey mb-5 flex items-center gap-5 ">
                     <div className="icon"><UserHeart /> </div>
                     <div className="overview flex justify-between w-full md:flex-row flex-col">
                         <div className="mb-3 md:mb-0 funded-content ">
@@ -20,14 +20,13 @@ const FundedLongue = () => {
                         <div className="btn">
                             <Link
                                 to="/dashboard/withdrawal/step2"
-                                className="md:w-44 w-full block md:text-base text-sm rounded-full bg-accent md:py-3 py-2
-                                px-4 text-center font-medium text-white shadow-accent-volume transition-all hover:bg-accent-dark">
+                                className="purple_bordered">
                                 Proceed
                             </Link>
                         </div>
                     </div>
                 </div>
-                <div className="theme_card bg-2b2a33 mb-5 flex items-center gap-5 md:flex-row flex-col">
+                <div className="theme_card bg-grey mb-5 flex items-center gap-5 md:flex-row flex-col">
                     <div className="icon"><UserHeart /> </div>
                     <div className="overview flex justify-between w-full md:flex-row flex-col">
                         <div className="mb-3 md:mb-0 funded-content ">
@@ -39,14 +38,13 @@ const FundedLongue = () => {
                         <div className="btn">
                             <Link
                                 to="/dashboard/withdrawal/step2"
-                                className="md:w-44 w-full md:text-base text-sm block rounded-full bg-accent md:py-3 py-2
-                                px-4 text-center font-medium text-white shadow-accent-volume transition-all hover:bg-accent-dark">
+                                className="purple_bordered">
                                 Proceed
                             </Link>
                         </div>
                     </div>
                 </div>
-                <div className="theme_card bg-2b2a33 mb-5 flex items-center gap-5 md:flex-row flex-col">
+                <div className="theme_card bg-grey mb-5 flex items-center gap-5 md:flex-row flex-col">
                     <div className="icon"><UserHeart /> </div>
                     <div className="overview flex justify-between w-full md:flex-row flex-col">
                         <div className="mb-3 md:mb-0 funded-content ">
@@ -58,8 +56,7 @@ const FundedLongue = () => {
                         <div className="btn">
                             <Link
                                 to="/dashboard/withdrawal/step2"
-                                className=" md:w-44 w-full md:text-base text-sm block  rounded-full bg-accent md:py-3 py-2
-                                px-4 text-center font-medium text-white shadow-accent-volume transition-all hover:bg-accent-dark">
+                                className="purple_bordered">
                                 Proceed
                             </Link>
                         </div>

@@ -34,13 +34,14 @@
       .media {
         padding: 16px;
         border-radius: 15px;
+        // border: 1px solid var(--theme-purple);
         @include media_768{
           padding: 8px;
         }
         .icon-box {
           width: 30%;
           // background-color: #fffefe4d;
-          background-color: rgb(0 0 0 / 30%);
+          background-color: rgb(169 168 168 / 30%);
           height: 55px;
           width: 55px;
           border-radius: 100%;
@@ -66,7 +67,7 @@
 
         .media-body {
           width: 70%;
-
+          color: var(--text_black);
           p {
             font-size: 16px;
 
@@ -105,7 +106,8 @@
 
           th {
             text-align: center;
-            padding: 12px;
+            padding: 8px;
+            font-size: 14px;
           }
         }
       }

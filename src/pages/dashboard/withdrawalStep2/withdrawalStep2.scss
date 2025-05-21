@@ -1,37 +1,20 @@
 @use '../../../assets/scss/abstract/mixins' as *;
-.withdrawal-wrapped{
-    .flex-box{
-        display: flex;
-        gap: 20px;
-        @include media_768{
-            flex-direction: column;
-        }
-        .left-side{
-            width: 60%;
-            @include media_768{
-                width: 100%;
-            }
-        }
-        .right-side{
-            width: 40%;
-            .withdraw-btn{
-                @include media_768{
-                    width: 100%;
-                }
-            }
-            @include media_768{
-                width: 100%;
-            }
-        }
-        .payout{
+
+.withdrawal-wrapped {
+    .purple_bordered {
+        min-width: 150px;
+        padding: 5px;
+    }
+      .payout{
             .theme_card {
                 width: 100%;
                 overflow-x: auto;
+
             }
             table{
                 thead{
                     tr{
-                        border-bottom: 1px solid #fff;
+                        border-bottom: 1px solid #ccc;
                         th{
                             padding: 12px;
                         }
@@ -39,7 +22,7 @@
                 }
                 tbody{
                     tr{
-                        border-bottom: 1px solid #fff;
+                        border-bottom: 1px solid #ccc;
                         &:last-child{
                             border: none;
                         }
@@ -47,7 +30,7 @@
                     td{
                         text-align: center;
                         padding: 12px;
-                        color: #ffffff;
+                        color: var(text_black);
                         font-weight: 300;
                         a{
                            display: flex;
@@ -61,5 +44,36 @@
                 }
             }
         }
+
+    .flex-box {
+        display: flex;
+        gap: 20px;
+
+        @include media_768 {
+            flex-direction: column;
+        }
+
+        .left-side {
+            width: 60%;
+
+            @include media_768 {
+                width: 100%;
+            }
+        }
+
+        .right-side {
+            width: 40%;
+
+            .withdraw-btn {
+                @include media_768 {
+                    width: 100%;
+                }
+            }
+
+            @include media_768 {
+                width: 100%;
+            }
+        }
+
     }
 }

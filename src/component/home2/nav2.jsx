@@ -28,7 +28,7 @@ export default function Nav2() {
             <li className="js-nav-dropdown group relative">
                 <Link
                     to="/"
-                    className={`dropdown-toggle flex items-center justify-between py-3.5 font-display text-base dark:text-white
+                    className={`dropdown-toggle flex items-center justify-between py-3.5  uppercase text-base dark:text-white
                          ${isScrolled? "dark-text dark:text-white":""}
                         hover:text-accent focus:text-accent text-jacarta-700 dark:hover:text-accent dark:focus:text-accent lg:px-5`}
                     id="navDropdown-1"
@@ -41,7 +41,7 @@ export default function Nav2() {
             <li className="group">
                 <Link
                     to="/faq"
-                    className={`dropdown-toggle flex items-center justify-between py-3.5 font-display text-base dark:text-white
+                    className={`dropdown-toggle flex items-center justify-between py-3.5  uppercase text-base dark:text-white
                    ${isScrolled? "dark-text dark:text-white":""}
                 hover:text-accent focus:text-accent text-jacarta-700 dark:hover:text-accent dark:focus:text-accent lg:px-5`}>
                     FAQ
@@ -51,7 +51,7 @@ export default function Nav2() {
             <li className="group">
                 <Link
                     to="/about-us"
-                    className={`dropdown-toggle flex items-center justify-between py-3.5 font-display text-base dark:text-white
+                    className={`dropdown-toggle flex items-center justify-between py-3.5  uppercase text-base dark:text-white
                        ${isScrolled? "dark-text dark:text-white":""} 
                 hover:text-accent focus:text-accent text-jacarta-700 dark:hover:text-accent dark:focus:text-accent lg:px-5`}>
                     About Us
@@ -61,14 +61,14 @@ export default function Nav2() {
             <li className="group">
                {isLogin? <Link
                     to="/dashboard/account-overview"
-                    className={`dropdown-toggle flex items-center justify-between py-3.5 font-display text-base dark:text-white
+                    className={`dropdown-toggle flex items-center justify-between py-3.5  uppercase text-base dark:text-white
                     ${isScrolled? "dark-text dark:text-white":""}  
                 hover:text-accent focus:text-accent text-jacarta-700 dark:hover:text-accent dark:focus:text-accent lg:px-5`}>
                     Client Area
                 </Link>:
                  <Link
                  to="/login"
-                 className={`dropdown-toggle flex items-center justify-between py-3.5 font-display text-base dark:text-white
+                 className={`dropdown-toggle flex items-center justify-between py-3.5 uppercase text-base dark:text-white
                  ${isScrolled? "dark-text dark:text-white":""}  
              hover:text-accent focus:text-accent text-jacarta-700 dark:hover:text-accent dark:focus:text-accent lg:px-5`}>
                  Client Area

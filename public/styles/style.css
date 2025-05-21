@@ -14,63 +14,37 @@
   }
 }
 @font-face {
-	font-family: "Dm-Sans";
-	src: url("../fonts/DM_Sans/DMSans-Regular.ttf");
+	font-family: "Outfit";
+	src: url("../fonts/Outfit/static/Outfit-Regular.ttf");
 	font-weight: 400;
 }
 @font-face {
-  font-family: "CalSans-SemiBold";
-  src: url("../fonts/CalSans-SemiBold.woff") format("woff"),
-    url("../fonts/CalSans-SemiBold.otf") format("opentype");
-  font-weight: 600;
-  font-display: swap;
-  font-style: normal;
-}
-
-/* DM Sans Regular */
-@font-face {
-  font-family: "DM Sans";
-  src: url("../fonts/DM_Sans/DMSans-Regular.ttf") format("truetype");
-  font-weight: 400;
-  font-display: swap;
-  font-style: normal;
-}
-
-/* DM Sans Italic */
-@font-face {
-  font-family: "DM Sans";
-  src: url("../fonts/DM_Sans/DMSans-Italic.ttf") format("truetype");
-  font-weight: 400;
-  font-display: swap;
-  font-style: italic;
-}
-
-/* DM Sans Medium */
-@font-face {
-  font-family: "DM Sans";
-  src: url("../fonts/DM_Sans/DMSans-Medium.ttf") format("truetype");
+  font-family: "Outfit";
+  src: url("../fonts/Outfit/static/Outfit-Medium.ttf") format("truetype");
   font-weight: 500;
-  font-display: swap;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Outfit";
+  src: url("../fonts/Outfit/static/Outfit-SemiBold.ttf");
+  font-weight: 600;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Outfit";
+  src: url("../fonts/Outfit/static/Outfit-Bold.ttf");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Outfit";
+  src: url("../fonts/Outfit/static/Outfit-ExtraBold.ttf");
+  font-weight: 900;
   font-style: normal;
 }
 
-/* DM Sans Bold */
-@font-face {
-  font-family: "DM Sans";
-  src: url("../fonts/DM_Sans/DMSans-Bold.ttf") format("truetype");
-  font-weight: 700;
-  font-display: swap;
-  font-style: normal;
-}
 
-/* DM Sans Bold Italic */
-@font-face {
-  font-family: "DM Sans";
-  src: url("../fonts/DM_Sans/DMSans-BoldItalic.ttf") format("truetype");
-  font-weight: 700;
-  font-display: swap;
-  font-style: italic;
-}
+
 
 @layer utilities {
   .text-fill-transparent {
@@ -283,9 +257,10 @@ color: #fff;
 }
 
 .hero-main h1{
-  font-size: 80px;
+  font-size: 76px;
   line-height: 80px;
   margin-bottom: 40px;
+  font-weight: 600;
 }
 .hero-main .main-cards{
   height: 140px;
@@ -416,7 +391,21 @@ color: #fff;
 box-shadow: none;
 }
 
-
+.purple_bordered{
+  background-color: transparent;
+  border: 1px solid var(--theme-purple);
+  padding: 10px 20px;
+  border-radius: 50px;
+  transition: .3s;
+  display: block;
+  text-align: center;
+  width: fit-content;
+  min-width: 120px;
+}
+.purple_bordered:hover{
+  background-color: var(--theme-purple);
+  color: #fff;
+}
 
 @media only screen and (min-width: 1920px){
   .hero-main h1{
@@ -541,65 +530,6 @@ box-shadow: none;
     visibility: hidden;
   }
 }
-@font-face {
-	font-family: "Dm-Sans";
-	src: url("../fonts/DM_Sans/DMSans-Regular.ttf");
-	font-weight: 400;
-}
-@font-face {
-  font-family: "CalSans-SemiBold";
-  src: url("../fonts/CalSans-SemiBold.woff") format("woff"),
-    url("../fonts/CalSans-SemiBold.otf") format("opentype");
-  font-weight: 600;
-  font-display: swap;
-  font-style: normal;
-}
-
-/* DM Sans Regular */
-@font-face {
-  font-family: "DM Sans";
-  src: url("../fonts/DM_Sans/DMSans-Regular.ttf") format("truetype");
-  font-weight: 400;
-  font-display: swap;
-  font-style: normal;
-}
-
-/* DM Sans Italic */
-@font-face {
-  font-family: "DM Sans";
-  src: url("../fonts/DM_Sans/DMSans-Italic.ttf") format("truetype");
-  font-weight: 400;
-  font-display: swap;
-  font-style: italic;
-}
-
-/* DM Sans Medium */
-@font-face {
-  font-family: "DM Sans";
-  src: url("../fonts/DM_Sans/DMSans-Medium.ttf") format("truetype");
-  font-weight: 500;
-  font-display: swap;
-  font-style: normal;
-}
-
-/* DM Sans Bold */
-@font-face {
-  font-family: "DM Sans";
-  src: url("../fonts/DM_Sans/DMSans-Bold.ttf") format("truetype");
-  font-weight: 700;
-  font-display: swap;
-  font-style: normal;
-}
-
-/* DM Sans Bold Italic */
-@font-face {
-  font-family: "DM Sans";
-  src: url("../fonts/DM_Sans/DMSans-BoldItalic.ttf") format("truetype");
-  font-weight: 700;
-  font-display: swap;
-  font-style: italic;
-}
-
 @layer utilities {
   .text-fill-transparent {
     -webkit-text-fill-color: transparent;
@@ -812,6 +742,7 @@ color: #fff;
   font-size: 80px;
   line-height: 80px;
   margin-bottom: 40px;
+  font-weight: 600;
 }
 .hero-main .main-cards{
   height: 140px;

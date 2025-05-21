@@ -29,7 +29,7 @@
     .select-mui-vs {
       svg {
         path {
-          stroke: #fff;
+          fill: #fff;
         }
       }
     }
@@ -53,6 +53,7 @@
         td {
           text-align: center;
           padding: 12px;
+          color: var(--text_black);
         }
       }
 
@@ -68,21 +69,27 @@
       }
     }
   }
-
+.card-container{
+  display: flex;
+  gap: 20px;
   .card-content {
-    width: 70%;
+    width: calc( 33% - 10px);
     padding: 20px;
+    .overview {
+      margin-bottom: 20px;
+    }
     .text-content{
       h3{
-        font-size: 16px;
+        font-size: 18px;
       }
       h4{
-        font-size: 14px;
+        font-size: 16px;
       }
     }
     .btn {
-      width: 200px;
-
+      .purple_bordered{
+        width: 100%;
+      }
       @include media_768 {
         width: 100%;
       }
@@ -105,4 +112,5 @@
       }
     }
   }
+}
 }

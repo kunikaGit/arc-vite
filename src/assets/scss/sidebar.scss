@@ -4,7 +4,8 @@
   position: relative;
   height: 100%;
   display: flex;
-  font-family: "Inter";
+  font-family: "outfit";
+  background-color: var(--bg_white);
 
   .sidebar-wrapped {
     @include media_1024 {
@@ -13,30 +14,35 @@
   }
 
   main {
-    color: var(--white_color);
+    color: var(--text_black);
     padding: 30px;
     position: relative;
-    @include media_768{
-     padding: 10px;
+    background-color: var(--bg-light);
+
+    @include media_768 {
+      padding: 10px;
     }
+
     &.width200 {
-      width: calc(100% - 200px);
-      @include media_1024{
+      width: calc(100% - 220px);
+
+      @include media_1024 {
         width: 100%;
       }
     }
 
     &.width80 {
       width: calc(100% - 80px);
-      @include media_1024{
+
+      @include media_1024 {
         width: 100%;
       }
     }
   }
 
   .toggle-button {
-    position: absolute;
-    left: -18px;
+    position: fixed;
+    left: 200px;
     top: 18px;
     height: 30px;
     width: 30px;
@@ -46,7 +52,8 @@
     align-items: center;
     justify-content: center;
     z-index: 11;
-    @include media_1024{
+
+    @include media_1024 {
       display: none;
     }
 
@@ -93,7 +100,9 @@
   aside {
     height: 100vh;
     border: none;
-    width: 200px;
+    width: 220px;
+    position: sticky;
+    top: 0;
 
     &.ps-collapsed {
       .sidebarlogo {
@@ -122,14 +131,17 @@
           .ps-menu-button {
             height: unset;
             padding: 8.5px 15px;
-            margin-bottom: 10px;
             transition: .3s;
             border-radius: 20px;
-            margin: 5px 10px;
+            margin: 15px 10px;
             width: 100%;
 
             &:hover {
               background-color: #8358ff;
+
+              .name {
+                color: #fff;
+              }
 
               svg {
                 path {
@@ -142,6 +154,10 @@
           &.active {
             .ps-menu-button {
               background-color: #8358ff;
+
+              .name {
+                color: #fff;
+              }
 
               svg {
                 path {
@@ -197,9 +213,9 @@
     }
 
     .name {
-      color: var(--white_color);
+      color: var(--text_black);
       line-height: 20px;
-      font-size: 14px;
+      font-size: 16px;
       font-weight: 400;
       font-family: 'Inter'
 

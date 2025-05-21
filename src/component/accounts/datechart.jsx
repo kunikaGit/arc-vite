@@ -36,14 +36,14 @@ const DateChart = () => {
         type: "datetime",
         labels: {
           style: {
-            colors: "#ffffff", // White label color
+            colors: "var(--text_black)", // White label color
           },
         },
       },
       yaxis: {
         labels: {
           style: {
-            colors: "#ffffff", // White label color
+            colors: "var(--text_black)", // White label color
           },
         },
       },

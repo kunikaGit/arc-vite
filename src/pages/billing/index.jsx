@@ -8,7 +8,7 @@ const Billing = () => {
         <>
             <DashboardHeader title="Billing" />
             <div className='billing-wrapped'>
-                <div className="theme_card bg-2b2a33 data-table mb-5">
+                <div className="theme_card bg-grey data-table mb-5">
                     <table className="w-full">
                         <thead>
                             <tr>
@@ -74,8 +74,7 @@ const Billing = () => {
                 <div className='flex justify-end'>
                 <Link   
                     to="#/"
-                    className="w-44 block text-base rounded-full bg-accent py-3
-                        px-4 text-center font-medium text-white shadow-accent-volume transition-all hover:bg-accent-dark">
+                    className="purple_bordered">
                     Refund
                 </Link>
                 </div>

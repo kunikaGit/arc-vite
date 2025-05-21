@@ -2,7 +2,7 @@ import React from 'react'
 
 const LeaderboardTable = () => {
     return (
-        <div className="theme_card bg-2b2a33 data-table">
+        <div className="theme_card bg-grey data-table">
             <table className="w-full">
                 <thead>
                     <tr>

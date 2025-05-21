@@ -30,7 +30,7 @@ const Merchandise = () => {
             <div className='contaienr'>
                 <div className='flex-box'>
                     {products.map((item,index)=>(
-                    <div className='card-wrapped bg-2b2a33' key={index}>
+                    <div className='card-wrapped bg-grey' key={index}>
                         <div className='image'>
                             <img src={item.img} alt='img' />
                         </div>
@@ -38,8 +38,7 @@ const Merchandise = () => {
                             <h4 className='uppercase text-lg'>{item.title}</h4>
                             <span className='text-sm mb-2 block'>(Limited Addition)</span>
                             <h3 className='font-display text-amber-600 title'>RM 50  <span className='text-white'>-10% off</span></h3>
-                            <Link to="#/"
-                                className="w-full block text-md rounded-full bg-accent py-2 px-4 text-center font-medium text-white shadow-accent-volume transition-all hover:bg-accent-dark">
+                            <Link to="#/" className="purple_bordered w-full mt-2">
                                 Buy
                             </Link>
                         </div>
