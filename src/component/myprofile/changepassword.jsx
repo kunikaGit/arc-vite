@@ -109,8 +109,7 @@ const ChangePassword = () => {
 
                     <button
                         type="submit"
-                        className="ml-auto w-44 block text-base rounded-full bg-accent py-3
-                                px-4 text-center font-medium text-white shadow-accent-volume transition-all hover:bg-accent-dark">
+                        className="purple_bordered ml-auto">
                         Save
                     </button>
                 </form>

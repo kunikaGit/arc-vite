@@ -38,11 +38,7 @@ const MenuItems = () => {
             link: '/dashboard/leaderboard',
             imgagepath: <BarchartIcon />
         },
-        // {
-        //     name: 'Insight',
-        //     link: '#/',
-        //     imgagepath: <BarchartIcon />
-        // },
+
         {
             name: 'Merchandise',
             link: '/dashboard/merchandise',
