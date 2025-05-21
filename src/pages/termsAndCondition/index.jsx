@@ -7,7 +7,7 @@ const TermsAndConsition = () => {
   return (
     <>
       <Header2 />
-      <section className="relative py-16 dark:bg-black md:py-24 termconditions term-main-page">
+      <section className="relative py-16 dark:bg-gradient md:py-24 termconditions term-main-page">
       <div className="container">
       <TermsContent/>
       </div>
