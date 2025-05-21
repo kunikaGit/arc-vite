@@ -25,6 +25,11 @@ const Login = () => {
                 {/* <CommonBanner pagename="Login" bgimage={bgimage} breadcrumbdata={breadcrumbdata} /> */}
                 <div className='upper-body' >
                     <div className='form-box'>
+                        <div className='logo-box'>
+                            <Link to='/' className='logo-text animate-gradient block text-center'>
+                                ARC
+                            </Link>
+                        </div>
                         <h2 className='main-heading' style={{ marginBottom: '40px' }}>
                             Welcome Back!<br />
                             Login to your account</h2>
@@ -93,10 +98,10 @@ const Login = () => {
                             <Link to='/' className='logo-text animate-gradient mb-5 block text-center'>
                                 ARC
                             </Link>
-                            <h2  className="mb-5  dark:text-jacarta-700 text-black text-center ">
-                            Built for Traders, <br />Backed by Professionals
-                        </h2>
-                        <img  src={imageMap['login.png']} alt='img' style={{maxWidth:'350px'}} className='m-auto'/>
+                            <h2 className="mb-5  dark:text-jacarta-700 text-black text-center ">
+                                Built for Traders, <br />Backed by Professionals
+                            </h2>
+                            <img src={imageMap['login.png']} alt='img' style={{ maxWidth: '350px' }} className='m-auto login-side-img' />
                         </div>
 
                     </div>

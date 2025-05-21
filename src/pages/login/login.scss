@@ -5,23 +5,17 @@
     min-height: 100vh;
 
     &.login-designed {
-        // background: linear-gradient(to right, #f8e1e7, #e3effd, #f5f9f6);
-
         .upper-body {
             display: flex;
             justify-content: center;
             width: 70%;
             margin: auto;
             background-color: transparent;
-            // gap: 20px;
-            // align-items: center;
 
-            // .logo-box {
-            //     .logo-text {
-            //         font-size: 70px;
-
-            //     }
-            // }
+            @include media_768 {
+                flex-direction: column;
+                width: 90%;
+            }
 
             .form-box {
                 margin: 0;
@@ -29,6 +23,15 @@
                 border-radius: 10px 0 0 10px;
                 // box-shadow: none;
                 padding: 30px;
+                .logo-box{
+                    display: none;
+                     @include media_768 {
+                    display: block;
+                }
+                }
+                @include media_768 {
+                    width: 100%;
+                }
 
                 .input-main-data {
                     margin-bottom: 10px;
@@ -51,9 +54,25 @@
                 flex-direction: column;
                 justify-content: center;
                 align-items: center;
+
+                @include media_768 {
+                    width: 100%;
+                    display: none;
+                }
+
                 h2 {
                     font-size: 28px;
                     font-weight: 600;
+                     @include media_768 {
+                        font-size: 20px;
+                     }
+                }
+                .logo-box{
+                     @include media_768 {
+                    .login-side-img{
+                        width: 100%;
+                    }
+                }
                 }
             }
         }
