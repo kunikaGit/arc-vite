@@ -28,7 +28,6 @@ export const getHeader = () => {
   
 export const successMsgStyle = {
   id: "",
-  position: "top-center",
   loading: true,
   style: {
     padding: "9px",
@@ -48,7 +47,6 @@ export const successMsgStyle = {
 
 export const errorMsgStyle = {
   id: "",
-  position: "top-center",
   loading: true,
   style: {
     padding: "9px",

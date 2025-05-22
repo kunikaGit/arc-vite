@@ -5,6 +5,7 @@ import OverlayLoading from '../../component/common/overlayLoader.jsx'
 import { EyeIcon, EyeoffIcon } from '../../icons/icons'
 import { GoogleLogin } from '@react-oauth/google';
 import TelegramLogin from './telegram.jsx';
+import imageMap from '../../utlis/helper.js'
 const Signup = () => {
     const {
         submitForm,
@@ -56,7 +57,7 @@ const Signup = () => {
 
     return (
         <OverlayLoading isLoading={loading}>
-            <div className='login'>
+            <div className='login login-designed'>
                 <div className='upper-body'>
                     <div className='form-box'>
                         <div className='logo-box'>
@@ -158,15 +159,15 @@ const Signup = () => {
                                 {/* Custom 3-2 Layout */}
                                 <div className="password-requirements">
                                     <div className="requirement-row">
-                                        {requirementList.slice(0, 3).map((req, i) => (
+                                        {requirementList.map((req, i) => (
                                             <PasswordRequirement key={i} label={req.label} passed={req.passed} />
                                         ))}
                                     </div>
-                                    <div className="requirement-row">
+                                    {/* <div className="requirement-row">
                                         {requirementList.slice(3).map((req, i) => (
                                             <PasswordRequirement key={i + 3} label={req.label} passed={req.passed} />
                                         ))}
-                                    </div>
+                                    </div> */}
                                 </div>
 
                                 {formErrors?.password && <div className="error-message">{formErrors.password}</div>}
@@ -187,16 +188,19 @@ const Signup = () => {
                             </div>
 
                             <div className='input-main-data'>
-                                                                    <input
+                                <div className='flex gap-x-2'>
+                                <input
                                     className='checkbox'
-                                        type='checkbox'
-                                        name='isNotUsCitizen'
-                                        checked={formData.isNotUsCitizen}
-                                        onChange={handleChange}
-                                    />
-                                <label className='flex items-center gap-2'>
+                                    type='checkbox'
+                                    name='isNotUsCitizen'
+                                    checked={formData.isNotUsCitizen}
+                                    onChange={handleChange}
+                                    style={{margin:'0'}}
+                                />
+                                <label className='flex items-center gap-2 ' >
                                     I confirm that I am <strong>not a US citizen</strong> <span className="text-danger">*</span>
                                 </label>
+                                </div>
                                 {formErrors?.isNotUsCitizen && (
                                     <div className="error-message">{formErrors.isNotUsCitizen}</div>
                                 )}
@@ -230,6 +234,18 @@ const Signup = () => {
                         <div className='signup-text'>
                             <p>Already have an account? <Link to="/login">Login</Link></p>
                         </div>
+                    </div>
+                    <div className='login-banner'>
+                        <div className='logo-box'>
+                            <Link to='/' className='logo-text animate-gradient block text-center'>
+                                ARC
+                            </Link>
+                            <h2 className="mb-5  dark:text-jacarta-700 text-black text-center ">
+                                Built for Traders, <br />Backed by Professionals
+                            </h2>
+                            <img src={imageMap['login.png']} alt='img' style={{ maxWidth: '350px' }} className='m-auto' />
+                        </div>
+
                     </div>
                 </div>
             </div>

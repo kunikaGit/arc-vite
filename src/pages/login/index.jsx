@@ -95,7 +95,7 @@ const Login = () => {
                     </div>
                     <div className='login-banner'>
                         <div className='logo-box'>
-                            <Link to='/' className='logo-text animate-gradient mb-5 block text-center'>
+                            <Link to='/' className='logo-text animate-gradient block text-center'>
                                 ARC
                             </Link>
                             <h2 className="mb-5  dark:text-jacarta-700 text-black text-center ">

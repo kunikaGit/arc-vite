@@ -100,13 +100,13 @@ const TradingObjective = () => {
                                 <tbody>
                                     <tr>
                                         <td>4</td>
-                                        <td>&5000</td>
+                                        <td>$5000</td>
                                         <td>$10,000</td>
                                         <td>$10,000.00</td>
                                     </tr>
                                   <tr>
                                         <td>4</td>
-                                        <td>&5000</td>
+                                        <td>$5000</td>
                                         <td>$10,000</td>
                                         <td>$10,000.00</td>
                                     </tr>
