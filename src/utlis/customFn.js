@@ -25,14 +25,13 @@ export const getHeader = () => {
 
 
 
-  
+
 export const successMsgStyle = {
   id: "",
   loading: true,
   style: {
-    padding: "9px",
-    background:
-      "linear-gradient(321deg, rgb(73 223 13 / 86%) 34%, rgb(6, 217, 14) 68%, rgb(76, 217, 6) 82%)",
+    padding: "12px",
+    background:"#000",
     color: "#fff",
 
     fontSize: "14px",
@@ -40,8 +39,8 @@ export const successMsgStyle = {
     // width: "20%",
   },
   iconTheme: {
-    primary: "#FFF",
-    secondary: "#4a8d00",
+    primary: "linear-gradient(321deg, rgb(73 223 13 / 86%) 34%, rgb(6, 217, 14) 68%, rgb(76, 217, 6) 82%)",
+    secondary: "#fff",
   },
 };
 
@@ -49,18 +48,19 @@ export const errorMsgStyle = {
   id: "",
   loading: true,
   style: {
-    padding: "9px",
-    background:
-      "linear-gradient(321deg, rgb(255 0 0 / 86%) 34%, rgb(255 0 0) 68%, rgb(255 0 0) 82%)",
+    padding: "12px",
+    background: "#000",
+      //   background:
+      // "linear-gradient(321deg, rgb(255 0 0 / 86%) 34%, rgb(255 0 0) 68%, rgb(255 0 0) 82%)",
     color: "#fff",
-
+    borderBotton:'2px solid red',
     fontSize: "14px",
     fontWeight: "600",
     width: "20%",
   },
   iconTheme: {
-    primary: "#FFF",
-    secondary: "#ff0101",
+    primary: "linear-gradient(321deg, rgb(255 0 0 / 86%) 34%, rgb(255 0 0) 68%, rgb(255 0 0) 82%)",
+    secondary: "#fff",
   },
 };
 
@@ -112,7 +112,7 @@ export const warningMsg = async (msg) => {
 
 export const handleCatchErrors = (error, navigate, rejectWithValue, path) => {
 
- 
+
   if (error.code === "ERR_NETWORK") {
     // Handle network-related errors
     if (rejectWithValue) {
@@ -121,7 +121,7 @@ export const handleCatchErrors = (error, navigate, rejectWithValue, path) => {
     }
   } else {
     const { status, data } = error.response || {}; // Ensure the response is not undefined
-  
+
     if (error.response !== undefined) {
       switch (status) {
         case 403:
@@ -147,23 +147,23 @@ export const handleCatchErrors = (error, navigate, rejectWithValue, path) => {
 
         case 400:
 
-        if (data.message) {
-          errorMsg(data.message);
-        }
-        break;
-          
+          if (data.message) {
+            errorMsg(data.message);
+          }
+          break;
+
         case 404:
           // Bad Request / Not Found
           if (data.message) {
             errorMsg(data.message);
           }
           break;
-          case 422:
-            // Bad Request / Not Found
-            if (data.message) {
-              errorMsg(data.message);
-            }
-            break;
+        case 422:
+          // Bad Request / Not Found
+          if (data.message) {
+            errorMsg(data.message);
+          }
+          break;
 
         case 500:
           // Internal Server Error

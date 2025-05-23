@@ -6,6 +6,7 @@ import useLoginUtils from './loginUtils'
 import { GoogleLogin } from '@react-oauth/google';
 import TelegramLogin from '../signup/telegram';
 import imageMap from '../../utlis/helper'
+import { successMsg } from '../../utlis/customFn'
 
 const Login = () => {
 
@@ -18,9 +19,9 @@ const Login = () => {
         handleSubmit,
         handleGoogleSuccess
     } = useLoginUtils();
-
     return (
         <>
+        
             <div className='login login-designed'>
                 {/* <CommonBanner pagename="Login" bgimage={bgimage} breadcrumbdata={breadcrumbdata} /> */}
                 <div className='upper-body' >
