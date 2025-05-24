@@ -3,7 +3,7 @@ import { BarLineIcon, EqualIcon, LossIcon, ProfiteIcon, UserHeart, WalletIcon } 
 import DateChart from "../../../component/accounts/datechart";
 import DailyCalender from "../../../component/common/calender";
 import { DashboardHeader, LineChart, TradingObjective } from "../../../component";
-
+import AccountChart from "./arechart";
 const accoundCrads = [
     {
         title: 'Average Profit',
@@ -57,6 +57,7 @@ const accoundCrads = [
     },
 ]
 const Accounts = () => {
+
     return (
         <>
             <DashboardHeader title="Account Dashboard" />
@@ -136,8 +137,8 @@ const Accounts = () => {
                         </div>
                     </div>
                 </div>
-
-
+                <div className="account-info"></div>
+                <AccountChart />
             </div>
         </>
     )

@@ -5,13 +5,20 @@ import { Link, useNavigate } from "react-router-dom";
 import { BarchartIcon, FileIcon, HomeIcon, Logout, SettingIcon, UserIcon } from "../../icons/icons";
 import { logout } from "../../redux/slice/authSlice";
 import { LogOut } from "lucide-react";
+import { useDispatch, useSelector } from 'react-redux'
 
 const MenuItems = () => {
+        const dispatch = useDispatch()
+    
     const navigate = useNavigate()
-        const handleLogout = () => {
+
+
+        const handleLogout = (e) => {
+            e.preventDefault()
             dispatch(logout());
             navigate("/");
         };
+
     const SidebarItems = [
         {
             name: 'Account Overview',
@@ -90,7 +97,7 @@ const MenuItems = () => {
                         </div>
                     }>
                 </SubMenu>
-                  <SubMenu onClick={() => handleLogout}
+                  <SubMenu onClick={(e) => handleLogout(e)}
                     className={`sidebar_label`}
                     label={
                         <div className="sidebar_label">

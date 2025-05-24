@@ -18,6 +18,8 @@ export const login = createAsyncThunk(
       const { data } = await axios.post("login", formData, config);
       if (data.status || data.success) {
         localStorage.setItem("auth_token", data?.data.token);
+        localStorage.setItem("name", data?.data.name);
+        localStorage.setItem("profile", data?.data.profile);
 
         dispatch(isloginSuccess());
         navigate("/")

@@ -41,6 +41,8 @@ const Accounts = () => {
     const handleAccSatusChange = (event) => {
         setAccStatus(event.target.value);
     };
+
+
     return (
         <>
             <DashboardHeader title="Account Overview" />
@@ -177,6 +179,9 @@ const Accounts = () => {
                         </tbody>
                     </table>
                 </div>
+
+
+                
             </div>
         </>
     )

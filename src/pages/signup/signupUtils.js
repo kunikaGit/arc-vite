@@ -169,11 +169,12 @@ const useSignupUtils = () => {
         const response = await fetchData(url, navigate, "POST", payload);
         if (response) {
             localStorage.setItem("auth_token", response?.data.token);
-
+            localStorage.setItem("name", response?.data.name);
+            localStorage.setItem("profile", response?.data.profile);
             dispatch(isloginSuccess());
             navigate("/")
             successMsg(response?.message);
-            navigate("/dashboard/myprofile");
+           // navigate("/dashboard/myprofile");
             setFormData({});
         }
 

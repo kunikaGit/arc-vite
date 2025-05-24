@@ -1,17 +1,28 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import imageMap from '../../utlis/helper'
 import { DownIcon, Logout, MenuIcon, UserIcon } from '../../icons/icons'
 import { Link } from 'react-router-dom'
 import Drawer from "react-modern-drawer";
 import MenuItems from '../sidebar/menuList';
-import { logout } from '../../redux/slice/authSlice'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom';
 import { handleDarkMode } from '../../utlis/handleDarkMode';
 
 const DashboardHeader = ({ title }) => {
+
+    const [profile,setProfile]=useState('')
+    const [name,setName]=useState('')
+
     const navigate = useNavigate();
-    const isLoggedIn = useSelector((state) => state.auth.isloginSuccess);
+
+    const isLoggedIn = useSelector((state) => state.auth);
+
+    useEffect(()=>{
+            setName(isLoggedIn.name)
+    setProfile(isLoggedIn.profile)
+    },[])
+
+
     const [showMenu, setShowMenu] = useState(false)
     const dispatch = useDispatch()
     const handleShowDropDown = () => {
@@ -21,6 +32,8 @@ const DashboardHeader = ({ title }) => {
     const toggleMenu = () => {
         setShowMToggle((prevState) => !prevState)
     }
+
+
 
     return (
         <>
@@ -37,8 +50,8 @@ const DashboardHeader = ({ title }) => {
                     <li>
                         <div className='profile flex item' onClick={handleShowDropDown} onBlur={() => setShowMenu(false)}>
                             <div>
-                                <img src={imageMap['man1.jpg']} alt='img2' />
-                                <h3 className=' md:text-base text-sm'>Verified</h3>
+                                <img src={profile?profile:imageMap['man1.jpg']} alt='img2' />
+                                <h3 className=' md:text-base text-sm'>{name?name:"Verified"}</h3>
                             </div>
                         </div>
                     </li>
