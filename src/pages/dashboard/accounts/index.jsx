@@ -75,7 +75,9 @@ const Accounts = () => {
                         </div>
                         {/* <LineChart /> */}
                         <div className="theme_card bg-grey mt-5">
-                            <DateChart />
+                            {/* <DateChart /> */}
+                <AccountChart />
+
                         </div>
                         <div className="calender-data theme_card bg-grey">
                             <h2>Profit / Loss Calendar</h2>
@@ -137,7 +139,7 @@ const Accounts = () => {
                         </div>
                     </div>
                 </div>
-                <div className="account-info"></div>
+         
                 <AccountChart />
             </div>
         </>
