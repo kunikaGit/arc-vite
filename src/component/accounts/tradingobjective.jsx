@@ -77,42 +77,42 @@ const ApexChart = ({ title, value }) => {
 const TradingObjective = () => {
     return (
         <>
-        <div className="bg-grey theme_card mb-4" >
-            <h2 className="card-title font-semibold text-lg mb-4" style={{color:'var(--text_black)'}}>
-                Trading Objectives</h2>
-            <div className="tradingobjective-cards">
-                <ApexChart title="Profit target" value={76} />
-                <ApexChart title="Max drawdown (Daily)" value={63} />
-                <ApexChart title="Max drawdown (Overall)" value={88} />
-                <ApexChart title="Minimum trading days" value={45} />
+            <div className="bg-grey theme_card mb-4" >
+                <h2 className="card-title font-semibold text-lg mb-4" style={{ color: 'var(--text_black)' }}>
+                    Trading Objectives</h2>
+                <div className="tradingobjective-cards">
+                    <ApexChart title="Profit target" value={76} />
+                    <ApexChart title="Max drawdown (Daily)" value={63} />
+                    <ApexChart title="Max drawdown (Overall)" value={88} />
+                    <ApexChart title="Minimum trading days" value={45} />
+                </div>
             </div>
-        </div>
-         <div className="theme_card bg-grey data-table mb-4">
-                            <table className="w-full">
-                                <thead>
-                                    <tr>
-                                        <th>Minimum Trading Days</th>
-                                        <th>Max Daily Loss</th>
-                                        <th>Max Loss</th>
-                                        <th>Profit Target</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>4</td>
-                                        <td>$5000</td>
-                                        <td>$10,000</td>
-                                        <td>$10,000.00</td>
-                                    </tr>
-                                  <tr>
-                                        <td>4</td>
-                                        <td>$5000</td>
-                                        <td>$10,000</td>
-                                        <td>$10,000.00</td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
+            <div className="theme_card bg-grey data-table mb-4">
+                <table className="w-full">
+                    <thead>
+                        <tr>
+                            <th>Minimum Trading Days</th>
+                            <th>Max Daily Loss</th>
+                            <th>Max Loss</th>
+                            <th>Profit Target</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>4</td>
+                            <td>$5000</td>
+                            <td>$10,000</td>
+                            <td>$10,000.00</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>$5000</td>
+                            <td>$10,000</td>
+                            <td>$10,000.00</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </>
     );
 };

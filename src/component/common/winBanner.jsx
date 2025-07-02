@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import '../../assets/scss/winbanner.scss'
 import { Cross } from '../../icons/icons'
 const WinBanner = () => {
-  const [showBanner,setShowBanner] = useState(true)
+  const [showBanner,setShowBanner] = useState(false)
 
   const closeBanner = () =>{
     setShowBanner(false)
