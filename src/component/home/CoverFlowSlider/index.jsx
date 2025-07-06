@@ -1,5 +1,5 @@
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation,EffectCoverflow } from "swiper/modules";
+import { Navigation,EffectCoverflow,Autoplay  } from "swiper/modules";
 export const collections4 = [
   {
     id: 61,
@@ -154,8 +154,11 @@ export default function CoverFlowSlider() {
         grabCursor={true}
         centeredSlides={true}
         slidesPerView={70}
-        loop={true}
-        autoplay={true}
+          loop={true}
+        autoplay={{
+          delay: 2500, // Time between auto scrolls
+          disableOnInteraction: false, // Keeps autoplay after interaction
+        }} 
         coverflowEffect={{
           rotate: 30,
           stretch: 0,
@@ -166,7 +169,7 @@ export default function CoverFlowSlider() {
         pagination={{
           clickable: true,
         }}
-        modules={[EffectCoverflow, Navigation]}
+        modules={[EffectCoverflow, Navigation,Autoplay]}
         navigation={{
           nextEl: ".snbn7",
           prevEl: ".snbp7",
@@ -182,8 +185,8 @@ export default function CoverFlowSlider() {
                     <img
                       src={elm.imageSrc}
                       alt="item 1"
-                      className="swiper-lazy h-[430px] w-full object-cover"
-                      height="430"
+                      className="swiper-lazy w-full object-cover"
+                      height="400"
                       width="379"
                     />
                     {/* <div className="swiper-lazy-preloader"></div> */}

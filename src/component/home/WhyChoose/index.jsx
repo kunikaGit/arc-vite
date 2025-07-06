@@ -79,18 +79,18 @@ const platformOptions = Object.keys(otherPlatforms).map(name => ({ title: name }
 export default function WhyChoose() {
   const [selectedCompany, setSelectedCompany] = useState("FTMO");
   return (
-    <section className="relative py-24 why-choose-us dark:bg-jacarta-900" >
+    <section className="relative why-choose-us dark:bg-jacarta-900" >
       <div className="container">
-        <div className="mx-auto mb-16 max-w-xl text-center" data-aos-duration={600} data-aos="fade-down" >
-          <h2 className="mb-2 text-center font-display text-3xl font-medium text-jacarta-700 dark:text-white">
+        <div className="mx-auto md:mb-16 mb-10 max-w-xl text-center" data-aos-duration={600} data-aos="fade-down" >
+          <h2 className="mb-2 text-center font-display md:text-3xl text-xl font-medium text-jacarta-700 dark:text-white">
             Why Choose ARC</h2>
           <p className="animate-gradient text-lg font-bold">
             Compare Markets
           </p>
         </div>
         <div data-aos-duration={800} data-aos="zoom-in" data-aos-delay="300"
-          className="rounded-2lg border border-jacarta-100 bg-white text-sm dark:border-jacarta-600 dark:bg-gray-900 dark:text-white">
-          <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
+          className="rounded-2lg mb-10 border border-jacarta-100 bg-white text-sm dark:border-jacarta-600 dark:bg-gray-900 dark:text-white">
+          <div className="relative overflow-x-auto shadow-md sm:rounded-lg ">
             <table
               className="w-full bg-white  text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 border-jacarta-100 border-t">
               <thead className="text-base uppercase">

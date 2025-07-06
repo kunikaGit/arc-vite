@@ -47,7 +47,7 @@ export default function TwoPhase({ handleOpenModal }) {
             <label className="flex items-center space-x-2 cursor-pointer  text-black dark:text-white ">
 
               <span
-                className={`text-jacarta-700 dark:text-white rounded-md md:py-2 md:px-4 py-2 px-1  md:text-md text-sm transition-all ${selected.account_size === account.account_size
+                className={`text-jacarta-700 dark:text-white rounded-md md:py-2 md:px-4 py-2 px-2  md:text-md text-sm transition-all ${selected.account_size === account.account_size
                   ? "text-accent bg-accent text-white"
                   : "  border-gray-400 dark:border-gray-500 text-gray-700 dark:text-white"
                   }`}
@@ -144,14 +144,12 @@ export default function TwoPhase({ handleOpenModal }) {
 
       <div className="sub-box">
         <div className="mb-5">
-          <h2 className="lg:text-5xl md:text-3xl text-xl text-center font-semibold text-jacarta-700 dark:text-white">${parseFloat(selected.price).toFixed(0)} For {selected.account_size} Account</h2>
+          <h2 className="md:text-3xl text-xl text-center font-semibold text-jacarta-700 dark:text-white">${parseFloat(selected.price).toFixed(0)} For {selected.account_size} Account</h2>
         </div>
-           <button
-      onClick={handleClick}
-      className="block mx-auto text-md rounded-full bg-accent py-2 w-[200px] text-center font-semibold text-white shadow-accent-volume transition-all hover:bg-accent-dark"
-    >
-      Start Now
-    </button>
+          <button className="fnx-purple-btn flex m-auto" onClick={handleClick}>
+            <span className="btn-label">Start Now</span>
+            <span className="btn-shine"></span>
+          </button>
       </div>
     </>
   );

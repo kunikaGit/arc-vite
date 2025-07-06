@@ -19,12 +19,12 @@ export default function Home() {
 
     return (
         <>
-           <div className="main-landing-page dark-for-header">
+            <div className="main-landing-page dark-for-header">
                 <Header2 />
                 <Hero1 />
-                <div className="hotbids-section" data-speed="1.2">
+                {/* <div className="hotbids-section" data-speed="1.2">
                     <CoverFlowSlider />
-                </div>
+                </div> */}
                 <div id="pricing" className="hotbids-section" data-speed="1.5">
                     <PricingTable />
                 </div>
@@ -41,7 +41,7 @@ export default function Home() {
                     <div className="liquid"></div>
                 </div>
                 <Footer1 />
-                <WinBanner/>
+                <WinBanner />
             </div>
 
         </>

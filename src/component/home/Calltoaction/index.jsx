@@ -28,13 +28,13 @@ export default function Calltoaction() {
           </picture>
           <div className="items-center justify-between md:flex">
             <div className="mb-6 md:w-1/2">
-              <h2 data-aos="fade-down" data-aos-duration={600} className="mb-4 font-display text-2xl text-jacarta-700 dark:text-white sm:text-3xl uppercase">
+              <h2 data-aos="fade-down" data-aos-duration={600} className="mb-4 font-display md:text-2xl text-xl text-jacarta-700 dark:text-white sm:text-3xl uppercase">
                 discover your potential and become a trader
               </h2>
               <p className="mb-8 text-lg dark:text-jacarta-300">
                 Join the Leading Prop Firm<br />
               </p>
-              <div className="flex items-center">
+              <div className="call-links">
                 <Link
                   data-aos="fade-up" data-aos-duration={600}
                   href="/create"

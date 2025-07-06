@@ -145,6 +145,10 @@
     }
 }
 
+.sticky-header {
+    z-index: 1200;
+    box-shadow: 0 4px 8px 0 #cccccc7a;
+}
 
 
 
@@ -172,7 +176,9 @@
 
 .hero {
     position: relative;
-    height: 95vh;
+    padding-bottom: 40px;
+    overflow-x: hidden;
+    // height: 95vh;
 
     &::after {
         content: "";
@@ -186,7 +192,8 @@
 
     .content-wrapped {
         position: relative;
-        z-index: 1200;
+        z-index: 999;
+        padding-bottom: 100px;
 
         .main-heading {
             font-size: 75px;
@@ -208,6 +215,15 @@
                 line-height: 60px;
             }
 
+            @include media_768 {
+                font-size: 40px;
+            }
+
+            @include media_576 {
+                font-size: 30px;
+                line-height: 35px;
+            }
+
             @include media_min_1600 {
                 font-size: 86px;
                 line-height: 95px;
@@ -222,18 +238,20 @@
         img {
             position: absolute;
             width: 100%;
-            top: 0;
+            top: -50px;
             left: 0;
             height: 100%;
             z-index: 0;
-
+            object-fit: cover;
         }
     }
 
     .two-grid {
         width: 75%;
         margin: auto;
-
+  @include media_768 {
+                       width: 95%;
+                    }
         // display: flex;
         // gap: 30px;
         .four-cards {
@@ -249,6 +267,11 @@
 
             @include media_min_1600 {
                 margin-bottom: 60px;
+            }
+
+            @include media_768 {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
             }
 
             // width: 50%;
@@ -286,6 +309,10 @@
                     @include media_min_1600 {
                         font-size: 24px;
                     }
+
+                    @include media_768 {
+                        font-size: 16px;
+                    }
                 }
 
                 span {
@@ -296,6 +323,10 @@
                     @include media_min_1600 {
                         font-size: 20px;
                     }
+                    @include media_768 {
+                        font-size: 12px;
+                        text-align: center;
+                    }
                 }
             }
         }
@@ -303,89 +334,93 @@
 
 
 
-    .fnx-purple-btn {
-        position: relative;
-        padding: 14px 36px;
-        border: none;
-        border-radius: 16px;
-        font-size: 20px;
-        font-weight: 600;
-        color: #fff;
-        cursor: pointer;
-        overflow: hidden;
-        z-index: 1;
-        font-family: "Montserrat", sans-serif;
-
-        @include media_1280 {
-            font-size: 16px;
-        }
-
-        @include media_min_1600 {
-            font-size: 28px;
-        }
-    }
-
-    /* Animated gradient border */
-    .fnx-purple-btn::before {
-        content: "";
-        position: absolute;
-        top: -2px;
-        left: -2px;
-        right: -2px;
-        bottom: -2px;
-        border-radius: 18px;
-        background: linear-gradient(135deg, #00f0ff, #4d44f7, #00f0ff);
-        background-size: 400% 400%;
-        animation: animatedBorder 6s linear infinite;
-        z-index: -2;
-    }
-
-    /* Actual button background */
-    .fnx-purple-btn::after {
-        content: "";
-        position: absolute;
-        inset: 2px;
-        border-radius: 14px;
-        background: #4139d7;
-        /* Your specified color */
-        z-index: -1;
-    }
-
-    /* Shine animation */
-    .btn-shine {
-        position: absolute;
-        top: 0;
-        left: -75%;
-        height: 100%;
-        width: 50%;
-        background: linear-gradient(120deg,
-                rgba(255, 255, 255, 0) 0%,
-                rgba(255, 255, 255, 0.2) 50%,
-                rgba(255, 255, 255, 0) 100%);
-        transform: skewX(-20deg);
-        animation: shineSlide 2.5s infinite;
-        z-index: 2;
-        pointer-events: none;
-    }
-
-    @keyframes animatedBorder {
-        0% {
-            background-position: 0% 50%;
-        }
-
-        100% {
-            background-position: 200% 50%;
-        }
-    }
-
-    @keyframes shineSlide {
-        0% {
-            left: -75%;
-        }
-
-        100% {
-            left: 125%;
-        }
-    }
-
 }
+
+
+// =================shining button css===========================
+.fnx-purple-btn {
+    position: relative;
+    padding: 14px 36px;
+    border: none;
+    border-radius: 16px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #fff;
+    cursor: pointer;
+    overflow: hidden;
+    z-index: 1;
+    font-family: "Montserrat", sans-serif;
+
+    @include media_1280 {
+        font-size: 16px;
+    }
+
+    @include media_min_1600 {
+        font-size: 28px;
+    }
+}
+
+/* Animated gradient border */
+.fnx-purple-btn::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, #00f0ff, #4d44f7, #00f0ff);
+    background-size: 400% 400%;
+    animation: animatedBorder 6s linear infinite;
+    z-index: -2;
+}
+
+/* Actual button background */
+.fnx-purple-btn::after {
+    content: "";
+    position: absolute;
+    inset: 2px;
+    border-radius: 14px;
+    background: #4139d7;
+    /* Your specified color */
+    z-index: -1;
+}
+
+/* Shine animation */
+.btn-shine {
+    position: absolute;
+    top: 0;
+    left: -75%;
+    height: 100%;
+    width: 50%;
+    background: linear-gradient(120deg,
+            rgba(255, 255, 255, 0) 0%,
+            rgba(255, 255, 255, 0.2) 50%,
+            rgba(255, 255, 255, 0) 100%);
+    transform: skewX(-20deg);
+    animation: shineSlide 2.5s infinite;
+    z-index: 2;
+    pointer-events: none;
+}
+
+@keyframes animatedBorder {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    100% {
+        background-position: 200% 50%;
+    }
+}
+
+@keyframes shineSlide {
+    0% {
+        left: -75%;
+    }
+
+    100% {
+        left: 125%;
+    }
+}
+
+// =========================================

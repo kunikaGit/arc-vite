@@ -2602,7 +2602,7 @@ select {
 
 .bg-accent {
     --tw-bg-opacity: 1;
-    background-color: rgb(131 88 255/var(--tw-bg-opacity))
+    background-color: var(--theme-purple)
 }
 
 .bg-accent-lighter {
@@ -3836,7 +3836,7 @@ input[type=search]::-webkit-search-results-decoration {
 }
 
 .js-page-header--is-sticky {
-    background-color: hsla(0, 0%, 100%, .5)
+    background-color: #fff
 }
 
 .dark .js-page-header--is-sticky,
@@ -3846,7 +3846,7 @@ input[type=search]::-webkit-search-results-decoration {
 
 .nav-link.active {
     --tw-text-opacity: 1;
-    color: rgb(19 23 64/var(--tw-text-opacity))
+    color: var(--theme-purple);
 }
 
 .nav-link.active:after {
@@ -3859,7 +3859,7 @@ input[type=search]::-webkit-search-results-decoration {
     width: 100%;
     content: var(--tw-content);
     --tw-bg-opacity: 1;
-    background-color: rgb(131 88 255/var(--tw-bg-opacity))
+    background-color: var(--theme-purple);
 }
 
 :is(.dark .nav-link.active) {
@@ -6280,7 +6280,7 @@ html[dir=rtl] .hover\:translate-x-1:hover {
     --color_171821:#171821;
     --white_color:#FFFFFF;
     --dark-purple:#18042b;
-    --theme-purple: #8257fe;
+    --theme-purple: #4139d7;
     --bg-grey:#1b1b1b;
 
     --bg_white:#fff;
@@ -6513,7 +6513,9 @@ html.dark{
 .swiper-lazy-preloader-black {
     --swiper-preloader-color: #000
 }
-
+.swiper-lazy{
+    height: 380px;
+}
 @keyframes swiper-preloader-spin {
     0% {
         transform: rotate(0deg)
@@ -6762,5 +6764,9 @@ html.dark{
 }
 .bg-grey{
     background-color: var(--bg_white);
+}
+
+.bg-blue{
+    background-color: var(--theme-purple);
 }
 
