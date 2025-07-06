@@ -6,6 +6,7 @@ import InstantFunding from "./instantfunding";
 import useMessageData from "./message";
 import { Box, colors, Modal } from "@mui/material";
 import { Cross } from "../../../icons/icons";
+import { Calculator, DollarSign, TrendingDown, Calendar, Sparkles } from 'lucide-react';
 
 
 const style = {
@@ -28,9 +29,9 @@ export default function PricingTable() {
     const [accountTab, setAccountTab] = useState("standard");
 
 
-    const [accountBalance, setAccountBalance] = useState(5000);
-    const [drawdown, setDrawdown] = useState(5);
-    const [minTradingDays, setMinTradingDays] = useState(2);
+    const [accountBalance, setAccountBalance] = useState(50000);
+    const [drawdown, setDrawdown] = useState(10);
+    const [minTradingDays, setMinTradingDays] = useState(3);
 
     const [calculatedResult, setCalculatedResult] = useState('');
     const [showCalculatedResult, setShowCalculatedResult] = useState(false)
@@ -45,17 +46,29 @@ export default function PricingTable() {
         }
     }
 
-    const handleSliderChange = (value, label) => {
+    const handleSliderChange = (value, field) => {
         setShowCalculatedResult(false)
-        if (label === 'accountBalance')
-            setAccountBalance(value)
-
-        if (label === 'drawdown')
-            setDrawdown(value)
-
-        if (label === 'minTradingDays')
-            setMinTradingDays(value)
+        switch (field) {
+            case 'accountBalance':
+                setAccountBalance(value);
+                break;
+            case 'drawdown':
+                setDrawdown(value);
+                break;
+            case 'minTradingDays':
+                setMinTradingDays(value);
+                break;
+        }
     }
+
+    const formatCurrency = (value) => {
+        return new Intl.NumberFormat('en-US', {
+            style: 'currency',
+            currency: 'USD',
+            minimumFractionDigits: 0,
+            maximumFractionDigits: 0,
+        }).format(value);
+    };
     return (
         <section className="md:py-16 py-5 pricing-table  bg-white dark:bg-jacarta-900" id="pricing">
             <div className="container">
@@ -197,146 +210,163 @@ export default function PricingTable() {
                             </li>
                         </ul>
                         <div className="tab-content mb-2" data-aos="zoom-in" data-aos-duration={800} data-aos-delay="300">
-                            {activeTab === "trending" &&
-                                <div className="slider-wrapper">
-                                    <div className="slider-group">
-                                        <label>Account Balance ($ 5,000 - $ 300,000):</label>
-                                        <div className="slider-input">
-                                            <input
-                                                type="range"
-                                                min={5000}
-                                                max={300000}
-                                                step={1000}
-                                                value={accountBalance}
-                                                onChange={(e) => handleSliderChange(Number(e.target.value), 'accountBalance')}
-                                            />
-                                            <input
-                                                type="number"
-                                                min={5000}
-                                                max={300000}
-                                                step={1000}
-                                                value={accountBalance}
-                                                onChange={(e) => handleSliderChange(Number(e.target.value), 'accountBalance')}
-                                            />
+                            {(activeTab === "trending" || activeTab === "sweeps") && (
+                                <div className="flex justify-center">
+                                    <div className="w-full max-w-4xl">
+                                        <div className="calculator-card">
+                                            {/* Header with gradient background */}
+                                            <div className="calculator-header">
+                                                <div className="header-icon">
+                                                    <Calculator className="w-8 h-8 text-white" />
+                                                    <Sparkles className="w-4 h-4 text-yellow-300 absolute -top-1 -right-1" />
+                                                </div>
+                                                <h1 className="calculator-title">Trading Calculator</h1>
+                                                <p className="calculator-subtitle">Configure your trading parameters with precision</p>
+                                            </div>
+
+                                            {/* Sliders Container */}
+                                            <div className="sliders-container">
+                                                {/* Account Balance Slider */}
+                                                <div className="slider-card balance-card">
+                                                    <div className="slider-header">
+                                                        <div className="icon-container balance-icon">
+                                                            <DollarSign className="w-6 h-6 text-white" />
+                                                        </div>
+                                                        <div className="slider-info">
+                                                            <h3 className="slider-title">Account Balance</h3>
+                                                            <p className="slider-range">$5,000 - $300,000</p>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div className="slider-content">
+                                                        <div className="slider-track">
+                                                            <input
+                                                                type="range"
+                                                                min={5000}
+                                                                max={300000}
+                                                                step={1000}
+                                                                value={accountBalance}
+                                                                onChange={(e) => handleSliderChange(Number(e.target.value), 'accountBalance')}
+                                                                className="range-slider balance-slider"
+                                                            />
+                                                            <div 
+                                                                className="slider-progress balance-progress"
+                                                                style={{ width: `${((accountBalance - 5000) / (300000 - 5000)) * 100}%` }}
+                                                            />
+                                                        </div>
+                                                        <div className="value-display">
+                                                            <input
+                                                                type="number"
+                                                                min={5000}
+                                                                max={300000}
+                                                                step={1000}
+                                                                value={accountBalance}
+                                                                onChange={(e) => handleSliderChange(Number(e.target.value), 'accountBalance')}
+                                                                className="value-input balance-input"
+                                                            />
+                                                            <span className="value-text balance-value">{formatCurrency(accountBalance)}</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                {/* Drawdown Slider */}
+                                                <div className="slider-card drawdown-card">
+                                                    <div className="slider-header">
+                                                        <div className="icon-container drawdown-icon">
+                                                            <TrendingDown className="w-6 h-6 text-white" />
+                                                        </div>
+                                                        <div className="slider-info">
+                                                            <h3 className="slider-title">Overall Drawdown</h3>
+                                                            <p className="slider-range">5% - 15%</p>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div className="slider-content">
+                                                        <div className="slider-track">
+                                                            <input
+                                                                type="range"
+                                                                min={5}
+                                                                max={15}
+                                                                value={drawdown}
+                                                                onChange={(e) => handleSliderChange(Number(e.target.value), 'drawdown')}
+                                                                className="range-slider drawdown-slider"
+                                                            />
+                                                            <div 
+                                                                className="slider-progress drawdown-progress"
+                                                                style={{ width: `${((drawdown - 5) / (15 - 5)) * 100}%` }}
+                                                            />
+                                                        </div>
+                                                        <div className="value-display">
+                                                            <input
+                                                                type="number"
+                                                                min={5}
+                                                                max={15}
+                                                                value={drawdown}
+                                                                onChange={(e) => handleSliderChange(Number(e.target.value), 'drawdown')}
+                                                                className="value-input drawdown-input"
+                                                            />
+                                                            <span className="value-text drawdown-value">{drawdown}%</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                {/* Trading Days Slider */}
+                                                <div className="slider-card days-card">
+                                                    <div className="slider-header">
+                                                        <div className="icon-container days-icon">
+                                                            <Calendar className="w-6 h-6 text-white" />
+                                                        </div>
+                                                        <div className="slider-info">
+                                                            <h3 className="slider-title">Minimum Trading Days</h3>
+                                                            <p className="slider-range">2 - 5 days</p>
+                                                        </div>
+                                                    </div>
+                                                    
+                                                    <div className="slider-content">
+                                                        <div className="slider-track">
+                                                            <input
+                                                                type="range"
+                                                                min={2}
+                                                                max={5}
+                                                                value={minTradingDays}
+                                                                onChange={(e) => handleSliderChange(Number(e.target.value), 'minTradingDays')}
+                                                                className="range-slider days-slider"
+                                                            />
+                                                            <div 
+                                                                className="slider-progress days-progress"
+                                                                style={{ width: `${((minTradingDays - 2) / (5 - 2)) * 100}%` }}
+                                                            />
+                                                        </div>
+                                                        <div className="value-display">
+                                                            <input
+                                                                type="number"
+                                                                min={2}
+                                                                max={5}
+                                                                value={minTradingDays}
+                                                                onChange={(e) => handleSliderChange(Number(e.target.value), 'minTradingDays')}
+                                                                className="value-input days-input"
+                                                            />
+                                                            <span className="value-text days-value">{minTradingDays} {minTradingDays === 1 ? 'day' : 'days'}</span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            {/* Calculate Button */}
+                                            <div className="calculate-section">
+                                                <button
+                                                    onClick={handleCalculate}
+                                                    className="calculate-button"
+                                                >
+                                                    <Calculator className="w-5 h-5" />
+                                                    <span>Calculate Results</span>
+                                                    <Sparkles className="w-4 h-4" />
+                                                </button>
+                                            </div>
                                         </div>
                                     </div>
-
-                                    <div className="slider-group">
-                                        <label>Overall Drawdown (5%-15%):</label>
-                                        <div className="slider-input">
-                                            <input
-                                                type="range"
-                                                min={5}
-                                                max={15}
-                                                value={drawdown}
-                                                onChange={(e) => handleSliderChange(Number(e.target.value), 'drawdown')}
-                                            />
-                                            <input
-                                                type="number"
-                                                min={5}
-                                                max={15}
-                                                value={drawdown}
-                                                onChange={(e) => handleSliderChange(Number(e.target.value), 'drawdown')}
-                                            />
-                                        </div>
-                                    </div>
-
-                                    <div className="slider-group">
-                                        <label>Minimum Trading Days (2-5 days):</label>
-                                        <div className="slider-input">
-                                            <input
-                                                type="range"
-                                                min={2}
-                                                max={5}
-                                                value={minTradingDays}
-                                                onChange={(e) => handleSliderChange(Number(e.target.value), 'minTradingDays')}
-                                            />
-                                            <input
-                                                type="number"
-                                                min={2}
-                                                max={5}
-                                                value={minTradingDays}
-                                                onChange={(e) => handleSliderChange(Number(e.target.value), 'minTradingDays')}
-                                            />
-                                        </div>
-                                    </div>
-                                    <button
-                                        onClick={e => { handleCalculate(e) }}
-                                        className="block mx-auto text-md rounded-full bg-accent py-2 w-[200px] text-center font-semibold text-white shadow-accent-volume transition-all hover:bg-accent-dark"
-                                    >
-                                        Calculate
-                                    </button>
-                                </div>}
-
-                            {activeTab === "sweeps" && <div className="slider-wrapper">
-                                <div className="slider-group">
-                                    <label>Account Balance ($ 5,000 - $ 300,000):</label>
-                                    <div className="slider-input">
-                                        <input
-                                            type="range"
-                                            min={5000}
-                                            max={300000}
-                                            step={1000}
-                                            value={accountBalance}
-                                            onChange={(e) => handleSliderChange(Number(e.target.value), 'accountBalance')}
-                                        />
-                                        <input
-                                            type="number"
-                                            min={5000}
-                                            max={300000}
-                                            step={1000}
-                                            value={accountBalance}
-                                            onChange={(e) => handleSliderChange(Number(e.target.value), 'accountBalance')}
-                                        />
-                                    </div>
                                 </div>
-
-                                <div className="slider-group">
-                                    <label>Overall Drawdown (5%-15%):</label>
-                                    <div className="slider-input">
-                                        <input
-                                            type="range"
-                                            min={5}
-                                            max={15}
-                                            value={drawdown}
-                                            onChange={(e) => handleSliderChange(Number(e.target.value), 'drawdown')}
-                                        />
-                                        <input
-                                            type="number"
-                                            min={5}
-                                            max={15}
-                                            value={drawdown}
-                                            onChange={(e) => handleSliderChange(Number(e.target.value), 'drawdown')}
-                                        />
-                                    </div>
-                                </div>
-
-                                <div className="slider-group">
-                                    <label>Minimum Trading Days (2-5 days):</label>
-                                    <div className="slider-input">
-                                        <input
-                                            type="range"
-                                            min={2}
-                                            max={5}
-                                            value={minTradingDays}
-                                            onChange={(e) => handleSliderChange(Number(e.target.value), 'minTradingDays')}
-                                        />
-                                        <input
-                                            type="number"
-                                            min={2}
-                                            max={5}
-                                            value={minTradingDays}
-                                            onChange={(e) => handleSliderChange(Number(e.target.value), 'minTradingDays')}
-                                        />
-                                    </div>
-                                </div>
-                                <button
-                                    onClick={e => { handleCalculate(e) }}
-                                    className="block mx-auto text-md rounded-full bg-accent py-2 w-[200px] text-center font-semibold text-white shadow-accent-volume transition-all hover:bg-accent-dark"
-                                >
-                                    Calculate
-                                </button>
-                            </div>}
+                            )}
                         </div>
 
 
