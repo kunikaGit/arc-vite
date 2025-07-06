@@ -149,11 +149,13 @@ export default function CoverFlowSlider() {
           },
         }}
         slidesPerGroupAuto
+        
         effect={"coverflow"}
         grabCursor={true}
         centeredSlides={true}
-        // slidesPerView={70}
+        slidesPerView={70}
         loop={true}
+        autoplay={true}
         coverflowEffect={{
           rotate: 30,
           stretch: 0,
@@ -172,7 +174,7 @@ export default function CoverFlowSlider() {
         className="swiper coverflow-slider !py-5"
       >
         {collections4.map((elm, i) => (
-          <SwiperSlide key={i}>
+          <SwiperSlide key={i} autoplay={true}>
             <article>
               <div className="block overflow-hidden rounded-2.5xl bg-white dark:text-jacarta-900 shadow-md transition-shadow hover:shadow-lg dark:bg-jacarta-700">
                 <figure className="relative">

@@ -40,7 +40,7 @@ const WithdrawalStep3 = () => {
                                     <span className="font-semibold card-text">Crypto / Paypal</span>
                                     <div className="images flex gap-x-2.5">
                                         <img src={imageMap['paypal.png']} className="card-icon" alt="pay" />
-                                        <img src={imageMap['crypto.png']} className="card-icon" alt="pay" />
+                                        <img     className="card-icon" alt="pay" />
                                     </div>
                                 </div>
                             </div>

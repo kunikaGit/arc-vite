@@ -20,7 +20,8 @@ html {
     -moz-tab-size: 4;
     -o-tab-size: 4;
     tab-size: 4;
-    font-family: 'Outfit';
+            font-family: "Montserrat", sans-serif;
+;
     font-feature-settings: normal;
     font-variation-settings: normal;
     -webkit-tap-highlight-color: transparent
@@ -3203,11 +3204,13 @@ select {
 }
 
 .font-body {
-    font-family: 'Outfit'
+            font-family: "Montserrat", sans-serif;
+
 }
 
 .font-display {
-    font-family: 'Outfit';
+            font-family: "Montserrat", sans-serif;
+;
     font-weight: 700;
 }
 
@@ -4065,7 +4068,8 @@ input[type=search]::-webkit-search-results-decoration {
 .modal-title {
     margin-bottom: 0;
     margin-top: .25rem;
-    font-family: 'Outfit';
+            font-family: "Montserrat", sans-serif;
+;
     font-size: 1.5rem;
     line-height: normal;
     font-weight: 600;
@@ -4228,7 +4232,8 @@ input[type=search]::-webkit-search-results-decoration {
 .article-content>h6 {
     margin-top: 2.5rem !important;
     margin-bottom: 0.5rem;
-    font-family: 'Outfit';
+            font-family: "Montserrat", sans-serif;
+;
     --tw-text-opacity: 1;
     color: rgb(19 23 64/var(--tw-text-opacity))
 }

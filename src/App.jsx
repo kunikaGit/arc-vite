@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { Routes, Route, Link } from "react-router-dom";
-import { AboutUs, AccountOverview, Accounts, Billing, Checkout, ComingSoon, Faq, FundedLongue, Leaderboard, Login, Merchandise, MyProfile, PrivacyPolicy, Signup, TermsAndCondition, WithdrawalStep2, WithdrawalStep3 } from "./pages/index.js";
+import { AboutUs, AccountOverview, Accounts, Billing, Checkout, ComingSoon, Faq, FundedLongue, Home, Leaderboard, Login, Merchandise, MyProfile, PrivacyPolicy, Signup, TermsAndCondition, WithdrawalStep2, WithdrawalStep3 } from "./pages/index.js";
 import Home2 from "./pages/home2.jsx";
 import './assets/scss/index.scss'
 import 'react-calendar/dist/Calendar.css';
@@ -39,8 +39,8 @@ useEffect(() => {
       <ScrollToTop />
      <Toaster position="top-right" reverseOrder={true} />
       <Routes>
-        {/* <Route path="/" element={<Home />} /> */}
-        <Route path="/" element={<Home2 />} />
+        <Route path="/" element={<Home />} />
+        {/* <Route path="/" element={<Home2 />} /> */}
         <Route path="/checkout" element={<Checkout />} />
         <Route path="/coming-soon" element={<ComingSoon />} />
         <Route path="/faq" element={<Faq />} />

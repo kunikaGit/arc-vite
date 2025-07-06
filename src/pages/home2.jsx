@@ -38,9 +38,9 @@ export default function Home2() {
                 <div id="pricing" className="hotbids-section" data-speed="1.5">
                     <PricingTable />
                 </div>
-                <div className="collections-section" data-speed="2">
+                {/* <div className="collections-section" data-speed="2">
                     <Testimonials />
-                </div>
+                </div> */}
                 <div className="categories-section" data-speed="2.5">
                     <WhyChoose />
                 </div>

@@ -316,7 +316,7 @@ color: #fff;
   margin-bottom: 80px;
 }
 .slider-section{
-  background: linear-gradient(to bottom, #1a031f, rgba(255, 255, 255, 0.444));
+  /* background: linear-gradient(to bottom, #1a031f, rgba(255, 255, 255, 0.444)); */
   position: relative;
   padding-bottom: 50px;
 }
@@ -710,7 +710,7 @@ color: #fff;
 
 .logo-text{
   font-size: 50px;
-  font-weight: 900;
+  font-weight: 800;
   letter-spacing: -5px;
 }
 
@@ -798,7 +798,7 @@ color: #fff;
   margin-bottom: 80px;
 }
 .slider-section{
-  background: linear-gradient(to bottom, #1a031f, rgba(255, 255, 255, 0.444));
+  /* background: linear-gradient(to bottom, #1a031f, rgba(255, 255, 255, 0.444)); */
   position: relative;
   padding-bottom: 50px;
 }
@@ -810,7 +810,7 @@ color: #fff;
   left: 0;
   width: 100%;
   height: 200px;
-  /* background: white; */
+  background: #06000f;
   clip-path: ellipse(100% 100px at 50% 0%)
 }
 .slider-section:is(.dark .dark\:bg-black){
