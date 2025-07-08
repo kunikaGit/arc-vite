@@ -186,8 +186,8 @@ export default function CoverFlowSlider() {
                       src={elm.imageSrc}
                       alt="item 1"
                       className="swiper-lazy w-full object-cover"
-                      height="400"
-                      width="379"
+                      height="300"
+                      width="300"
                     />
                     {/* <div className="swiper-lazy-preloader"></div> */}
                   </Link>

@@ -82,32 +82,23 @@ export default function WhyChoose() {
     <section className="relative why-choose-us dark:bg-jacarta-900" >
       <div className="container">
         <div className="mx-auto md:mb-16 mb-10 max-w-xl text-center" data-aos-duration={600} data-aos="fade-down" >
-          <h2 className="mb-2 text-center font-display md:text-3xl text-xl font-medium text-jacarta-700 dark:text-white">
+          <h2 className="mb-2 text-center md:text-3xl text-xl text-jacarta-700 dark:text-white">
             Why Choose ARC</h2>
           <p className="animate-gradient text-lg font-bold">
             Compare Markets
           </p>
         </div>
         <div data-aos-duration={800} data-aos="zoom-in" data-aos-delay="300"
-          className="rounded-2lg mb-10 border border-jacarta-100 bg-white text-sm dark:border-jacarta-600 dark:bg-gray-900 dark:text-white">
+          className="table-wrapped rounded-2lg mb-10 border border-jacarta-100 bg-white text-sm dark:border-jacarta-600 dark:bg-gray-900 dark:text-white">
           <div className="relative overflow-x-auto shadow-md sm:rounded-lg ">
             <table
-              className="w-full bg-white  text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 border-jacarta-100 border-t">
+              className="w-full bg-white  text-sm text-left rtl:text-right text-black dark:text-gray-400 border-jacarta-100 border-t">
               <thead className="text-base uppercase">
-                <tr className="border-t border-jacarta-100 py-2 px-4 transition-shadow hover:shadow-lg dark:border-jacarta-600 dark:bg-jacarta-900">
-                  <th scope="col" className="px-6 py-3 dark:text-white">VARIABLES</th>
-                  <th scope="col" className="px-6 py-3 text-center dark:text-white">ARC</th>
-                  <th scope="col" className="px-6 py-3 text-center dark:text-white">
-                    {/* <select
-                      value={selectedCompany}
-                      onChange={(e) => setSelectedCompany(e.target.value)}
-                      className="bg-transparent dark:bg-gray-900 outline-none border-none font-semibold dark:text-white focus:border-transparent focus:outline-none focus:shadow-none">
-                      {Object.keys(otherPlatforms).map((platform) => (
-                        <option key={platform} value={platform}>
-                          {platform}
-                        </option>
-                      ))}
-                    </select> */}
+                <tr className="table-heading">
+                  <th scope="col" className=" text-white">VARIABLES</th>
+                  <th scope="col" className=" text-center text-white">ARC</th>
+                  <th scope="col" className=" text-center text-white">
+                
                     <div className='input-main-data select-mui-vs dark:mui-dark'>
                       <Autocomplete
                         autoComplete={false}
@@ -139,18 +130,15 @@ export default function WhyChoose() {
                     key={index}
                     className="border-t border-jacarta-100 py-2 px-4 transition-shadow hover:shadow-lg dark:border-jacarta-600 dark:bg-jacarta-900"
                   >
-                    <th
-                      scope="row"
-                      className="text-gray-500 w-1/3 px-6 py-4 font-medium whitespace-nowrap dark:text-white text-base"
-                    >
+                    <th  scope="row">
                       {item.name}
                     </th>
-                    <td className="w-1/3 px-6 py-4 text-center dark:text-white min-w-36">
+                    <td className="w-1/3  text-center dark:text-white min-w-36">
                       <div className="flex justify-center items-center">
                         {item.arc}
                       </div>
                     </td>
-                    <td className="w-1/3 px-6 py-4 text-center dark:text-white min-w-30">
+                    <td className="w-1/3  text-center dark:text-white min-w-30">
                       <div className="flex justify-center items-center">
                         {otherPlatforms[selectedCompany][index]}
                       </div>

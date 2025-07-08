@@ -4,8 +4,8 @@
   position: relative;
   height: 100%;
   display: flex;
-  font-family: "outfit";
-  background-color: var(--bg_white);
+  font-family: "Montserrat", sans-serif;
+  // background-color: var(--bg_white);
 
   .sidebar-wrapped {
     @include media_1024 {
@@ -17,7 +17,7 @@
     color: var(--text_black);
     padding: 30px;
     position: relative;
-    background-color: var(--bg-light);
+    background-color: #e0dede4a;
 
     @include media_768 {
       padding: 10px;
@@ -137,7 +137,7 @@
             width: 100%;
 
             &:hover {
-              background-color: #8358ff;
+              background-color: var(--theme-purple);
 
               .name {
                 color: #fff;
@@ -153,7 +153,7 @@
 
           &.active {
             .ps-menu-button {
-              background-color: #8358ff;
+              background-color: var(--theme-purple);
 
               .name {
                 color: #fff;
@@ -181,7 +181,7 @@
         width: 22px;
 
         path {
-          fill: #8358ff;
+          fill: var(--theme-purple);
         }
       }
     }
@@ -216,8 +216,7 @@
       color: var(--text_black);
       line-height: 20px;
       font-size: 16px;
-      font-weight: 400;
-      font-family: 'Inter'
+      font-weight: 500;
 
       a {
         color: var(--white_color);

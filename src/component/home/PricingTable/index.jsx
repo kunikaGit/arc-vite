@@ -243,15 +243,6 @@ export default function PricingTable() {
                                                             />
                                                         </div>
                                                         <div className="value-display">
-                                                            <input
-                                                                type="number"
-                                                                min={5000}
-                                                                max={300000}
-                                                                step={1000}
-                                                                value={accountBalance}
-                                                                onChange={(e) => handleSliderChange(Number(e.target.value), 'accountBalance')}
-                                                                className="value-input balance-input"
-                                                            />
                                                             <span className="value-text balance-value">{formatCurrency(accountBalance)}</span>
                                                         </div>
                                                     </div>
@@ -285,14 +276,7 @@ export default function PricingTable() {
                                                             />
                                                         </div>
                                                         <div className="value-display">
-                                                            <input
-                                                                type="number"
-                                                                min={5}
-                                                                max={15}
-                                                                value={drawdown}
-                                                                onChange={(e) => handleSliderChange(Number(e.target.value), 'drawdown')}
-                                                                className="value-input drawdown-input"
-                                                            />
+                                                           
                                                             <span className="value-text drawdown-value">{drawdown}%</span>
                                                         </div>
                                                     </div>
@@ -326,14 +310,6 @@ export default function PricingTable() {
                                                             />
                                                         </div>
                                                         <div className="value-display">
-                                                            <input
-                                                                type="number"
-                                                                min={2}
-                                                                max={5}
-                                                                value={minTradingDays}
-                                                                onChange={(e) => handleSliderChange(Number(e.target.value), 'minTradingDays')}
-                                                                className="value-input days-input"
-                                                            />
                                                             <span className="value-text days-value">{minTradingDays} {minTradingDays === 1 ? 'day' : 'days'}</span>
                                                         </div>
                                                     </div>

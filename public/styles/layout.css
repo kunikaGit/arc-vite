@@ -20,8 +20,7 @@ html {
     -moz-tab-size: 4;
     -o-tab-size: 4;
     tab-size: 4;
-            font-family: "Montserrat", sans-serif;
-;
+            font-family: "Montserrat", sans-serif;;
     font-feature-settings: normal;
     font-variation-settings: normal;
     -webkit-tap-highlight-color: transparent
@@ -68,7 +67,7 @@ code,
 kbd,
 pre,
 samp {
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, Liberation Mono, Courier New, monospace;
+    font-family: "Montserrat", sans-serif;
     font-feature-settings: normal;
     font-variation-settings: normal;
     font-size: 1em
@@ -2752,7 +2751,7 @@ select {
 }
 
 .fill-accent {
-    fill: #8358ff
+    fill: var(--theme-purple)
 }
 
 .fill-accent-dark {
@@ -3484,12 +3483,12 @@ select {
 }
 
 .shadow-\[0_5px_0_0_\#10b981\],
-.shadow-\[0_5px_0_0_\#8358ff\] {
+.shadow-\[0_5px_0_0_\var(--theme-purple)\] {
     box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)
 }
 
-.shadow-\[0_5px_0_0_\#8358ff\] {
-    --tw-shadow: 0 5px 0 0 #8358ff;
+.shadow-\[0_5px_0_0_\var(--theme-purple)\] {
+    --tw-shadow: 0 5px 0 0 var(--theme-purple);
     --tw-shadow-colored: 0 5px 0 0 var(--tw-shadow-color)
 }
 
@@ -4363,7 +4362,7 @@ html[dir=rtl] .hover\:translate-x-1:hover {
 }
 
 .hero .four-cards .accent:hover svg {
-    fill: #8358ff
+    fill: var(--theme-purple)
 }
 
 .before\:absolute:before {
@@ -4807,7 +4806,7 @@ html[dir=rtl] .hover\:translate-x-1:hover {
 }
 
 .group:hover .group-hover\:fill-accent {
-    fill: #8358ff
+    fill: var(--theme-purple)
 }
 
 .group:hover .group-hover\:fill-white {

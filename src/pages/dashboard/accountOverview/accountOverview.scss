@@ -19,10 +19,14 @@
       }
     }
   .filters {
+    background-color: var(--color-white);
+    padding: 15px;
     margin-bottom: 30px;
     display: flex;
     align-items: center;
     gap: 30px;
+    box-shadow: 1px 3px 5px 0px #ccccccd1;
+    border-radius: 10px ;
     @include media_768{
       gap: 10px;
     }
@@ -75,6 +79,7 @@
   .card-content {
     width: calc( 33% - 10px);
     padding: 20px;
+    box-shadow: 1px 3px 5px 0px #ccccccd1;
     .overview {
       margin-bottom: 20px;
     }

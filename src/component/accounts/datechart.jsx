@@ -24,7 +24,7 @@ const DateChart = () => {
           enabled: false,
         },
       },
-      colors: ["#8358ff"], // Your custom purple color
+      colors: ["var(--theme-purple)"], // Your custom purple color
       dataLabels: {
         enabled: false,
       },
@@ -70,12 +70,12 @@ const DateChart = () => {
             [
               {
                 offset: 0,
-                color: "#8358ff",
+                color: "var(--theme-purple)",
                 opacity: 0.5,
               },
               {
                 offset: 100,
-                color: "#8358ff",
+                color: "var(--theme-purple)",
                 opacity: 0.1,
               },
             ],

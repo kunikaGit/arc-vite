@@ -9,7 +9,7 @@ const accoundCrads = [
         title: 'Average Profit',
         number: '70',
         icon: <ProfiteIcon />,
-        bgcolor: '#8358ff',
+        bgcolor: 'var(--theme-purple)',
         target: 'profit'
     },
     {
@@ -47,7 +47,7 @@ const accoundCrads = [
         title: 'Lots',
         number: '76',
         icon: <ProfiteIcon />,
-        bgcolor: '#8358ff'
+        bgcolor: 'var(--theme-purple)'
     },
     {
         title: 'Average RRS',
@@ -139,9 +139,7 @@ const Accounts = () => {
                         </div>
                     </div>
                 </div>
-         
-                <AccountChart />
-            </div>
+                     </div>
         </>
     )
 }

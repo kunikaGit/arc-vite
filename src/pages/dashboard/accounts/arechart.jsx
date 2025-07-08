@@ -38,7 +38,7 @@ const backgroundColorPlugin = (bgColor = 'white') => ({
 });
 
 const AccountChart = ({ theme = 'light' }) => {
-    const chartRef = useRef(null); // ✅ Reference to chart instance
+    const chartRef = useRef(null); // 
 
     const zoomIn = () => {
         alert(":")
@@ -208,67 +208,67 @@ const AccountChart = ({ theme = 'light' }) => {
             annotation: {
                 annotations: {
 
-                    equityValue: {
-                        type: 'line',
-                        yMin: equityValue,
-                        yMax: equityValue,
-                        borderColor: 'rgb(102, 3, 105)', // blue-ish highlight
-                        borderWidth: 2,
-                        label: {
-                            content: `Equity Value = ${equityValue}`,
-                            enabled: true,
-                            display: true,
-                            position: 'start',
-                            backgroundColor: 'rgb(102, 3, 105)',
-                            color: '#fff',
-                            font: { weight: 'bold' },
-                            padding: {
-                                top: 10,
-                                bottom: 5,
-                            },
-                        },
-                    },
-                    currentBalance: {
-                        type: 'line',
-                        yMin: currentBalance,
-                        yMax: currentBalance,
-                        borderColor: 'rgba(0, 217, 255, 0.7)', // blue-ish highlight
-                        borderWidth: 2,
-                        label: {
-                            content: `Balance = ${currentBalance}`,
-                            enabled: true,
-                            display: true,
-                            position: 'start',
-                            backgroundColor: 'rgba(0, 217, 255, 0.7)',
-                            color: '#fff',
-                            font: { weight: 'bold' },
-                            padding: {
-                                top: 10,
-                                bottom: 5,
-                            },
-                        },
-                    },
-                    accountSize: {
-                        type: 'line',
-                        yMin: referenceLine,
-                        yMax: referenceLine,
-                        borderColor: 'rgba(0, 0, 255, 0.7)', // blue-ish highlight
-                        borderDash: [5, 5],
-                        borderWidth: 2,
-                        label: {
-                            content: 'Account Size',
-                            enabled: true,
-                            display: true,
-                            position: 'start',
-                            backgroundColor: 'rgba(0, 0, 255, 0.7)',
-                            color: '#fff',
-                            font: { weight: 'bold' },
-                            padding: {
-                                top: 10,
-                                bottom: 5,
-                            },
-                        },
-                    },
+                    // equityValue: {
+                    //     type: 'line',
+                    //     yMin: equityValue,
+                    //     yMax: equityValue,
+                    //     borderColor: 'rgb(102, 3, 105)', // blue-ish highlight
+                    //     borderWidth: 2,
+                    //     label: {
+                    //         content: `Equity Value = ${equityValue}`,
+                    //         enabled: true,
+                    //         display: true,
+                    //         position: 'start',
+                    //         backgroundColor: 'rgb(102, 3, 105)',
+                    //         color: '#fff',
+                    //         font: { weight: 'bold' },
+                    //         padding: {
+                    //             top: 10,
+                    //             bottom: 5,
+                    //         },
+                    //     },
+                    // },
+                    // currentBalance: {
+                    //     type: 'line',
+                    //     yMin: currentBalance,
+                    //     yMax: currentBalance,
+                    //     borderColor: 'rgba(0, 217, 255, 0.7)', // blue-ish highlight
+                    //     borderWidth: 2,
+                    //     label: {
+                    //         content: `Balance = ${currentBalance}`,
+                    //         enabled: true,
+                    //         display: true,
+                    //         position: 'start',
+                    //         backgroundColor: 'rgba(0, 217, 255, 0.7)',
+                    //         color: '#fff',
+                    //         font: { weight: 'bold' },
+                    //         padding: {
+                    //             top: 10,
+                    //             bottom: 5,
+                    //         },
+                    //     },
+                    // },
+                    // accountSize: {
+                    //     type: 'line',
+                    //     yMin: referenceLine,
+                    //     yMax: referenceLine,
+                    //     borderColor: 'rgba(0, 0, 255, 0.7)', // blue-ish highlight
+                    //     borderDash: [5, 5],
+                    //     borderWidth: 2,
+                    //     label: {
+                    //         content: 'Account Size',
+                    //         enabled: true,
+                    //         display: true,
+                    //         position: 'start',
+                    //         backgroundColor: 'rgba(0, 0, 255, 0.7)',
+                    //         color: '#fff',
+                    //         font: { weight: 'bold' },
+                    //         padding: {
+                    //             top: 10,
+                    //             bottom: 5,
+                    //         },
+                    //     },
+                    // },
                     profitTarget: {
                         type: 'line',
                         yMin: profitTarget,
@@ -311,29 +311,29 @@ const AccountChart = ({ theme = 'light' }) => {
                             },
                         },
                     },
-                    maxDailyLoss: {
-                        type: 'line',
-                        yMin: maxDailyLoss,
-                        yMax: maxDailyLoss,
-                        borderColor: 'orange',
-                        borderDash: [5, 5],
-                        borderWidth: 1.5,
-                        label: {
-                            content: 'Max Daily Loss',
-                            enabled: true,
-                            display: true,
-                            position: 'start',
-                            backgroundColor: 'orange',
-                            color: '#fff',
-                            font: {
-                                size: 12,
-                            },
-                            padding: {
-                                top: 10,
-                                bottom: 5,
-                            },
-                        },
-                    },
+                    // maxDailyLoss: {
+                    //     type: 'line',
+                    //     yMin: maxDailyLoss,
+                    //     yMax: maxDailyLoss,
+                    //     borderColor: 'orange',
+                    //     borderDash: [5, 5],
+                    //     borderWidth: 1.5,
+                    //     label: {
+                    //         content: 'Max Daily Loss',
+                    //         enabled: true,
+                    //         display: true,
+                    //         position: 'start',
+                    //         backgroundColor: 'red',
+                    //         color: '#fff',
+                    //         font: {
+                    //             size: 12,
+                    //         },
+                    //         padding: {
+                    //             top: 10,
+                    //             bottom: 5,
+                    //         },
+                    //     },
+                    // },
                 },
             },
             customCanvasBackgroundColor: backgroundColorPlugin(theme === 'dark' ? '#000' : '#fff'),

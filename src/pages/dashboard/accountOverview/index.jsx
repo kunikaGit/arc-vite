@@ -91,6 +91,7 @@ const Accounts = () => {
                                 type="radio"
                                 name="table-data"
                                 value="0.1"
+                                defaultChecked
                                 className=" h-5 w-5 items-center rounded-full border-jacarta-200 text-accent checked:bg-accent focus:ring-accent/20 focus:ring-offset-0 dark:border-jacarta-500 dark:bg-jacarta-600"
                             />
                             <div className="icon"><UserHeart /> </div>

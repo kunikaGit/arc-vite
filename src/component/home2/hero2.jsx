@@ -67,7 +67,7 @@ export default function Hero2() {
                             </h3>
                             <p className="dark:text-jacarta-300 text-jacarta-700">of profit split</p>
                         </div>
-                        <div data-aos="zoom-in" className="main-cards  blue pb-5 relative  hover:text-white rounded-2.5xl  border-jacarta-100 bg-white  shadow-[0_5px_0_0_#8358ff] transition-shadow hover:shadow-[0_16px_24px_-8px_rgba(131,88,255,.3)] dark:border-jacarta-700 dark:bg-jacarta-700">
+                        <div data-aos="zoom-in" className="main-cards  blue pb-5 relative  hover:text-white rounded-2.5xl  border-jacarta-100 bg-white  shadow-[0_5px_0_0_var(--theme-purple)] transition-shadow hover:shadow-[0_16px_24px_-8px_rgba(131,88,255,.3)] dark:border-jacarta-700 dark:bg-jacarta-700">
                             <div className="mb-4   bg-gradient home-cards inline-flex xl:h-[5.5rem] xl:w-[5.5rem] lg:h-[4.5rem] lg:w-[4.5rem] items-center justify-center rounded-full border border-jacarta-100 bg-white dark:border-jacarta-600 dark:bg-jacarta-700">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -83,7 +83,7 @@ export default function Hero2() {
                             </h3>
                             <p className="dark:text-jacarta-300 text-jacarta-700">trading accounts</p>
                         </div>
-                        <div data-aos="zoom-in" className="main-cards  orange  hover:text-white pb-5 relative rounded-2.5xl  border-jacarta-100 bg-white  shadow-[0_5px_0_0_#8358ff] transition-shadow hover:shadow-[0_16px_24px_-8px_rgba(131,88,255,.3)] dark:border-jacarta-700 dark:bg-jacarta-700">
+                        <div data-aos="zoom-in" className="main-cards  orange  hover:text-white pb-5 relative rounded-2.5xl  border-jacarta-100 bg-white  shadow-[0_5px_0_0_var(--theme-purple)] transition-shadow hover:shadow-[0_16px_24px_-8px_rgba(131,88,255,.3)] dark:border-jacarta-700 dark:bg-jacarta-700">
                             <div className="mb-4  bg-gradient home-cards inline-flex xl:h-[5.5rem] xl:w-[5.5rem] lg:h-[4.5rem] lg:w-[4.5rem] items-center justify-center rounded-full border border-jacarta-100 bg-white dark:border-jacarta-600 dark:bg-jacarta-700">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
@@ -99,7 +99,7 @@ export default function Hero2() {
                             </h3>
                             <p className="dark:text-jacarta-300 text-jacarta-700">limit in challenge phase</p>
                         </div>
-                        <div data-aos="zoom-in" className="main-cards  accent  hover:text-white pb-5 relative rounded-2.5xl  border-jacarta-100 bg-white  shadow-[0_5px_0_0_#8358ff] transition-shadow hover:shadow-[0_16px_24px_-8px_rgba(131,88,255,.3)] dark:border-jacarta-700 dark:bg-jacarta-700">
+                        <div data-aos="zoom-in" className="main-cards  accent  hover:text-white pb-5 relative rounded-2.5xl  border-jacarta-100 bg-white  shadow-[0_5px_0_0_var(--theme-purple)] transition-shadow hover:shadow-[0_16px_24px_-8px_rgba(131,88,255,.3)] dark:border-jacarta-700 dark:bg-jacarta-700">
                             <div className="mb-4  bg-gradient home-cards inline-flex xl:h-[5.5rem] xl:w-[5.5rem] lg:h-[4.5rem] lg:w-[4.5rem] items-center justify-center rounded-full border border-jacarta-100 bg-white dark:border-jacarta-600 dark:bg-jacarta-700">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
