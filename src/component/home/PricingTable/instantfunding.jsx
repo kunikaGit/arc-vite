@@ -80,6 +80,51 @@ export default function InstantFunding({ handleOpenModal }) {
             </ul>
           </div>
         </div>
+        {/* Themed Profit Share Table */}
+        <div className="profit-table-card mt-8">
+          <div className="table-header">
+            <h3 className="table-title">Profit Share Structure</h3>
+            <p className="table-subtitle">Earn up to 90% profit share</p>
+          </div>
+          <div className="table-container">
+            <table className="profit-table">
+              <thead>
+                <tr>
+                  <th>Account Balance</th>
+                  <th>Profit Target</th>
+                  <th>Profit Share</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>$5,000</td>
+                  <td>8%</td>
+                  <td>80%</td>
+                </tr>
+                <tr>
+                  <td>$10,000</td>
+                  <td>8%</td>
+                  <td>80%</td>
+                </tr>
+                <tr>
+                  <td>$25,000</td>
+                  <td>8%</td>
+                  <td>80%</td>
+                </tr>
+                <tr>
+                  <td>$50,000</td>
+                  <td>8%</td>
+                  <td>80%</td>
+                </tr>
+                <tr>
+                  <td>$100,000</td>
+                  <td>8%</td>
+                  <td>80%</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
         <div className="mb-8 flex justify-center mt-4" >
           <Link to="/terms-use" className="text-accent text-base">Please check Terms of Use for detailed info</Link>
         </div>

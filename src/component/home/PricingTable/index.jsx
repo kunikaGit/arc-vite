@@ -33,6 +33,28 @@ export default function PricingTable() {
     const [drawdown, setDrawdown] = useState(10);
     const [minTradingDays, setMinTradingDays] = useState(3);
 
+    // Slider configurations
+    const sliderConfig = {
+        accountBalance: {
+            min: 5000,
+            max: 300000,
+            step: 1000,
+            scale: [5000, 10000, 25000, 50000, 75000, 100000, 150000, 200000, 250000, 300000]
+        },
+        drawdown: {
+            min: 5,
+            max: 15,
+            step: 1,
+            scale: [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
+        },
+        minTradingDays: {
+            min: 2,
+            max: 5,
+            step: 1,
+            scale: [2, 3, 4, 5]
+        }
+    };
+
     const [calculatedResult, setCalculatedResult] = useState('');
     const [showCalculatedResult, setShowCalculatedResult] = useState(false)
 
@@ -184,37 +206,16 @@ export default function PricingTable() {
                                 </button>
                             </li>
 
-                            {/* Sweeps */}
-                            <li className="nav-item" role="presentation" >
-                                <button
-                                    className={`tab-button rounded-sm nav-link relative flex items-center whitespace-nowrap py-2 md:px-3 px-2 font-medium
-                                    ${activeTab === "sweeps"
-                                            ? "active text-jacarta-700 dark:text-white"
-                                            : "text-jacarta-400 dark:text-jacarta-200 hover:text-jacarta-700 dark:hover:text-white"
-                                        }`}
-                                    id="sweeps-tab"
-                                    data-bs-toggle="tab"
-                                    data-bs-target="#sweeps"
-                                    type="button"
-                                    role="tab"
-                                    aria-controls="sweeps"
-                                    aria-selected="false"
-                                    tabIndex="-1"
-                                    onClick={() => setActiveTab("sweeps")}>
-                                    <span className="font-medium md:text-medium text-sm">
-                                        Instant Funding
-                                    </span>
-                                </button>
-                            </li>
+
                         </ul>
                         <div className="tab-content mb-2" data-aos="zoom-in" data-aos-duration={800} data-aos-delay="300">
-                            {(activeTab === "trending" || activeTab === "sweeps") && (
+                            {(activeTab === "trending" ) && (
                                 <div className="flex justify-center">
                                     <div className="w-full max-w-4xl">
                                         <div className="calculator-card">
                                             {/* Sliders Container */}
                                             <div className="sliders-container">
-                                                {/* Account Balance Slider */}
+                                                                                                {/* Account Balance Slider */}
                                                 <div className="slider-card balance-card">
                                                     <div className="slider-header">
                                                         <div className="icon-container balance-icon">
@@ -225,22 +226,29 @@ export default function PricingTable() {
                                                             <p className="slider-range">$5,000 - $300,000</p>
                                                         </div>
                                                     </div>
-
+                                                    
                                                     <div className="slider-content">
                                                         <div className="slider-track">
                                                             <input
                                                                 type="range"
-                                                                min={5000}
-                                                                max={300000}
-                                                                step={1000}
+                                                                min={sliderConfig.accountBalance.min}
+                                                                max={sliderConfig.accountBalance.max}
+                                                                step={sliderConfig.accountBalance.step}
                                                                 value={accountBalance}
                                                                 onChange={(e) => handleSliderChange(Number(e.target.value), 'accountBalance')}
                                                                 className="range-slider balance-slider"
                                                             />
-                                                            <div
+                                                            <div 
                                                                 className="slider-progress balance-progress"
-                                                                style={{ width: `${((accountBalance - 5000) / (300000 - 5000)) * 100}%` }}
+                                                                style={{ width: `${((accountBalance - sliderConfig.accountBalance.min) / (sliderConfig.accountBalance.max - sliderConfig.accountBalance.min)) * 100}%` }}
                                                             />
+                                                        </div>
+                                                        <div className="slider-scale">
+                                                            {sliderConfig.accountBalance.scale.map((value, index) => (
+                                                                <div key={index} className="scale-mark">
+                                                                    <span className="scale-label">{formatCurrency(value)}</span>
+                                                                </div>
+                                                            ))}
                                                         </div>
                                                         <div className="value-display">
                                                             <span className="value-text balance-value">{formatCurrency(accountBalance)}</span>
@@ -248,7 +256,7 @@ export default function PricingTable() {
                                                     </div>
                                                 </div>
 
-                                                {/* Drawdown Slider */}
+                                                                                                {/* Drawdown Slider */}
                                                 <div className="slider-card drawdown-card">
                                                     <div className="slider-header">
                                                         <div className="icon-container drawdown-icon">
@@ -259,30 +267,37 @@ export default function PricingTable() {
                                                             <p className="slider-range">5% - 15%</p>
                                                         </div>
                                                     </div>
-
+                                                    
                                                     <div className="slider-content">
                                                         <div className="slider-track">
                                                             <input
                                                                 type="range"
-                                                                min={5}
-                                                                max={15}
+                                                                min={sliderConfig.drawdown.min}
+                                                                max={sliderConfig.drawdown.max}
+                                                                step={sliderConfig.drawdown.step}
                                                                 value={drawdown}
                                                                 onChange={(e) => handleSliderChange(Number(e.target.value), 'drawdown')}
                                                                 className="range-slider drawdown-slider"
                                                             />
-                                                            <div
+                                                            <div 
                                                                 className="slider-progress drawdown-progress"
-                                                                style={{ width: `${((drawdown - 5) / (15 - 5)) * 100}%` }}
+                                                                style={{ width: `${((drawdown - sliderConfig.drawdown.min) / (sliderConfig.drawdown.max - sliderConfig.drawdown.min)) * 100}%` }}
                                                             />
                                                         </div>
+                                                        <div className="slider-scale">
+                                                            {sliderConfig.drawdown.scale.map((value, index) => (
+                                                                <div key={index} className="scale-mark">
+                                                                    <span className="scale-label">{value}%</span>
+                                                                </div>
+                                                            ))}
+                                                        </div>
                                                         <div className="value-display">
-                                                           
                                                             <span className="value-text drawdown-value">{drawdown}%</span>
                                                         </div>
                                                     </div>
                                                 </div>
 
-                                                {/* Trading Days Slider */}
+                                                                                                {/* Trading Days Slider */}
                                                 <div className="slider-card days-card">
                                                     <div className="slider-header">
                                                         <div className="icon-container days-icon">
@@ -293,21 +308,29 @@ export default function PricingTable() {
                                                             <p className="slider-range">2 - 5 days</p>
                                                         </div>
                                                     </div>
-
+                                                    
                                                     <div className="slider-content">
                                                         <div className="slider-track">
                                                             <input
                                                                 type="range"
-                                                                min={2}
-                                                                max={5}
+                                                                min={sliderConfig.minTradingDays.min}
+                                                                max={sliderConfig.minTradingDays.max}
+                                                                step={sliderConfig.minTradingDays.step}
                                                                 value={minTradingDays}
                                                                 onChange={(e) => handleSliderChange(Number(e.target.value), 'minTradingDays')}
                                                                 className="range-slider days-slider"
                                                             />
-                                                            <div
+                                                            <div 
                                                                 className="slider-progress days-progress"
-                                                                style={{ width: `${((minTradingDays - 2) / (5 - 2)) * 100}%` }}
+                                                                style={{ width: `${((minTradingDays - sliderConfig.minTradingDays.min) / (sliderConfig.minTradingDays.max - sliderConfig.minTradingDays.min)) * 100}%` }}
                                                             />
+                                                        </div>
+                                                        <div className="slider-scale">
+                                                            {sliderConfig.minTradingDays.scale.map((value, index) => (
+                                                                <div key={index} className="scale-mark">
+                                                                    <span className="scale-label">{value} {value === 1 ? 'day' : 'days'}</span>
+                                                                </div>
+                                                            ))}
                                                         </div>
                                                         <div className="value-display">
                                                             <span className="value-text days-value">{minTradingDays} {minTradingDays === 1 ? 'day' : 'days'}</span>
