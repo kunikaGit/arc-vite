@@ -240,7 +240,7 @@ color: #fff;
 }
 
 .why-choose-us{
-  background: linear-gradient(to right, #f8e1e7, #e3effd, #f5f9f6);
+  background: linear-gradient(to right,#292662, #3267ed, #292662);
   padding: 50px 0;
 }
 
@@ -740,7 +740,7 @@ color: #fff;
 }
 
 .why-choose-us{
-  background: linear-gradient(to right, #f8e1e7, #e3effd, #f5f9f6)
+  background: linear-gradient(to right,#292662, #3267ed, #292662);
 }
 
 .why-choose-us:is(.dark .dark\:bg-jacarta-900){
