@@ -92,7 +92,10 @@ const Login = () => {
                         </div>
                         <div className='signup-text'>
                             <p>Don’t have an account? <Link to="/signup">Signup</Link></p>
+                            <p>Or</p>
+                            <p><Link to="/">Back to Home</Link></p>
                         </div>
+                        
                     </div>
                     <div className='login-banner'>
                         <div className='logo-box'>
@@ -103,6 +106,7 @@ const Login = () => {
                                 Built for Traders, <br />Backed by Professionals
                             </h2>
                             <img src={imageMap['login.png']} alt='img' style={{ maxWidth: '350px' }} className='m-auto login-side-img' />
+                       
                         </div>
 
                     </div>

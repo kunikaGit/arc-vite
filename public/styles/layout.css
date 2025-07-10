@@ -1,5 +1,4 @@
-/*
-! tailwindcss v3.4.1 | MIT License | https://tailwindcss.com
+/*! tailwindcss v3.4.1 | MIT License | https://tailwindcss.com
 */
 *,
 :after,
@@ -30,6 +29,9 @@ body {
     margin: 0;
     line-height: inherit;
     font-weight: 400;
+    background-color: #100a28;
+    /* background: url(../img/bg.webp);
+    background-size: cover; */
 }
 
 hr {
@@ -601,24 +603,6 @@ select {
     padding-right: 1rem;
     padding-left: 1rem
 }
-
-/* @media (min-width: 575px) {
-    .container {
-        max-width:575px
-    }
-} */
-
-/* @media (min-width: 768px) {
-    .container {
-        max-width:768px
-    }
-} */
-
-/* @media (min-width: 1025px) {
-    .container {
-        max-width:1025px
-    }
-} */
 
 @media (min-width: 1920) {
     .container {
@@ -6768,4 +6752,6 @@ html.dark{
 .bg-blue{
     background-color: var(--theme-purple);
 }
-
+.border-btn{
+    border: 1px solid var(--theme-purple);
+}

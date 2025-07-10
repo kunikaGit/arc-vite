@@ -109,7 +109,7 @@ function Navigation() {
 
 export default function Footer1() {
   return (
-    <footer className="page-footer  dark:bg-jacarta-900">
+    <footer className="page-footer">
       <div className="container">
         <div className="grid grid-cols-6 gap-x-7 gap-y-14 pt-16 pb-12 md:grid-cols-12">
 

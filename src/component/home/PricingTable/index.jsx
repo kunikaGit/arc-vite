@@ -92,13 +92,13 @@ export default function PricingTable() {
         }).format(value);
     };
     return (
-        <section className="pricing-table  bg-white dark:bg-jacarta-900" id="pricing">
+        <section className="pricing-table " id="pricing">
             <div className="container">
                 <div className="mb-4 flex justify-center space-x-4 main-tab-btns">
                     <button
-                        className={`px-4 py-2 rounded-sm font-semibold ${accountTab === "standard"
+                        className={`px-4 py-2 border-btn rounded-sm font-semibold ${accountTab === "standard"
                             ? "bg-blue text-white"
-                            : "bg-gray-200 text-jacarta-700"
+                            : "bg-gray-200 text-white"
                             }`}
                         onClick={() => {
                             setAccountTab("standard");
@@ -108,9 +108,9 @@ export default function PricingTable() {
                         Standard Account
                     </button>
                     <button
-                        className={`px-4 py-2 rounded-sm font-semibold ${accountTab === "customized"
+                        className={`px-4 py-2 rounded-sm border-btn font-semibold ${accountTab === "customized"
                             ? " bg-blue text-white"
-                            : "bg-gray-200 text-jacarta-700"
+                            : "bg-gray-200 text-white"
                             }`}
                         onClick={() => {
                             setAccountTab("customized");
@@ -125,15 +125,15 @@ export default function PricingTable() {
                     <div className="child-tabs overflow-x-auto">
                         <ul
                             data-aos-duration={600} data-aos="fade-down"
-                            className="bg-[#f5f5fa] nav nav-tabs mb-8 flex items-center space-x-1 sm:space-x-3 justify-center  dark:bg-jacarta-700"
+                            className="nav nav-tabs mb-8 flex items-center space-x-1 sm:space-x-3 justify-center  dark:bg-jacarta-700"
                             role="tablist">
                             {/* Trending */}
                             <li className="nav-item" role="presentation">
                                 <button
                                     className={`tab-button rounded-sm nav-link relative flex items-center whitespace-nowrap py-2 md:px-3 px-2 
                                     ${activeTab === "trending"
-                                            ? "active text-jacarta-700 dark:text-white"
-                                            : "text-jacarta-400 dark:text-jacarta-200 hover:text-jacarta-700 dark:hover:text-white"
+                                            ? "active text-jacarta-700"
+                                            : "text-white"
                                         }`}
                                     id="trending-tab"
                                     data-bs-toggle="tab"
@@ -152,8 +152,8 @@ export default function PricingTable() {
                                 <button
                                     className={`tab-button rounded-sm nav-link relative flex items-center whitespace-nowrap py-2 md:px-3 px-2 font-medium
                                     ${activeTab === "sweeps"
-                                            ? "active text-jacarta-700 dark:text-white"
-                                            : "text-jacarta-400 dark:text-jacarta-200 hover:text-jacarta-700 dark:hover:text-white"
+                                            ? "active text-white"
+                                            : "text-jacarta-400 "
                                         }`}
                                     id="sweeps-tab"
                                     data-bs-toggle="tab"
@@ -182,15 +182,15 @@ export default function PricingTable() {
                     <div className="child-tabs overflow-x-auto">
                         <ul
                             data-aos-duration={600} data-aos="fade-down"
-                            className="bg-[#f5f5fa] p-0 common-nav-header nav nav-tabs mb-8 flex items-center space-x-1 sm:space-x-3 justify-center  dark:bg-jacarta-700"
+                            className=" p-0 common-nav-header nav nav-tabs mb-8 flex items-center space-x-1 sm:space-x-3 justify-center  dark:bg-jacarta-700"
                             role="tablist">
                             {/* Trending */}
                             <li className="nav-item" role="presentation">
                                 <button
-                                    className={`tab-button rounded-sm nav-link relative flex items-center whitespace-nowrap py-2 md:px-3 px-2 font-medium
+                                    className={` active tab-button rounded-sm nav-link relative flex items-center whitespace-nowrap py-2 md:px-3 px-2 font-medium
                                     ${activeTab === "trending"
-                                            ? "active text-jacarta-700 dark:text-white"
-                                            : "text-jacarta-400 dark:text-jacarta-200 hover:text-jacarta-700 dark:hover:text-white"
+                                            ? "active  dark:text-white"
+                                            : "text-jacarta-400"
                                         }`}
                                     id="trending-tab"
                                     data-bs-toggle="tab"
@@ -209,13 +209,13 @@ export default function PricingTable() {
 
                         </ul>
                         <div className="tab-content mb-2" data-aos="zoom-in" data-aos-duration={800} data-aos-delay="300">
-                            {(activeTab === "trending" ) && (
+                            {(activeTab === "trending") && (
                                 <div className="flex justify-center">
                                     <div className="w-full max-w-4xl">
                                         <div className="calculator-card">
                                             {/* Sliders Container */}
                                             <div className="sliders-container">
-                                                                                                {/* Account Balance Slider */}
+                                                {/* Account Balance Slider */}
                                                 <div className="slider-card balance-card">
                                                     <div className="slider-header">
                                                         <div className="icon-container balance-icon">
@@ -226,7 +226,7 @@ export default function PricingTable() {
                                                             <p className="slider-range">$5,000 - $300,000</p>
                                                         </div>
                                                     </div>
-                                                    
+
                                                     <div className="slider-content">
                                                         <div className="slider-track">
                                                             <input
@@ -238,7 +238,7 @@ export default function PricingTable() {
                                                                 onChange={(e) => handleSliderChange(Number(e.target.value), 'accountBalance')}
                                                                 className="range-slider balance-slider"
                                                             />
-                                                            <div 
+                                                            <div
                                                                 className="slider-progress balance-progress"
                                                                 style={{ width: `${((accountBalance - sliderConfig.accountBalance.min) / (sliderConfig.accountBalance.max - sliderConfig.accountBalance.min)) * 100}%` }}
                                                             />
@@ -256,7 +256,7 @@ export default function PricingTable() {
                                                     </div>
                                                 </div>
 
-                                                                                                {/* Drawdown Slider */}
+                                                {/* Drawdown Slider */}
                                                 <div className="slider-card drawdown-card">
                                                     <div className="slider-header">
                                                         <div className="icon-container drawdown-icon">
@@ -267,7 +267,7 @@ export default function PricingTable() {
                                                             <p className="slider-range">5% - 15%</p>
                                                         </div>
                                                     </div>
-                                                    
+
                                                     <div className="slider-content">
                                                         <div className="slider-track">
                                                             <input
@@ -279,7 +279,7 @@ export default function PricingTable() {
                                                                 onChange={(e) => handleSliderChange(Number(e.target.value), 'drawdown')}
                                                                 className="range-slider drawdown-slider"
                                                             />
-                                                            <div 
+                                                            <div
                                                                 className="slider-progress drawdown-progress"
                                                                 style={{ width: `${((drawdown - sliderConfig.drawdown.min) / (sliderConfig.drawdown.max - sliderConfig.drawdown.min)) * 100}%` }}
                                                             />
@@ -297,7 +297,7 @@ export default function PricingTable() {
                                                     </div>
                                                 </div>
 
-                                                                                                {/* Trading Days Slider */}
+                                                {/* Trading Days Slider */}
                                                 <div className="slider-card days-card">
                                                     <div className="slider-header">
                                                         <div className="icon-container days-icon">
@@ -308,7 +308,7 @@ export default function PricingTable() {
                                                             <p className="slider-range">2 - 5 days</p>
                                                         </div>
                                                     </div>
-                                                    
+
                                                     <div className="slider-content">
                                                         <div className="slider-track">
                                                             <input
@@ -320,7 +320,7 @@ export default function PricingTable() {
                                                                 onChange={(e) => handleSliderChange(Number(e.target.value), 'minTradingDays')}
                                                                 className="range-slider days-slider"
                                                             />
-                                                            <div 
+                                                            <div
                                                                 className="slider-progress days-progress"
                                                                 style={{ width: `${((minTradingDays - sliderConfig.minTradingDays.min) / (sliderConfig.minTradingDays.max - sliderConfig.minTradingDays.min)) * 100}%` }}
                                                             />
@@ -362,17 +362,6 @@ export default function PricingTable() {
                                 </div>
                             )}
                         </div>
-
-
-                        {/* {showCalculatedResult &&
-                            <div className="sub-box">
-                                <div className="mb-5">
-                                    <h2 className="text-5xl text-center font-semibold text-jacarta-700 dark:text-white">{calculatedResult} Account</h2>
-                                </div>
-                                <button className="block mx-auto text-md rounded-full bg-accent py-2 w-[200px] text-center font-semibold text-white shadow-accent-volume transition-all hover:bg-accent-dark">
-                                    Start Now
-                                </button>
-                            </div>} */}
                     </div>
 
                 )}

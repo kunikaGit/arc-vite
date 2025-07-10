@@ -16,7 +16,7 @@ const DashboardHeader = ({ title }) => {
     const navigate = useNavigate();
 
     const isLoggedIn = useSelector((state) => state.auth);
-
+console.log(isLoggedIn)
     useEffect(()=>{
             setName(isLoggedIn.name)
     setProfile(isLoggedIn.profile)

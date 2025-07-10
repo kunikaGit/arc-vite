@@ -97,29 +97,39 @@ export default function InstantFunding({ handleOpenModal }) {
               </thead>
               <tbody>
                 <tr>
+                  <td>$2,500</td>
+                  <td>5%</td>
+                  <td>50%</td>
+                </tr>
+                <tr>
                   <td>$5,000</td>
-                  <td>8%</td>
-                  <td>80%</td>
+                  <td>5%</td>
+                  <td>50%</td>
                 </tr>
                 <tr>
                   <td>$10,000</td>
-                  <td>8%</td>
-                  <td>80%</td>
+                  <td>5%</td>
+                  <td>50%</td>
                 </tr>
                 <tr>
-                  <td>$25,000</td>
-                  <td>8%</td>
-                  <td>80%</td>
+                  <td>$20,000</td>
+                  <td>5%</td>
+                  <td>50%</td>
                 </tr>
                 <tr>
-                  <td>$50,000</td>
-                  <td>8%</td>
-                  <td>80%</td>
+                  <td>$40,000</td>
+                  <td>5%</td>
+                  <td>50%</td>
+                </tr>
+                <tr>
+                  <td>$80,000</td>
+                  <td>5%</td>
+                  <td>50%</td>
                 </tr>
                 <tr>
                   <td>$100,000</td>
-                  <td>8%</td>
-                  <td>80%</td>
+                  <td>5%</td>
+                  <td>50%</td>
                 </tr>
               </tbody>
             </table>
@@ -131,7 +141,7 @@ export default function InstantFunding({ handleOpenModal }) {
       </div>
       <div className="sub-box">
         <div className="mb-5">
-          <h2 className="text-3xl text-center font-semibold text-jacarta-700 dark:text-white">${parseFloat(selected.price).toFixed(0)} For {selected.account_size} Account</h2>
+          <h2 className="text-3xl text-center font-semibold text-white">${parseFloat(selected.price).toFixed(0)} For {selected.account_size} Account</h2>
         </div>
           <button className="fnx-purple-btn flex m-auto" onClick={handleClick}>
             <span className="btn-label">Start Now</span>

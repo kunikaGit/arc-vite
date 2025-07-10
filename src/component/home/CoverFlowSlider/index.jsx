@@ -126,7 +126,7 @@ import {Link} from "react-router-dom";
 
 export default function CoverFlowSlider() {
   return (
-    <div className="relative px-6 md:pb-16 pb-2 sm:px-0 dark:bg-black slider-section" >
+    <div className="relative px-6 !pb-0 sm:px-0 slider-section" >
       <Swiper
         breakpoints={{
           // when window width is >= 640px
@@ -174,7 +174,7 @@ export default function CoverFlowSlider() {
           nextEl: ".snbn7",
           prevEl: ".snbp7",
         }}
-        className="swiper coverflow-slider !py-5"
+        className="swiper coverflow-slider !pt-5"
       >
         {collections4.map((elm, i) => (
           <SwiperSlide key={i} autoplay={true}>
