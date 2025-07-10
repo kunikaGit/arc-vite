@@ -3,35 +3,17 @@ import imageMap from "../../../utlis/helper";
 
 export default function Calltoaction() {
   return (
-    <div className="relative z-10 -mt-10 bg-white dark:bg-jacarta-900">
+    <div className="relative z-10 py-5">
       <div className="container">
-        <div className="relative overflow-hidden rounded-2.5xl md:px-16 px-6 pt-16 pb-8 shadow-md lg:px-24">
-          <picture className="pointer-events-none absolute inset-0 -z-10 dark:hidden" data-aos="fade-down" data-aos-duration={600}>
-            <img
-              width={1920}
-              height={789}
-              src="/img/gradient_light.jpg"
+        <div className="relative overflow-hidden rounded-2.5xl md:px-16 px-6 pt-16 pb-0 lg:px-24">
 
-              priority
-              alt="gradient"
-              className="h-full w-full"
-            />
-          </picture>
-          <picture className="pointer-events-none absolute inset-0 -z-10 hidden dark:block" data-aos="fade-down" data-aos-duration={600}>
-            <img
-              width={1920}
-              height={900}
-              src="/img/gradient_dark.jpg"
-              alt="gradient dark"
-              className="h-full w-full"
-            />
-          </picture>
           <div className="items-center justify-between md:flex">
             <div className="mb-6 md:w-1/2">
-              <h2 data-aos="fade-down" data-aos-duration={600} className="mb-4 font-display md:text-2xl text-xl text-jacarta-700 dark:text-white sm:text-3xl uppercase">
+              <h2 data-aos="fade-down" data-aos-duration={600}
+                className="mb-4 font-display md:text-2xl text-xl text-white sm:text-3xl uppercase">
                 discover your potential and become a trader
               </h2>
-              <p className="mb-8 text-lg dark:text-jacarta-300">
+              <p className="mb-8 text-lg  text-white ">
                 Join the Leading Prop Firm<br />
               </p>
               <div className="call-links">
@@ -54,9 +36,9 @@ export default function Calltoaction() {
             </div>
             <img
               data-aos="fade-down" data-aos-duration={600}
-              width={340}
+              width={440}
               height={300}
-              src='img/start.svg'
+              src='img/upgrate.png'
               alt="image"
             />
           </div>

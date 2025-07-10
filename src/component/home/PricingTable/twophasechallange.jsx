@@ -52,7 +52,7 @@ export default function TwoPhase({ handleOpenModal }) {
                   : "  border-gray-400 dark:border-gray-500 text-gray-700 dark:text-white"
                   }`}
               >
-                {account.account_size}
+                {account?.account_size}
               </span>
             </label>
           </div>
@@ -144,7 +144,7 @@ export default function TwoPhase({ handleOpenModal }) {
 
       <div className="sub-box">
         <div className="mb-5">
-          <h2 className="md:text-3xl text-xl text-center font-semibold text-jacarta-700 dark:text-white">${parseFloat(selected.price).toFixed(0)} For {selected.account_size} Account</h2>
+          <h2 className="md:text-3xl text-xl text-center font-semibold text-white">${parseFloat(selected.price).toFixed(0)} For {selected.account_size} Account</h2>
         </div>
           <button className="fnx-purple-btn flex m-auto" onClick={handleClick}>
             <span className="btn-label">Start Now</span>

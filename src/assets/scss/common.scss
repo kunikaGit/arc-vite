@@ -103,13 +103,13 @@
         .MuiOutlinedInput-root {
             font-weight: 600;
             font-size: 16px;
-            color: #697284;
+            color: #fff;
             border: none;
             text-align: center;
 
             svg {
                 path {
-                    fill: #697284;
+                    fill: #fff;
                 }
             }
         }
@@ -149,36 +149,17 @@
     z-index: 1200;
     box-shadow: 0 4px 8px 0 #cccccc7a;
 }
+.section-heading{
+    font-size: 50px;
+    color: var(--color-white);
+}
 
-
-
-// .particles-bg {
-//   position: absolute !important;
-//   top: 0;
-//   left: 0;
-//   width: 100% !important;
-//   height: 100% !important;
-//   z-index: 0;
-//   pointer-events: none;
-// }
-
-// .hero {
-//   position: relative;
-//   min-height: 100vh;
-//   overflow: hidden;
-// }
-
-// .content-wrapped {
-//   position: relative;
-//   z-index: 2;
-// }
 
 
 .hero {
     position: relative;
-    padding-bottom: 40px;
+    padding-bottom: 0;
     overflow-x: hidden;
-    // height: 95vh;
 
     &::after {
         content: "";

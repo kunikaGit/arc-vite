@@ -79,20 +79,19 @@ const platformOptions = Object.keys(otherPlatforms).map(name => ({ title: name }
 export default function WhyChoose() {
   const [selectedCompany, setSelectedCompany] = useState("FTMO");
   return (
-    <section className="relative why-choose-us dark:bg-jacarta-900" >
+    <section className="relative " >
       <div className="container">
         <div className="mx-auto md:mb-16 mb-10 max-w-xl text-center" data-aos-duration={600} data-aos="fade-down" >
-          <h2 className="mb-2 text-center md:text-3xl text-xl text-jacarta-700 dark:text-white">
-            Why Choose ARC</h2>
+          <h2 className="section-heading"> Why Choose ARC</h2>
           <p className="animate-gradient text-lg font-bold">
             Compare Markets
           </p>
         </div>
         <div data-aos-duration={800} data-aos="zoom-in" data-aos-delay="300"
-          className="table-wrapped rounded-2lg mb-10 border border-jacarta-100 bg-white text-sm dark:border-jacarta-600 dark:bg-gray-900 dark:text-white">
+          className="table-wrapped rounded-2lg mb-10 text-sm">
           <div className="relative overflow-x-auto shadow-md sm:rounded-lg ">
             <table
-              className="w-full bg-white  text-sm text-left rtl:text-right text-black dark:text-gray-400 border-jacarta-100 border-t">
+              className="w-full text-sm text-left rtl:text-right text-black dark:text-gray-400">
               <thead className="text-base uppercase">
                 <tr className="table-heading">
                   <th scope="col" className=" text-white">VARIABLES</th>
@@ -128,17 +127,17 @@ export default function WhyChoose() {
                 {whychoose.map((item, index) => (
                   <tr
                     key={index}
-                    className="border-t border-jacarta-100 py-2 px-4 transition-shadow hover:shadow-lg dark:border-jacarta-600 dark:bg-jacarta-900"
+                    className="py-2 px-4 transition-shadow hover:shadow-lg "
                   >
                     <th  scope="row">
                       {item.name}
                     </th>
-                    <td className="w-1/3  text-center dark:text-white min-w-36">
+                    <td className="w-1/3  text-center min-w-36">
                       <div className="flex justify-center items-center">
                         {item.arc}
                       </div>
                     </td>
-                    <td className="w-1/3  text-center dark:text-white min-w-30">
+                    <td className="w-1/3  text-center min-w-30">
                       <div className="flex justify-center items-center">
                         {otherPlatforms[selectedCompany][index]}
                       </div>

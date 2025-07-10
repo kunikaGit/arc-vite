@@ -240,7 +240,7 @@ color: #fff;
 }
 
 .why-choose-us{
-  background: linear-gradient(to right, #f8e1e7, #e3effd, #f5f9f6);
+  /* background: linear-gradient(to right, #f8e1e7, #e3effd, #f5f9f6); */
   padding: 50px 0;
 }
 
@@ -250,22 +250,28 @@ color: #fff;
 
 .why-choose-us table th{
   font-weight: 600;
-  color: #000;
+  color: #fff;
 }
 /* .why-choose-us table .table-heading{
   background-color: var(--theme-purple);
 } */
+ .why-choose-us table tr{
+  border-bottom: 1px solid #cccccc35;
+ }
 .why-choose-us table th,td{
-  color: oklch(0.551 0.027 264.364);
-  padding: 20px;
+  color: #fff;
+  padding: 30px 20px;
   font-size: 18px;
 }
 .why-choose-us table{
  margin-bottom: 30px;
+  border-bottom: 1px solid #cccccc35;
 }
 .why-choose-us .table-wrapped{
   width: 70%;
   margin: auto;
+  background: linear-gradient(127.09deg, rgba(6, 11, 40, 0.94) 19.41%, rgba(10, 14, 35, 0.49) 76.65%) border-box;
+  box-shadow: rgba(0, 0, 0, 0.4) 0px 20px 40px 0px;
 }
 .why-choose-us h2{
   font-weight: 600;
@@ -740,7 +746,9 @@ color: #fff;
 }
 
 .why-choose-us{
-  background: linear-gradient(to right, #f8e1e7, #e3effd, #f5f9f6)
+  /* background: linear-gradient(to right, #f8e1e7, #e3effd, #f5f9f6) */
+  background: url(../img/bg.webp);
+    background-size: cover;
 }
 
 .why-choose-us:is(.dark .dark\:bg-jacarta-900){
@@ -748,7 +756,7 @@ color: #fff;
 }
 
 .why-choose-us table th,td{
-  color: oklch(0.551 0.027 264.364);
+  color: #fff;
 }
 
 .hero-main{
@@ -817,12 +825,11 @@ color: #fff;
   margin-bottom: 80px;
 }
 .slider-section{
-  /* background: linear-gradient(to bottom, #1a031f, rgba(255, 255, 255, 0.444)); */
   position: relative;
-  padding-bottom: 50px;
+  padding-bottom: 0;
 }
 
-.slider-section::before {
+/* .slider-section::before {
   content: "";
   position: absolute;
   top: 0px;
@@ -831,10 +838,10 @@ color: #fff;
   height: 200px;
   background: #06000f;
   clip-path: ellipse(100% 100px at 50% 0%)
-}
-.slider-section:is(.dark .dark\:bg-black){
+} */
+/* .slider-section:is(.dark .dark\:bg-black){
   background: linear-gradient(to bottom, #1a031f, rgb(13 16 45/1));
-}
+} */
 
 
 

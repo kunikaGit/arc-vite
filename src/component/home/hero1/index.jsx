@@ -15,7 +15,7 @@ export default function Hero1() {
   }, []);
 
   return (
-    <section className="hero relative py-20 md:pt-32" style={{ backgroundColor: 'rgb(0 1 1)' }}>
+    <section className="hero relative py-20 md:pt-32">
       <picture className="pointer-events-none absolute top-0 left-0 roated-90 z-10"  >
         <ShadeImage />
       </picture>
