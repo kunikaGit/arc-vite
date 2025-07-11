@@ -737,7 +737,9 @@
   font-size: 16px;
   border-radius: 12px;
 }
-
+.sub-box {
+    text-align: center;
+}
 
 
 

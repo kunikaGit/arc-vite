@@ -30,7 +30,7 @@ export default function Hero1() {
           <div className="two-grid">
             <div className="four-cards">
               <div className="card-value">
-                <img src={imageMap['database.png']} alt="icon" />
+                <img src={imageMap['allocation.png']} alt="icon" />
                 <h3>Up to 90%</h3>
                 <span>of profit split</span>
               </div>
@@ -51,10 +51,10 @@ export default function Hero1() {
               </div>
             </div>
           </div>
-          <button className="fnx-purple-btn">
+          <a className="fnx-purple-btn" href="#pricing">
             <span className="btn-label">Start Challenge</span>
             <span className="btn-shine"></span>
-          </button>
+          </a>
 
         </div>
         <CoverFlowSlider />

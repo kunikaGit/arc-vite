@@ -147,7 +147,8 @@
 
 .sticky-header {
     z-index: 1200;
-    box-shadow: 0 4px 8px 0 #cccccc7a;
+    box-shadow: 0 4px 8px 0 rgb(48 44 44 / 48%);
+    background-color: #160559;
 }
 .section-heading{
     font-size: 50px;
@@ -321,6 +322,7 @@
 // =================shining button css===========================
 .fnx-purple-btn {
     position: relative;
+    display: inline-block;
     padding: 14px 36px;
     border: none;
     border-radius: 16px;
