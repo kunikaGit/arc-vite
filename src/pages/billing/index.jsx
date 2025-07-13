@@ -8,7 +8,7 @@ const Billing = () => {
         <>
             <DashboardHeader title="Billing" />
             <div className='billing-wrapped'>
-                <div className="theme_card bg-grey data-table mb-5">
+                <div className="theme_card dark-gradient data-table mb-5">
                     <table className="w-full">
                         <thead>
                             <tr>

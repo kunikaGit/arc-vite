@@ -7,6 +7,7 @@ import { Autocomplete, Box, FormControl, InputLabel, MenuItem, Select, TextField
 import { styled } from '@mui/material/styles';
 import { DownIcon, UserHeart } from "../../../icons/icons";
 import { FilterIcon } from "lucide-react";
+import CreativeFilters from "./accountFilter";
 
 const trades = [
     { position: "Buy", lot: 1.5, entry: 1.1250, tp: 1.1350, sl: 1.1200, pips: 100, profitLoss: "$150" },
@@ -46,8 +47,8 @@ const Accounts = () => {
     return (
         <>
             <DashboardHeader title="Account Overview" />
-            <div className="accounts-overview-wrapped">
-                <div className="filters">
+            <div className="accounts-overview-wrapped ">
+                {/* <div className="filters dark-gradient">
                     <div className='input-main-data select-mui-vs'>
                         <Autocomplete
                             autoComplete={false}
@@ -82,10 +83,11 @@ const Accounts = () => {
                         className="purple_bordered">
                         Start Now
                     </Link>
-                </div>
+                </div> */}
+                <CreativeFilters/>
                 <div className="card-container">
 
-                    <div className="theme_card bg-grey mb-5  gap-5 card-content ">
+                    <div className="theme_card dark-gradient mb-5  gap-5 card-content ">
                         <div className="overview flex items-center gap-x-3 w-full">
                             <input
                                 type="radio"
@@ -106,7 +108,7 @@ const Accounts = () => {
                         </div>
                     </div>
 
-                    <div className="theme_card bg-grey mb-5  gap-5 card-content">
+                    <div className="theme_card dark-gradient mb-5  gap-5 card-content">
                         <div className="overview flex items-center gap-x-3 w-full">
                             <input
                                 type="radio"
@@ -125,7 +127,7 @@ const Accounts = () => {
                         </div>
                     </div>
 
-                    <div className="theme_card bg-grey mb-5  gap-5 card-content">
+                    <div className="theme_card dark-gradient mb-5  gap-5 card-content">
                         <div className="overview flex  gap-x-3 w-full items-center">
                             <input
                                 type="radio"
@@ -145,7 +147,7 @@ const Accounts = () => {
                     </div>
 
                 </div>
-                <div className="theme_card bg-grey data-table">
+                <div className="theme_card dark-gradient data-table">
                     <table className="w-full">
                         <thead>
                             <tr>

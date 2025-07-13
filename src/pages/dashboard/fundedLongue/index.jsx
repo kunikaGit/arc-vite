@@ -8,7 +8,7 @@ const FundedLongue = () => {
         <>
             <DashboardHeader title="Traders Withdrawal" />
             <div className="accounts-overview-wrapped">
-                <div className="theme_card  md:flex-row flex-col bg-grey mb-5 flex items-center gap-5 ">
+                <div className="theme_card  md:flex-row flex-col dark-gradient mb-5 flex items-center gap-5 ">
                     <div className="icon"><UserHeart /> </div>
                     <div className="overview flex justify-between w-full md:flex-row flex-col">
                         <div className="mb-3 md:mb-0 funded-content ">
@@ -26,7 +26,7 @@ const FundedLongue = () => {
                         </div>
                     </div>
                 </div>
-                <div className="theme_card bg-grey mb-5 flex items-center gap-5 md:flex-row flex-col">
+                <div className="theme_card dark-gradient mb-5 flex items-center gap-5 md:flex-row flex-col">
                     <div className="icon"><UserHeart /> </div>
                     <div className="overview flex justify-between w-full md:flex-row flex-col">
                         <div className="mb-3 md:mb-0 funded-content ">
@@ -44,7 +44,7 @@ const FundedLongue = () => {
                         </div>
                     </div>
                 </div>
-                <div className="theme_card bg-grey mb-5 flex items-center gap-5 md:flex-row flex-col">
+                <div className="theme_card dark-gradient mb-5 flex items-center gap-5 md:flex-row flex-col">
                     <div className="icon"><UserHeart /> </div>
                     <div className="overview flex justify-between w-full md:flex-row flex-col">
                         <div className="mb-3 md:mb-0 funded-content ">
