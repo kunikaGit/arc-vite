@@ -44,7 +44,7 @@ export default function InstantFunding({ handleOpenModal }) {
 
   ]])
 
-  const [pricingTableIndex,setPricingTableIndex] = useState(0)
+  const [pricingTableIndex,setPricingTableIndex] = useState(2)
   useEffect(() => {
     if (instantFundingPlans.length > 2) {
       setSelected(instantFundingPlans[2]);
