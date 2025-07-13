@@ -21,6 +21,7 @@ import { useNavigate } from 'react-router-dom';
 import { logout } from '../src/redux/slice/authSlice.js'
 import { useDispatch, useSelector } from 'react-redux'
 import {autoLogout} from "../src/utlis/autoLogout.js"
+import TradingDashboard from "./dashboard-components/TradingDashboard.jsx";
 export default function App() {
     const navigate = useNavigate();
   const { auth_token } = useSelector((state) => state.auth);
@@ -65,7 +66,7 @@ useEffect(() => {
 
         {/* -----------for dashboard routing--------------- */}
         <Route path="/dashboard" element={<DashboardLayout />}>
-          <Route index element={<Accounts />} />
+          <Route index element={<TradingDashboard />} />
           <Route path="/dashboard/account-overview" element={<AccountOverview />} />
           <Route path="/dashboard/withdrawal" element={<FundedLongue />} />
           <Route path="/dashboard/withdrawal/step2" element={<WithdrawalStep2 />} />

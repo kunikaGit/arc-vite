@@ -1,0 +1,228 @@
+.trading-journal {
+  // background-color: #2d2d2d !important;
+  // border: 1px solid #444;
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 20px;
+  
+  .header {
+    margin-bottom: 20px;
+    
+    .title {
+      color: white;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      
+      .info-icon {
+        font-size: 18px;
+        color: #b0b0b0;
+      }
+    }
+  }
+  
+  .controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 20px;
+    .search-content{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .left-controls {
+      
+      .order-label {
+        color: #e5e1e1;
+        font-size: 16px;
+      }
+      
+      .order-select {
+        width: 200px;
+        .MuiSelect-select {
+          color: white;
+          font-size: 13px;
+          padding: 10px 12px;
+        }
+        
+        .MuiOutlinedInput-notchedOutline {
+          border-color: #555;
+        }
+        
+        &:hover .MuiOutlinedInput-notchedOutline {
+          border-color: #4fd1c7;
+        }
+      }
+    }
+    
+    .center-controls {
+      
+      .search-label {
+      color: #e5e1e1;
+        font-size: 16px;
+      }
+      
+      .search-container {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        border: 1px solid #555;
+        border-radius: 5px;
+        .search-input {
+          width: 200px;
+          .MuiOutlinedInput-root {
+            color: white;
+            font-size: 13px;
+            .MuiOutlinedInput-notchedOutline {
+              border: none;
+            }
+            
+            &:hover .MuiOutlinedInput-notchedOutline {
+              border-color: #4fd1c7;
+            }
+          }
+        }
+        
+        .search-button {
+          color: #b0b0b0;
+          
+          &:hover {
+            color: #4fd1c7;
+          }
+        }
+      }
+    }
+    
+    .right-controls {
+      .export-button {
+        background-color: #4285f4;
+        color: white;
+        font-size: 13px;
+        text-transform: none;
+        
+        &:hover {
+          background-color: #3367d6;
+        }
+      }
+    }
+  }
+  
+  .table-container {
+    background-color: transparent;
+    padding: 0;
+    .MuiTable-root {
+      .MuiTableHead-root {
+        .MuiTableCell-root {
+          background-color: #3a3a3a;
+          color: white;
+          font-weight: 500;
+          border-bottom: 1px solid #555;
+          padding: 8px 12px;
+          font-size: 12px;
+          white-space: nowrap;
+        }
+      }
+      
+      .MuiTableBody-root {
+        .MuiTableRow-root {
+          &:hover {
+            background-color: #363636;
+          }
+          
+          .MuiTableCell-root {
+            border-bottom: 1px solid #555;
+            padding: 8px 12px;
+            font-size: 12px;
+            color: white;
+            
+            &.ticket-cell {
+              color: #b0b0b0;
+            }
+            
+            &.time-cell {
+              .time-detail {
+                color: #b0b0b0;
+                font-size: 11px;
+              }
+            }
+            
+            &.symbol-cell {
+              color: #4fd1c7;
+              font-weight: 500;
+            }
+            
+            &.profit-positive {
+              color: #28a745;
+            }
+            
+            &.profit-negative {
+              color: #dc3545;
+            }
+            
+            &.pips-positive {
+              color: #28a745;
+            }
+            
+            &.pips-negative {
+              color: #dc3545;
+            }
+            
+            &.duration-cell {
+              color: #b0b0b0;
+            }
+            
+            .type-chip {
+              font-size: 11px;
+              height: 20px;
+              
+              &.buy {
+                background-color: rgba(40, 167, 69, 0.2);
+                color: #28a745;
+              }
+              
+              &.sell {
+                background-color: rgba(220, 53, 69, 0.2);
+                color: #dc3545;
+              }
+            }
+            
+            .refresh-icon {
+              color: #b0b0b0;
+              
+              &:hover {
+                color: #4fd1c7;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
+  .pagination {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #555;
+    
+    .MuiTypography-root {
+      color: #b0b0b0;
+      font-size: 12px;
+      
+      &.next-page {
+        color: #4fd1c7;
+        cursor: pointer;
+        
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}

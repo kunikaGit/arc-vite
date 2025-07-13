@@ -1,0 +1,44 @@
+.account-metrix {
+  background-color: transparent!important;
+  margin-bottom: 20px;
+  .header-section {
+    border-radius: 8px;
+    padding: 20px;  
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    background: linear-gradient(127.09deg, rgba(6, 11, 40, 0.94) 19.41%, rgba(10, 14, 35, 0.49) 76.65%) border-box!important;
+
+    .title {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: white;
+      font-weight: 500;
+      
+      .title-icon {
+        color:var(--theme-purple);
+      }
+    }
+    
+  }
+  .button-group {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    
+    .MuiButton-root {
+      border-color:var(--theme-purple);
+      color: #fff;
+      font-size: 16px;
+      padding: 6px 20px;
+      
+      &:hover {
+        border-color:var(--theme-purple);
+        background-color: rgba(79, 209, 199, 0.1);
+      }
+    }
+  }
+  
+}
