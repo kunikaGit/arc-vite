@@ -25,16 +25,14 @@ export default function Home() {
                 <div id="pricing" className="hotbids-section" data-speed="1.5">
                     <PricingTable />
                 </div>
-                {/* <div className="collections-section" data-speed="2">
-                    <Testimonials />
-                </div> */}
+ 
                 <div className="why-choose-us">
-                <div className="categories-section " data-speed="2.5">
-                    <WhyChoose />
-                </div>
-                <div className="categories-section" data-speed="3">
-                    <Calltoaction />
-                </div>
+                    <div className="categories-section " data-speed="2.5">
+                        <WhyChoose />
+                    </div>
+                    <div className="categories-section" data-speed="3">
+                        <Calltoaction />
+                    </div>
                 </div>
                 <div className="button-box">
                     <div className="liquid"></div>

@@ -419,7 +419,7 @@ box-shadow: none;
 }
 
 .purple_bordered{
-  background-color: transparent;
+  background-color: var(--theme-purple);
   border: 1px solid var(--theme-purple);
   padding: 10px 20px;
   border-radius: 50px;

@@ -6,22 +6,7 @@ export const menu = [{ id: 1, href: "/arc-home", text: "ARC Home" }];
 
 export default function Nav2() {
     const location = useLocation();
-    const [isScrolled, setIsScrolled] = useState(false);
     const isLogin = useSelector((state) => state.auth.isAuthenticated); // adjust path as per your state
-    useEffect(() => {
-        const handleScroll = () => {
-            if (window.scrollY > 50) { // Change color after scrolling 50px
-                setIsScrolled(true);
-            } else {
-                setIsScrolled(false);
-            }
-        };
-
-        window.addEventListener("scroll", handleScroll);
-        return () => window.removeEventListener("scroll", handleScroll);
-    }, []);
-
-
 
     return (
         <>
@@ -29,7 +14,6 @@ export default function Nav2() {
                 <Link
                     to="/"
                     className={`dropdown-toggle flex items-center justify-between py-3.5  uppercase text-base dark:text-white
-                         ${isScrolled ? "dark-text dark:text-white" : ""}
                         hover:text-accent focus:text-accent text-jacarta-700 dark:hover:text-accent dark:focus:text-accent lg:px-5`}
                     id="navDropdown-1"
                     aria-expanded="false"
@@ -42,7 +26,6 @@ export default function Nav2() {
                 <Link
                     to="/faq"
                     className={`dropdown-toggle flex items-center justify-between py-3.5  uppercase text-base dark:text-white
-                   ${isScrolled ? "dark-text dark:text-white" : ""}
                 hover:text-accent focus:text-accent text-jacarta-700 dark:hover:text-accent dark:focus:text-accent lg:px-5`}>
                     FAQ
                 </Link>
@@ -51,8 +34,7 @@ export default function Nav2() {
             <li className="group">
                 <Link
                     to="/about-us"
-                    className={`dropdown-toggle flex items-center justify-between py-3.5  uppercase text-base dark:text-white
-                       ${isScrolled ? "dark-text dark:text-white" : ""} 
+                    className={`dropdown-toggle flex items-center justify-between py-3.5  uppercase text-base dark:text-white 
                 hover:text-accent focus:text-accent text-jacarta-700 dark:hover:text-accent dark:focus:text-accent lg:px-5`}>
                     About Us
                 </Link>
@@ -61,15 +43,13 @@ export default function Nav2() {
             <li className="group">
                 {isLogin ? <Link
                     to="/dashboard/account-overview"
-                    className={`dropdown-toggle flex items-center justify-between py-3.5  uppercase text-base dark:text-white
-                    ${isScrolled ? "dark-text dark:text-white" : ""}  
+                    className={`dropdown-toggle flex items-center justify-between py-3.5  uppercase text-base dark:text-white  
                 hover:text-accent focus:text-accent text-jacarta-700 dark:hover:text-accent dark:focus:text-accent lg:px-5`}>
                     Client Area
                 </Link> :
                     <Link
                         to="/login"
-                        className={`dropdown-toggle flex items-center justify-between py-3.5 uppercase text-base dark:text-white
-                 ${isScrolled ? "dark-text dark:text-white" : ""}  
+                        className={`dropdown-toggle flex items-center justify-between py-3.5 uppercase text-base dark:text-white  
              hover:text-accent focus:text-accent text-jacarta-700 dark:hover:text-accent dark:focus:text-accent lg:px-5`}>
                         Client Area
                     </Link>}

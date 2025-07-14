@@ -1,0 +1,72 @@
+.daily-summary {
+  // background-color: #2d2d2d !important;
+  // border: 1px solid #444;
+  border-radius: 8px;
+  padding: 20px;
+  height: 100%;
+  .header {
+    margin-bottom: 20px;
+    
+    .title {
+      color: white;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      
+      .info-icon,
+      .chart-icon {
+        font-size: 18px;
+        color: #b0b0b0;
+      }
+    }
+  }
+  
+  .MuiTableContainer-root {
+    background-color: transparent;
+  }
+  
+  .MuiTable-root {
+    .MuiTableHead-root {
+      .MuiTableCell-root {
+        background-color: #3a3a3a;
+        color: white;
+        font-weight: 500;
+        border-bottom: 1px solid #555;
+        padding: 12px;
+        font-size: 13px;
+      }
+    }
+    
+    .MuiTableBody-root {
+      .MuiTableRow-root {
+        &:hover {
+          background-color: #363636;
+        }
+        
+        .MuiTableCell-root {
+          border-bottom: 1px solid #555;
+          padding: 12px;
+          
+          .date {
+            color: var(--theme-purple);
+            font-size: 13px;
+          }
+          
+          .MuiTypography-root {
+            color: white;
+            font-size: 13px;
+            
+            &.positive {
+              color: #28a745;
+            }
+            
+            &.negative {
+              color: #dc3545;
+            }
+          }
+        }
+      }
+    }
+  }
+}

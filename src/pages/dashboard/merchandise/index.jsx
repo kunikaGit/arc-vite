@@ -30,7 +30,7 @@ const Merchandise = () => {
             <div className='contaienr'>
                 <div className='flex-box'>
                     {products.map((item,index)=>(
-                    <div className='card-wrapped bg-grey' key={index}>
+                    <div className='card-wrapped dark-gradient  ' key={index}>
                         <div className='image'>
                             <img src={item.img} alt='img' />
                         </div>

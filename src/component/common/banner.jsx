@@ -1,5 +1,6 @@
 
 import React, { useEffect, useRef } from "react"
+import imageMap from "../../utlis/helper";
 const CommonBanner = ({ title }) => {
     const videoRef = useRef(null);
 
@@ -12,15 +13,7 @@ const CommonBanner = ({ title }) => {
         <>
             <section className="relative pt-4">
                 <div className="absolute inset-0  overflow-hidden  -z-10 common-banner" style={{ height: '320px' }} >
-                    <video
-                        ref={videoRef}
-                        autoPlay
-                        loop
-                        muted
-                        playsInline
-                        className="w-full object-cover  -z-10 h-full "
-                        src="video/graphs.mp4"
-                    />
+                   <img  src={imageMap['glob-bg.jpg']} className="w-full object-cover  -z-10 h-full "/>
                 </div>
             </section>
             <div className="text-center flex items-center justify-center m-auto xl:max-w-4xl lg:max-w-full lg:text-6xl md:text-4xl sm:text-3xl"
