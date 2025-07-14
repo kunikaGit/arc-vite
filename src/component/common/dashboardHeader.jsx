@@ -49,10 +49,8 @@ console.log(isLoggedIn)
                 <ul className='flex gap-5 items-center'>
                     <li>
                         <div className='profile flex item' onClick={handleShowDropDown} onBlur={() => setShowMenu(false)}>
-                            <div>
                                 <img src={profile?profile:imageMap['man1.jpg']} alt='img2' />
                                 <h3 className=' md:text-base text-sm'>{name?name:"Verified"}</h3>
-                            </div>
                         </div>
                     </li>
                     {/* <li>
@@ -96,7 +94,7 @@ console.log(isLoggedIn)
                 onClose={toggleMenu}
                 direction='left'
                 className='mobile-menu'
-                style={{ width: "200px", backgroundColor: '#2b2a33' }}>
+                style={{ width: "230px", backgroundColor: '#2b2a33' }}>
                 <MenuItems />
             </Drawer>
         </>

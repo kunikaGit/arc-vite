@@ -5,7 +5,7 @@ import { Info } from 'lucide-react';
 
 function CurrentResultsTable() {
   return (
-    <Paper className="current-results main-paper">
+    <Paper className="current-results-table main-paper">
       <Typography variant="h6" className="title">
         Current Results
       </Typography>

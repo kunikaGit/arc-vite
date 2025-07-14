@@ -17,14 +17,14 @@ export default function Calltoaction() {
                 Join the Leading Prop Firm<br />
               </p>
               <div className="call-links">
-                <Link
+                <a
                   data-aos="fade-up" data-aos-duration={600}
-                  href="/create"
+                  href="#pricing"
                   className=" md:w-44 w-30 block md:text-md text-sm rounded-full bg-accent py-3
              md:px-5 px-2 text-center font-semibold text-white shadow-accent-volume transition-all hover:bg-accent-dark"
                 >
                   Start Challenge
-                </Link>
+                </a>
                 <Link
                   data-aos="fade-up" data-aos-duration={600}
                   href="/create"

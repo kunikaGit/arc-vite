@@ -19,7 +19,7 @@ function AccountMetrix() {
       <Box className="header-section main-paper">
         <Typography variant="h6" className="title">
           <TrendingUp className="title-icon" />
-          Account Metrix 7404591
+          Account Metrix
         </Typography>
       </Box>
         <Box className="button-group">

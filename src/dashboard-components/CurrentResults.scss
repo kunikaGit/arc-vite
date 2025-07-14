@@ -5,7 +5,7 @@
   padding: 20px;
   
   .title {
-    color: white;
+    color: #fff;
     font-weight: 500;
     margin-bottom: 20px;
   }
@@ -27,9 +27,9 @@
         display: block;
         
         &.profit {
-          background-color: rgba(79, 209, 199, 0.2);
-          color: var(--theme-purple);
-          border: 1px solid var(--theme-purple);
+          background-color: rgba(4, 207, 4,0.2);
+          color: rgb(4, 207, 4);
+          border: 1px solid rgb(4, 207, 4);
         }
         
         &.loss {
@@ -61,6 +61,156 @@
         
         &.negative {
           color: #dc3545;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .current-results {
+    padding: 16px;
+    margin: 0;
+    
+    .title {
+      font-size: 1.125rem;
+      margin-bottom: 16px;
+    }
+    
+    .chart-container {
+      margin-bottom: 16px;
+      
+      .chart-labels {
+        top: 10px;
+        right: 10px;
+        
+        .label {
+          font-size: 10px;
+          padding: 3px 6px;
+          margin-bottom: 3px;
+        }
+      }
+    }
+    
+    .results-footer {
+      gap: 16px;
+      
+      .result-item {
+        .label {
+          font-size: 11px;
+          margin-bottom: 4px;
+        }
+        
+        .value {
+          font-size: 1.125rem;
+        }
+      }
+    }
+  }
+}
+
+// Mobile breakpoint (480px and below)
+@media screen and (max-width: 480px) {
+  .current-results {
+    padding: 12px;
+    
+    .title {
+      font-size: 1rem;
+      margin-bottom: 12px;
+      text-align: center;
+    }
+    
+    .chart-container {
+      margin-bottom: 12px;
+      
+      .recharts-wrapper {
+        height: 300px !important;
+      }
+      
+      .chart-labels {
+        position: static;
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin-top: 8px;
+        
+        .label {
+          font-size: 9px;
+          padding: 2px 4px;
+          margin-bottom: 0;
+          text-align: center;
+          flex: 1;
+          max-width: 120px;
+        }
+      }
+    }
+    
+    .results-footer {
+      flex-direction: column;
+      gap: 12px;
+      
+      .result-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 8px 0;
+        border-bottom: 1px solid #374151;
+        
+        &:last-child {
+          border-bottom: none;
+        }
+        
+        .label {
+          font-size: 10px;
+          margin-bottom: 0;
+          flex: 1;
+        }
+        
+        .value {
+          font-size: 1rem;
+          text-align: right;
+        }
+      }
+    }
+  }
+}
+
+// Extra small mobile breakpoint (360px and below)
+@media screen and (max-width: 360px) {
+  .current-results {
+    padding: 8px;
+    
+    .title {
+      font-size: 0.875rem;
+      margin-bottom: 8px;
+    }
+    
+    .chart-container {
+      
+      .chart-labels {
+        flex-direction: column;
+        align-items: center;
+        
+        .label {
+          font-size: 8px;
+          padding: 2px 3px;
+          max-width: 100px;
+        }
+      }
+    }
+    
+    .results-footer {
+      gap: 8px;
+      
+      .result-item {
+        padding: 6px 0;
+        
+        .label {
+          font-size: 9px;
+        }
+        
+        .value {
+          font-size: 0.875rem;
         }
       }
     }

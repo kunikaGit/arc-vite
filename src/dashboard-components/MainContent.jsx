@@ -16,10 +16,10 @@ function MainContent() {
   return (
     <div className="main-content">
       <Grid container  spacing={3}>
-        <Grid size={{md:8 ,sm:12}}>
+        <Grid size={{md:8 ,xs:12}}>
           <CurrentResults />
         </Grid>
-        <Grid size={{md:4 ,sm:12}}>
+        <Grid size={{md:4 ,xs:12}}>
           <FTMOChallenge />
         </Grid>
          <Grid size={{xs:12}}>
