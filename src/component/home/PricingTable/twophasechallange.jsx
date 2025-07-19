@@ -138,7 +138,7 @@ export default function TwoPhase({ handleOpenModal }) {
           </div>
         </div>
         <div className="mb-8 mt-4 flex justify-center" >
-          <Link to="/terms-use" className="text-accent text-base">Please check Terms of Use for detailed info</Link>
+          <Link to="/terms-use" className="text-light-blue text-base">Please check Terms of Use for detailed info</Link>
         </div>
       </div>
 

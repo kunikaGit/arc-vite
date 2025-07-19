@@ -169,7 +169,8 @@ function TradingJournal() {
   const [searchQuery, setSearchQuery] = useState('');
 
   return (
-    <Paper className="trading-journal main-paper">
+    <div id='trading-journal'>
+    <Paper className="trading-journal main-paper" >
       <Box className="header">
         <Typography variant="h6" className="title">
           Trading Journal <Info className="info-icon" />
@@ -295,6 +296,7 @@ function TradingJournal() {
         <Typography variant="body2" className="next-page">Next page</Typography>
       </Box>
     </Paper>
+    </div>
   );
 };
 

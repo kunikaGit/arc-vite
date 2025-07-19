@@ -33,9 +33,9 @@ const WithdrawalStep2 = () => {
             <div className="withdrawal-wrapped">
                 <div className="flex-box">
                     <div className="left-side">
-                        <div className="block1 mb-4">
+                        <div className="block1 mb-4 ">
                             <h2 className="font-semibold text-lg mb-3">Contract</h2>
-                            <div className="theme_card bg-grey">
+                            <div className="main-paper">
                                 <div className="flex justify-between mb-2"><span>1. Contract 1</span>
                                     <Link to="#"
                                         className="purple_bordered">
@@ -71,7 +71,7 @@ const WithdrawalStep2 = () => {
                         </div>
                         <div>
                             <h2 className="font-semibold text-lg mb-3">Withdrawal Steps <span className="text-base">2 days left</span></h2>
-                            <div className="flex md:gap-x-4 gap-x-2 theme_card bg-grey justify-around">
+                            <div className="flex md:gap-x-4 gap-x-2 main-paper justify-around">
                                 <div className=" border border-accent px-4 py-2 rounded-3xl md:text-base text-sm md:px-4">Step 1</div>
                                 <div className=" border border-accent px-4 py-2 rounded-3xl md:text-base text-sm md:px-4">Step 2</div>
                                 <div className=" border border-accent px-4 py-2 rounded-3xl md:text-base text-sm md:px-4">Step 3</div>
@@ -82,7 +82,7 @@ const WithdrawalStep2 = () => {
                   <div className="payout">
                             <h2 className="font-semibold text-lg mb-3">Payouts</h2>
     
-                            <div className="theme_card bg-grey ">
+                            <div className="main-paper ">
                                 <table className="w-full">
                                     <thead>
                                         <tr>
@@ -123,7 +123,7 @@ const WithdrawalStep2 = () => {
                     <button type="button" className="bg-transparent border-0 absolute right-3 top-1.5" onClick={() => handleClose()}>
                         <Cross />
                     </button>
-                    <div className="theme_card bg-grey calender-data mt-0" style={{ marginTop: '0' }}>
+                    <div className="main-paper calender-data mt-0" style={{ marginTop: '0' }}>
                         <DailyCalender handleClose={handleClose}/>
                     </div>
                 </Box>

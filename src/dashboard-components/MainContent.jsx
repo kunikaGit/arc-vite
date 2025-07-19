@@ -25,23 +25,23 @@ function MainContent() {
          <Grid size={{xs:12}}>
           <CurrentResultsTable/>
         </Grid>
-        <Grid size={{xs:12}}>
+        {/* <Grid size={{xs:12}}>
           <ConsistencyScore />
-        </Grid>
+        </Grid> */}
         <Grid size={{xs:12}}>
           <Objectives />
         </Grid>
-        <Grid size={{md:6,xs:12}}>
+        <Grid size={{md:6,xs:12}}>  
           <Statistics />
         </Grid>
         <Grid size={{md:6,xs:12}}>
           <DailySummary />
         </Grid>
         <Grid size={{xs:12}}>
-          <TradingJournal />
+          <AnalyticsCharts />
         </Grid>
         <Grid size={{xs:12}}>
-          <AnalyticsCharts />
+          <TradingJournal />
         </Grid>
         <Grid size={{xs:12}}>
           <DisclaimerFooter />

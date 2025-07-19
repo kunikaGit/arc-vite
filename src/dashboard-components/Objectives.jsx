@@ -5,6 +5,7 @@ import {
   XCircle as Cancel             // Cross inside a circle
 } from 'lucide-react';
 import './Objectives.scss';
+import { useNavigate } from 'react-router-dom';
 
 const objectivesData = [
   {
@@ -34,6 +35,7 @@ const objectivesData = [
 ];
 
 function Objectives() {
+  const navigate = useNavigate()
   return (
     <div className="objectives ">
     <Paper className='object-card main-paper'>
@@ -79,10 +81,16 @@ function Objectives() {
       </TableContainer>
     </Paper>
       <Box className="button-group">
-          <Button variant="outlined" size="medium" >
+          <Button variant="outlined" size="medium" 
+           onClick={() => {
+    const el = document.getElementById('trading-journal');
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+  }}>
             Trading Journal
           </Button>
-          <Button variant="outlined" size="medium">
+          <Button variant="outlined" size="medium" onClick={()=>navigate('/dashboard/withdrawal')}>
             Mentor App
           </Button>
           <Button variant="outlined" size="medium">
