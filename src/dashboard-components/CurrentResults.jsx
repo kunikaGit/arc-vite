@@ -35,15 +35,15 @@ function CurrentResults() {
               tick={{ fill: '#b0b0b0', fontSize: 12 }}
               domain={[-6000, 6000]}
             />
-            <ReferenceLine y={0} stroke="var(--theme-purple)" strokeDasharray="3 3" />
-            <ReferenceLine y={-5000} stroke="#dc3545" strokeWidth={2} />
-            <ReferenceLine y={5000} stroke="var(--theme-purple)" strokeWidth={2} />
+            <ReferenceLine y={0} stroke="#fff" strokeDasharray="3 3" />
+            <ReferenceLine y={-5000} stroke="#fff" strokeWidth={2} />
+            <ReferenceLine y={5000} stroke="#fff" strokeWidth={2} />
             <Line 
               type="monotone" 
               dataKey="value" 
-              stroke="var(--theme-purple)" 
+              stroke="#fff" 
               strokeWidth={2}
-              dot={{ fill: 'var(--theme-purple)', strokeWidth: 2, r: 4 }}
+              dot={{ fill: '#fff', strokeWidth: 2, r: 4 }}
             />
           </LineChart>
         </ResponsiveContainer>

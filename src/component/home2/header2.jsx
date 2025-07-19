@@ -39,9 +39,9 @@ export default function Header2() {
         className={`js-page-header  main-header fixed top-0 z-20 w-full backdrop-blur transition-colors  ${scrolled ? "js-page-header--is-sticky sticky-header" : ""
           }`}
       >
-        <div className="flex items-center px-6 xl:px-24">
+        <div className="flex items-center px-6 xl:px-24" >
           {/* Logo */}
-          <Link to="/" >
+          <Link to="/" style={{width:'200px'}}>
             <h2 className="logo-text animate-gradient ">ARC</h2>
           </Link>
           {/* Search */}

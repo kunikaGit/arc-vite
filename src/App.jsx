@@ -22,6 +22,7 @@ import { logout } from '../src/redux/slice/authSlice.js'
 import { useDispatch, useSelector } from 'react-redux'
 import {autoLogout} from "../src/utlis/autoLogout.js"
 import TradingDashboard from "./dashboard-components/TradingDashboard.jsx";
+import FlowContainer from "./component/arc-flow/FlowContainer.jsx";
 export default function App() {
     const navigate = useNavigate();
   const { auth_token } = useSelector((state) => state.auth);
@@ -55,6 +56,7 @@ useEffect(() => {
         <Route path="/signup" element={<Signup />} />
         <Route path="/success" element={<SuccessStatus/>}/>
         <Route path="/failed" element={<FailedStatus/>}/>
+        <Route path="/build-arc" element={<FlowContainer/>}/>
 
         <Route path="/forget-password" element={<ForgetPassword/>}/>
         <Route path="/reset-password" element={<ResetPassword/>}/>

@@ -97,7 +97,7 @@ export default function WhyChoose() {
                   <th scope="col" className=" text-white">VARIABLES</th>
                   <th scope="col" className=" text-center text-white">ARC</th>
                   <th scope="col" className=" text-center text-white">
-                
+
                     <div className='input-main-data select-mui-vs dark:mui-dark'>
                       <Autocomplete
                         autoComplete={false}
@@ -105,8 +105,18 @@ export default function WhyChoose() {
                         getOptionLabel={(option) => option.title}
                         value={platformOptions.find(opt => opt.title === selectedCompany) || null}
                         disableClearable
-                        popupIcon={<DownIcon/>}
+                        popupIcon={<DownIcon />}
                         onChange={(e, newValue) => setSelectedCompany(newValue?.title || '')}
+                        slotProps={{
+                          popper: {
+                            sx: {
+                              '.MuiAutocomplete-listbox': {
+                                color: '#fff',
+                                zIndex:'0'                                
+                              },
+                            },
+                          },
+                        }}
                         renderInput={(params) => (
                           <TextField
                             {...params}
@@ -115,7 +125,7 @@ export default function WhyChoose() {
                               ...params.inputProps,
                               readOnly: true, // <-- disables typing
                             }}
-                            sx={{ minWidth: '130px',maxWidth:'160px' }}
+                            sx={{ minWidth: '130px', maxWidth: '160px' }}
                           />
                         )}
                       />
@@ -129,7 +139,7 @@ export default function WhyChoose() {
                     key={index}
                     className="py-2 px-4 transition-shadow hover:shadow-lg "
                   >
-                    <th  scope="row">
+                    <th scope="row">
                       {item.name}
                     </th>
                     <td className="w-1/3  text-center min-w-36">

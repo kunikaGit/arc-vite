@@ -3,6 +3,7 @@ import { Paper, Typography, Box, Grid } from '@mui/material';
 import { BarChart, Bar, XAxis, YAxis, ResponsiveContainer } from 'recharts';
 import { Expand as Fullscreen } from 'lucide-react';
 import './AnalyticsCharts.scss';
+import DailyCalender from '../component/common/calender';
 
 const openTimeData = [
   { time: '8:00', value: -4500 },
@@ -123,7 +124,7 @@ function AnalyticsCharts() {
   return (
     <Box className="analytics-charts">
       <Grid container spacing={3}>
-        <Grid size={{md:6,xs:12}}>
+        {/* <Grid size={{md:6,xs:12}}>
           <ChartBlock
             title="Open time hour"
             data={openTimeData}
@@ -147,8 +148,13 @@ function AnalyticsCharts() {
             domain={[-3200, 800]}
             showControls
           />
+        </Grid> */}
+        <Grid size={{ md: 6, xs: 12 }}>
+          <Box className='calender-data'>
+          <DailyCalender />
+          </Box>
         </Grid>
-        <Grid size={{md:6,xs:12}}>
+        <Grid size={{ md: 6, xs: 12 }}>
           <ChartBlock
             title="Symbol"
             data={symbolData}

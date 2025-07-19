@@ -14,7 +14,7 @@ export default function Nav2() {
                 <Link
                     to="/"
                     className={`dropdown-toggle flex items-center justify-between py-3.5  uppercase text-base dark:text-white
-                        hover:text-accent focus:text-accent text-jacarta-700 dark:hover:text-accent dark:focus:text-accent lg:px-5`}
+                        hover:text-accent focus:text-accent text-white dark:hover:text-accent dark:focus:text-accent lg:px-5`}
                     id="navDropdown-1"
                     aria-expanded="false"
                     role="button">
@@ -26,7 +26,7 @@ export default function Nav2() {
                 <Link
                     to="/faq"
                     className={`dropdown-toggle flex items-center justify-between py-3.5  uppercase text-base dark:text-white
-                hover:text-accent focus:text-accent text-jacarta-700 dark:hover:text-accent dark:focus:text-accent lg:px-5`}>
+                hover:text-accent focus:text-accent text-white dark:hover:text-accent dark:focus:text-accent lg:px-5`}>
                     FAQ
                 </Link>
             </li>
@@ -35,22 +35,29 @@ export default function Nav2() {
                 <Link
                     to="/about-us"
                     className={`dropdown-toggle flex items-center justify-between py-3.5  uppercase text-base dark:text-white 
-                hover:text-accent focus:text-accent text-jacarta-700 dark:hover:text-accent dark:focus:text-accent lg:px-5`}>
+                hover:text-accent focus:text-accent text-white dark:hover:text-accent dark:focus:text-accent lg:px-5`}>
                     About Us
                 </Link>
             </li>
-
+   <li className="group">
+                <Link
+                    to="/build-arc"
+                    className={`dropdown-toggle flex items-center justify-between py-3.5  uppercase text-base dark:text-white 
+                hover:text-accent focus:text-accent text-white dark:hover:text-accent dark:focus:text-accent lg:px-5`}>
+                    Build Your ARC
+                </Link>
+            </li>
             <li className="group">
                 {isLogin ? <Link
                     to="/dashboard/account-overview"
                     className={`dropdown-toggle flex items-center justify-between py-3.5  uppercase text-base dark:text-white  
-                hover:text-accent focus:text-accent text-jacarta-700 dark:hover:text-accent dark:focus:text-accent lg:px-5`}>
+                hover:text-accent focus:text-accent text-white dark:hover:text-accent dark:focus:text-accent lg:px-5`}>
                     Client Area
                 </Link> :
                     <Link
                         to="/login"
                         className={`dropdown-toggle flex items-center justify-between py-3.5 uppercase text-base dark:text-white  
-             hover:text-accent focus:text-accent text-jacarta-700 dark:hover:text-accent dark:focus:text-accent lg:px-5`}>
+             hover:text-accent focus:text-accent text-white dark:hover:text-accent dark:focus:text-accent lg:px-5`}>
                         Client Area
                     </Link>}
             </li>

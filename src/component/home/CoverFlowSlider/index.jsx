@@ -186,13 +186,13 @@ export default function CoverFlowSlider() {
                       src={elm.imageSrc}
                       alt="item 1"
                       className="swiper-lazy w-full object-cover"
-                      height="300"
-                      width="300"
+                      width="350"
+                      style={{height:'300px'}}
                     />
                     {/* <div className="swiper-lazy-preloader"></div> */}
                   </Link>
                 </figure>
-                <div className="p-6">
+                <div className="p-4">
                   <div className="flex">
                     <Link href={`/user/${elm.id}`} className="shrink-0">
                       <img
@@ -205,11 +205,11 @@ export default function CoverFlowSlider() {
                     </Link>
                     <div>
                       <Link href={`/item/${elm.id}`} className="block">
-                        <span className="font-display text-lg leading-none text-jacarta-700 hover:text-accent dark:text-white">
+                        <span className="font-display text-md leading-none text-jacarta-700 hover:text-accent dark:text-white">
                           {elm.title}
                         </span>
                       </Link>
-                      <div href="#" className="text-sm text-accent">
+                      <div href="#" className="text-xs text-accent">
                         {elm.subTitle}
                       </div>
                     </div>
