@@ -23,6 +23,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import {autoLogout} from "../src/utlis/autoLogout.js"
 import TradingDashboard from "./dashboard-components/TradingDashboard.jsx";
 import FlowContainer from "./component/arc-flow/FlowContainer.jsx";
+import EconomyCalendar from "./pages/economy-calendar/index.jsx";
 export default function App() {
     const navigate = useNavigate();
   const { auth_token } = useSelector((state) => state.auth);
@@ -64,6 +65,7 @@ useEffect(() => {
         <Route path="/verify-email" element={<EmailVerification/>}/>
         <Route path="/telegram-auth" element={<TelegramSignup/>}/>
         <Route path="/telegram-login-auth" element={<TelegramLoginStatus/>}/>
+        <Route path="/economy" element={<EconomyCalendar />} />
 
 
         {/* -----------for dashboard routing--------------- */}
@@ -77,7 +79,6 @@ useEffect(() => {
           <Route path="/dashboard/leaderboard" element={<Leaderboard />} />
           <Route path="/dashboard/myprofile" element={<MyProfile />} />
           <Route path="/dashboard/billing" element={<Billing />} />
-
         </Route>
 
       </Routes>

@@ -216,7 +216,7 @@ export default function PricingTable() {
                                             {/* Sliders Container */}
                                             <div className="sliders-container">
                                                 {/* Account Balance Slider */}
-                                                <div className="slider-card balance-card">
+                                                <div className="slider-card main-paper balance-card">
                                                     <div className="slider-header">
                                                         <div className="icon-container balance-icon">
                                                             <DollarSign className="w-6 h-6 text-white" />
@@ -257,7 +257,7 @@ export default function PricingTable() {
                                                 </div>
 
                                                 {/* Drawdown Slider */}
-                                                <div className="slider-card drawdown-card">
+                                                <div className="slider-card main-paper drawdown-card">
                                                     <div className="slider-header">
                                                         <div className="icon-container drawdown-icon">
                                                             <TrendingDown className="w-6 h-6 text-white" />
@@ -298,7 +298,7 @@ export default function PricingTable() {
                                                 </div>
 
                                                 {/* Trading Days Slider */}
-                                                <div className="slider-card days-card">
+                                                <div className="slider-card main-paper days-card">
                                                     <div className="slider-header">
                                                         <div className="icon-container days-icon">
                                                             <Calendar className="w-6 h-6 text-white" />
@@ -340,7 +340,7 @@ export default function PricingTable() {
                                             </div>
 
                                             {/* Calculate Button */}
-                                            <div className="calculate-section">
+                                            <div className="calculate-section main-paper">
                                                 <button
                                                     onClick={handleCalculate}
                                                     className="calculate-button"
