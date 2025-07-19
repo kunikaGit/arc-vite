@@ -7,6 +7,7 @@ import DashboardHeader from '../component/common/dashboardHeader';
 function TradingDashboard() {
   return (
     <div className="trading-dashboard">
+      <DashboardHeader/>
       {/* <DashboardHeader/> */}
         <AccountMetrix />
         <MainContent />

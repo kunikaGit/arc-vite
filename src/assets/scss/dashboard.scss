@@ -17,11 +17,16 @@
      }
 }
 .dahboard-header{
-    margin-bottom: 30px;
+    margin-bottom: 15px;
     position: relative;
     .mobile-toggle{
         background-color: transparent;
         display: none;
+        svg{
+            path{
+                fill: #fff;
+            }
+        }
         @include media_1024{
             display: block;
         }
@@ -56,6 +61,9 @@
     }
     .profile{
         cursor: pointer;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         svg{
             fill: var(--text_black);
             path{
@@ -63,8 +71,8 @@
             }
         }
         img{
-            height: 50px;
-            width: 50px;
+            height: 40px;
+            width: 40px;
             border-radius: 100%;
             object-fit: cover;
             margin-bottom: 5px;

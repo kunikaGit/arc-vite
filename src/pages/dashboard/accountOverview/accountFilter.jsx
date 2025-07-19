@@ -35,96 +35,96 @@ const CreativeFilters = () => {
 
   return (
     <div className="filters dark-gradient">
-        <div className='flex gap-10'>
-      <div className="input-main-data select-mui-vs">
-        <label className="filter-label">Account Type</label>
-        <Autocomplete
-          autoComplete={false}
-          options={accTypeOption}
-          getOptionLabel={(option) => option.title}
-          value={accType}
-          onChange={handleAccTypeChange}
-          disableClearable
-          popupIcon={<KeyboardArrowDown className="dropdown-icon" size={18} />}
-          renderOption={(props, option) => (
-            <li {...props} className="custom-option">
-              <div className="option-content">
-                <span className="option-icon" style={{ color: option.color }}>
-                  {option.icon}
-                </span>
-                <span className="option-text">{option.title}</span>
-              </div>
-            </li>
-          )}
-          renderInput={(params) => (
-            <TextField
-              {...params}
-              placeholder="Account Type"
-              className="creative-textfield"
-              InputProps={{
-                ...params.InputProps,
-                startAdornment: accType?.icon && (
-                  <span className="selected-icon" style={{ color: accType.color }}>
-                    {accType.icon}
+      <div className=' filter-field'>
+        <div className="input-main-data select-mui-vs">
+          <label className="filter-label">Account Type</label>
+          <Autocomplete
+            autoComplete={false}
+            options={accTypeOption}
+            getOptionLabel={(option) => option.title}
+            value={accType}
+            onChange={handleAccTypeChange}
+            disableClearable
+            popupIcon={<KeyboardArrowDown className="dropdown-icon" size={18} />}
+            renderOption={(props, option) => (
+              <li {...props} className="custom-option">
+                <div className="option-content">
+                  <span className="option-icon" style={{ color: option.color }}>
+                    {option.icon}
                   </span>
-                ),
-              }}
-            />
-          )}
-        />
-      </div>
+                  <span className="option-text">{option.title}</span>
+                </div>
+              </li>
+            )}
+            renderInput={(params) => (
+              <TextField
+                {...params}
+                placeholder="Account Type"
+                className="creative-textfield"
+                InputProps={{
+                  ...params.InputProps,
+                  startAdornment: accType?.icon && (
+                    <span className="selected-icon" style={{ color: accType.color }}>
+                      {accType.icon}
+                    </span>
+                  ),
+                }}
+              />
+            )}
+          />
+        </div>
 
-      <div className="input-main-data select-mui-vs">
-        <label className="filter-label">Account Status</label>
-        <Autocomplete
-          autoComplete={false}
-          options={accStatusOption}
-          getOptionLabel={(option) => option.title}
-          value={accStatus}
-          onChange={handleAccStatusChange}
-          disableClearable
-          popupIcon={<KeyboardArrowDown className="dropdown-icon" size={18} />}
-          renderOption={(props, option) => (
-            <li {...props} className="custom-option">
-              <div className="option-content">
-                <Chip
-                  label={option.title}
-                  size="small"
-                  style={{
-                    backgroundColor: option.color,
-                    color: 'white',
-                    fontWeight: 500,
-                  }}
-                />
-              </div>
-            </li>
-          )}
-          renderInput={(params) => (
-            <TextField
-              {...params}
-              placeholder="Account Status"
-              className="creative-textfield"
-              InputProps={{
-                ...params.InputProps,
-                startAdornment: accStatus && (
+        <div className="input-main-data select-mui-vs">
+          <label className="filter-label">Account Status</label>
+          <Autocomplete
+            autoComplete={false}
+            options={accStatusOption}
+            getOptionLabel={(option) => option.title}
+            value={accStatus}
+            onChange={handleAccStatusChange}
+            disableClearable
+            popupIcon={<KeyboardArrowDown className="dropdown-icon" size={18} />}
+            renderOption={(props, option) => (
+              <li {...props} className="custom-option">
+                <div className="option-content">
                   <Chip
-                    label={accStatus.title}
+                    label={option.title}
                     size="small"
-                    className="selected-chip"
                     style={{
-                      backgroundColor: accStatus.color,
+                      backgroundColor: option.color,
                       color: 'white',
                       fontWeight: 500,
-                      marginRight: '8px',
                     }}
                   />
-                ),
-              }}
-            />
-          )}
-        />
+                </div>
+              </li>
+            )}
+            renderInput={(params) => (
+              <TextField
+                {...params}
+                placeholder="Account Status"
+                className="creative-textfield"
+                InputProps={{
+                  ...params.InputProps,
+                  startAdornment: accStatus && (
+                    <Chip
+                      label={accStatus.title}
+                      size="small"
+                      className="selected-chip"
+                      style={{
+                        backgroundColor: accStatus.color,
+                        color: 'white',
+                        fontWeight: 500,
+                        marginRight: '8px',
+                      }}
+                    />
+                  ),
+                }}
+              />
+            )}
+          />
+        </div>
       </div>
-</div>
       <div className="action-wrapper">
         <button className="purple_bordered start-now-btn">
           <span className="btn-text">Start Now</span>
