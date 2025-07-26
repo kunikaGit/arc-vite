@@ -29,16 +29,17 @@ export default function PricingTable() {
     const [accountTab, setAccountTab] = useState("standard");
 
 
-    const [accountBalance, setAccountBalance] = useState(50000);
+    const [accountBalance, setAccountBalance] = useState(5000);
     const [drawdown, setDrawdown] = useState(10);
     const [minTradingDays, setMinTradingDays] = useState(3);
 
+    const [accountBalanceScale, setAccountBalanceScale] = useState(1000)
     // Slider configurations
     const sliderConfig = {
         accountBalance: {
             min: 5000,
             max: 300000,
-            step: 1000,
+            step: accountBalanceScale,
             scale: [5000, 10000, 25000, 50000, 75000, 100000, 150000, 200000, 250000, 300000]
         },
         drawdown: {
@@ -69,6 +70,34 @@ export default function PricingTable() {
     }
 
     const handleSliderChange = (value, field) => {
+        if (field == "accountBalance") {
+            console.log({ value })
+            console.log({ accountBalanceScale })
+
+        }
+        // if ((value > 5000 && value < 10000) && field == "accountBalance") {
+        //     setAccountBalanceScale(1000)
+        // }
+        // if ((value > 10000 && value <= 40000) && field == "accountBalance") {
+        //     if(accountBalance==10000){
+        //         value=15000
+        //     }
+        //     setAccountBalanceScale(5000)
+        // }
+        // if ((value > 40000 && value < 100000) && field == "accountBalance") {
+        //     console.log("above 40000")
+        //     console.log({accountBalance})
+        //                 if(accountBalance==40000 || accountBalance==45000){
+        //         value=50000
+        //     }
+        //     setAccountBalanceScale(10000)
+        // }
+        // if ((value > 100000 && value <= 300000) && field == "accountBalance") {
+        //                             if(accountBalance==100000){
+        //         value=150000
+        //     }
+        //     setAccountBalanceScale(50000)
+        // }
         setShowCalculatedResult(false)
         switch (field) {
             case 'accountBalance':
@@ -82,6 +111,36 @@ export default function PricingTable() {
                 break;
         }
     }
+
+    const getStepForBalance = (value) => {
+        if (value < 10000) return 1000;
+        if (value < 40000) return 5000;
+        if (value < 100000) return 10000;
+        return 50000;
+    };
+
+    const handleSliderRelease = (value) => {
+        const step = getStepForBalance(value);
+        const snapped = Math.round(value / step) * step;
+
+        // Make sure the snapped value is within range
+        const clamped = Math.min(Math.max(snapped, sliderConfig.accountBalance.min), sliderConfig.accountBalance.max);
+
+        setAccountBalance(clamped);
+        setAccountBalanceScale(step);
+        setShowCalculatedResult(false);
+    };
+
+    const generateScale = (min, max, step) => {
+        const scale = [];
+        for (let i = min; i <= max; i += step) {
+            scale.push(i);
+        }
+        return scale;
+    };
+
+    const currentStep = getStepForBalance(accountBalance);
+    const currentScale = generateScale(sliderConfig.accountBalance.min, sliderConfig.accountBalance.max, currentStep);
 
     const formatCurrency = (value) => {
         return new Intl.NumberFormat('en-US', {
@@ -233,9 +292,13 @@ export default function PricingTable() {
                                                                 type="range"
                                                                 min={sliderConfig.accountBalance.min}
                                                                 max={sliderConfig.accountBalance.max}
-                                                                step={sliderConfig.accountBalance.step}
+                                                                // step={sliderConfig.accountBalance.step}
+                                                                step={1}
+
                                                                 value={accountBalance}
-                                                                onChange={(e) => handleSliderChange(Number(e.target.value), 'accountBalance')}
+                                                                // onChange={(e) => handleSliderChange(Number(e.target.value), 'accountBalance')}
+                                                                onChange={(e) => setAccountBalance(Number(e.target.value))} // Just set the raw value
+                                                                onMouseUp={() => handleSliderRelease(accountBalance)} // Snap on release
                                                                 className="range-slider balance-slider"
                                                             />
                                                             <div
@@ -244,11 +307,17 @@ export default function PricingTable() {
                                                             />
                                                         </div>
                                                         <div className="slider-scale">
-                                                            {sliderConfig.accountBalance.scale.map((value, index) => (
+                                                            {/* {sliderConfig.accountBalance.scale.map((value, index) => (
+                                                                <div key={index} className="scale-mark">
+                                                                    <span className="scale-label">{formatCurrency(value)}</span>
+                                                                </div>
+                                                            ))} */}
+                                                            {currentScale.map((value, index) => (
                                                                 <div key={index} className="scale-mark">
                                                                     <span className="scale-label">{formatCurrency(value)}</span>
                                                                 </div>
                                                             ))}
+
                                                         </div>
                                                         <div className="value-display">
                                                             <span className="value-text balance-value">{formatCurrency(accountBalance)}</span>
