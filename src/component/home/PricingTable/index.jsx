@@ -29,7 +29,7 @@ export default function PricingTable() {
     const [accountTab, setAccountTab] = useState("standard");
 
 
-    const [accountBalance, setAccountBalance] = useState(5000);
+    const [accountBalance, setAccountBalance] = useState(50000);
     const [drawdown, setDrawdown] = useState(10);
     const [minTradingDays, setMinTradingDays] = useState(3);
 
