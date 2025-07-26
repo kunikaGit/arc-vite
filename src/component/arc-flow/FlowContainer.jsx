@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Container, Typography } from '@mui/material';
+import { Box, Container, Typography } from '@mui/material';
 import FlowStep from './FlowStep';
 import SuggestedAccountForm from './SuggestedAccountForm';
 import './FlowContainer.scss';
@@ -33,6 +33,12 @@ const FlowContainer = () => {
       setCurrentStep(stepIndex + 1);
     }
   };
+
+  const handlePrevStep = () => {
+  if (currentStep > 0) {
+    setCurrentStep(currentStep - 1);
+  }
+};
 
   const getStepContent = (data = flowData) => {
     const steps = [
@@ -86,34 +92,35 @@ const FlowContainer = () => {
 
   return (
     <>
-                    <Header2 />
-    
-    <Container maxWidth="xl" className="flow-container">
-      <Typography variant="h3" component="h1" className="main-title">
-        Build Your ARC
-      </Typography>
+      <Header2 />
 
-      <div className={`content-wrapper ${flowData.showForm ? 'with-form' : ''}`}>
-        <div className="flow-steps">
-          {steps.map((step, index) => (
-            <FlowStep
-              key={index}
-              step={step}
-              stepIndex={index}
-              isActive={index === currentStep}
-              isCompleted={index < currentStep}
-              onClick={handleStepClick}
-            />
-          ))}
-        </div>
+      <Box className="flow-container">
+        <Typography variant="h3" component="h1" className="main-title">
+          Build Your ARC
+        </Typography>
 
-        {flowData.showForm && (
-          <div className="form-section">
-            <SuggestedAccountForm />
+        <div className={`content-wrapper ${flowData.showForm ? 'with-form' : ''}`}>
+          <div className="flow-steps">
+            {steps.map((step, index) => (
+              <FlowStep
+                key={index}
+                step={step}
+                stepIndex={index}
+                isActive={index === currentStep}
+                isCompleted={index < currentStep}
+                onClick={handleStepClick}
+                onBack={handlePrevStep}
+              />
+            ))}
           </div>
-         )} 
-      </div>
-    </Container>
+
+          {flowData.showForm && (
+            <div className="form-section">
+              <SuggestedAccountForm />
+            </div>
+          )}
+        </div>
+      </Box>
     </>
   );
 };

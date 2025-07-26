@@ -1,9 +1,11 @@
 import React from 'react';
 import { Card, CardContent, Typography, Button, Box } from '@mui/material';
-import { ArrowDown, CheckCircle } from 'lucide-react';
+import { ArrowDown, ArrowUp, CheckCircle } from 'lucide-react';
 import './FlowStep.scss';
 
-const FlowStep = ({ step, stepIndex, isActive, isCompleted, onClick }) => {
+const FlowStep = ({ step, stepIndex, isActive, isCompleted, onClick, onBack }) => {
+
+
   return (
     <div className="flow-step-container">
       <Card
@@ -34,24 +36,47 @@ const FlowStep = ({ step, stepIndex, isActive, isCompleted, onClick }) => {
                   {choice}
                 </Button>
               ))}
+              {onBack && stepIndex > 0 && (
+                <Button
+                  variant="outlined"
+                  color="secondary"
+                  className="prev-btn"
+                  onClick={onBack}
+                >
+                  Previous
+                </Button>
+              )}
             </Box>
           ) : !isCompleted && (
-            <Button
-              variant="contained"
-              color="primary"
-              className="next-btn"
-              onClick={() => onClick(stepIndex)}
-              disabled={!isActive}
-            >
-              {isActive ? 'Continue' : 'Next'}
-            </Button>
+            <Box className="step-buttons">
+              {isActive && stepIndex > 0 && (
+                <Button
+                  variant="outlined"
+                  color="secondary"
+                  className="prev-btn "
+                  onClick={onBack}
+                >
+                  Previous
+                </Button>
+              )}
+              <Button
+                variant="contained"
+                color="primary"
+                className="next-btn"
+                onClick={() => onClick(stepIndex)}
+                disabled={!isActive}
+              >
+                {isActive ? 'Continue' : 'Next'}
+              </Button>
+            </Box>
           )}
         </CardContent>
       </Card>
 
-      {stepIndex < 10 && (
-        <ArrowDown className={`arrow ${isCompleted ? 'completed' : ''}`} />
-      )}
+      <div className="arrows">
+        {stepIndex > 0 && <ArrowUp className="arrow up" onClick={onBack} />}
+        {stepIndex < 10 && <ArrowDown className={`arrow down ${isCompleted ? 'completed' : ''}`} />}
+      </div>
     </div>
   );
 };
