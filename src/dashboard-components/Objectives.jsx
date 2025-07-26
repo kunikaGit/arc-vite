@@ -38,68 +38,68 @@ function Objectives() {
   const navigate = useNavigate()
   return (
     <div className="objectives ">
-    <Paper className='object-card main-paper'>
-      <Typography variant="h6" className="title">
-        Objectives
-      </Typography>
-      <TableContainer>
-        <Table>
-          <TableHead>
-            <TableRow>
-              <TableCell>Trading Objectives</TableCell>
-              <TableCell>Results</TableCell>
-              <TableCell>Summary</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {objectivesData.map((row, index) => (
-              <TableRow key={index}>
-                <TableCell className="objective-cell">
-                  <Typography variant="body2" className="objective-text">
-                    {row.objective}
-                  </Typography>
-                </TableCell>
-                <TableCell>
-                  <Typography variant="body2" className="result-text">
-                    {row.result}
-                  </Typography>
-                </TableCell>
-                <TableCell>
-                  <Box className="summary-cell">
-                    {row.status === 'passed' && <CheckCircle className="icon passed" />}
-                    {row.status === 'passing' && <CheckCircle className="icon passing" />}
-                    {row.status === 'not-passing' && <Cancel className="icon not-passing" />}
-                    <Typography variant="body2" className={`summary-text ${row.status}`}>
-                      {row.summary}
-                    </Typography>
-                  </Box>
-                </TableCell>
+      <Paper className='object-card main-paper'>
+        <Typography variant="h6" className="title">
+          Objectives
+        </Typography>
+        <TableContainer>
+          <Table>
+            <TableHead>
+              <TableRow>
+                <TableCell>Trading Objectives</TableCell>
+                <TableCell>Results</TableCell>
+                <TableCell>Summary</TableCell>
               </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer>
-    </Paper>
+            </TableHead>
+            <TableBody>
+              {objectivesData.map((row, index) => (
+                <TableRow key={index}>
+                  <TableCell className="objective-cell">
+                    <Typography variant="body2" className="objective-text">
+                      {row.objective}
+                    </Typography>
+                  </TableCell>
+                  <TableCell>
+                    <Typography variant="body2" className="result-text">
+                      {row.result}
+                    </Typography>
+                  </TableCell>
+                  <TableCell>
+                    <Box className="summary-cell">
+                      {row.status === 'passed' && <CheckCircle className="icon passed" />}
+                      {row.status === 'passing' && <CheckCircle className="icon passing" />}
+                      {row.status === 'not-passing' && <Cancel className="icon not-passing" />}
+                      <Typography variant="body2" className={`summary-text ${row.status}`}>
+                        {row.summary}
+                      </Typography>
+                    </Box>
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
+        </TableContainer>
+      </Paper>
       <Box className="button-group">
-          <Button variant="outlined" size="medium" 
-           onClick={() => {
-    const el = document.getElementById('trading-journal');
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth' });
-    }
-  }}>
-            Trading Journal
-          </Button>
-          <Button variant="outlined" size="medium" onClick={()=>navigate('/dashboard/withdrawal')}>
-            Mentor App
-          </Button>
-          <Button variant="outlined" size="medium">
-            Economic Calender
-          </Button>
-          <Button variant="outlined" size="medium">
-            Useful Link
-          </Button>          
-        </Box>
+        <Button variant="outlined" size="medium"
+          onClick={() => {
+            const el = document.getElementById('trading-journal');
+            if (el) {
+              el.scrollIntoView({ behavior: 'smooth' });
+            }
+          }}>
+          Trading Journal
+        </Button>
+        <Button variant="outlined" size="medium" onClick={() => navigate('/dashboard/withdrawal')}>
+          Mentor App
+        </Button>
+        <Button variant="outlined" size="medium" onClick={() => navigate('/economy')}>
+          Economic Calender
+        </Button>
+        <Button variant="outlined" size="medium">
+          Useful Link
+        </Button>
+      </Box>
     </div>
   );
 };

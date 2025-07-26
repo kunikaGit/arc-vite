@@ -1,0 +1,288 @@
+// Main App Styles
+.app-container {
+  display: flex;
+  height: 100vh;
+  background-color: #f5f5f5;
+  padding-top: 70px;
+  header{
+    background-color: #160559;;
+  }
+}
+
+.sidebar {
+  width: 280px;
+  background-color: #ffffff;
+  border-right: 1px solid #e0e0e0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  .navigation-section {
+    padding: 16px;
+    border-bottom: 1px solid #e0e0e0;
+    
+    h3 {
+      margin: 0 0 16px 0;
+      font-size: 14px;
+      font-weight: 500;
+      color: #666;
+    }
+  }
+  .MuiPickersLayout-root{
+    min-width: 250px!important;
+    width: 280px!important;
+    margin: 0!important;    
+  }
+  .MuiDateCalendar-root{
+    width: 250px!important;
+    margin: 0!important;
+  }
+  .calendar-container {
+    padding: 16px;
+    .MuiPickersCalendarHeader-root {
+      padding: 0;
+      margin: 0 0 16px 0;
+    }
+  }
+  
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    
+    .nav-link {
+      padding: 8px 12px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 13px;
+      color: #333;
+      transition: background-color 0.2s;
+      
+      &:hover {
+        background-color: #f0f0f0;
+      }
+      
+      &.active {
+        background-color: #e3f2fd;
+        color: #1976d2;
+      }
+    }
+  }
+  
+  .calendar-types {
+    padding: 16px;
+    border-top: 1px solid #e0e0e0;
+    
+    .calendar-type {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 0;
+      font-size: 13px;
+      color: #333;
+      cursor: pointer;
+      
+      &:hover {
+        color: #1976d2;
+      }
+      
+      .icon {
+        width: 16px;
+        height: 16px;
+      }
+    }
+  }
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.header {
+  // background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #000;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+  .week-navigation {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    
+    .week-title {
+      font-size: 18px;
+      font-weight: 500;
+    }
+    
+    .nav-button {
+      background: rgba(255, 255, 255, 0.2);
+      color: #000;
+      border: none;
+      width: 32px;
+      height: 32px;
+      border-radius: 4px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      
+      &:hover {
+        background: rgba(255, 255, 255, 0.3);
+      }
+    }
+  }
+  
+  .header-actions {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    
+    .action-button {
+      background: rgba(255, 255, 255, 0.2);
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      
+      &:hover {
+        background: rgba(255, 255, 255, 0.3);
+      }
+    }
+  }
+}
+
+.table-container {
+  flex: 1;
+  overflow: auto;
+  background: white;
+  
+  .MuiTableContainer-root {
+    height: 100%;
+  }
+  
+  .MuiTableHead-root {
+    background-color: #f8f9fa;
+    
+    .MuiTableCell-head {
+      font-weight: 600;
+      font-size: 13px;
+      color: #555;
+      border-bottom: 2px solid #e0e0e0;
+      padding: 12px 8px;
+    }
+  }
+  
+  .MuiTableBody-root {
+    .MuiTableRow-root {
+      &:hover {
+        background-color: #f8f9fa;
+      }
+      
+      &.date-row {
+        background-color: #f0f4f8;
+        
+        .MuiTableCell-root {
+          font-weight: 600;
+          color: #2c3e50;
+          border-bottom: 1px solid #d0d7de;
+        }
+      }
+    }
+    
+    .MuiTableCell-root {
+      padding: 8px;
+      font-size: 13px;
+      border-bottom: 1px solid #f0f0f0;
+      
+      &.time-cell {
+        color: #666;
+        width: 80px;
+      }
+      
+      &.currency-cell {
+        font-weight: 600;
+        width: 60px;
+      }
+      
+      &.impact-cell {
+        width: 60px;
+        text-align: center;
+      }
+      
+      &.event-cell {
+        color: #333;
+        max-width: 300px;
+      }
+      
+      &.value-cell {
+        text-align: right;
+        font-weight: 500;
+        width: 80px;
+        
+        &.positive {
+          color: #4caf50;
+        }
+        
+        &.negative {
+          color: #f44336;
+        }
+        
+        &.neutral {
+          color: #666;
+        }
+      }
+    }
+  }
+}
+
+.impact-indicator {
+  width: 16px;
+  height: 16px;
+  border-radius: 2px;
+  display: inline-block;
+  
+  &.low {
+    background-color: #ffeb3b;
+  }
+  
+  &.medium {
+    background-color: #ff9800;
+  }
+  
+  &.high {
+    background-color: #f44336;
+  }
+}
+
+.chart-icon {
+  width: 20px;
+  height: 20px;
+  color: #1976d2;
+  cursor: pointer;
+  
+  &:hover {
+    color: #1565c0;
+  }
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column;
+  }
+  
+  .sidebar {
+    width: 100%;
+    height: auto;
+    max-height: 300px;
+  }
+  
+  .main-content {
+    height: calc(100vh - 300px);
+  }
+}

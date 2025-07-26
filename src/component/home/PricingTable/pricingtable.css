@@ -126,21 +126,12 @@
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   border-radius: 24px;
   padding: 0;
-  box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3);
+  /* box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3); */
   overflow: hidden;
   position: relative;
 }
 
-.calculator-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(45deg, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0.05) 100%);
-  pointer-events: none;
-}
+
 
 /* Header Section */
 .calculator-header {
@@ -199,7 +190,7 @@
 /* Sliders Container */
 .sliders-container {
   padding: 2rem;
-  background: white;
+  background: var(--theme-purple);
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
@@ -207,17 +198,17 @@
 
 /* Individual Slider Cards */
 .slider-card {
-  background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
+  /* background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%); */
   border-radius: 16px;
   padding: 16px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.8);
+  /* box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1); */
+  /* border: 1px solid rgba(255, 255, 255, 0.8); */
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
 }
 
-.slider-card::before {
+/* .slider-card::before {
   content: '';
   position: absolute;
   top: 0;
@@ -227,7 +218,7 @@
   background: linear-gradient(90deg, #6b6bff, #4ecdc4, #45b7d1, #96ceb4);
   background-size: 400% 400%;
   animation: gradientShift 3s ease infinite;
-}
+} */
 
 /* @keyframes gradientShift {
   0%, 100% { background-position: 0% 50%; }
@@ -287,13 +278,13 @@
 .slider-title {
   font-size: 18px;
   font-weight: 600;
-  color: #2d3748;
+  color: #fff;
   margin: 0 0 0.25rem 0;
 }
 
 .slider-range {
   font-size: 0.9rem;
-  color: #718096;
+  color: #fff;
   margin: 0;
   font-weight: 500;
 }
@@ -377,7 +368,7 @@
 
 .scale-label {
   font-size: 11px;
-  color: #718096;
+  color: #fff;
   font-weight: 500;
   text-align: center;
   margin-top: 4px;
@@ -424,8 +415,8 @@
 /* Calculate Section */
 .calculate-section {
   padding: 1rem;
-  background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 100%);
   text-align: center;
+  /* background-color: #000  ; */
   border-top: 1px solid rgba(0, 0, 0, 0.05);
   display: flex;
   align-items: center;
@@ -629,7 +620,7 @@
   padding: 1rem;
   text-align: center;
   font-weight: 700;
-  color: #2d3748;
+  color: #fff;
   font-size: 0.9rem;
   text-transform: uppercase;
   letter-spacing: 0.5px;
