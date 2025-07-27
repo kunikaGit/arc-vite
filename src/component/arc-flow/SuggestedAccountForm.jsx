@@ -10,12 +10,15 @@ import {
 } from '@mui/material';
 import { Banknote, TrendingUp } from 'lucide-react';
 import './SuggestedAccountForm.scss';
+import { useNavigate } from 'react-router-dom';
 
 const SuggestedAccountForm = () => {
+  const navigate = useNavigate()
   const [formData, setFormData] = useState({
     name: '',
     age: '',
     amount: '',
+    email: ''
   });
   const [suggestion, setSuggestion] = useState('');
 
@@ -64,6 +67,15 @@ const SuggestedAccountForm = () => {
             className="form-field"
             size="small"
           />
+          <TextField
+            fullWidth
+            label="Email"
+            variant="outlined"
+            value={formData.email}
+            onChange={(e) => handleInputChange('email', e.target.value)}
+            className="form-field"
+            size="small"
+          />
 
           <TextField
             fullWidth
@@ -86,17 +98,26 @@ const SuggestedAccountForm = () => {
             className="form-field"
             size="small"
           />
-
+    <Box sx={{display:'flex',alignItems:'center',gap:'10px'}}>
           <Button
             fullWidth
             variant="contained"
             onClick={suggestAccount}
             disabled={!isFormValid}
             className="suggest-btn"
-            startIcon={<TrendingUp />}
           >
             Suggest Account Size
           </Button>
+          <Button
+            fullWidth
+            variant="contained"
+            onClick={()=>navigate('/checkout')}
+            disabled={!isFormValid}
+            className="suggest-btn"
+          >
+            Checkout
+          </Button>
+          </Box>
         </Box>
 
         {suggestion && (
