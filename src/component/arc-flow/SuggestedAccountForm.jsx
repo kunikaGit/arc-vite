@@ -98,25 +98,25 @@ const SuggestedAccountForm = () => {
             className="form-field"
             size="small"
           />
-    <Box sx={{display:'flex',alignItems:'center',gap:'10px'}}>
-          <Button
-            fullWidth
-            variant="contained"
-            onClick={suggestAccount}
-            disabled={!isFormValid}
-            className="suggest-btn"
-          >
-            Suggest Account Size
-          </Button>
-          <Button
-            fullWidth
-            variant="contained"
-            onClick={()=>navigate('/checkout')}
-            disabled={!isFormValid}
-            className="suggest-btn"
-          >
-            Checkout
-          </Button>
+          <Box className='button-group'>
+            <Button
+              fullWidth
+              variant="contained"
+              onClick={suggestAccount}
+              disabled={!isFormValid}
+              className="suggest-btn"
+            >
+              Suggest Account Size
+            </Button>
+            <Button
+              fullWidth
+              variant="contained"
+              onClick={() => navigate('/checkout')}
+              disabled={!isFormValid}
+              className="suggest-btn"
+            >
+              Checkout
+            </Button>
           </Box>
         </Box>
 

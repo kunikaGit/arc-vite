@@ -93,12 +93,17 @@ const FlowContainer = () => {
   const steps = getStepContent();
   const currentStepData = steps[currentStep];
 
-  useEffect(() => {
-    const el = stepRefs.current[currentStep];
-    if (el) {
-      el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  }, [currentStep]);
+ useEffect(() => {
+  const container = document.querySelector('.flow-steps');
+  const el = stepRefs.current[currentStep];
+  if (el && container) {
+    container.scrollTo({
+      top: el.offsetTop - container.offsetTop,
+      behavior: 'smooth'
+    });
+  }
+}, [currentStep]);
+
 
   return (
     <>
@@ -115,7 +120,7 @@ const FlowContainer = () => {
         </Typography>
 
         <div className='two-flex'>
-          {flowData.showForm   && (
+          {flowData.showForm   && ( 
             <div  className={`section-one ${flowData.showForm ? 'show' : ''}`}>
               <div className="form-section">
                 <SuggestedAccountForm />
@@ -123,7 +128,7 @@ const FlowContainer = () => {
             </div>
           )} 
 
-          <div className={`content-wrapper `}>
+          <div className={`content-wrapper `} >
             <div className="flow-steps">
               <div className="step-details-box">
                 <div className="step-details-content">

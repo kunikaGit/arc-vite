@@ -6,14 +6,27 @@
   max-width: 100vw;
   padding: 120px 20px 0 20px;
   position: relative;
+  overflow-x: hidden;
+
+  @include media_768 {
+    padding: 80px 10px 0 10px;
+  }
 
   .two-flex {
     display: flex;
     min-height: calc(100vh - 140px);
+
+    @include media_768 {
+      flex-direction: column;
+    }
   }
 
   .section-one {
     width: 50%;
+
+    @include media_768 {
+      width: 100%;
+    }
 
     .form-section {
       margin: auto;
@@ -22,6 +35,11 @@
       justify-content: center;
       animation: slideInRight 1s cubic-bezier(0.4, 0, 0.2, 1);
       margin-bottom: 20px;
+      width: 80%;
+
+      @include media_768 {
+        width: 100%;
+      }
 
       @keyframes slideInRight {
         from {
@@ -48,6 +66,7 @@
     font-weight: 700;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     font-size: 40px;
+    margin-bottom: 30px;
   }
 
   .step-details-box {
@@ -67,9 +86,21 @@
     animation: floatIn 0.8s cubic-bezier(0.4, 0, 0.2, 1);
     transition: all 0.3s ease;
     left: 0px;
+    top: 100px;
+    z-index: 1;
 
     @include media_1440 {
       left: 0;
+    }
+
+    @include media_1280 {
+      max-width: 250px;
+    }
+
+    @include media_768 {
+      max-width: 200px;
+      padding: 5px;
+      top: 140px;
     }
 
     &:hover {
@@ -106,11 +137,19 @@
       letter-spacing: 1px;
       margin-bottom: 10px;
       text-align: center;
+
+      @include media_768 {
+        font-size: 12px;
+      }
     }
 
     .step-info {
       text-align: center;
       margin-bottom: 20px;
+
+      @include media_768 {
+        margin-bottom: 5px;
+      }
 
       .step-detail-title {
         font-size: 20px;
@@ -118,6 +157,10 @@
         color: #333;
         margin: 0 0 8px 0;
         line-height: 1.3;
+
+        @include media_768 {
+          font-size: 14px;
+        }
       }
 
       .step-detail-description {
@@ -125,6 +168,10 @@
         color: #666;
         margin: 0;
         line-height: 1.5;
+
+        @include media_768 {
+          font-size: 12px;
+        }
       }
     }
 
@@ -189,12 +236,21 @@
     height: calc(100vh - 140px);
     transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
     width: 70%;
-    margin: auto;
+    margin: 0 auto;
+    height: 70vh;
+
+    @include media_768 {
+      width: 100%;
+    }
 
     &.with-form {
       .flow-steps {
         width: 50%;
         transform: translateX(-10%);
+      }
+
+      @include media_768 {
+        width: 100%;
       }
     }
 
@@ -207,6 +263,11 @@
       overflow-y: auto;
       padding-right: 50px;
       transition: all 1s cubic-bezier(0.4, 0, 0.2, 1);
+
+      @include media_768 {
+        height: 400px;
+        padding: 0;
+      }
 
       &::-webkit-scrollbar {
         width: 6px;
