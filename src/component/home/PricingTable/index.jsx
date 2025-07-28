@@ -40,7 +40,14 @@ export default function PricingTable() {
             min: 5000,
             max: 300000,
             step: accountBalanceScale,
-            scale: [5000, 10000, 25000, 50000, 75000, 100000, 150000, 200000, 250000, 300000]
+            //scale: [5000, 10000, 25000, 50000, 75000, 100000, 150000, 200000, 250000, 300000]
+scale: [
+  5000, 6000, 7000, 8000, 9000, 10000, // step 1000
+  15000, 20000, 25000, 30000, 35000, // step 5000
+  40000, 50000, 60000, 70000, 80000, 90000, // step 10000
+  100000, 150000, 200000, 250000, 300000 // step 50000
+]
+
         },
         drawdown: {
             min: 5,
@@ -56,6 +63,8 @@ export default function PricingTable() {
         }
     };
 
+    const [accountBalanceIndex, setAccountBalanceIndex] = useState(0); // Index of scale
+//const accountBalance = sliderConfig.accountBalance.scale[accountBalanceIndex];
     const [calculatedResult, setCalculatedResult] = useState('');
     const [showCalculatedResult, setShowCalculatedResult] = useState(false)
 
@@ -70,38 +79,30 @@ export default function PricingTable() {
     }
 
     const handleSliderChange = (value, field) => {
-        if (field == "accountBalance") {
-            console.log({ value })
-            console.log({ accountBalanceScale })
+  // Ensure the scale is available (replace with your actual scale array)
+  const scale = sliderConfig.accountBalance.scale; // Or however you store it
+  const currentIndex = scale.indexOf(accountBalance);
 
-        }
-        // if ((value > 5000 && value < 10000) && field == "accountBalance") {
-        //     setAccountBalanceScale(1000)
-        // }
-        // if ((value > 10000 && value <= 40000) && field == "accountBalance") {
-        //     if(accountBalance==10000){
-        //         value=15000
-        //     }
-        //     setAccountBalanceScale(5000)
-        // }
-        // if ((value > 40000 && value < 100000) && field == "accountBalance") {
-        //     console.log("above 40000")
-        //     console.log({accountBalance})
-        //                 if(accountBalance==40000 || accountBalance==45000){
-        //         value=50000
-        //     }
-        //     setAccountBalanceScale(10000)
-        // }
-        // if ((value > 100000 && value <= 300000) && field == "accountBalance") {
-        //                             if(accountBalance==100000){
-        //         value=150000
-        //     }
-        //     setAccountBalanceScale(50000)
-        // }
+  let newIndex = currentIndex;
+
+  if (field === 'accountBalance') {
+    if (value > accountBalance) {
+      // Go to next index if available
+      newIndex = Math.min(currentIndex + 1, scale.length - 1);
+    } else if (value < accountBalance) {
+      // Go to previous index if available
+      newIndex = Math.max(currentIndex - 1, 0);
+    }
+
+    const newValue = scale[newIndex];
+   // console.log({ newIndex, newValue });
+    setAccountBalance(newValue);
+  }
         setShowCalculatedResult(false)
         switch (field) {
             case 'accountBalance':
-                setAccountBalance(value);
+                
+                // setAccountBalance(value);
                 break;
             case 'drawdown':
                 setDrawdown(value);
@@ -119,17 +120,24 @@ export default function PricingTable() {
         return 50000;
     };
 
-    const handleSliderRelease = (value) => {
-        const step = getStepForBalance(value);
-        const snapped = Math.round(value / step) * step;
+    // const handleSliderRelease = (value) => {
+    //     const step = getStepForBalance(value);
+    //     const snapped = Math.round(value / step) * step;
 
-        // Make sure the snapped value is within range
-        const clamped = Math.min(Math.max(snapped, sliderConfig.accountBalance.min), sliderConfig.accountBalance.max);
+    //     // Make sure the snapped value is within range
+    //     const clamped = Math.min(Math.max(snapped, sliderConfig.accountBalance.min), sliderConfig.accountBalance.max);
 
-        setAccountBalance(clamped);
-        setAccountBalanceScale(step);
-        setShowCalculatedResult(false);
-    };
+    //     setAccountBalance(clamped);
+    //     setAccountBalanceScale(step);
+    //     setShowCalculatedResult(false);
+    // };
+
+    const handleSliderRelease = (index) => {
+  const snappedIndex = Math.min(Math.max(index, 0), sliderConfig.accountBalance.scale.length - 1);
+  console.log({snappedIndex});
+  setAccountBalanceIndex(snappedIndex);
+  setShowCalculatedResult(false);
+};
 
     const generateScale = (min, max, step) => {
         const scale = [];
@@ -293,12 +301,17 @@ export default function PricingTable() {
                                                                 min={sliderConfig.accountBalance.min}
                                                                 max={sliderConfig.accountBalance.max}
                                                                 // step={sliderConfig.accountBalance.step}
-                                                                step={1}
+                                                                //step={1}
 
                                                                 value={accountBalance}
-                                                                // onChange={(e) => handleSliderChange(Number(e.target.value), 'accountBalance')}
-                                                                onChange={(e) => setAccountBalance(Number(e.target.value))} // Just set the raw value
-                                                                onMouseUp={() => handleSliderRelease(accountBalance)} // Snap on release
+                                                                 onChange={(e) => handleSliderChange(Number(e.target.value), 'accountBalance')}
+                                                                // onChange={(e) => setAccountBalance(Number(e.target.value))} // Just set the raw value
+                                                                // onMouseUp={() => handleSliderRelease(accountBalance)} // Snap on release
+
+                                                                //onChange={(e) => setAccountBalanceIndex(Number(e.target.value))}
+                                                                // onMouseUp={() => handleSliderRelease(accountBalanceIndex)}
+                                                                // value={accountBalanceIndex}
+
                                                                 className="range-slider balance-slider"
                                                             />
                                                             <div
