@@ -1,88 +1,117 @@
 // Main App Styles
 .app-container {
-  display: flex;
+  // display: flex;
   height: 100vh;
-  padding-top: 70px;
-  header{
-    background-color: #160559;;
+
+  header {
+    background-color: #160559;
+    ;
   }
 }
 
 .sidebar {
-  width: 280px;
   // background-color: #ffffff;
-  border-right: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
   overflow-y: auto;
   overflow-x: hidden;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  padding-bottom: 20px;
   .navigation-section {
-    padding: 16px;
-    border-bottom: 1px solid #e0e0e0;
-    
+    padding: 0;
+
     h3 {
       margin: 0 0 16px 0;
       font-size: 14px;
       font-weight: 500;
-      color: #666;
+      color: #fff;
     }
   }
-  .MuiPickersLayout-root{
-    min-width: 250px!important;
-    width: 280px!important;
-    margin: 0!important;    
+
+  .MuiPickersLayout-root {
+    min-width: 250px !important;
+    width: 280px !important;
+    margin: 0 !important;
+    background: linear-gradient(127.09deg, rgba(6, 11, 40, 0.94) 19.41%, rgba(10, 14, 35, 0.49) 76.65%) border-box;
+    border: none;
+    color: #fff;
   }
-  .MuiDateCalendar-root{
-    width: 250px!important;
-    margin: 0!important;
+
+  .MuiDateCalendar-root {
+    width: 250px !important;
+    margin: 0 !important;
+
+    span {
+      color: #fff;
+    }
+
+    .MuiButtonBase-root {
+      color: #fff;
+    }
   }
+
   .calendar-container {
-    padding: 16px;
+    padding: 0;
+    svg{
+      path{
+        color: #fff;
+      }
+    }
+    .MuiPickersOutlinedInput-notchedOutline{
+      border-color: #fff;
+    }
+    .MuiPickersInputBase-root{
+      color: #fff;
+      .MuiSvgIcon-root{
+      }
+    }
     .MuiPickersCalendarHeader-root {
       padding: 0;
       margin: 0 0 16px 0;
     }
   }
-  
+
   .nav-links {
     display: flex;
-    flex-direction: column;
     gap: 4px;
-    
+
     .nav-link {
       padding: 8px 12px;
       border-radius: 4px;
       cursor: pointer;
       font-size: 13px;
-      color: #333;
+      color: #fff;
       transition: background-color 0.2s;
-      
+      display: flex;
       &:hover {
         background-color: #f0f0f0;
       }
-      
+
       &.active {
         background-color: #e3f2fd;
         color: #1976d2;
       }
     }
   }
-  
+
   .calendar-types {
     padding: 16px;
     border-top: 1px solid #e0e0e0;
-    
+
     .calendar-type {
       display: flex;
       align-items: center;
       gap: 8px;
       padding: 6px 0;
       font-size: 13px;
-      color: #333;
+      color: #fff;
       cursor: pointer;
-      
+
       &:hover {
         color: #1976d2;
       }
-      
+
       .icon {
         width: 16px;
         height: 16px;
@@ -105,17 +134,18 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  
+
   .week-navigation {
     display: flex;
     align-items: center;
     gap: 16px;
-    
+
     .week-title {
       font-size: 18px;
       font-weight: 500;
+      color: #fff;
     }
-    
+
     .nav-button {
       background: rgba(255, 255, 255, 0.2);
       color: #000;
@@ -127,18 +157,18 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      
+
       &:hover {
         background: rgba(255, 255, 255, 0.3);
       }
     }
   }
-  
+
   .header-actions {
     display: flex;
     gap: 12px;
     align-items: center;
-    
+
     .action-button {
       background: rgba(255, 255, 255, 0.2);
       color: white;
@@ -147,26 +177,29 @@
       border-radius: 4px;
       cursor: pointer;
       font-size: 14px;
-      
+
       &:hover {
-        background: rgba(255, 255, 255, 0.3);
+        background: rgba(47, 5, 5, 0.3);
       }
     }
   }
 }
 
 .table-container {
-  flex: 1;
-  overflow: auto;
   background: transparent;
-  
+  padding: 0;
+  margin: 20px;
+  max-height: 500px;
+  overflow-y: auto;
   .MuiTableContainer-root {
     height: 100%;
+    background: transparent;
+
   }
-  
+
   .MuiTableHead-root {
     background-color: transparent;
-    
+
     .MuiTableCell-head {
       font-weight: 600;
       font-size: 13px;
@@ -175,64 +208,63 @@
       padding: 12px 8px;
     }
   }
-  
+
   .MuiTableBody-root {
     .MuiTableRow-root {
       &:hover {
-        background-color: #f8f9fa;
+        background-color: #000;
       }
-      
+
       &.date-row {
-        background-color: #f0f4f8;
-        
+
         .MuiTableCell-root {
           font-weight: 600;
-          color: #2c3e50;
+          color: #fff;
           border-bottom: 1px solid #d0d7de;
         }
       }
     }
-    
+
     .MuiTableCell-root {
       padding: 8px;
       font-size: 13px;
       border-bottom: 1px solid #f0f0f0;
-      
+
       &.time-cell {
-        color: #666;
+        color: #fff;
         width: 80px;
       }
-      
+
       &.currency-cell {
         font-weight: 600;
         width: 60px;
       }
-      
+
       &.impact-cell {
         width: 60px;
         text-align: center;
       }
-      
+
       &.event-cell {
-        color: #333;
+        color: #fff;
         max-width: 300px;
       }
-      
+
       &.value-cell {
         text-align: right;
         font-weight: 500;
         width: 80px;
-        
+
         &.positive {
           color: #4caf50;
         }
-        
+
         &.negative {
           color: #f44336;
         }
-        
+
         &.neutral {
-          color: #666;
+          color: #fff;
         }
       }
     }
@@ -244,15 +276,15 @@
   height: 16px;
   border-radius: 2px;
   display: inline-block;
-  
+
   &.low {
     background-color: #ffeb3b;
   }
-  
+
   &.medium {
     background-color: #ff9800;
   }
-  
+
   &.high {
     background-color: #f44336;
   }
@@ -263,7 +295,7 @@
   height: 20px;
   color: #1976d2;
   cursor: pointer;
-  
+
   &:hover {
     color: #1565c0;
   }
@@ -274,13 +306,13 @@
   .app-container {
     flex-direction: column;
   }
-  
+
   .sidebar {
     width: 100%;
     height: auto;
     max-height: 300px;
   }
-  
+
   .main-content {
     height: calc(100vh - 300px);
   }

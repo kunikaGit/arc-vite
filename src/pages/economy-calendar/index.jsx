@@ -8,18 +8,17 @@ import EconomyHeader from '../../component/economy-calender/Header';
 import EventsTable from '../../component/economy-calender/EventsTable';
 import { getEventsByDate, getEventsByDateRange, mockEconomicData } from '../../component/data/mockData';
 import Header2 from '../../component/home2/header2';
+import { DashboardHeader } from '../../component';
 const theme = createTheme({
   palette: {
     primary: {
-      main: '#1976d2',
+      main: '#000',
     },
     secondary: {
-      main: '#dc004e',
+      main: '#000',
     },
   },
-  typography: {
-    fontFamily: 'Roboto, Arial, sans-serif',
-  },
+
 });
 
 function EconomyCalendar() {
@@ -102,10 +101,9 @@ function EconomyCalendar() {
   };
 
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
+<>
+      <DashboardHeader title="Economy Calender"/>
       <div className="app-container">
-      <Header2/>
         <EconomySidebar
           selectedDate={selectedDate}
           onDateChange={handleDateChange}
@@ -122,7 +120,7 @@ function EconomyCalendar() {
           <EventsTable events={filteredEvents} />
         </div>
       </div>
-    </ThemeProvider>
+      </>
   );
 }
 
