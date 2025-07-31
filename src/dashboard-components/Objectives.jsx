@@ -93,7 +93,7 @@ function Objectives() {
         <Button variant="outlined" size="medium" onClick={() => navigate('/dashboard/withdrawal')}>
           Mentor App
         </Button>
-        <Button variant="outlined" size="medium" onClick={() => navigate('/economy')}>
+        <Button variant="outlined" size="medium" onClick={() => navigate('/dashboard/economy')}>
           Economic Calender
         </Button>
         <Button variant="outlined" size="medium">
