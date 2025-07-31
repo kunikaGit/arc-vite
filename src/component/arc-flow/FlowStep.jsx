@@ -1,13 +1,14 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import { Card, CardContent, Typography, Button, Box } from '@mui/material';
 import { ArrowDown, ArrowUp, CheckCircle } from 'lucide-react';
 import './FlowStep.scss';
 
-const FlowStep = ({ step, stepIndex, isActive, isCompleted, onClick, onBack }) => {
+const FlowStep = forwardRef(({ step, stepIndex, isActive, isCompleted, onClick, onBack }, ref)  => {
 
 
   return (
-    <div className="flow-step-container">
+    <div className="flow-step-container"  ref={ref}>
+      
       <Card
         className={`flow-step ${isActive ? 'active' : ''} ${isCompleted ? 'completed' : ''}`}
         elevation={isActive ? 8 : 2}
@@ -79,6 +80,6 @@ const FlowStep = ({ step, stepIndex, isActive, isCompleted, onClick, onBack }) =
       </div>
     </div>
   );
-};
+});
 
 export default FlowStep;

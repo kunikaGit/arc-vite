@@ -286,9 +286,9 @@ export default function Checkout() {
         <>
             <Header2 />
             <OverlayLoading isLoading={loading}>
-                <section className="relative py-16 bg-white dark:bg-black md:pt-32">
+                <section className="relative py-16 md:pt-32">
                     <div className="container">
-                        <h2 className="mb-9 text-center font-display text-3xl text-jacarta-700  dark:text-white">
+                        <h2 className="mb-9 text-center font-display text-3xl text-white">
                             Checkout</h2>
                         <div className="md:flex gap-9">
                             <div className="md:w-[65%]">
@@ -447,7 +447,7 @@ export default function Checkout() {
                             </div>
                             <div className="md:w-[35%] relative">
                                 <div className="sticky top-40 ">
-                                    <div className=" mb-5 h-fit detail-card col-span-1 rounded-xl border border-jacarta-100 bg-accent p-[1.1875rem] transition-shadow shadow-md dark:border-jacarta-700 dark:bg-jacarta-700">
+                                    <div className=" mb-5 h-fit detail-card col-span-1 rounded-xl bg-accent p-[1.1875rem] transition-shadow shadow-md dark:border-jacarta-700 dark:bg-jacarta-700">
                                         <div className="flex items-center mb-4">
                                             <div className="w-3/4">
                                                 <h2 className="mb-0 font-display text-xl dark:text-jacarta-700 text-white">
@@ -489,7 +489,7 @@ export default function Checkout() {
                                                 <input
                                                     type="checkbox"
                                                     value={item.percentage}
-                                                    className="mr-4 h-5 w-5 self-start rounded border-jacarta-200 text-accent checked:bg-accent focus:ring-accent/20 focus:ring-offset-0 dark:border-jacarta-500 dark:bg-jacarta-600"
+                                                    className="mr-4 h-5 w-5 self-start rounded border-jacarta-200 text-white checked:bg-accent focus:ring-accent/20 focus:ring-offset-0 dark:border-jacarta-500 dark:bg-jacarta-600"
                                                     onChange={(e) => handleAddonChange(e, item.id)}
                                                 />
                                                 {index == 0 ? <DollerIcon /> : index == 1 ? <TrophyIcon /> : <DoubleUp />} {item.name}
@@ -546,7 +546,7 @@ export default function Checkout() {
                                         </div>}
                                     </div>
                                     <div className="mb-5">
-                                        <button type="button" onClick={() => handleOpen("md")} className="text-accent font-medium">
+                                        <button type="button" onClick={() => handleOpen("md")} className="text-white font-medium">
                                             Check Terms and conditions Before Checkout</button>
                                     </div>
 
