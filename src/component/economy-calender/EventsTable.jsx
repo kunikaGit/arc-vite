@@ -42,7 +42,7 @@ const EventsTable = ({ events }) => {
   };
 
   return (
-    <div className="table-container">
+    <div className="table-container main-paper">
       <TableContainer component={Paper} sx={{ height: '100%' }}>
         <Table stickyHeader>
           <TableHead>

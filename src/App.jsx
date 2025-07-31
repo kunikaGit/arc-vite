@@ -20,27 +20,27 @@ import TelegramLoginStatus from "./pages/status/telegramLoginStatus.jsx";
 import { useNavigate } from 'react-router-dom';
 import { logout } from '../src/redux/slice/authSlice.js'
 import { useDispatch, useSelector } from 'react-redux'
-import {autoLogout} from "../src/utlis/autoLogout.js"
+import { autoLogout } from "../src/utlis/autoLogout.js"
 import TradingDashboard from "./dashboard-components/TradingDashboard.jsx";
 import FlowContainer from "./component/arc-flow/FlowContainer.jsx";
 import EconomyCalendar from "./pages/economy-calendar/index.jsx";
 export default function App() {
-    const navigate = useNavigate();
+  const navigate = useNavigate();
   const { auth_token } = useSelector((state) => state.auth);
-    const dispatch = useDispatch()
+  const dispatch = useDispatch()
 
-useEffect(() => {
-  if (auth_token) {
-    autoLogout(auth_token, () => {
-      dispatch(logout());
-      navigate("/login");
-    });
-  }
-}, [auth_token, dispatch, navigate]);
+  useEffect(() => {
+    if (auth_token) {
+      autoLogout(auth_token, () => {
+        dispatch(logout());
+        navigate("/login");
+      });
+    }
+  }, [auth_token, dispatch, navigate]);
   return (
     <>
       <ScrollToTop />
-     <Toaster position="top-right" reverseOrder={true} />
+      <Toaster position="top-right" reverseOrder={true} />
       <Routes>
         <Route path="/" element={<Home />} />
         {/* <Route path="/" element={<Home2 />} /> */}
@@ -55,22 +55,22 @@ useEffect(() => {
 
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/success" element={<SuccessStatus/>}/>
-        <Route path="/failed" element={<FailedStatus/>}/>
-        <Route path="/build-arc" element={<FlowContainer/>}/>
+        <Route path="/success" element={<SuccessStatus />} />
+        <Route path="/failed" element={<FailedStatus />} />
+        <Route path="/build-arc" element={<FlowContainer />} />
 
-        <Route path="/forget-password" element={<ForgetPassword/>}/>
-        <Route path="/reset-password" element={<ResetPassword/>}/>
+        <Route path="/forget-password" element={<ForgetPassword />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
 
-        <Route path="/verify-email" element={<EmailVerification/>}/>
-        <Route path="/telegram-auth" element={<TelegramSignup/>}/>
-        <Route path="/telegram-login-auth" element={<TelegramLoginStatus/>}/>
-        <Route path="/economy" element={<EconomyCalendar />} />
+        <Route path="/verify-email" element={<EmailVerification />} />
+        <Route path="/telegram-auth" element={<TelegramSignup />} />
+        <Route path="/telegram-login-auth" element={<TelegramLoginStatus />} />
 
 
         {/* -----------for dashboard routing--------------- */}
         <Route path="/dashboard" element={<DashboardLayout />}>
           <Route index element={<TradingDashboard />} />
+          <Route path="/dashboard/economy" element={<EconomyCalendar />} />
           <Route path="/dashboard/account-overview" element={<AccountOverview />} />
           <Route path="/dashboard/withdrawal" element={<FundedLongue />} />
           <Route path="/dashboard/withdrawal/step2" element={<WithdrawalStep2 />} />
