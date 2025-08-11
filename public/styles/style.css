@@ -491,9 +491,6 @@ box-shadow: none;
   .hero-main .home-actions{
     margin-bottom:40px;
   }
-  .js-page-header--is-sticky .js-mobile-menu{
-    background-color: #fff;
-  }
   .js-mobile-menu{
     background-color: rgb(16 20 54/1);
     width: 90%;

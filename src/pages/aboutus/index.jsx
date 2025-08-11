@@ -5,22 +5,22 @@ import Aos from 'aos';
 import Footer1 from '../../component/footer';
 
 const AboutUs = () => {
-    useEffect   (() => {
-        Aos.init({ 
-            duration: 800, 
-            once: true 
+    useEffect(() => {
+        Aos.init({
+            duration: 800,
+            once: true
         });
     }, []);
     return (
         <>
+            <Header2 />
             <div className='dark-for-header about-us'>
-                <Header2 />
-                <CommonBanner title="About Us"/>
-                <AboutBanner/>
-                <AboutMission/>
-                <AboutVision/>
-                <AboutRoadmap/>
-                <Footer1/>
+                <CommonBanner title="About Us" />
+                <AboutBanner />
+                <AboutMission />
+                <AboutVision />
+                <AboutRoadmap />
+                <Footer1 />
             </div>
         </>
     )

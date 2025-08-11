@@ -24,7 +24,7 @@ const Faq = () => {
     }, []);
     return (
         <>
-            <div className="dark-for-header relative">
+            <div className="dark-for-header relative faq-wrapped">
                 <Header2 />
                 <section className="relative pt-4">
                     <div className="absolute inset-0  overflow-hidden  -z-10 common-banner" style={{ height: '320px' }} >
@@ -41,7 +41,7 @@ const Faq = () => {
                             className="w-full rounded-2xl border border-jacarta-100 py-3 px-4 pl-10 text-white placeholder-jacarta-500  bg-white/[.15] placeholder-white"
                             placeholder="Search"
                         />
-                        <span className="absolute left-0 md:top-4 top-4 flex h-full w-12 items-center justify-center rounded-2xl">
+                        <span className="absolute flex  w-12 items-center justify-center rounded-2xl faq-search">
                             <svg
                                 xmlns="http://www.w3.org/2000/svg"
                                 viewBox="0 0 24 24"
